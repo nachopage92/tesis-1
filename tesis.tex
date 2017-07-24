@@ -1,0 +1,234 @@
+\documentclass[oneside,authoryear,spanish]{ezthesis}
+%\documentclass[oneside,authoryear,draft,spanish]{ezthesis}
+%\documentclass[oneside,authoryear,draftmarks,spanish]{ezthesis}
+%% # Opciones disponibles para el documento #
+%%
+%% Las opciones con un (*) son las opciones predeterminadas.
+%%
+%% Modo de compilar:
+%%   draft            - borrador con marcas de fecha y sin im'agenes
+%%   draftmarks       - borrador con marcas de fecha y con im'agenes
+%%   final (*)        - version final de la tesis
+%%
+%% Tama'no de papel:
+%%   letterpaper (*)  - tama'no carta (Am'erica)
+%%   a4paper          - tama'no A4    (Europa)
+%%
+%% Formato de impresi'on:
+%%   oneside          - hojas impresas por un solo lado
+%%   twoside (*)      - hijas impresas por ambos lados
+%%
+%% Tama'no de letra:
+%%   10pt, 11pt, o 12pt (*)
+%%
+%% Espaciado entre renglones:
+%%   singlespace      - espacio sencillo
+%%   onehalfspace (*) - espacio de 1.5
+%%   doublespace      - a doble espacio
+%%
+%% Formato de las referencias bibliogr'aficas:
+%%   numbers          - numeradas, p.e. [1]
+%%   authoryear (*)   - por autor y a'no, p.e. (Newton, 1997)
+%%
+%% Opciones adicionales:
+%%   spanish         - tesis escrita en espa'nol
+%%
+%% Desactivar opciones especiales:
+%%   nobibtoc   - no incluir la bibiolgraf'ia en el 'Indice general
+%%   nofancyhdr - no incluir "fancyhdr" para producir los encabezados
+%%   nocolors   - no incluir "xcolor" para producir ligas con colores
+%%   nographicx - no incluir "graphicx" para insertar gr'aficos
+%%   nonatbib   - no incluir "natbib" para administrar la bibliograf'ia
+
+%% Paquetes adicionales requeridos se pueden agregar tambi'en aqu'i.
+%% Por ejemplo:
+%\usepackage{subfig}
+%\usepackage{multirow}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amsmath,amssymb,amsfonts,latexsym,cancel}
+\usepackage{rawfonts}
+\usepackage{pictexwd}
+\usepackage{float}
+\usepackage{graphicx}
+%\numberwithin{equation}{section}
+%paquete para diagramas
+\usepackage[all]{xy}
+\usepackage{mathrsfs}
+\usepackage{tikz}
+\usetikzlibrary{3d}
+%\usepackage{tikz-3dplot}
+\usepackage[thinlines]{easytable}
+
+\usepackage[none]{hyphenat}
+
+%Configuracion codigo c++
+\usepackage{listings}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{color}
+\definecolor{lightblue}{rgb}{0, 0.7, .7}
+\definecolor{gray97}{gray}{.97}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
+\lstset{ frame=Ltb,
+framerule=0pt,
+aboveskip=0.5cm,
+framextopmargin=3pt,
+framexbottommargin=3pt,
+framexleftmargin=0.4cm,
+framesep=0pt,
+rulesep=.4pt,
+backgroundcolor=\color{gray97},
+rulesepcolor=\color{black},
+%
+stringstyle=\ttfamily,
+showstringspaces = false,
+basicstyle=\tiny\ttfamily,
+commentstyle=\color{gray45},
+keywordstyle=\bfseries,
+%
+numbers=left,
+numbersep=15pt,
+numberstyle=\tiny,
+numberfirstline = false,
+breaklines=true,
+}
+% minimizar fragmentado de listados
+\lstnewenvironment{listing}[1][]
+{\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
+
+\lstdefinestyle{consola}
+{basicstyle=\scriptsize\bf\ttfamily,
+backgroundcolor=\color{gray75},
+}
+
+\lstdefinestyle{C}
+{language=C,
+}
+
+\lstdefinestyle{customc}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=C,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+
+\lstdefinestyle{customasm}{
+  belowcaptionskip=1\baselineskip,
+  frame=L,
+  xleftmargin=\parindent,
+  language=[x86masm]Assembler,
+  basicstyle=\footnotesize\ttfamily,
+  commentstyle=\itshape\color{purple!40!black},
+}
+
+\lstset{escapechar=@,style=customc,basicstyle=\small}
+%
+
+
+
+%%##################################################################################################################################
+%% # Datos del documento #
+%% Nota que los acentos se deben escribir: \'a, \'e, \'i, etc.
+%% La letra n con tilde es: \~n.
+
+\author{Pablo Andrés Cárdenas Zamorano}
+%\title{SIMULACIÓN DE LAS ESCALAS TURBULENTAS PRINCIPALES DE UNA MEZCLA BIF\'ASICA AGUA-PETROLEO AL INTERIOR DE UN INYECTOR DE TURBINA A GAS MEDIANTE LOS MÉTODO LARGE-EDDY SIMULATION Y VOLUME OF FLUID}
+\title{``TÍTULO MUY MUY PRETENCIOSO SOBRE VIENTO''}
+\degree{Magíster en Ciencias de la Ingeniería Mecánica}
+\supervisor{Dr. Ing. Alex Flores}
+%\correferent{Dr. Ing. Olivier Skurtys}
+%\correferentextern{Dr. Ing. Juan Carlos Elicer}
+\institution{UNIVERSIDAD TÉCNICA FEDERICO SANTA MARÍA}
+\faculty{Escuela de Ingeniería y Ciencias}
+\department{DEPARTAMENTO DE INGENIRIA MECÁNICA}
+\city{VALPARAISO}
+\country{CHILE}
+
+%% # M'argenes del documento #
+%% 
+%% Quitar el comentario en la siguiente linea para austar los m'argenes del
+%% documento. Leer la documentaci'on de "geometry" para m'as informaci'on.
+
+%\geometry{top=40mm,bottom=33mm,inner=40mm,outer=25mm}
+
+%% El siguiente comando agrega ligas activas en el documento para las
+%% referencias cruzadas y citas bibliogr'aficas. Tiene que ser *la 'ultima*
+%% instrucci'on antes de \begin{document}.
+\hyperlinking
+\begin{document}
+
+\sloppy 
+
+
+%% En esta secci'on se describe la estructura del documento de la tesis.
+%% Consulta los reglamentos de tu universidad para determinar el orden
+%% y la cantidad de secciones que debes de incluir.
+
+%% # Portada de la tesis #
+\include{Portada/anteportada}
+\include{blanco}
+\include{Preliminares/portada}
+\include{blanco}
+\include{Preliminares/contraportada}
+
+%% # Prefacios #
+%% Por cada prefacio (p.e. agradecimientos, resumen, etc.) crear
+%% un nuevo archivo e incluirlo aqu'i.
+%% Para m'as detalles y un ejemplo mirar el archivo "gracias.tex".
+\include{blanco}
+\include{Prefacios/gracias}
+\include{blanco}
+\include{Prefacios/abstract}
+\include{blanco}
+\include{Prefacios/resumen}
+\include{blanco}
+
+%%% # 'Indices y listas de contenido #
+%%% Quitar los comentarios en las lineas siguientes para obtener listas de
+%%% figuras y cuadros/tablas.
+
+%%%% Indice
+\tableofcontents
+%%%% Indice de figuras
+\listoffigures
+%%%% Indice de tablas
+\listoftables
+
+%
+%%% # Cap'itulos #
+%%% Por cada cap'itulo hay que crear un nuevo archivo e incluirlo aqu'i.
+%%% Mirar el archivo "intro.tex" para un ejemplo y recomendaciones para
+%%% escribir.
+%
+\include{Capitulos/capitulo_1}
+%
+\include{Capitulos/capitulo_2}
+
+
+%%
+\appendix
+%%%% Cap'itulos incluidos despues del comando \appendix aparecen como ap'endices
+%%%% de la tesis.
+
+\include{Anexos/Apendice_A}
+\include{Anexos/Apendice_B}
+%
+
+%%% Incluir la bibliograf'ia. Mirar el archivo "biblio.bib" para m'as detales
+%%% y un ejemplo.
+%
+
+\nocite{*}     %incluir en la bibliografia articulos no citados
+\bibliography{Bibliografia/biblio}
+
+\end{document}
