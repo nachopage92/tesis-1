@@ -1,0 +1,24 @@
+\begin{thebibliography}{2}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem[{Guide(2014)}]{Guide2014}
+User Guide.
+\newblock \emph{{Open FOAM}}.
+\newblock December. FOAM Fundation, 2014.
+
+\bibitem[{Hirt y Nichols(1981)}]{Hirt1981}
+C.W Hirt y B.D Nichols.
+\newblock {Volume of fluid (VOF) method for the dynamics of free boundaries}.
+\newblock \emph{Journal of Computational Physics}, 39(1):201--225, 1981.
+\newblock ISSN 00219991.
+\newblock \doi{10.1016/0021-9991(81)90145-5}.
+\newblock
+  \urlprefix\url{http://www.sciencedirect.com/science/article/pii/0021999181901455}.
+
+\end{thebibliography}

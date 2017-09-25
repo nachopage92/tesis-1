@@ -1,5 +1,13 @@
 \select@language {spanish}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Separaci\IeC {\'o}n de escalas en simulaci\IeC {\'o}n de mec\IeC {\'a}nica de fluidos.\relax }}{11}{figure.caption.9}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Informaci\IeC {\'o}n del Explorador E\IeC {\'o}lico para la zona de inter\IeC {\'e}s.\relax }}{13}{figure.caption.13}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Dominios de las mallas exteriores d01 y d02.\relax }}{15}{figure.caption.14}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Dominios d02 y d03.\relax }}{15}{figure.caption.15}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Dominios d03 y d04 (LES).\relax }}{16}{figure.caption.16}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Dominios d04 (LES) y d05 (LES).\relax }}{16}{figure.caption.17}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Dominios mas finos d05 (LES) y d06 (LES).\relax }}{17}{figure.caption.18}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
