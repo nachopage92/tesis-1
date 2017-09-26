@@ -1,4 +1,4 @@
-\begin{thebibliography}{2}
+\begin{thebibliography}{5}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -7,18 +7,30 @@
   \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
   \urlstyle{rm}\Url}\fi
 
-\bibitem[{Guide(2014)}]{Guide2014}
-User Guide.
-\newblock \emph{{Open FOAM}}.
-\newblock December. FOAM Fundation, 2014.
+\bibitem[{Davidson(2013)}]{davidson2013turbulence}
+P.A. Davidson.
+\newblock \emph{Turbulence in Rotating, Stratified and Electrically Conducting
+  Fluids}.
+\newblock Cambridge University Press, 2013.
 
-\bibitem[{Hirt y Nichols(1981)}]{Hirt1981}
-C.W Hirt y B.D Nichols.
-\newblock {Volume of fluid (VOF) method for the dynamics of free boundaries}.
-\newblock \emph{Journal of Computational Physics}, 39(1):201--225, 1981.
-\newblock ISSN 00219991.
-\newblock \doi{10.1016/0021-9991(81)90145-5}.
-\newblock
-  \urlprefix\url{http://www.sciencedirect.com/science/article/pii/0021999181901455}.
+\bibitem[{Holton(1992)}]{holton1992introduction}
+J.R. Holton.
+\newblock \emph{An Introduction to Dynamic Meteorology}.
+\newblock Academic Press, 1992.
+
+\bibitem[{Pope(2000)}]{pope2000turbulent}
+S.B. Pope.
+\newblock \emph{Turbulent Flows}.
+\newblock Cambridge University Press, 2000.
+
+\bibitem[{Stull(1988)}]{stull1988introduction}
+R.B. Stull.
+\newblock \emph{An Introduction to Boundary Layer Meteorology}.
+\newblock Springer Netherlands, 1988.
+
+\bibitem[{Warner(2010)}]{warner2010numerical}
+T.T. Warner.
+\newblock \emph{Numerical Weather and Climate Prediction}.
+\newblock Cambridge University Press, 2010.
 
 \end{thebibliography}
