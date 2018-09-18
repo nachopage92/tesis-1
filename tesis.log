@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.24)  17 SEP 2018 22:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.24)  18 SEP 2018 12:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1057,8 +1057,7 @@ LaTeX Info: Redefining \% on input line 26.
 (./Capitulos/01_intro.aux) (./Capitulos/02_estado_arte.aux)
 (./Capitulos/03_marco_teorico.aux) (./Capitulos/04_wrf.aux)
 (./Capitulos/05_metodologia.aux) (./Capitulos/06_resultados.aux)
-(./Capitulos/07_conclusiones.aux) (./Anexos/Apendice_A.aux)
-(./Anexos/Apendice_B.aux))
+(./Capitulos/07_conclusiones.aux) (./Anexos/Apendice_A.aux))
 \openout1 = `tesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 169.
@@ -1191,7 +1190,7 @@ LaTeX Info: Redefining \nameref on input line 169.
 \openout2 = `Portada/anteportada.aux'.
 
  (./Portada/anteportada.tex
-<Imagenes/utfsm_logo.pdf, id=52, 347.2975pt x 252.945pt>
+<Imagenes/utfsm_logo.pdf, id=48, 347.2975pt x 252.945pt>
 File: Imagenes/utfsm_logo.pdf Graphic file (type pdf)
 
 <use Imagenes/utfsm_logo.pdf>
@@ -2172,36 +2171,26 @@ LaTeX Info: Redefining \% on input line 26.
 (./Capitulos/07_conclusiones.aux) (./Anexos/Apendice_A.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 242.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 242.
-
-
-Package rerunfilecheck Warning: File `tesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `tesis.out':
-(rerunfilecheck)             Before: 99CD5AC5E05ADB0ADD54F535BC06FA36;658
-(rerunfilecheck)             After:  E3EFE7FF3DD5A30FAF84BA87E76D6BE1;600.
+Package rerunfilecheck Info: File `tesis.out' has not changed.
+(rerunfilecheck)             Checksum: E3EFE7FF3DD5A30FAF84BA87E76D6BE1;600.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 242.
  ) 
 Here is how much of TeX's memory you used:
- 16000 strings out of 493029
- 221599 string characters out of 6136234
- 391058 words of memory out of 5000000
- 18997 multiletter control sequences out of 15000+600000
+ 15994 strings out of 493029
+ 221495 string characters out of 6136234
+ 390489 words of memory out of 5000000
+ 18995 multiletter control sequences out of 15000+600000
  64629 words of font info for 116 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,11n,56p,3237b,426s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{appendix.Alph2} has been referenced but does not 
-exist, replaced by a fixed one
-
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
-texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/font
-s/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
-es/utmri8a.pfb>
-Output written on tesis.pdf (24 pages, 128263 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
+imes/utmri8a.pfb>
+Output written on tesis.pdf (24 pages, 128413 bytes).
 PDF statistics:
- 202 PDF objects out of 1000 (max. 8388607)
- 170 compressed objects within 2 object streams
- 43 named destinations out of 1000 (max. 500000)
- 102 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 196 PDF objects out of 1000 (max. 8388607)
+ 164 compressed objects within 2 object streams
+ 42 named destinations out of 1000 (max. 500000)
+ 94 words of extra memory for PDF output out of 10000 (max. 10000000)
 
