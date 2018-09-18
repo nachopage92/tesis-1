@@ -59,12 +59,11 @@
 %paquete para diagramas
 \usepackage[all]{xy}
 \usepackage{mathrsfs}
-\usepackage{tikz}
-\usetikzlibrary{3d}
+%\usepackage{tikz}
+%\usetikzlibrary{3d}
 %\usepackage{tikz-3dplot}
 \usepackage[thinlines]{easytable}
 \usepackage[none]{hyphenat}
-
 %Configuracion codigo c++
 \usepackage{listings}
 \usepackage[T1]{fontenc}
@@ -145,11 +144,11 @@ backgroundcolor=\color{gray75},
 
 \author{Pablo Andrés Cárdenas Zamorano}
 %\title{SIMULACIÓN DE LAS ESCALAS TURBULENTAS PRINCIPALES DE UNA MEZCLA BIF\'ASICA AGUA-PETROLEO AL INTERIOR DE UN INYECTOR DE TURBINA A GAS MEDIANTE LOS MÉTODO LARGE-EDDY SIMULATION Y VOLUME OF FLUID}
-\title{``TÍTULO MUY MUY PRETENCIOSO SOBRE VIENTO EN TERRENO COMPLEJO CON LARGE EDDY SIMULATION Y APLICANDO DATA ASSIMILATION''}
+\title{``SISTEMA DE PREDICCIÓN DE VIENTO A CORTO PLAZO MEDIANTE SIMULACIONES MESO-MICROESCALA DE ALTA RESOLUCIÓN UTILIZANDO SIMULACIÓN DE GRANDES VÓRTICES Y ASIMILACIÓN DE DATOS EN CASOS REALES''}
 \degree{Magíster en Ciencias de la Ingeniería Mecánica}
 \supervisor{Dr. Ing. Alex Flores}
-\correferent{Dr. Ing. Olivier Skurtys}
-\correferentextern{Dr. Ing. Juan Carlos Elicer}
+\correferent{Phd. Carlos Rosales}
+\correferentextern{Dr. XXXXX XXXXXXXXX}
 \institution{UNIVERSIDAD TÉCNICA FEDERICO SANTA MARÍA}
 \faculty{Escuela de Ingeniería y Ciencias}
 \department{DEPARTAMENTO DE INGENIRIA MECÁNICA}
@@ -161,7 +160,7 @@ backgroundcolor=\color{gray75},
 %% Quitar el comentario en la siguiente linea para austar los m'argenes del
 %% documento. Leer la documentaci'on de "geometry" para m'as informaci'on.
 
-%\geometry{top=40mm,bottom=33mm,inner=40mm,outer=25mm}
+\geometry{top=35mm,bottom=35mm,inner=30mm,outer=30mm}
 
 %% El siguiente comando agrega ligas activas en el documento para las
 %% referencias cruzadas y citas bibliogr'aficas. Tiene que ser *la 'ultima*
@@ -177,21 +176,21 @@ backgroundcolor=\color{gray75},
 %% y la cantidad de secciones que debes de incluir.
 
 %% # Portada de la tesis #
-%\include{Portada/anteportada}
-%\include{blanco}
-%\include{Preliminares/portada}
-%\include{blanco}
-%\include{Preliminares/contraportada}
+\include{Portada/anteportada}
+\include{blanco}
+\include{Preliminares/portada}
+\include{blanco}
+\include{Preliminares/contraportada}
 
 %% # Prefacios #
 %% Por cada prefacio (p.e. agradecimientos, resumen, etc.) crear
 %% un nuevo archivo e incluirlo aqu'i.
 %% Para m'as detalles y un ejemplo mirar el archivo "gracias.tex".
-%\include{blanco}
-%\include{Prefacios/gracias}
-%\include{blanco}
-%\include{Prefacios/abstract}
-%\include{blanco}
+\include{Prefacios/frase}
+\include{Prefacios/gracias}
+\include{blanco}
+\include{Prefacios/abstract}
+\include{blanco}
 \include{Prefacios/resumen}
 \include{blanco}
 
@@ -212,18 +211,25 @@ backgroundcolor=\color{gray75},
 %%% Mirar el archivo "intro.tex" para un ejemplo y recomendaciones para
 %%% escribir.
 %
-\include{Capitulos/capitulo_1}
+\include{Capitulos/01_intro}
 %
-\include{Capitulos/capitulo_2}
-
-\include{Capitulos/capitulo_3}
-
+\include{Capitulos/02_estado_arte}
+%
+\include{Capitulos/03_marco_teorico}
+%
+\include{Capitulos/04_wrf}
+%
+\include{Capitulos/05_metodologia}
+%
+\include{Capitulos/06_resultados}
+%
+\include{Capitulos/07_conclusiones}
 %%
 \appendix
 %%%% Cap'itulos incluidos despues del comando \appendix aparecen como ap'endices
 %%%% de la tesis.
 
-%\include{Anexos/Apendice_A}
+\include{Anexos/Apendice_A}
 %\include{Anexos/Apendice_B}
 %
 
@@ -233,5 +239,4 @@ backgroundcolor=\color{gray75},
 
 \nocite{*}     %incluir en la bibliografia articulos no citados
 \bibliography{Bibliografia/biblio}
-Falta crear base de dato .bib
 \end{document}

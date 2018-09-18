@@ -1,46 +1,12 @@
-\contentsline {chapter}{Resumen}{1}{section*.1}
 \select@language {spanish}
-\contentsline {chapter}{\numberline {1}Estado del Arte}{9}{chapter.1}
-\contentsline {chapter}{\numberline {2}Marco Te\IeC {\'o}rico}{10}{chapter.2}
-\contentsline {section}{\numberline {2.1}Leyes Fundamentales}{10}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Mec\IeC {\'a}nica de Fluidos}{10}{subsection.2.1.1}
-\contentsline {subsubsection}{Conservaci\IeC {\'o}n de la Masa}{10}{section*.6}
-\contentsline {subsubsection}{Conservaci\IeC {\'o}n de la Cantidad de Movimiento}{11}{section*.7}
-\contentsline {subsubsection}{Conservaci\IeC {\'o}n de la Energ\IeC {\'\i }a}{11}{section*.8}
-\contentsline {subsection}{\numberline {2.1.2}Din\IeC {\'a}mica Atmosf\IeC {\'e}rica}{11}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Teor\IeC {\'\i }a de la Capa L\IeC {\'\i }mite Atmosf\IeC {\'e}rica}{11}{subsection.2.1.3}
-\contentsline {section}{\numberline {2.2}Turbulencia Hidrodin\IeC {\'a}mica}{11}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Fundamentos}{11}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Cascada de Energ\IeC {\'\i }a}{12}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Hip\IeC {\'o}tesis de Taylor}{12}{subsection.2.2.3}
-\contentsline {section}{\numberline {2.3}Large Eddy Simulation}{13}{section.2.3}
-\contentsline {section}{\numberline {2.4}Data Assimilation}{14}{section.2.4}
-\contentsline {section}{\numberline {2.5}Simulaci\IeC {\'o}n Num\IeC {\'e}rica Multiescala}{14}{section.2.5}
-\contentsline {section}{\numberline {2.6}ARW-WRF}{16}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}Generalidades}{16}{subsection.2.6.1}
-\contentsline {subsection}{\numberline {2.6.2}Ecuaciones Resueltas}{17}{subsection.2.6.2}
-\contentsline {subsection}{\numberline {2.6.3}Discretizaci\IeC {\'o}n Espacial}{17}{subsection.2.6.3}
-\contentsline {subsection}{\numberline {2.6.4}Discretizaci\IeC {\'o}n Temporal}{17}{subsection.2.6.4}
-\contentsline {subsection}{\numberline {2.6.5}Aspectos Num\IeC {\'e}ricos}{17}{subsection.2.6.5}
-\contentsline {subsubsection}{Filtros}{17}{section*.11}
-\contentsline {subsubsection}{Advecci\IeC {\'o}n}{17}{section*.12}
-\contentsline {subsubsection}{Difusi\IeC {\'o}n}{17}{section*.13}
-\contentsline {subsubsection}{Microf\IeC {\'\i }sicas}{18}{section*.14}
-\contentsline {chapter}{\numberline {3}Caso de Estudio}{19}{chapter.3}
-\contentsline {section}{\numberline {3.1}Aspectos Generales}{19}{section.3.1}
-\contentsline {section}{\numberline {3.2}Resoluci\IeC {\'o}n Espacial}{20}{section.3.2}
-\contentsline {section}{\numberline {3.3}Resoluci\IeC {\'o}n Temporal}{24}{section.3.3}
-\contentsline {section}{\numberline {3.4}Condiciones de Borde}{24}{section.3.4}
-\contentsline {section}{\numberline {3.5}Informaci\IeC {\'o}n del Terreno}{25}{section.3.5}
-\contentsline {section}{\numberline {3.6}Parametrizaciones}{25}{section.3.6}
-\contentsline {section}{\numberline {3.7}Monitoreo de Variables}{25}{section.3.7}
-\contentsline {chapter}{\numberline {4}Resultados}{27}{chapter.4}
-\contentsline {section}{\numberline {4.1}Series de Tiempo}{27}{section.4.1}
-\contentsline {section}{\numberline {4.2}Campos de Velocidad}{29}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Rapidez Instant\IeC {\'a}nea a 10 [m]}{29}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Velocidad Media}{48}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}Perfiles de Velocidad}{53}{section.4.3}
-\contentsline {section}{\numberline {4.4}Espectro de Energ\IeC {\'\i }a}{55}{section.4.4}
-\contentsline {chapter}{\numberline {5}An\IeC {\'a}lisis y Conclusiones}{62}{chapter.5}
-\contentsline {section}{\numberline {5.1}Trabajo Futuro}{63}{section.5.1}
-\contentsline {chapter}{Bibliograf\'{\i }a}{64}{section*.92}
+\contentsline {chapter}{Agradecimientos}{7}{section*.1}
+\contentsline {chapter}{Abstract}{10}{section*.3}
+\contentsline {chapter}{Resumen}{12}{section*.5}
+\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{17}{chapter.1}
+\contentsline {chapter}{\numberline {2}Estado del Arte}{18}{chapter.2}
+\contentsline {chapter}{\numberline {3}Marco Te\IeC {\'o}rico}{19}{chapter.3}
+\contentsline {chapter}{\numberline {4}Weather Research and Forecast (WRF)}{20}{chapter.4}
+\contentsline {chapter}{\numberline {5}Metodolog\IeC {\'\i }a}{21}{chapter.5}
+\contentsline {chapter}{\numberline {6}Resultados}{22}{chapter.6}
+\contentsline {chapter}{\numberline {7}Conclusiones}{23}{chapter.7}
+\contentsline {chapter}{\numberline {A}Incorporaci\IeC {\'o}n de Bases de Datos de Alta Resoluci\IeC {\'o}n}{24}{appendix.Alph1}
