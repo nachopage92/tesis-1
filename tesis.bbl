@@ -1,0 +1,319 @@
+\begin{thebibliography}{44}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem[{Arasa et~al.(2016)Arasa, Porras, Domingo-Dalmau, Picanyol, Codina,
+  Gonz{\'{a}}lez, y Pi{\~{n}}{\'{o}}n}]{Arasa2016}
+Ra{\'{u}}l Arasa, Ignasi Porras, Anna Domingo-Dalmau, Miquel Picanyol, Bernat
+  Codina, M{\textordfeminine}~{\'{A}}ngeles Gonz{\'{a}}lez, y J{\'{e}}sica
+  Pi{\~{n}}{\'{o}}n.
+\newblock Defining a standard methodology to obtain optimum {WRF} configuration
+  for operational forecast: Application over the port of huelva (southern
+  spain).
+\newblock \emph{Atmospheric and Climate Sciences}, 06(02):329--350, 2016.
+
+\bibitem[{Arnold et~al.(2010)Arnold, Schicker, y Seibert}]{Arnold2010}
+D.~Arnold, I.~Schicker, y P.~Seibert.
+\newblock High-resolution atmospheric modelling in complex terrain for future
+  climate simulations (hirmod).
+\newblock Inf.\ t\'ec., Institute of Meteorology (BOKU-Met), University of
+  Natural Resources and Life Sciences, 2010.
+
+\bibitem[{Arnold et~al.(2012)Arnold, Morton, Schicker, Seibert, Rotach,
+  Horvath, Dudhia, Satomura, M{\"u}ller, Z{\"a}ngl et~al.}]{arnold2012high}
+Delia Arnold, D~Morton, I~Schicker, P~Seibert, MW~Rotach, K~Horvath, J~Dudhia,
+  T~Satomura, M~M{\"u}ller, G~Z{\"a}ngl, et~al.
+\newblock \emph{High resolution modelling in complex terrain: report on the
+  HiRCoT 2012 Workshop, Vienna, 21-23 February 2012}.
+\newblock Institut f{\"u}r Meteorologie, Department
+  Wasser-Atmosph{\"a}re-Umwelt, Univ. f. Bodenkultur, 2012.
+
+\bibitem[{Barker et~al.(2004)Barker, Huang, Guo, Bourgeois, y
+  Xiao}]{Barker2004}
+D.~M. Barker, W.~Huang, Y-R. Guo, A.~J. Bourgeois, y Q.~N. Xiao.
+\newblock A three-dimensional variational data assimilation system for {MM}5:
+  Implementation and initial results.
+\newblock \emph{Monthly Weather Review}, 132(4):897--914, 2004.
+
+\bibitem[{Barker et~al.(2003)Barker, Huang, Guo, y
+  Bourgeois}]{https://doi.org/10.5065/d6cf9n1j}
+Dale Barker, Wei Huang, Yong-Run Guo, y Al~Bourgeois.
+\newblock A three-demiensional variational (3dvar) data assimilation system for
+  use with mm5.
+\newblock 2003.
+
+\bibitem[{Barker et~al.(2012)Barker, Huang, Liu, Aulign{\'{e}}, Zhang, Rugg,
+  Ajjaji, Bourgeois, Bray, Chen, Demirtas, Guo, Henderson, Huang, Lin,
+  Michalakes, Rizvi, y Zhang}]{Barker2012}
+Dale Barker, Xiang-Yu Huang, Zhiquan Liu, Tom Aulign{\'{e}}, Xin Zhang, Steven
+  Rugg, Raji Ajjaji, Al~Bourgeois, John Bray, Yongsheng Chen, Meral Demirtas,
+  Yong-Run Guo, Tom Henderson, Wei Huang, Hui-Chuan Lin, John Michalakes, Syed
+  Rizvi, y Xiaoyan Zhang.
+\newblock The weather research and forecasting model's community
+  variational/ensemble data assimilation system: {WRFDA}.
+\newblock \emph{Bulletin of the American Meteorological Society},
+  93(6):831--843, 2012.
+
+\bibitem[{Bechmann et~al.(2011)Bechmann, S{\o}rensen, Berg, Mann, y
+  R{\'{e}}thor{\'{e}}}]{Bechmann2011}
+A.~Bechmann, N.~N. S{\o}rensen, J.~Berg, J.~Mann, y P.-E. R{\'{e}}thor{\'{e}}.
+\newblock The bolund experiment, part {II}: Blind comparison of microscale flow
+  models.
+\newblock \emph{Boundary-Layer Meteorology}, 141(2):245--271, 2011.
+
+\bibitem[{Bechmann et~al.(2009)Bechmann, Berg, Courtney, {Ejsing Jørgensen},
+  Mann, y Sørensen}]{3d4285ac04444eb3b9775baf9af052c6}
+Andreas Bechmann, Jacob Berg, Michael Courtney, Hans {Ejsing Jørgensen}, Jakob
+  Mann, y {Niels N.} Sørensen.
+\newblock \emph{The Bolund Experiment: Overview and Background}.
+\newblock Danmarks Tekniske Universitet, Risø Nationallaboratoriet for
+  Bæredygtig Energi, 2009.
+\newblock ISBN 978-87-550-3703-8.
+\newblock Risø-R-1658(EN).
+
+\bibitem[{Berg et~al.(2011)Berg, Mann, Bechmann, Courtney, y
+  J{\o}rgensen}]{Berg2011}
+J.~Berg, J.~Mann, A.~Bechmann, M.~S. Courtney, y H.~E. J{\o}rgensen.
+\newblock The bolund experiment, part {I}: Flow over a steep, three-dimensional
+  hill.
+\newblock \emph{Boundary-Layer Meteorology}, 141(2):219--243, 2011.
+
+\bibitem[{Berselli et~al.(2005)Berselli, Iliescu, y Layton}]{9783540263173}
+Luigi Berselli, Traian Iliescu, y William~J. Layton.
+\newblock \emph{Mathematics of Large Eddy Simulation of Turbulent Flows
+  (Scientific Computation)}.
+\newblock Springer, 2005.
+\newblock ISBN 3540263173.
+
+\bibitem[{Brasseur y Wei(2010)}]{doi:10.1063/1.3319073}
+James~G. Brasseur y Tie Wei.
+\newblock Designing large-eddy simulation of the turbulent boundary layer to
+  capture law-of-the-wall scaling.
+\newblock \emph{Physics of Fluids}, 22(2):021303, 2010.
+
+\bibitem[{Carati et~al.(2001)Carati, Winckelmans, y Jeanmart}]{CARATI2001}
+Daniele Carati, Gr{\'{e}}goire~S. Winckelmans, y Herv{\'{e}} Jeanmart.
+\newblock On the modelling of the subgrid-scale and filtered-scale stress
+  tensors in large-eddy simulation.
+\newblock \emph{Journal of Fluid Mechanics}, 441, 2001.
+
+\bibitem[{Davidson(2013)}]{davidson2013turbulence}
+P.A. Davidson.
+\newblock \emph{Turbulence in Rotating, Stratified and Electrically Conducting
+  Fluids}.
+\newblock Cambridge University Press, 2013.
+\newblock ISBN 9781107026865.
+
+\bibitem[{Doubrawa et~al.(2018)Doubrawa, Montorn\`es, Barthelmie, Pryor, y
+  Casso}]{wes-2017-61}
+P.~Doubrawa, A.~Montorn\`es, R.~J. Barthelmie, S.~C. Pryor, y P.~Casso.
+\newblock Analysis of different gray zone treatments in wrf-les real case
+  simulations.
+\newblock \emph{Wind Energy Science Discussions}, 2018:1--23, 2018.
+
+\bibitem[{Enriquez y Street(2017)}]{subgrid_report}
+Rica~Mae Enriquez y Robert~L. Street.
+\newblock An algebraic subgrid-scale model for large-eddy simulations of the
+  atmospheric boundary layer.
+\newblock Inf.\ t\'ec., Bob and Norma Street Environmental Fluid Mechanics
+  Laboratory, Stanford University, 2017.
+
+\bibitem[{Green y Zhang(2015)}]{Green2015}
+Benjamin~W. Green y Fuqing Zhang.
+\newblock Numerical simulations of hurricane katrina (2005) in the turbulent
+  gray zone.
+\newblock \emph{Journal of Advances in Modeling Earth Systems}, 7(1):142--161,
+  2015.
+
+\bibitem[{Gr{\o}nnegaard~Pedersen et~al.(2013)Gr{\o}nnegaard~Pedersen, Kelly,
+  Gryning, y Br\"{u}mmer}]{Pedersen2013}
+Jesper Gr{\o}nnegaard~Pedersen, Mark Kelly, Sven-Erik Gryning, y Burghard
+  Br\"{u}mmer.
+\newblock The effect of unsteady and baroclinic forcing on predicted wind
+  profiles in large eddy simulations: Two case studies of the daytime
+  atmospheric boundary layer.
+\newblock \emph{Meteorologische Zeitschrift}, 22(6):661--674, 2013.
+
+\bibitem[{Holton(1992)}]{holton1992introduction}
+J.R. Holton.
+\newblock \emph{An Introduction to Dynamic Meteorology}.
+\newblock Academic Press, 1992.
+\newblock ISBN 9780123543554.
+
+\bibitem[{Jim{\'{e}}nez-Esteve et~al.(2018)Jim{\'{e}}nez-Esteve, Udina, Soler,
+  Pepin, y Mir{\'{o}}}]{JimnezEsteve2018}
+B.~Jim{\'{e}}nez-Esteve, M.~Udina, M.R. Soler, N.~Pepin, y J.R. Mir{\'{o}}.
+\newblock Land use and topography influence in a complex terrain area: A high
+  resolution mesoscale modelling study over the eastern pyrenees using the
+  {WRF} model.
+\newblock \emph{Atmospheric Research}, 202:49--62, 2018.
+
+\bibitem[{Kosovi{\'{c}} y Curry(2000)}]{Kosovi2000}
+Branko Kosovi{\'{c}} y Judith~A. Curry.
+\newblock A large eddy simulation study of a quasi-steady, stably stratified
+  atmospheric boundary layer.
+\newblock \emph{Journal of the Atmospheric Sciences}, 57(8):1052--1068, 2000.
+
+\bibitem[{Kundu et~al.(2001)Kundu, Cohen, y Hu}]{kundu2001fluid}
+P.K. Kundu, I.M. Cohen, y H.~Hu.
+\newblock \emph{Fluid Mechanics}.
+\newblock Elsevier Science, 2001.
+\newblock ISBN 9780080545585.
+
+\bibitem[{Mathieu y Scott(2000)}]{9780521775380}
+Jean Mathieu y Julian Scott.
+\newblock \emph{An Introduction to Turbulent Flow}.
+\newblock Cambridge University Press, 2000.
+\newblock ISBN 0521775388.
+
+\bibitem[{Meij y Vinuesa(2014)}]{DeMeij2014}
+A.~De Meij y J.F. Vinuesa.
+\newblock Impact of {SRTM} and corine land cover data on meteorological
+  parameters using {WRF}.
+\newblock \emph{Atmospheric Research}, 143:351--370, 2014.
+
+\bibitem[{Mirocha et~al.(2010)Mirocha, Lundquist, y
+  Kosovi{\'{c}}}]{Mirocha2010}
+J.~D. Mirocha, J.~K. Lundquist, y B.~Kosovi{\'{c}}.
+\newblock Implementation of a nonlinear subfilter turbulence stress model for
+  large-eddy simulation in the advanced research {WRF} model.
+\newblock \emph{Monthly Weather Review}, 138(11):4212--4228, 2010.
+
+\bibitem[{Mirocha et~al.()Mirocha, Lundquist, Chow, y Kosovi}]{MirochaNewLE}
+J.~D. Mirocha, Julie~K. Lundquist, Fotini~Katopodes Chow, y B.~Kosovi.
+\newblock New large eddy simulation subfilter turbulence models implemented
+  into the advanced research wrf version 3 . 0.
+
+\bibitem[{Moeng et~al.(2007)Moeng, Dudhia, Klemp, y Sullivan}]{Moeng2007}
+C-H. Moeng, Jimy Dudhia, Joe Klemp, y Peter Sullivan.
+\newblock Examining two-way grid nesting for large eddy simulation of the {PBL}
+  using the {WRF} model.
+\newblock \emph{Monthly Weather Review}, 135(6):2295--2311, 2007.
+
+\bibitem[{Mu{\~{n}}oz-Esparza et~al.(2014)Mu{\~{n}}oz-Esparza, Kosovi{\'{c}},
+  Mirocha, y van Beeck}]{MuozEsparza2014}
+Domingo Mu{\~{n}}oz-Esparza, Branko Kosovi{\'{c}}, Jeff Mirocha, y Jeroen van
+  Beeck.
+\newblock Bridging the transition from mesoscale to microscale turbulence in
+  numerical weather prediction models.
+\newblock \emph{Boundary-Layer Meteorology}, 153(3):409--440, 2014.
+
+\bibitem[{Pe{\~{n}}a et~al.(2013)Pe{\~{n}}a, Floors, y Gryning}]{Pea2013}
+Alfredo Pe{\~{n}}a, Rogier Floors, y Sven-Erik Gryning.
+\newblock The h{\o}vs{\o}re tall wind-profile experiment: A description of wind
+  profile observations in the atmospheric boundary layer.
+\newblock \emph{Boundary-Layer Meteorology}, 150(1):69--89, 2013.
+
+\bibitem[{Pe{\~{n}}a et~al.(2015)Pe{\~{n}}a, Floors, Sathe, Gryning, Wagner,
+  Courtney, Lars{\'{e}}n, Hahmann, y Hasager}]{Pea2015}
+Alfredo Pe{\~{n}}a, Rogier Floors, Ameya Sathe, Sven-Erik Gryning, Rozenn
+  Wagner, Michael~S. Courtney, Xiaoli.~G. Lars{\'{e}}n, Andrea~N. Hahmann, y
+  Charlotte~B. Hasager.
+\newblock Ten years of boundary-layer and wind-power meteorology at
+  h{\o}vs{\o}re, denmark.
+\newblock \emph{Boundary-Layer Meteorology}, 158(1):1--26, 2015.
+
+\bibitem[{Pineda et~al.(2004)Pineda, Jorba, Jorge, y Baldasano}]{Pineda2004}
+N.~Pineda, O.~Jorba, J.~Jorge, y J.~M. Baldasano.
+\newblock Using {NOAA} {AVHRR} and {SPOT} {VGT} data to estimate surface
+  parameters: application to a mesoscale meteorological model.
+\newblock \emph{International Journal of Remote Sensing}, 25(1):129--143, 2004.
+
+\bibitem[{Pope(2000)}]{pope2000turbulent}
+S.B. Pope.
+\newblock \emph{Turbulent Flows}.
+\newblock Cambridge University Press, 2000.
+\newblock ISBN 9780521598866.
+
+\bibitem[{Porte-Agél et~al.(2000)Porte-Agél, Meneveau, y
+  Parlange}]{porte-agel_meneveau_parlange_2000}
+Fernando Porte-Agél, Charles Meneveau, y Marc~B. Parlange.
+\newblock A scale-dependent dynamic model for large-eddy simulation:
+  application to a neutral atmospheric boundary layer.
+\newblock \emph{Journal of Fluid Mechanics}, 415:261–284, 2000.
+
+\bibitem[{Rodrigo et~al.(2017)Rodrigo, Allaerts, Avila, Barcons, Cavar, Arroyo,
+  Churchfield, Kosovic, Lundquist, Meyers, Esparza, Palma, Tomaszewski,
+  Troldborg, van~der Laan, y Rodrigues}]{Rodrigo2017}
+J~Sanz Rodrigo, D~Allaerts, M~Avila, J~Barcons, D~Cavar, RA~Ch{\'{a}}vez
+  Arroyo, M~Churchfield, B~Kosovic, JK~Lundquist, J~Meyers, D~Mu{\~{n}}oz
+  Esparza, JMLM Palma, JM~Tomaszewski, N~Troldborg, MP~van~der Laan, y C~Veiga
+  Rodrigues.
+\newblock Results of the {GABLS}3 diurnal-cycle benchmark for wind energy
+  applications.
+\newblock \emph{Journal of Physics: Conference Series}, 854:012037, 2017.
+
+\bibitem[{Schicker et~al.(2016)Schicker, Arnold~Arias, y
+  Seibert}]{Schicker2016}
+Irene Schicker, D{\`e}lia Arnold~Arias, y Petra Seibert.
+\newblock Influences of updated land-use datasets on wrf simulations for two
+  austrian regions.
+\newblock \emph{Meteorology and Atmospheric Physics}, 128(3):279--301, 2016.
+\newblock ISSN 1436-5065.
+
+\bibitem[{Skamarock et~al.(2008)Skamarock, Klemp, Dudhia, Gill, Barker, Wang,
+  Huang, y Duda}]{https://doi.org/10.5065/d68s4mvh}
+William Skamarock, Joseph Klemp, Jimy Dudhia, David Gill, Dale Barker, Wei
+  Wang, Xiang-Yu Huang, y Michael Duda.
+\newblock A description of the advanced research wrf version 3.
+\newblock 2008.
+
+\bibitem[{Smagorinsky(1963)}]{doi:10.1175/1520-0493(1963)091<0099:GCEWTP>2.3.CO;2}
+J.~Smagorinsky.
+\newblock General circulation experiments with the primitive equations.
+\newblock \emph{Monthly Weather Review}, 91(3):99--164, 1963.
+
+\bibitem[{Stevens et~al.(2014)Stevens, Wilczek, y Meneveau}]{Stevens2014}
+Richard~J.~A.~M. Stevens, Michael Wilczek, y Charles Meneveau.
+\newblock Large-eddy simulation study of the logarithmic law for second- and
+  higher-order moments in turbulent wall-bounded flow.
+\newblock \emph{Journal of Fluid Mechanics}, 757:888--907, 2014.
+
+\bibitem[{Stull(1988)}]{stull1988introduction}
+R.B. Stull.
+\newblock \emph{An Introduction to Boundary Layer Meteorology}.
+\newblock Springer Netherlands, 1988.
+\newblock ISBN 9789027727695.
+
+\bibitem[{Talbot et~al.(2012)Talbot, Bou-Zeid, y Smith}]{Talbot2012}
+Charles Talbot, Elie Bou-Zeid, y Jim Smith.
+\newblock Nested mesoscale large-eddy simulations with {WRF}: Performance in
+  real test cases.
+\newblock \emph{Journal of Hydrometeorology}, 13(5):1421--1441, 2012.
+
+\bibitem[{Torrecillas et~al.(2016)Torrecillas, Casso, Lizcano, y
+  Kosovic}]{https://doi.org/10.13140/rg.2.1.2270.1041}
+Alex~Montornès Torrecillas, Pau Casso, Gil Lizcano, y Branko Kosovic.
+\newblock Wrf-les in the real world: Towards a seamless modeling chain for wind
+  industry applications.
+\newblock 2016.
+
+\bibitem[{Warner(2010)}]{warner2010numerical}
+T.T. Warner.
+\newblock \emph{Numerical Weather and Climate Prediction}.
+\newblock Cambridge University Press, 2010.
+\newblock ISBN 9781139494311.
+
+\bibitem[{{WRF Community}(2000)}]{https://doi.org/10.5065/d6mk6b4k}
+{WRF Community}.
+\newblock Weather research and forecasting (wrf) model.
+\newblock 2000.
+
+\bibitem[{Wyngaard(2004)}]{doi:10.1175/1520-0469(2004)061<1816:TNMITT>2.0.CO;2}
+John~C. Wyngaard.
+\newblock Toward numerical modeling in the “terra incognita”.
+\newblock \emph{Journal of the Atmospheric Sciences}, 61(14):1816--1826, 2004.
+
+\bibitem[{Yamaguchi y Feingold(2012)}]{Yamaguchi2012}
+Takanobu Yamaguchi y Graham Feingold.
+\newblock Technical note: Large-eddy simulation of cloudy boundary layer with
+  the advanced research {WRF} model.
+\newblock \emph{Journal of Advances in Modeling Earth Systems}, 4(3):n/a--n/a,
+  2012.
+
+\end{thebibliography}

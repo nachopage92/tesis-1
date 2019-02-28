@@ -42,6 +42,12 @@
 
 %% Paquetes adicionales requeridos se pueden agregar tambi'en aqu'i.
 %% Por ejemplo:
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{rotating}
+\usepackage[export]{adjustbox}
+
 \usepackage{subfig}
 \usepackage{multirow}
 \usepackage[activeacute,spanish]{babel}
@@ -69,6 +75,13 @@
 \usepackage[T1]{fontenc}
 \usepackage{times}
 \usepackage{color}
+
+\usepackage{eulervm}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bce}{\begin{center}}
+\newcommand{\ece}{\end{center}}
+
 \definecolor{lightblue}{rgb}{0, 0.7, .7}
 \definecolor{gray97}{gray}{.97}
 \definecolor{gray75}{gray}{.75}
@@ -136,7 +149,19 @@ backgroundcolor=\color{gray75},
 %
 
 
-
+%\usepackage{ccaption}%Cambia el formato de los pie de foto o tabla
+%\captionnamefont{\bfseries}
+%\captiontitlefont{\small}
+%\captiondelim{:\ }
+%\hangcaption
+%\addto\captionsspanish{
+%	\def\tablename{Tabla}
+%}
+\usepackage[labelfont=bf]{caption}
+\makeatletter
+\def\tagform@#1{\maketag@@@{(\ignorespaces\textbf{#1}\unskip\@@italiccorr)}}
+\renewcommand{\eqref}[1]{\textup{{\normalfont(\ref{#1}}\normalfont)}}
+\makeatother 
 %%##################################################################################################################################
 %% # Datos del documento #
 %% Nota que los acentos se deben escribir: \'a, \'e, \'i, etc.
@@ -144,10 +169,10 @@ backgroundcolor=\color{gray75},
 
 \author{Pablo Andrés Cárdenas Zamorano}
 %\title{SIMULACIÓN DE LAS ESCALAS TURBULENTAS PRINCIPALES DE UNA MEZCLA BIF\'ASICA AGUA-PETROLEO AL INTERIOR DE UN INYECTOR DE TURBINA A GAS MEDIANTE LOS MÉTODO LARGE-EDDY SIMULATION Y VOLUME OF FLUID}
-\title{``SISTEMA DE PREDICCIÓN EÓLICA DE ALTA RESOLUCIÓN A CORTO PLAZO PARA CASOS REALES EN TERRENO COMPLEJO MEDIANTE ACOPLAMIENTO MESO-MICROESCALA, SIMULACIÓN DE GRANDES VÓRTICES Y ASIMILACIÓN DE DATOS''}
+\title{``SISTEMA DE PREDICCIÓN EÓLICA DE ALTA RESOLUCIÓN A CORTO PLAZO EN TERRENO COMPLEJO MEDIANTE ACOPLAMIENTO MESO-MICROESCALA, SIMULACIÓN DE GRANDES VÓRTICES Y ASIMILACIÓN DE DATOS''}
 \degree{Magíster en Ciencias de la Ingeniería Mecánica}
 \supervisor{Dr. Ing. Alex Flores}
-\correferent{Phd. Carlos Rosales}
+\correferent{XXXXXXXXXXXXXXXXXXXXXX}
 \correferentextern{Dr. XXXXX XXXXXXXXX}
 \institution{UNIVERSIDAD TÉCNICA FEDERICO SANTA MARÍA}
 \faculty{Escuela de Ingeniería y Ciencias}
@@ -219,17 +244,17 @@ backgroundcolor=\color{gray75},
 %
 \include{Capitulos/04_wrf}
 %
-\include{Capitulos/05_metodologia}
+%\include{Capitulos/05_metodologia}
 %
-\include{Capitulos/06_resultados}
+%\include{Capitulos/06_resultados}
 %
-\include{Capitulos/07_conclusiones}
+%\include{Capitulos/07_conclusiones}
 %%
 \appendix
 %%%% Cap'itulos incluidos despues del comando \appendix aparecen como ap'endices
 %%%% de la tesis.
 
-\include{Anexos/Apendice_A}
+%\include{Anexos/Apendice_A}
 %\include{Anexos/Apendice_B}
 %
 

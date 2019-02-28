@@ -1,1 +1,326 @@
 \chapter{Marco Teórico}
+Las bases de esta investigación se encuentran distribuidas en las areas de la mecánica de fluidos, meteorología, computación científica y matemáticas. En este capítulo se presenta el conjunto de conocimientos mínimos necesarios para comprender la manera en la que el código WRF ejecuta la integración numérica para predecir el comportamiento del viento. 
+
+En primer lugar, se introducen las ecuaciones que describen el comportamiento de un fluido a modo de ganar cierta intuición sobre los términos existentes en cada ecuación. Luego se describen aspectos relevantes de estas ecuaciones aplicadas a la atmósfera, para finalmente escribir las ecuaciones primitivas. Seguido se presentan los temas de turbulencia, teoría de la capa límite, los fundamentos matemáticos del LES, generalidades sobre los métodos numéricos aplicados a las ecuaciones y finalmente el proceso de asimilación de datos.
+
+A lo largo de esta sección, y por simplicidad, se aplicará la notación indicial cada vez que exista un índice repetido en un término, es decir:
+\begin{equation}\label{eq:indicial}
+\sum_{i=1}^{3}\! x_i y_i = x_i y_i
+\end{equation}
+De la misma manera, se utiliza la siguiente notación para las derivadas:
+\begin{equation}
+\partial_x \phi = \frac{\partial \phi}{\partial x}
+\end{equation}
+Utilizando estas dos notaciones, notar que es posible por ejemplo, escribir el operador divergencia como:
+\begin{equation}\label{eq:divergencia}
+\nabla\cdot\vec{u} = \partial_i u_i
+\end{equation}
+\section{Leyes Fundamentales de un Fluido}
+Sea un medio fluido cualquiera de densidad $\rho$ y campo de velocidad $u_i$. Se define la derivada material como el cambio total de una variable en un elemento diferencial fluido a lo largo de su trayectoria.
+\be 
+d_ta = \partial_t a + u_i\partial_i a
+\ee
+
+La definición de esta derivada permite unificar los enfoques lagrangianos y eulerianos de las leyes de conservación.
+\subsection{Conservación de la Masa}
+La conservación de la masa queda descrita en el sentido euleriano de la forma:
+\begin{equation}\label{eq:cons_masa}
+\partial_t \rho + \partial_i(\rho u_i) = 0
+\end{equation}
+donde el primer término corresponde a la acumulación de masa dentro de un elemento diferencial de fluido, y el segundo, a los flujos de masa por las fronteras.
+
+Cuando las fluctuaciones en la densidad no son elevadas, i.e. no violan la condición de incompresibilidad para el número de Mach $M<0.3$, el término de acumulación es de un orden inferior al término asociado a los flujos y por lo tanto puede despreciarse.
+
+La conservación de masa en su forma incompresible se escribe entonces como:
+\begin{equation}
+\partial_i u_i =0
+\end{equation}
+
+Implicando que el volumen de un elemento diferencial de fluido se mantiene constante en toda su trayectoria material.
+\subsection{Conservación de la Cantidad de Movimiento}
+La forma general de la ecuación de conservación de la cantidad de movimiento lineal es de la forma:
+
+\be\label{eq:cons_mom1}
+\rho d_t u_i = \rho(\partial_t u_i + u_j\partial_j u_i)= \rho g_i + \partial_j\sigma_{ij}
+\ee
+
+El lado izquierdo de la ecuación \ref{eq:cons_mom1} representa la derivada material de la cantidad de movimiento y por lo tanto su transformación. En el lado derecho están las fuerzas de cuerpo $\rho g_i$ (asociadas a las aceleraciones de gravedad, Coriolis o campos electromagnéticos), y los esfuerzos asociados a las fuerzas de superficie $\partial_j \sigma_{ij}$. 
+
+Esta ecuación es válida para cualquier medio continuo siempre y cuando existan maneras de determinar el tensor de esfuerzos $\sigma_{ij}$.
+
+En específico para un fluido, las fuerzas de superficie vendrán dadas unicamente por la acción de la presión y de la viscosidad de la forma:
+
+\be
+\sigma_{ij} = -p\delta_{ij} + \tau_{ij}
+\ee 
+
+La conservación de momentum para un fluido queda entonces:
+
+\be\label{eq:cons_mom}
+\rho(\partial_t u_i + u_j\partial_j u_i)= \rho g_i -\partial_i p + \partial_j\tau_{ij}
+\ee
+
+En el caso de un fluido compresible, isotrópico, newtoniano y de viscosidad constante, el tensor de esfuerzos viscosos se define a través de su ecuación constitutiva:
+\be
+\tau_{ij}=2\mu S_{ij} - \frac{2}{3}\mu S_{kk}\delta_{ij}
+\ee
+
+Donde $\mu$ es la viscosidad dinámica y $S_{ij}$ es el tensor tasa de deformación.
+
+\be 
+S_{ij} = \frac{1}{2}(\partial_j u_i + \partial_i u_j)
+\ee
+
+Nuevamente, cuando las variaciones de densidad son despreciables ($M<0.3$) la traza del tensor $S_{ij}$ vale cero. Entonces, la conservación de cantidad de movimiento puede expresarse de la siguiente forma:
+
+\be\label{eq:cons_mom_nse}
+\rho(\partial_t u_i + u_j\partial_j u_i)= \rho g_i -\partial_i p + \mu\partial_{jj}u_i
+\ee
+
+La ecuación \ref{eq:cons_mom_nse} corresponde a la conocida ecuación de Navier-Stokes. 
+
+Para un fluido ideal, es decir $\mu= 0$ se obtiene la ecuación de Euler, que es de la forma:
+
+\be\label{eq:cons_mom_eu}
+\rho(\partial_t u_i + u_j\partial_j u_i)= \rho g_i -\partial_i p
+\ee
+
+\subsection{Conservación de la Energía}
+En primer lugar, se extrae una ecuación para la energía cinética haciendo una contracción simple de la ecuación \ref{eq:cons_mom} con $u_i$.
+\be \label{eq:energia1}
+\rho\left[\partial_t \left(\frac{u_iu_i}{2}\right) + u_j\partial_j \left(\frac{u_iu_i}{2}\right)\right]= \rho u_ig_i + u_i\partial_j\sigma_{ij}
+\ee
+
+Se define la energía cinética $K$ como:
+\be 
+K = \frac{1}{2}u_iu_i
+\ee 
+
+A través de la regla de la cadena podemos expresar la ecuación \ref{eq:energia1} como:
+
+\be 
+\rho d_tK= \rho\left(\partial_t K + u_j\partial_j K\right)= \rho u_ig_i + \partial_j(u_i\sigma_{ij}) - \sigma_{ij}\partial_j u_i
+\ee
+
+Notar que ahora el segundo término del lado derecho representa el trabajo realizado por las fuerzas de superficie. El primer término corresponde al trabajo realizado por las fuerzas de cuerpo. Reemplazando con la ecuación constitutiva se obtiene:
+\be \label{eq:cinect}
+\rho\left(\partial_t K + u_j\partial_j K\right)= \rho u_ig_i + \partial_j(u_i\sigma_{ij}) + p\partial_i u_i - \Phi
+\ee
+
+El tercer término representa ahora el trabajo por expansión o compresión de un elemento de fluido. $\phi$ es la pérdida de energía cinética por disipación viscosa y es un valor siempre positivo. Se puede demostrar que se puede escribir como:
+
+\be 
+\Phi = \tau_{ij}S_{ij}
+\ee
+
+La ley general de la conservación de energía se deriva del teorema de transporte de Reynolds y en su forma diferencial queda expresada como:
+\be 
+\rho d_t\left( e+ K \right) = u_i\rho g_i + \partial_j(u_i \sigma_{ij}) - \partial_j q_i
+\ee
+
+Acá $e$ es energía interna y $q_i$ es el flujo de calor. Combinando la ecuación anterior con la ecuación \ref{eq:cinect} se obtiene una ecuación de transporte para la energía interna (ecuación de calor) en su forma mas general.
+
+\be \label{eq:energia_e}
+\rho\left(\partial_t e + u_j\partial_j e\right)= -\partial_i q_i - p\partial_i u_i + \Phi
+\ee
+
+Para el caso de un gas ideal, la magnitud de $\Phi$ es despreciable con respecto al resto de los términos en la ecuación\footnote{Si bien los órdenes de magnitud pueden ser muy distintos en las escalas grandes, en la escala molecular la importancia de $\Phi$ es indiscutida, ya que es la encargada de ``agotar'' la energía cinética y transformarla efectivamente en calor, permitiendo la creación de una cascada de energía a través de las escalas espaciales. Este concepto se abordará mas adelante en la tesis.}. Se introduce la definición de energía interna.
+\be 
+e = C_v T
+\ee
+
+Se puede demostrar que la ecuación de energía térmica para un gas ideal queda de la forma:
+\be 
+\rho C_p d_t T = -\partial_i q_i
+\ee
+
+El flujo de calor y la temperatura están relacionados a través de la ley de Fourier.
+\be 
+q_i = -k\partial_i T
+\ee
+
+Finalmente, la ecuación de calor para un gas ideal queda de la forma:
+\be 
+d_t T = \kappa \partial_{jj} T
+\ee
+
+Notar la naturaleza difusiva de la temperatura. $\kappa = k/\rho C_p$ es la difusividad térmica.
+\subsection{Ecuación de Estado: Gas Ideal}
+El acoplamiento de las leyes de conservación de masa, cantidad de movimiento y energía introducen como incógnitas las variables $u_i$, $\rho$, $p$ y $T$, por lo tanto solo se poseen 5 ecuaciones para 6 variables. 
+
+De manera general, la manera en la que se logra la clausura del sistema es a través de la inclusión de una relación de la forma:
+\be\label{ec:estado}
+p = f(\rho,T)
+\ee 
+
+A esta relación de la forma de la Ecuación \ref{ec:estado} se le denomina ecuación de estado.
+
+Para un gas, la clausura del sistema se lleva a cabo incorporando la ecuación de gas ideal:
+\be \label{eq:gas_ideal}
+p = \rho R T
+\ee
+
+De esta forma, el sistema de ecuaciones que generan en conjunto las ecuaciones \ref{eq:cons_masa}, \ref{eq:cons_mom}, \ref{eq:energia_e}, \ref{ec:estado} forman un sistema cerrado para 6 incógnitas.
+\section{Dinámica Atmosférica}
+Tomando en consideración las ecuaciónes de conservación presentadas en la sección anterior, es fácil deducir el conjunto de ecuaciones que modelan el comportamiento de la atmósfera. La derivación de estas se puede encontrar en las referencias, sin embargo si ya se tiene un instinto físico con respecto a las fuerzas fundamentales explicadas anteriormente no debería ser sorpresiva la forma que toman estas ecuaciones. 
+
+Las diferencias entre las leyes deducidas en la sección anterior y la dinámica atmosférica son:
+\begin{enumerate*}
+	\item Se agregan de las aceleraciones de Coriolis y centrífugas debido al marco de referencia no inercial que presenta la rotación de la Tierra.
+	\item Se incorporan los efectos debido a la curvatura de la Tierra.
+	\item Se anexa una ecuación de conservación de masa para la humedad en el aire.
+\end{enumerate*} 
+Antes de escribir las ecuaciones en su forma final es necesario definir primero algunas variables auxiliares.
+\subsection{Temperatura Potencial}
+Generalmente en dinámica atmosférica es conveniente escribir la ecuación de conservación de energía en función de una nueva variable para la temperatura que permite entregar mas información acerca del estado térmico del ambiente. 
+
+Se introduce entonces la temperatura potencial $\theta$. Corresponde la temperatura de un elemento diferencial de fluido si se expande adiabáticamente hasta una presión de referencia $p_s$ (generalmente la presión atmosférica). Este valor permanece constante para procesos secos y adiabáticos.
+\be \label{eq:temp_pot}
+\theta = T\left(\frac{p_s}{p}\right)^{R/C_p}
+\ee 
+Esta relación es conocida como la relación de Poisson.
+\subsection{Gradiente de Temperatura}
+Corresponde a la variación de temperatura con respecto a la altura. Es un parámetro muy importante en meteorología ya que permite clasificar la estabilidad de la atmósfera (la cual se define mas adelante). Se puede desprender una relación entre el gradiente de temperatura y la temperatura potencial tomando el logaritmo de la ecuación \ref{eq:temp_pot}, derivando con respecto a $z$ y utilizando la ecuación de gas ideal. Esta relación queda como:
+\be 
+\frac{T}{\theta}\partial_z \theta = \partial_z T +\frac{g}{C_p}
+\ee
+Para el caso de una atmósfera en donde $\theta$ es constante con respecto a su altura (estabilidad neutra), se obtiene el valor para el gradiente adiabático:
+\be 
+-\partial_z T = \frac{g}{C_p}= \gamma_d
+\ee
+El valor de $\gamma_d$ es de $9.8$ [$^\circ$C/km] y es aproximadamente constante en la parte baja de la atmósfera.
+\subsection{Condiciones de Estabilidad}
+Se desprende de lo anterior que si la temperatura potencial varía con respecto a la altura, existe una desviación del gradiente de temperatura con respecto a su contraparte adiabática. Se escribe esta desviación como:
+\be 
+\frac{T}{\theta}\partial_z \theta = \gamma_d - \gamma
+\ee
+Si $\gamma<\gamma_d$, significa que $\partial_z \theta>0$ entonces un elemento diferencial de aire que se somete a un desplazamiento adiabático desde su posición de equilibrio va a tender a flotar hacia arriba cuando es desplazado hacia abajo y, de la misma manera, va a tender a flotar hacia abajo si es desplazado hacia arriba, de tal forma que independiente de su perturbación, este va a tender al equilibrio. Para este caso se habla de \emph{atmósfera estable} o \emph{establemente estratificada}.
+
+Naturalmente, un elemento de fluido sometido a una perturbación en una atmósfera estable va a tener un movimiento oscilatorio hasta su equilibrio. A este movimiento se le denomina oscilación de flotabilidad. 
+
+Se puede hallar un valor para la frecuencia carácterística de estas oscilaciones si se considera la ecuación de conservación de cantidad de movimiento y una aproximación hidrostática frente a un pequeño desplazamiento $\delta z$.
+
+La ecuación que modela la oscilación es:
+\be \label{eq:flotacion}
+d^2_z(\delta z) = -N^2 \delta z
+\ee 
+Donde:
+\be 
+N^2 = g \partial_z \ln \theta
+\ee
+$N$ es una medida de la estabilidad de la atmósfera.
+
+Notar que la ecuación \ref{eq:flotacion} tiene como solución general la forma $\delta z = A \exp(iNt)$, por lo tanto si $N^2>0$, un elemento de fluido va a oscilar torno al equilibrio con periodo $\tau_n = 2\pi/N$. $N$ es entonces la frecuencia de flotación o frecuencia de Brunt–Väisälä. 
+
+Para el caso donde $N=0$, no existen fuerzas que aceleren un movimiento perturbado y un elemento de fluido estará en equilibrio neutro con un nuevo nivel. Para $N^2<0$ ($\theta$ disminuye con respecto a la altura), el desplazamiento incrementará exponencialmente en el tiempo.
+
+Como resumen, se puede clasificar la estabilidad atmoférica según los siguientes criterios:
+\begin{align*}
+d_z \theta &> 0\quad;\quad\text{Estable}\\
+d_z \theta &= 0\quad;\quad\text{Neutra}\\
+d_z \theta &< 0\quad;\quad\text{Inestable}
+\end{align*}
+\subsection{Ecuaciónes Primitivas}
+Las ecuaciones en coordenadas esféricas son:
+\begin{align}
+d_t u &= \frac{uv\tan\phi}{a}-\frac{uw}{a}-\frac{1}{\rho}\partial_x p - 2\Omega(w\cos\phi - v\sin\phi) + F_{rx}\\
+d_t v &= -\frac{u^2\tan\phi}{a}-\frac{uw}{a}-\frac{1}{\rho}\partial_y p - 2\Omega u\sin\phi + F_{ry}\\
+d_t w &= \frac{u^2 + v^2}{a}-\frac{1}{\rho}\partial_z p + 2\Omega u\cos\phi -g + F_{rz}\\
+d_t T &= (\gamma-\gamma_d)w+\frac{1}{C_p}d_t H\\
+d_t \rho &= -\rho(\partial_i u_i)\\
+d_t q_v &= Q_v\\
+p &= \rho R T
+\end{align}
+
+\subsection{Análisis de Escalas}
+\section{Turbulencia Hidrodinámica}
+\subsection{Fundamentos}
+naturaleza de la turbulencia, fenomenología, 
+\subsection{Cascada de Energía}
+hipótesis de kolmogorov, derivar ley -5/3, espectro de energía cinética turbulenta.
+
+\section{Teoría de la Capa Límite Atmosférica}
+Se define la capa límite atmosférica (ABL) como la parte de la troposfera que está influenciada directamente por la presencia de la superficie terrestre y responde a las fuerzas superficiales en una escala de tiempo del orden de las horas o menor.
+
+explicar fenomenos de la abl, turbulencia, explicar transporte turbulento e introducir la descomposición de Reynolds.
+
+\be 
+\rho u_*^2 = |\tau_s|
+\ee
+
+monin obukhov
+
+
+\section{Large Eddy Simulation}
+Considerando entonces la naturaleza multiescala de la turbulencia, es natural querer resolver los campos de flujo separando las escalas de producción (relacionadas con los grandes vórtices y el ingreso de energía) de las microescalas (relacionadas a los vórtices en la escala de Kolmogorov y a la disipación de energía). 
+
+La manera de realizar esto es aplicando un filtro a las variables de modo que actúe al nivel del espectro de energía, separando las escalas grandes de las pequeñas. Se introduce entonces el operador de filtrado según Leonard(1974).
+\begin{equation}
+\overline{\phi}(x_i,t) = \int G(r_i,x_j)\phi(x_j-r_i,t)dr_i
+\end{equation}
+Donde la integración se realiza en todo el dominio del flujo. Notar que el filtro corresponde a una operación de convolución en el sentido del análisis de Fourier. El kernel $G$ del filtro satisface una condición de normalización:
+\begin{equation}
+\int G(r_j,x_i)dr_j = 1
+\end{equation}
+Se define entonces una magnitud residual basada en la operación de filtrado como:
+\begin{equation}
+\phi' = \phi - \overline{\phi}
+\end{equation}
+Es decir, se depara la variable de interés en una parte filtrada y su residuo. Está descomposición es, a priori, análoga a una descomposición de Reynolds.
+
+Se debe tener en cuenta que el filtro es en el fondo un nuevo operador matemático que cumple sus propias propiedades y que permite separar las escalas grandes de las pequeñas. Para una mejor descripción teórica de lo que implica un operador de filtrado se puede recurrir a las referencias...
+
+falta mucho...
+\section{Análisis Numérico}
+
+\section{Asimilación de Datos}
+Se busca minimizar la siguiente función de costo, que pondera los errores provenientes del modelo $J_b$ (\emph{background}) y de las observaciones $J_o$:
+
+\be 
+J(x) = \frac{1}{2}(x-x_b)^T B^{-1}(x-x_b) + \frac{1}{2}(Hx-y)^T R^{-1}(Hx-y)
+\ee 
+
+\be 
+J(x) = J_b + J_o
+\ee 
+
+En este problema $x=x_a$ es el valor que a posteriori minimiza la función de costo y por lo tanto es lo mas cercano al verdadero estado de la atmósfera.
+
+El operador de observación $H$ se encarga de hacer una interpolación 3D de la malla numérica al espacio de observación. En el paquete de asimilación del WRF esto se hace en dos pasos, una interpolación vertical y otra horizontal. El funcionamiento exacto se desconoce porque las subrutinas que realizan esta operación no están comentadas, sin embargo existe una ponderación según distancias para los 4 puntos mas cercanos a la observación. 
+
+Teóricamente el problema variacional se soluciona minimizando el gradiente de la función de costo, es decir:
+\be 
+\nabla J(x) = B^{-1}(x-x_b)-H^TR^{-1}(y-Hx)=0
+\ee
+Dejando expresado el incremento como:
+\be 
+x_a-x_b = BH^T(HBH^T+R)^{-1}(y-Hx_b)
+\ee
+La ecuación anterior es fácil de entender si se identifican las matrices $HBH^T$ que es la proyección del error del background en el espacio de observacion y $BH^T$ que es la proyección del error del background en espacio de background-observación.
+\bigskip
+
+En WRF, para hallar $x_a$ se consideran los siguientes cambios de variables que disminuyen el costo computacional:
+\be 
+y_o' = y_o - H(x_b)
+\ee 
+\be 
+x' = Uv = x - x_b
+\ee
+Donde $U$ se calcula convenientemente para que:
+\be 
+UU^T \approx B
+\ee
+$v$ es llamada la variable de control.
+
+Notar que $y_o'$ es el vector de innovación, i.e. la desviación entre la observación y el background. $x'$ es el incremento de análisis.
+
+Entonces podemos escribir el problema variacional como:
+\be\label{eq_newcost}
+J(v)=\frac{1}{2}v^Tv + \frac{1}{2}(y_o'-\overline{H}Uv)^TR^{-1}(y_o'- \overline{H}Uv)
+\ee 
+
+Donde $\overline{H}$ es el operador de observación linealizado.
+
+En la práctica $U$ es una aplicación recursiva de varios filtros que permiten que el proceso de asimilación sea menos costoso y que la variable de control cumpla con los balances atmosféricos.
+
+La Ecuación \ref{eq_newcost} es la que se minimiza dentro del programa siguiendo el algoritmo de minimización Quasi-Newtoniano.

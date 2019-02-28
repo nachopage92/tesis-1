@@ -1,0 +1,84 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: tesis.aux
+The style file: ezspanish.bst
+A level-1 auxiliary file: Portada/anteportada.aux
+A level-1 auxiliary file: blanco.aux
+A level-1 auxiliary file: Preliminares/portada.aux
+Already encountered file blanco.aux
+---line 33 of file tesis.aux
+ : \@input{blanco.aux
+ :                   }
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: Preliminares/contraportada.aux
+A level-1 auxiliary file: Prefacios/frase.aux
+A level-1 auxiliary file: Prefacios/gracias.aux
+Already encountered file blanco.aux
+---line 37 of file tesis.aux
+ : \@input{blanco.aux
+ :                   }
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: Prefacios/abstract.aux
+Already encountered file blanco.aux
+---line 39 of file tesis.aux
+ : \@input{blanco.aux
+ :                   }
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: Prefacios/resumen.aux
+Already encountered file blanco.aux
+---line 41 of file tesis.aux
+ : \@input{blanco.aux
+ :                   }
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: Capitulos/01_intro.aux
+A level-1 auxiliary file: Capitulos/02_estado_arte.aux
+A level-1 auxiliary file: Capitulos/03_marco_teorico.aux
+A level-1 auxiliary file: Capitulos/04_wrf.aux
+A level-1 auxiliary file: Capitulos/05_metodologia.aux
+Database file #1: Bibliografia/biblio.bib
+Warning--empty journal in https://doi.org/10.5065/d6cf9n1j
+Warning--empty booktitle in MirochaNewLE
+Warning--empty year in MirochaNewLE
+Warning--empty journal in https://doi.org/10.5065/d68s4mvh
+You've used 44 entries,
+            2833 wiz_defined-function locations,
+            881 strings with 14777 characters,
+and the built_in function-call counts, 29438 in all, are:
+= -- 2091
+> -- 1599
+< -- 15
++ -- 614
+- -- 540
+* -- 2244
+:= -- 4491
+add.period$ -- 142
+call.type$ -- 44
+change.case$ -- 392
+chr.to.int$ -- 44
+cite$ -- 48
+duplicate$ -- 2188
+empty$ -- 2127
+format.name$ -- 670
+if$ -- 5657
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 537
+newline$ -- 239
+num.names$ -- 176
+pop$ -- 1160
+preamble$ -- 1
+purify$ -- 355
+quote$ -- 0
+skip$ -- 673
+stack$ -- 0
+substring$ -- 1143
+swap$ -- 1117
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 366
+warning$ -- 4
+while$ -- 179
+width$ -- 0
+write$ -- 580
+(There were 4 error messages)

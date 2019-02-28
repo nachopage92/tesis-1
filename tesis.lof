@@ -1,9 +1,13 @@
 \select@language {spanish}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Interfaz online del explorador e\IeC {\'o}lico de la Universidad de Chile.\relax }}{19}{figure.caption.10}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Detalle del proyecto FONDEF ID16I10105. (a) C\IeC {\'e}lula del sistema experimental de medici\IeC {\'o}n. (b) Prototipo en el laboratorio.\relax }}{21}{figure.caption.11}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Esquema de la sonda FONDEF ID16I10105.\relax }}{22}{figure.caption.12}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Separaci\IeC {\'o}n de escalas para la din\IeC {\'a}mica atmosf\IeC {\'e}rica.\relax }}{27}{figure.caption.13}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Idealizaci\IeC {\'o}n de los distintos tama\IeC {\~n}os de v\IeC {\'o}rtices dentro de un dominio en la zona gris de la turbulencia. Los v\IeC {\'o}rtices mas grandes pueden ser resueltos por la malla, mientras que los m\IeC {\'a}s peque\IeC {\~n}os son filtrados num\IeC {\'e}ricamente y por lo tanto deben ser parametrizados para que su efecto se considere en las ecuaciones de movimiento.\relax }}{29}{figure.caption.14}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Espectro de energ\IeC {\'\i }a turbulenta multiescala.\relax }}{30}{figure.caption.15}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Estructura de la coordenada vertical.\relax }}{45}{figure.caption.16}
