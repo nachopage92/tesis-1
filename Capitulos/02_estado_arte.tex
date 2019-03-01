@@ -26,11 +26,11 @@ En el contexto del trabajo a realizar, las escalas temporales pertenecientes a l
 
 De manera general, el escalamiento dinámico funciona bien y solo incorpora al modelo un error de interpolación debido al traspaso de una malla mas gruesa a otra mas fina. Sin embargo, la presencia de la turbulencia a lo largo de todo el espectro de escalas complica el escalamiento desde la mesoescala hasta la microescala.
 
-Para entender la complejidad asociada a la presencia de la turbulencia debido al escalamiento dinámico, hay que entender primero la manera en la que actúan las distintas fuerzas que controlan el movimiento atmosférico. Si se considera, por ejemplo, la fuerza de Coriolis que es el motor principal de los ciclones y anticiclones en los hemisferios, esta fuerza es relevante en escalas sinópticas y globales y si se quisiera resolver ecuaciones a un nivel de mesoescala, podrían ser válidamente despreciadas. Por otra parte, si se considera ahora, la disipación viscosa generada por el roce entre los distintos elementos diferenciales de aire, esta podría ser válidamente despreciada también en todas las escalas debido a que la viscosidad del aire es muy baja, sin embargo si se desea analizar la parte viscosa de la capa límite atmosférica, este término es fundamental y no podría despreciarse\footnote{Un análisis mas detallado de las distintas fuerzas existentes dentro de las ecuaciones que modelan el comportamiento atmosférico se dará en el próximo capítulo}. 
+Para entender la complejidad asociada a la presencia de la turbulencia debido al escalamiento dinámico, hay que entender primero la manera en la que actúan las distintas fuerzas que controlan el movimiento atmosférico. Si se considera, por ejemplo, la fuerza de Coriolis que es el motor principal de los ciclones y anticiclones en los hemisferios, esta fuerza es relevante en escalas sinópticas y globales y si se quisiera resolver ecuaciones a un nivel de mesoescala, podrían ser válidamente despreciadas. Por otra parte, si se considera ahora, la disipación viscosa generada por el roce entre los distintos elementos diferenciales de aire, esta podría ser válidamente despreciada también en todas las escalas debido a que la viscosidad del aire es muy baja, sin embargo si se desea analizar la parte viscosa de la capa límite atmosférica, este término es fundamental y no podría despreciarse\footnote{Un análisis mas detallado de las distintas fuerzas existentes dentro de las ecuaciones que modelan el comportamiento atmosférico y su correspondiente análisis en órdenes de magnitud se dará en el próximo capítulo.}. 
  
 Se concluye entonces que las distintas fuerzas que aparecen en las ecuaciones tienen un cierto rango de escalas propias donde contribuyen fuertemente al movimiento atmosférico. 
 
-La turbulencia sin embargo\footnote{Probablemente le haga ruido al lector el hecho que hasta ahora no se ha presentado una definición formal de la turbulencia. Esta se presentará en el próximo capítulo.}, no funciona de la misma forma. Los vórtices de distintos tamaños que habitan en la atmósfera son igualmente importantes en términos de órdenes de magnitud para las ecuaciones que se resuelven.
+La turbulencia sin embargo\footnote{Probablemente le haga ruido al lector el hecho que hasta ahora no se ha presentado una definición formal de la turbulencia. Como esta requiere una descripción matemática extensa se prefirió dejarla para el próximo capítulo.}, no funciona de la misma forma. Los vórtices de distintos tamaños que habitan en la atmósfera son igualmente importantes en términos de órdenes de magnitud para las ecuaciones que se resuelven.
 
 Cuando se modelan las grandes escalas (sinóptica, mesoescala), generalmente la resolución de malla horizontal es demasiado grande como para captar los vórtices y por lo tanto en efecto de estos en las ecuaciones queda filtrado numéricamente. Operacionalmente, esta operación de filtrado se revierte con la utilización de un esquema adecuado para parametrizar la turbulencia. En los modelos meteorológicos actuales este efecto generalmente queda confinado en la llamada \emph{parametrización de capa límite}, ya que el principal rol que cumple la turbulencia en estas escalas es la de transmitir la información que se genera a nivel de superficie terrestre a la atmósfera libre.
 
@@ -62,7 +62,9 @@ Queda entonces el rango en donde $\Delta\sim l$. Dentro de este intervalo se des
 
 En la práctica, el acercamiento para compensar este problema es definir los dominios de modo que se evite usar el modelo en el rango de la \emph{Terra Incognita}.
 \section{Turbulencia Atmosférica y LES}
-\section{Simulaciones de Alta Resolución en Terreno Complejo}
+\textcolor{red}{hacer}
+\section{Alta Resolución y Terreno Complejo}
+Como motivación, se comienza esta sección haciendo una pequeña derivación de la importancia de una correcta estimación de la velocidad del viento. Luego se expondrán los consensos tomados el año 2012 por el \emph{HiRCoT Workshop} (High Resolution Modelling in Complex Terrain), los cuales resumen de muy buena forma las bases y desafios actuales sobre este tema particular y que tienen especial importante en el trabajo a desarrollar.
 \subsection{Importancia de la Estimación del Viento}
 Para tener un acercamiento a la importancia de la correcta estimación del viento, consideremos la energía cinética del viento. Para un área arbitraria de magnitud $A$ en un tiempo $t$ se tiene:
 \begin{equation} 
@@ -89,13 +91,71 @@ Y dividiendo ahora por la potencia eólica:
 
 Lo que significa que un error relativo (o porcentual) en una estimación de la velocidad del viento, conlleva a un error el triple mas grande para la potencia que se podría generar.
 
+Anteriormente ya se había hablado de la relación que existe entre la complejidad del terreno y la velocidad del viento. Los fenómenos asociados a la orografía y las no linealidades provocan que la predicción del viento en estas zonas sea especialmente difícil. 
+
+Como consecuencia, es de especial interés analizar las problemáticas que induce el terreno complejo y definir las maneras de como abordarlas.
 \subsection{Problemáticas de la Simulación de Alta Resolución}
+El año 2012 se llevo a cabo en Viena, el primer \emph{HiRCoT Workshop}, instancia que reunió a académicos y personas de la industria a debatir activamente sobre las problemáticas y avances existentes con respecto a la modelación atmosférica a alta resolución.
+
+El concepto de alta resolución, se debe entender en el sentido de una resolución que está por sobre aquella definida por los desarrolladores para utilizar los modelos. A priori se podría decir que un modelo atmosférico con una resolución de malla menor a 1 [km] entra en esta categoría.
+
+Dentro de los objetivos específicos definidos en este workshop se incluyen: la identificación de problemas asociados a la simulación numérica en terreno complejo y el mapeo de las posibilidades de como manejar estos, por lo tanto las conclusiones emanadas de ese taller sirven como buenos cimientos para este trabajo de tesis.
+
+A continuación se presenta un resumen de los cuatro aspectos estudiados en el workshop y que se deben tener en consideración a la hora de realizar una simulación atmosférica a alta resolución y para la lectura de esta tesis.
+
+\subsubsection{Aspecto 1: Problemas Computacionales}
+Tomando en consideración que existen casos demostrados en donde la alta resolución es una necesidad para simular realísticamente fenómenos meteorológicos asociados a las escalas sinópticas y mesoescala, queda claro que, para desarrollar simulaciones a alta resolución en terreno complejo, se debe asumir un cierto compromiso computacional. El wokrshop identifica 2 temas principales: los relacionados a los tiempos de simulación y aquellos relacionados al rendimiento I/O del código.
+
+Con respecto al tiempo de simulación, se abordó el tema de como impacta en este el hecho de llevar una simulación con resolución de 9 [km] a 1 [km]. Si se mantienen los límites de los dominios numéricos constantes, el aumento en la resolución de la malla traerá consigo un aumento de la cantidad de puntos necesarios para simular. Por otro lado, este refinamiento también exigirá un paso de tiempo menor para evitar la violación de la condición CFL. En el mejor de los casos entonces, pasar de una resolución de 9 [km] a 1 [km] en la cual la primera se demore, por ejemplo, 1 hora, implicará que la simulación a alta resolución se va a demorar aproximadamente 1 mes. Actualmente no existen maneras de reducir este aumento considerable en los tiempos de cálculo y por lo tanto pasa mas a ser un limitante en el diseño experimental. Pequeñas mejoras se pueden obtener si se adopta el uso de un paso de tiempo adaptativo, pero esto puede crear incongruencias en los tiempos de obtención de resultados del modelo, en especial para la aplicación de asimilación de datos. La paralelización de procesos también puede ayudar bastante, sin embargo para el análisis de este caso, ambas simulaciones estuvieron masivamente paralelizadas.
+
+Con respecto al rendimiento en I/O, y que tiene especial relación con lo descrito en el párrafo anterior, el aumento en la cantidad de puntos de malla, y la disminución en el paso de tiempo, significa un aumento considerable en término de memoria para cada uno de los procesos con los que se ejecuta el código. En la arquitectura del WRF (y en la mayoría de los modelos atmosféricos) el cálculo se paraleliza en tantos procesos como procesadores se disponga utilizando un paradigma de maestro/esclavo en donde un único proceso maestro es el encargado de ejecutar las funciones de entrada/salida del modelo. A grandes rasgos el aumento de los puntos de malla no afecta tanto a los procesos que son esclavos, pero el proceso maestro si sufre de un cuello de botella al ser el encargado de leer y ubicar todas las variables globales a cada proceso. Como ejemplo académico, consideremos un dominio de 448 millones de puntos ($4000\times4000\times28$) en un servidor con 75 nodos de 4 núcleos cada uno. En este ejemplo cada proceso usará un total de 1.9GBytes, sin embargo el proceso maestro requerirá un extra de 1.8GBytes para las funciones de I/O, pudiendo ser un potencial punto de falla. En la actualidad se estan desarrollando nuevos formatos y paradigmas para facilitar la paralelización de este tipo de tareas, sin embargo una implementación de estos no se ve en el corto plazo.
+
+\subsubsection{Aspecto 2: Problemas Numéricos}
+Corresponden a las problemáticas asociadas a la discretización por la implementación de los esquemas numéricos para resolver las ecuaciones que rigen el comportamiento atmosférico. Se identificaron 5 grandes grupos:
+\begin{itemize*}
+	\item Precisión
+	\item Estabilidad
+	\item Difusión (explícita e implícita)
+	\item Coordenadas
+	\item Necesidad de Benchmark
+\end{itemize*}
+
+El éxito de una simulación a alta resolución dependerá fuertemente del conocimiento de los aspectos técnicos relacionados a uso de los esquemas numéricos en el modelo a usar. Como base, la gran mayoría de los modelos atmosféricos utiliza un esquema de diferencias finitas y la integración temporal se hace de manera explícita. Esta selección en el modo de integrar numéricamente limita en gran medida la estabilidad del esquema ya que no se debe violar la condición CFL. La implementación de un esquema implícito permite ganar estabilidad, en el sentido de la condición CFL, sin embargo las numéricas se complejizan y la resolución implica ahora solucionar una ecuación elíptica la cual es difícil de paralelizar en super computadores.
+
+La presencia de terreno complejo por otra parte, incentiva la aparición de ruido numérico debido al desarrollo de perturbaciones de alta frecuencia las cuales desafían la precisión del esquema de advección, los gradientes de presión y la consistencia de los términos métricos. Para evitar esto se suele suavizar el terreno, aunque para el caso de una simulación a alta resolución esto no es deseable ya que se pierde una parte sustancial de la fineza del terreno, que es lo que se quería ganar en primer lugar. 
+
+\paragraph{Precisión} Se entiende como precisión, el orden con el cual se reducen los errores de truncación debido a un refinamiento temporal o espacial. Mejores esquemas numéricos implican una mejor precisión, sin embargo son mas costosos computacionalmente. Para simulaciones a alta resolución en terreno complejo, los datos utilizados para inicializar el modelo ya vienen con una resolución propia de los instrumentos de medición usados. Estos datos pueden ensuciar la precisión formal que tenga un cierto esquema numérico debido a que los errores inducidos por los datos predominaran por sobre aquellos del modelo. De ahí que para este tipo de simulaciones, la utilización de esquemas de alto orden no se presenta como un beneficio tan tangible.
+
+\paragraph{Estabilidad} cfl, damping de $w$ que es lo mas critico para el cfl
+\begin{equation}\label{eq:cfl}
+\frac{c\Delta t}{\Delta x}<\beta
+\end{equation}
+
+\begin{equation}\label{eq:cfl_d}
+\frac{M\Delta t}{\Delta x^2}<\beta
+\end{equation}
+
+\paragraph{Difusión} problemas de la difusión artificial, puede suavizar completamente una simulación a alta resolución. En este caso se debe calcular la difusión horizontal en la coordenada real
+
+\paragraph{Coordenadas} aaa
+ 
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth,trim={2.6cm 13.5cm 9.2cm 9cm},clip]{Imagenes/02/coordinates}
+	\caption{Comparación entre las coordenadas usuales sigma (arriba) y el método de frontera inmersa (abajo).}
+	\label{fig:02coordinates}
+\end{figure}
+
+\paragraph{Benchmarking}
+\subsubsection{Aspecto 3: Parametrizaciones de Capa Límite}
+
+\subsubsection{Aspecto 4: Inicialización y Datos de Entrada}
 
 \section{Uso Operativo de Asimilación de Datos}
 
 Como se verá mas adelante en detalle, el proceso de asimilación de datos corresponde a buscar la mejor  estimación del estado de la atmósfera a través de una combinación lineal entre un conjunto de observaciones y el resultado de un modelo. A esta estimación se le llama análisis.
 
-Actualmente la asimilación de datos es ampliamente utilizada para corregir las desviaciones propias de las simulaciones de la dinámica atmósferica para los casos de las escalas globales y sinópticas, ya que para ese rango existen una gran cantidad de datos de acceso libre que se pueden utilizar.
+Actualmente la asimilación de datos es ampliamente utilizada para corregir las desviaciones propias de las simulaciones de la dinámica atmosférica para los casos de las escalas globales y sinópticas, ya que para ese rango existen una gran cantidad de datos de acceso libre que se pueden utilizar.
 
 Para este caso, como se busca mejorar la aproximación atmoserica de una zona a muy alta resolución, y en la capa límite, la colección de observaciones que uno pueda poseer siempre va a ser escasa y generalmente va a ser responsabilidad del equipo de modeladores implementar equipos de medición espeíficos para la zona. Es por esto la investigación acerca de la influencia de la asimilación de datos para estas escalas es limitada e incluso confidencial ya que su aplicación está relacionada con las empresas militares.
 
