@@ -8,9 +8,9 @@ El recurso viento posee la particularidad de ser extremadamente variable en todo
 
 %Este hecho sustenta la necesidad de tener predicciones para la rapidez del viento lo mas cercanas a la realidad que se puedan, ya que variaciones en la potencia que puede generar un parque eólico puede significar la no rentabilidad económica de este, entre otros problemas como mantenciones correctivas o fallas en la planificación de la mantención preventiva de las turbinas y la aparición esfuerzos no deseados en el aspa.
 
-Además, en la práctica existe un conflicto permanente en que las zonas con mayor potencial eólico (i.e. aquellos lugares donde estadísticamente se tienen velocidades del viento lo suficientemente altas para que sea conveniente generar energía de estos), son aquellas que tienen terreno complejo, o sea, terreno con topografía no regular como las costas o montañas, esto debido a la aceleración que toma el viento al ajustarse a los contornos del suelo. Existe entonces una dicotomía o conflicto entre que los lugares mas aptos para poner parques eólicos, son al mismo tiempo los mas turbulentos y los más difíciles de predecir.
+En la práctica existe un conflicto permanente en que las zonas con mayor potencial eólico (i.e. aquellos lugares donde estadísticamente se tienen velocidades del viento lo suficientemente altas para que sea conveniente generar energía de estos), son aquellas que tienen terreno complejo, o sea, terreno con topografía no regular como las costas o montañas, esto debido a la aceleración que toma el viento al ajustarse a los contornos del suelo. Existe entonces una dicotomía o conflicto entre que los lugares mas aptos para poner parques eólicos, son al mismo tiempo los mas turbulentos y los más difíciles de predecir.
 
-De este modo, surge la necesidad de buscar maneras teóricas y prácticas para tener completamente determinado el comportamiento del viento en su interacción con terreno complejo y así tener también determinada la potencia eléctrica que se puede generar de esta.
+De este modo, surge la necesidad de buscar maneras teóricas y prácticas para tener completamente determinado el comportamiento y la rapidez del viento en su interacción con terreno complejo y así tener también determinada la potencia eléctrica que se puede generar de esta.
 
 Históricamente se ha dependido de técnicas estadísticas (describiendo el viento a través de distribuciones de probabilidad) basadas en bases de datos que contienen mediciones del viento a lo largo de varios años. El problema con este acercamiento es que para el terreno complejo, en donde el comportamiento del viento es en gran parte no homogéneo, este no refleja el movimiento real ni los fenómenos no lineales (como el desprendimiento de la capa límite o la mezcla turbulenta) dentro de la zona de interés. Aún asi, si se quisiera aplicar estos métodos estadísticos, el volumen de instrumentación necesaria sería inmenso para aplicarlo en zonas localizadas y por lo tanto, los costos asociados serían demasiado altos como para que se pudieran llevar a cabo en todos los lugares en donde se quisieran instalar turbinas.
 
@@ -31,7 +31,7 @@ Entonces, frente a esta latente necesidad de conocer el comportamiento del vient
 	\label{fig:01_explorador}
 \end{figure}
 
-Aterrizando el tema a una escala mas local, Chile cada año está inaugurando nuevos parques eólicos debido al buen factor de planta que posee en ciertas zonas del país (según estudios del Ministerio de Energía en el 2014). Hasta la fecha ya se han instalado mas de 600 turbinas eólicas y la tendencia es a que este número siga aumentando. De la mano de la instalación de nuevas plantas, está la simulación numérica realizada para tener una estimación de la cantidad de energía que se puede llegar a generar. En el 2010, la Universidad de Chile entregó a la comunidad la herramienta online llamada Explorador Eólico, en esta se muestra el potencial que tiene gran parte de Chile el cual fue simulado a través del software libre WRF. Algunos resultados de esta herramienta se pueden ver en la Figura \ref{fig:01_explorador}.
+Aterrizando el tema a una escala mas local, Chile cada año está inaugurando nuevos parques eólicos debido al buen factor de planta que se poseen en ciertas zonas del país (según estudios del Ministerio de Energía en el 2014). Hasta la fecha ya se han instalado mas de 600 turbinas eólicas y la tendencia es a que este número siga aumentando. De la mano de la instalación de nuevas plantas, está la simulación numérica realizada para tener una estimación de la cantidad de energía que se puede llegar a generar. En el 2010, la Universidad de Chile entregó a la comunidad la herramienta online llamada Explorador Eólico, en esta se muestra el potencial que tiene gran parte de Chile el cual fue simulado a través del software libre WRF. Algunos resultados de esta herramienta se pueden ver en la Figura \ref{fig:01_explorador}.
 
 
 Si bien esta herramienta ha entregado a Chile información certera y que antes no existía, las simulaciones realizadas para el Explorador Eólico contemplaban mallas numéricas con una resolución horizontal máxima de 1 [km], resolución que no es suficiente para resolver el comportamiento turbulento de microescala, ni para captar efectivamente las variaciones orográficas. El comportamiento del viento a lo largo de una superficie de 1 [km$^2$] puede cambiar mucho, en especial si existe terreno complejo, y por lo tanto la ubicación o no de una turbina eólica requiere un análisis mas detallado del dominio.
@@ -80,29 +80,26 @@ El objetivo final de esta investigación será lograr un sistema robusto que obt
 	\label{fig:01_sonda}
 \end{figure}
 
-Finalmente, a través de esta tesis se espera una descripción acabada de los fenómenos y problemáticas que abarca la tarea descrita anteriormente, además de un resumen de la bibliografía necesaria para que cualquier persona que quiera involucrarse en el campo de la simulación atmosférica pueda hacerlo de una manera sencilla. 
+Finalmente, a través de esta tesis se espera una descripción acabada de los fenómenos y problemáticas que abarca la tarea descrita anteriormente, además de un resumen de la bibliografía necesaria para que cualquier persona que quiera involucrarse en el campo de la simulación atmosférica pueda hacerlo de una manera sencilla. Como beneficio para la comunidad científica, los resultados obtenidos acá podrán ser utilizados como linea de base o benchmark para cualquier otra simulación futura a alta resolución, pudiendo dar pié a ser un nueva prueba para modelos multiescala.
 
-La estructura de la tesis es la siguiente, en el capítulo 2 se explican los últimos avances, problemáticas y consensos en torno a la simulación atmosférica multiescala y asimilación de datos. El capítulo 3 sienta las bases matemáticas, físicas y numéricas que enmarcan toda la investigación. En el capítulo 4 se detallan las particularidades del código WRF, que es el programa que se utilizó para realizar las simulaciones y el proceso de asimilación de datos. El capítulo 5 muestra la metodología de trabajo para poder obtener los resultados esperados, detallando la configuración con la que se llevaron a cabo los experimentos numéricos en WRF y la manera con la que se valida el modelo propuesto. En el capítulo 6 se exponen los resultados obtenidos. Finalmente en el capítulo 7 están las conclusiones de la investigación y los aspectos que quedan abiertos a la mejora.
+\section{Caracterización de la Tesis}
+\subsection{Hipótesis}
 
-\newpage
-\chapter{Caracterización de la Tesis}
-\section{Hipótesis}
-\textcolor{red}{entregar un caso de benchmark, decir esto en la intro como motivación}
+Mejorar la precisión de los pronósticos actuales para el viento a través de simulaciones atmosféricas de alta resolución en terreno complejo y la incorporación de un esquema de asimilación de datos 4D que vaya alimentando datos al sistema en tiempo real.
 
-Mejorar la precisión de los pronósticos actuales para el viento a través de simulaciones atmosféricas de alta resolución en terreno complejo y la incorporación de un esquema de asimilación de datos que vaya alimentando datos al sistema en tiempo real.
-
-\section{Objetivos}
-\subsection{Objetivos Principales}
+\subsection{Objetivos}
+\subsubsection{Objetivo Principal}
 \begin{itemize*}
 	\item Desarrollar un sistema de predicción de viento en terreno complejo de alta resolución en base al código WRF que proponga una mejora comparativa con respecto a los modelos existentes a través del uso de la asimilación de datos en la capa límite atmosférica.
 \end{itemize*}
-\subsection{Objetivos Secundarios}
+\subsubsection{Objetivos Secundarios}
 \begin{itemize*}
 	\item Acoplar dominios de microescala y mesoescala en las simulaciones numéricas mediante una clausura de turbulencia a través del modelo LES.
-	\item Estudiar el uso e incorporación de bases de datos de alta resolución para orografía y tipo de uso de suelo en el modelo WRF
-	\item Estudiar fenómenos específicos de la capa límite planetaria por la interacción del viento en terreno complejo.
+	\item Estudiar el uso e incorporación de bases de datos reales de alta resolución para orografía y tipo de uso de suelo en el modelo WRF.
 	\item Desarrollar y optimizar códigos relacionados con simulación atmosférica multiescala y asimilación de datos.
+	\item Estudiar la influencia de la asimilación de datos en la capa límite considerando un solo punto y multipunto.
 	\item Verificar y validar resultados obtenidos con aquellos presentes en el estado del arte y campañas de medición en terrenos reales.
-	\item Hacer uso operativo del sistema incorporandolo a un sistema de medición remoto por redes multisensoriales de sondas distribuidas. 
-	\item Entregar a la comunidad una herramienta fiel, libre y gratuita para el diagnóstico de la atmósfera en su interacción con el terreno complejo.
 \end{itemize*}
+
+\section{Estructura del Documento}
+La estructura de la tesis es la siguiente, en el capítulo 2 se explican los últimos avances, problemáticas y consensos en torno a la simulación atmosférica multiescala y asimilación de datos. El capítulo 3 sienta las bases matemáticas, físicas y numéricas que enmarcan toda la investigación. En el capítulo 4 se detallan las particularidades del código WRF, que es el programa que se utilizó para realizar las simulaciones y el proceso de asimilación de datos. El capítulo 5 muestra la metodología de trabajo para poder obtener los resultados esperados, detallando la configuración con la que se llevaron a cabo los experimentos numéricos en WRF y la manera con la que se valida el modelo propuesto. En el capítulo 6 se exponen los resultados obtenidos. Finalmente en el capítulo 7 están las conclusiones de la investigación y los aspectos que quedan abiertos a la mejora.

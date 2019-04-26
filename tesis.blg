@@ -35,6 +35,9 @@ A level-1 auxiliary file: Capitulos/02_estado_arte.aux
 A level-1 auxiliary file: Capitulos/03_marco_teorico.aux
 A level-1 auxiliary file: Capitulos/04_wrf.aux
 A level-1 auxiliary file: Capitulos/05_metodologia.aux
+A level-1 auxiliary file: Capitulos/06_resultados.aux
+A level-1 auxiliary file: Capitulos/07_conclusiones.aux
+A level-1 auxiliary file: Anexos/Apendice_A.aux
 Database file #1: Bibliografia/biblio.bib
 Warning--empty journal in https://doi.org/10.5065/d6cf9n1j
 Warning--empty booktitle in MirochaNewLE
@@ -42,7 +45,7 @@ Warning--empty year in MirochaNewLE
 Warning--empty journal in https://doi.org/10.5065/d68s4mvh
 You've used 44 entries,
             2833 wiz_defined-function locations,
-            881 strings with 14777 characters,
+            884 strings with 14854 characters,
 and the built_in function-call counts, 29438 in all, are:
 = -- 2091
 > -- 1599

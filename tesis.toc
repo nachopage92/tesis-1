@@ -1,56 +1,96 @@
 \select@language {spanish}
 \contentsline {chapter}{Agradecimientos}{7}{section*.1}
 \contentsline {chapter}{Abstract}{9}{section*.3}
-\contentsline {chapter}{Resumen}{11}{section*.5}
-\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{17}{chapter.1}
-\contentsline {chapter}{\numberline {2}Caracterizaci\IeC {\'o}n de la Tesis}{24}{chapter.2}
-\contentsline {section}{\numberline {2.1}Hip\IeC {\'o}tesis}{24}{section.2.1}
-\contentsline {section}{\numberline {2.2}Objetivos}{24}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Objetivos Principales}{24}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Objetivos Secundarios}{24}{subsection.2.2.2}
-\contentsline {chapter}{\numberline {3}Estado del Arte}{26}{chapter.3}
-\contentsline {section}{\numberline {3.1}Simulaci\IeC {\'o}n Multiescala y Zona Gris}{26}{section.3.1}
-\contentsline {section}{\numberline {3.2}Turbulencia Atmosf\IeC {\'e}rica y LES}{31}{section.3.2}
-\contentsline {section}{\numberline {3.3}Alta Resoluci\IeC {\'o}n y Terreno Complejo}{31}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Importancia de la Estimaci\IeC {\'o}n del Viento}{31}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Problem\IeC {\'a}ticas de la Simulaci\IeC {\'o}n de Alta Resoluci\IeC {\'o}n}{32}{subsection.3.3.2}
-\contentsline {subsubsection}{Aspecto 1: Problemas Computacionales}{32}{section*.16}
-\contentsline {subsubsection}{Aspecto 2: Problemas Num\IeC {\'e}ricos}{33}{section*.17}
-\contentsline {paragraph}{Precisi\IeC {\'o}n}{34}{section*.18}
-\contentsline {paragraph}{Estabilidad}{34}{section*.19}
-\contentsline {paragraph}{Difusi\IeC {\'o}n}{35}{section*.20}
-\contentsline {paragraph}{Coordenadas}{35}{section*.21}
-\contentsline {paragraph}{Benchmarking}{35}{section*.23}
-\contentsline {subsubsection}{Aspecto 3: Parametrizaciones de Capa L\IeC {\'\i }mite}{35}{section*.24}
-\contentsline {subsubsection}{Aspecto 4: Inicializaci\IeC {\'o}n y Datos de Entrada}{35}{section*.25}
-\contentsline {section}{\numberline {3.4}Uso Operativo de Asimilaci\IeC {\'o}n de Datos}{35}{section.3.4}
-\contentsline {chapter}{\numberline {4}Marco Te\IeC {\'o}rico}{37}{chapter.4}
-\contentsline {section}{\numberline {4.1}Leyes Fundamentales de un Fluido}{38}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Conservaci\IeC {\'o}n de la Masa}{38}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Conservaci\IeC {\'o}n de la Cantidad de Movimiento}{38}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Conservaci\IeC {\'o}n de la Energ\IeC {\'\i }a}{39}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}Ecuaci\IeC {\'o}n de Estado: Gas Ideal}{41}{subsection.4.1.4}
-\contentsline {section}{\numberline {4.2}Din\IeC {\'a}mica Atmosf\IeC {\'e}rica}{41}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Temperatura Potencial}{42}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Gradiente de Temperatura}{42}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Condiciones de Estabilidad}{43}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Ecuaci\IeC {\'o}nes Primitivas}{44}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}An\IeC {\'a}lisis de Escalas}{44}{subsection.4.2.5}
-\contentsline {section}{\numberline {4.3}Turbulencia Hidrodin\IeC {\'a}mica}{44}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Fundamentos}{44}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Cascada de Energ\IeC {\'\i }a}{45}{subsection.4.3.2}
-\contentsline {section}{\numberline {4.4}Teor\IeC {\'\i }a de la Capa L\IeC {\'\i }mite Atmosf\IeC {\'e}rica}{45}{section.4.4}
-\contentsline {section}{\numberline {4.5}Large Eddy Simulation}{45}{section.4.5}
-\contentsline {section}{\numberline {4.6}An\IeC {\'a}lisis Num\IeC {\'e}rico}{46}{section.4.6}
-\contentsline {section}{\numberline {4.7}Asimilaci\IeC {\'o}n de Datos}{46}{section.4.7}
-\contentsline {chapter}{\numberline {5}Weather Research and Forecast (WRF)}{48}{chapter.5}
-\contentsline {section}{\numberline {5.1}Aspectos Generales}{48}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Ecuaciones Resueltas}{49}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Discretizaci\IeC {\'o}n Espacial}{49}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Discretizaci\IeC {\'o}n Temporal}{50}{subsection.5.1.3}
-\contentsline {subsection}{\numberline {5.1.4}Aspectos Num\IeC {\'e}ricos}{50}{subsection.5.1.4}
-\contentsline {subsubsection}{Filtros}{50}{section*.27}
-\contentsline {subsubsection}{Advecci\IeC {\'o}n}{50}{section*.28}
-\contentsline {subsubsection}{Difusi\IeC {\'o}n}{50}{section*.29}
-\contentsline {subsubsection}{Microf\IeC {\'\i }sicas}{51}{section*.30}
-\contentsline {chapter}{Bibliograf\'{\i }a}{52}{section*.31}
+\contentsline {paragraph}{Keywords}{9}{section*.5}
+\contentsline {chapter}{Resumen}{11}{section*.6}
+\contentsline {paragraph}{Palabras Clave}{11}{section*.8}
+\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{21}{chapter.1}
+\contentsline {section}{\numberline {1.1}Caracterizaci\IeC {\'o}n de la Tesis}{27}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Hip\IeC {\'o}tesis}{27}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Objetivos}{27}{subsection.1.1.2}
+\contentsline {subsubsection}{Objetivo Principal}{27}{section*.15}
+\contentsline {subsubsection}{Objetivos Secundarios}{27}{section*.16}
+\contentsline {section}{\numberline {1.2}Estructura del Documento}{28}{section.1.2}
+\contentsline {chapter}{\numberline {2}Estado del Arte}{29}{chapter.2}
+\contentsline {section}{\numberline {2.1}Simulaci\IeC {\'o}n Multiescala y Zona Gris}{29}{section.2.1}
+\contentsline {section}{\numberline {2.2}Turbulencia Atmosf\IeC {\'e}rica y LES}{34}{section.2.2}
+\contentsline {section}{\numberline {2.3}Alta Resoluci\IeC {\'o}n y Terreno Complejo}{35}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Importancia de la Estimaci\IeC {\'o}n del Viento}{35}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Problem\IeC {\'a}ticas de la Simulaci\IeC {\'o}n de Alta Resoluci\IeC {\'o}n}{36}{subsection.2.3.2}
+\contentsline {subsubsection}{Aspecto 1: Problemas Computacionales}{36}{section*.20}
+\contentsline {subsubsection}{Aspecto 2: Problemas Num\IeC {\'e}ricos}{38}{section*.21}
+\contentsline {paragraph}{Precisi\IeC {\'o}n}{38}{section*.22}
+\contentsline {paragraph}{Estabilidad}{39}{section*.23}
+\contentsline {paragraph}{Difusi\IeC {\'o}n Num\IeC {\'e}rica}{39}{section*.24}
+\contentsline {paragraph}{Coordenadas}{40}{section*.25}
+\contentsline {paragraph}{Benchmarking}{41}{section*.27}
+\contentsline {subsubsection}{Aspecto 3: Parametrizaciones de Capa L\IeC {\'\i }mite}{41}{section*.28}
+\contentsline {subsubsection}{Aspecto 4: Inicializaci\IeC {\'o}n y Datos de Entrada}{41}{section*.29}
+\contentsline {section}{\numberline {2.4}Uso Operativo de Asimilaci\IeC {\'o}n de Datos}{42}{section.2.4}
+\contentsline {chapter}{\numberline {3}Marco Te\IeC {\'o}rico}{43}{chapter.3}
+\contentsline {section}{\numberline {3.1}Leyes Fundamentales de un Fluido}{44}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Conservaci\IeC {\'o}n de la Masa}{44}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Conservaci\IeC {\'o}n de la Cantidad de Movimiento}{44}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Conservaci\IeC {\'o}n de la Energ\IeC {\'\i }a}{45}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Ecuaci\IeC {\'o}n de Estado: Gas Ideal}{47}{subsection.3.1.4}
+\contentsline {section}{\numberline {3.2}Din\IeC {\'a}mica Atmosf\IeC {\'e}rica}{47}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Temperatura Potencial}{48}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Gradiente de Temperatura}{48}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Condiciones de Estabilidad}{49}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Ecuaci\IeC {\'o}nes Primitivas}{50}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}An\IeC {\'a}lisis de Escalas}{50}{subsection.3.2.5}
+\contentsline {section}{\numberline {3.3}Turbulencia Hidrodin\IeC {\'a}mica}{50}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Fundamentos}{50}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Cascada de Energ\IeC {\'\i }a}{51}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}Teor\IeC {\'\i }a de la Capa L\IeC {\'\i }mite Atmosf\IeC {\'e}rica}{51}{section.3.4}
+\contentsline {section}{\numberline {3.5}Large Eddy Simulation}{51}{section.3.5}
+\contentsline {section}{\numberline {3.6}An\IeC {\'a}lisis Num\IeC {\'e}rico}{52}{section.3.6}
+\contentsline {section}{\numberline {3.7}Asimilaci\IeC {\'o}n de Datos}{52}{section.3.7}
+\contentsline {chapter}{\numberline {4}Weather Research and Forecast (WRF)}{54}{chapter.4}
+\contentsline {section}{\numberline {4.1}Aspectos Generales}{54}{section.4.1}
+\contentsline {section}{\numberline {4.2}Ecuaciones Resueltas}{57}{section.4.2}
+\contentsline {paragraph}{Coordenada Vertical}{57}{section*.31}
+\contentsline {paragraph}{Inclusi\IeC {\'o}n de la Humedad}{57}{section*.32}
+\contentsline {paragraph}{Proyecciones Cartogr\IeC {\'a}ficas}{58}{section*.33}
+\contentsline {paragraph}{Fuerza de Coriolis y T\IeC {\'e}rminos de Curvatura}{58}{section*.34}
+\contentsline {paragraph}{Forma de Perturbaci\IeC {\'o}n de las Ecuaciones Governantes}{59}{section*.35}
+\contentsline {section}{\numberline {4.3}Aspectos Num\IeC {\'e}ricos Relevantes}{60}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Difusi\IeC {\'o}n}{60}{subsection.4.3.1}
+\contentsline {subsubsection}{C\IeC {\'a}lculo de la Viscosidad Turbulenta}{61}{section*.36}
+\contentsline {subsection}{\numberline {4.3.2}Parametrizaciones F\IeC {\'\i }sicas}{62}{subsection.4.3.2}
+\contentsline {subsubsection}{Microf\IeC {\'\i }sicas}{63}{section*.37}
+\contentsline {subsubsection}{Parametrizaci\IeC {\'o}n de C\IeC {\'u}mulos}{63}{section*.38}
+\contentsline {subsubsection}{Capa Superficial}{63}{section*.39}
+\contentsline {subsubsection}{Modelo de Suelo}{63}{section*.40}
+\contentsline {subsubsection}{Capa L\IeC {\'\i }mite Planetaria}{64}{section*.41}
+\contentsline {subsubsection}{Radiaci\IeC {\'o}n Atmosf\IeC {\'e}rica}{64}{section*.42}
+\contentsline {section}{\numberline {4.4}Sistema de Asimilaci\IeC {\'o}n de Datos WRFDA}{64}{section.4.4}
+\contentsline {chapter}{\numberline {5}Metodolog\IeC {\'\i }a de la Investigaci\IeC {\'o}n}{65}{chapter.5}
+\contentsline {section}{\numberline {5.1}Filosof\IeC {\'\i }a y Alcance de la Investigaci\IeC {\'o}n}{65}{section.5.1}
+\contentsline {section}{\numberline {5.2}Datos de Entrada al Modelo}{65}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Condiciones de Borde de Suelo}{65}{subsection.5.2.1}
+\contentsline {subsubsection}{Incorporaci\IeC {\'o}n a WRF}{66}{section*.43}
+\contentsline {subsection}{\numberline {5.2.2}Condiciones de Borde Laterales}{67}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Condiciones Iniciales}{67}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}Proceso de Asimilaci\IeC {\'o}n de Datos}{68}{section.5.3}
+\contentsline {section}{\numberline {5.4}Caso I - Terreno Plano: H\IeC {\o }vs\IeC {\o }re}{68}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Aspectos Generales del Experimento}{68}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Configuraci\IeC {\'o}n de las Simulaciones}{68}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Configuraci\IeC {\'o}n de la Asimilaci\IeC {\'o}n de Datos}{70}{subsection.5.4.3}
+\contentsline {section}{\numberline {5.5}Caso II - Terreno Complejo: Bolund}{71}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Aspectos Generales del Experimento}{71}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Configuraci\IeC {\'o}n de las Simulaciones}{71}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}Configuraci\IeC {\'o}n de la Asimilaci\IeC {\'o}n de Datos}{75}{subsection.5.5.3}
+\contentsline {section}{\numberline {5.6}Posproceso de los datos}{75}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}Interpolaci\IeC {\'o}n de alturas}{75}{subsection.5.6.1}
+\contentsline {subsection}{\numberline {5.6.2}C\IeC {\'a}lculo de Errores}{75}{subsection.5.6.2}
+\contentsline {chapter}{\numberline {6}Resultados Obtenidos y An\IeC {\'a}lisis}{77}{chapter.6}
+\contentsline {section}{\numberline {6.1}Caso I: H\IeC {\o }vs\IeC {\o }re s/DA}{77}{section.6.1}
+\contentsline {section}{\numberline {6.2}Caso I: H\IeC {\o }vs\IeC {\o }re c/DA}{83}{section.6.2}
+\contentsline {section}{\numberline {6.3}Caso II: Bolund s/DA}{86}{section.6.3}
+\contentsline {section}{\numberline {6.4}Caso II: Bolund c/DA}{97}{section.6.4}
+\contentsline {chapter}{\numberline {7}Conclusiones y Trabajo Futuro}{98}{chapter.7}
+\contentsline {chapter}{\numberline {A}C\IeC {\'a}lculo de Resultados para Bolund y Comparaci\IeC {\'o}n Ciega}{99}{appendix.Alph1}
+\contentsline {chapter}{\numberline {B}Incorporaci\IeC {\'o}n de Bases de Datos de Alta Resoluci\IeC {\'o}n}{104}{appendix.Alph2}
+\contentsline {chapter}{\numberline {C}Tiempos de C\IeC {\'a}lculo de las Simulaciones}{107}{appendix.Alph3}
+\contentsline {chapter}{Bibliograf\'{\i }a}{109}{section*.93}

@@ -1,0 +1,40 @@
+\chapter{Tiempos de Cálculo de las Simulaciones}
+Las simulaciones se llevaron a cabo en servidores configurados especialmente para ejecutar el código WRF de manera paralela haciendo uso de todos los núcleos y recursos disponibles. En específico se utilizaron dos servidores distintos: S1 es el servidor utilizado para correr las simulaciones correspondientes al caso I de terreno plano en Høvsore y S2 es el servidor utilizado para correr el caso II de terreno complejo en Bolund. Otros recursos computacionales adicionales fueron utilizados también para llevar a cabo distintos análisis de sensibilidad para diversos parámetros y otras pruebas varias las cuales no se detallan en este documento. Las específicaciones técnicas de S1 y S2 se pueden ver en la Tabla \ref{tab:an3_s12}.
+
+\begin{table}[H]
+	\caption{Específicaciones técnicas de los recursos computacionales utilizados.}\label{tab:an3_s12}
+	\centering\resizebox{\textwidth}{!}{
+	\begin{tabular}{lcc}
+		\toprule
+		Servidor 				& S1	&	S2	\\
+		\midrule
+		CPU			 			& Intel Xeon CPU E5-2609 v2@2.50Ghz & Intel Xeon Silver 4110 CPU @ 2.10GHz  \\
+		\# Cores				& 8 & 32  \\
+		Arquitectura            & x86\_64  & x86\_64  \\
+	 	RAM			 			& 55Gb & 126Gb  \\
+		HDD			 			& 1Tb & 2Tb  \\
+		OS			 			& Scientific Linux 7.2 & Debian 9  \\
+		\bottomrule
+	\end{tabular}}
+\end{table}
+
+Para cada servidor se registraron los tiempos de pared a través de un bot de \emph{Telegram} el cual registraba de manera automática e inmediata la fecha y hora a la cual cada simulación comenzaba o terminaba. Los registros de estos tiempos se pueden ver en la Tabla \ref{tab:an3_tiempos}.
+
+\begin{table}[H]
+	\caption{Específicaciones técnicas de los recursos computacionales utilizados.}\label{tab:an3_tiempos}
+	\centering\resizebox{\textwidth}{!}{
+	\begin{tabular}{lccccc}
+		\toprule
+		Caso 				& Fecha Inicio	&	Fecha Término & $T_w$ [h] &	$\Delta t$ [h] & Incremento	\\
+		\midrule
+		Høvsøre s/DA		& 25/02/2019 17:30 & 04/03/2019 01:28 & 151,97 & -- & --  \\
+		Høvsore c/ DA		& 13/03/2019 23:13 & 19/03/2019 00:49 & 121,60 & -30,37 & -19.98\%\footnotemark \\
+		Bolund s/DA			& \color{red}12/02/2019 22:22 & 20/03/2019 8:35 & 850.22 & -- & -- \\
+		Bolund c/ DA		& aaa & bbb & aaa & bbb & bbb \\
+		\bottomrule
+	\end{tabular}}
+\end{table}
+
+Acá $T_w$ es el tiempo de pared efectivo y $\Delta t$ corresponde al aumento en este debido a la incorporación del proceso de asimilación de datos. El incremento se calcula como $\Delta t/T_{w0}$, donde el subíndice 0 índica la simulación sin asimilación de datos.
+
+\footnotetext{La justificación con respecto a la disminución del tiempo de cálculo para el caso de Høvsøre se explica debido a que durante la primera simulación, otras personas pertenecientes al grupo de trabajo con el servidor ejecutaron tareas intensivas durante ese tiempo, lo cual hizo imposible el aislamiento del tiempo de pared efectivo}

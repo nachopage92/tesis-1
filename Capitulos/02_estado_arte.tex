@@ -1,19 +1,19 @@
 \chapter{Estado del Arte}
 Tomando en consideración lo amplio, en el sentido de las disciplinas a abarcar, de este trabajo de tesis, el resumen del estado del arte para este se llevará a cabo en cuatro secciones distintas. 
 
-Primero se expondrá la problemática que nace debido a la turbulencia en las simulaciones multiescala. Luego se revisará la historia y la creciente utilización de la técnica de Simulación de Grandes Vórtices (de aquí en adelante \emph{Large Eddy Simulations} o LES) en la solución numérica de los modelos meteorológicos. Tercero, se verán las complicaciones y los desafíos que conlleva el realizar simulaciones de alta resolución en terreno complejo y los consensos internacionales tomados al respecto. Finalmente se mostrará el estado actual de la utilización de los métodos de asimilación de datos para el uso operacional en el contexto de las simulaciones atmosféricas.
+Primero se expondrá la problemática que nace debido a la turbulencia en las simulaciones multiescala. Luego se revisará la historia y la creciente utilización de la técnica de Simulación de Grandes Vórtices (de aquí en adelante \emph{Large Eddy Simulation} o LES) en la solución numérica de los modelos meteorológicos. Tercero, se verán las complicaciones y los desafíos que conlleva el realizar simulaciones de alta resolución en terreno complejo y los consensos internacionales tomados al respecto. Finalmente se mostrará el estado actual de la utilización de los métodos de asimilación de datos para el uso operacional en el contexto de las simulaciones atmosféricas.
 \section{Simulación Multiescala y Zona Gris}
-Como ya se justificó en la introducción, la predicción atmósférica en zonas localizadas, en especial en aquellas con terreno irregular, es un tema de especial relevancia en las áreas del cambio climático, la contaminación ambiental y la industria energética. Actualmente las simulaciones climáticas regionales se realizan con una resolución de malla del orden de los kilómetros. Esto es, evidentemente, insuficiente para poder representar fehacientemente una topografía compleja, como puede ser la Cordillera de Los Andes, y por lo tanto, insuficiente también para resolver los fenómenos meteorológicos asociados a esta.
+Como ya se justificó en la introducción, la predicción atmosférica en zonas localizadas, en especial en aquellas con terreno irregular, es un tema de especial relevancia en las áreas del cambio climático, la contaminación ambiental y la industria energética. Actualmente las simulaciones climáticas regionales se realizan con una resolución de malla del orden de los kilómetros. Esto es, evidentemente, insuficiente para poder representar fehacientemente cualquier topografía compleja, y por lo tanto, insuficiente también para resolver los fenómenos meteorológicos asociados a esta.
 
-Una manera de solucionar esto puede ser el eso de un escalamiento estadístico para llevar las soluciones a una malla mas fina, sin embargo, este acercamiento no contempla ni la física fundamental ni las no-linealidades, que son la característica mas importante del comportamiento de la atmósfera. Su contraparte, el escalamiento dinámico, permite anidar mallas y resolver las leyes de conservación para resoluciones cada vez mas altas hasta lo que se desee resolver, teniendo como limitantes: el costo computacional, la precisión de las condiciones de borde y las parametrizaciones físicas que se incorporarán a las ecuaciones. Para este trabajo, es claro el beneficio que trae el utilizar el escalamiento dinámico como metodología para alcanzar simulaciones de alta resolución y por lo tanto ese es el acercamiento que se utilizará.
+Una manera de solucionar esto puede ser el eso de un escalamiento estadístico para llevar las soluciones a una malla mas fina, sin embargo, este acercamiento no contempla ni la física fundamental ni las no-linealidades, que son la característica mas importante del comportamiento de la atmósfera en su interacción con el terreno complejo. Su contraparte, el escalamiento dinámico, permite anidar mallas y resolver las leyes de conservación para resoluciones cada vez mas altas hasta lo que se desee resolver, teniendo como limitantes: el costo computacional, la precisión de las condiciones de borde y las parametrizaciones físicas que se incorporarán a las ecuaciones. Para este trabajo, es claro el beneficio que trae el utilizar el escalamiento dinámico como metodología para alcanzar simulaciones de alta resolución y por lo tanto ese es el acercamiento que se utilizará.
 
-A modo de formar una explicación un poco mas formal y clara sobre lo que conlleva el realizar una simulación atmosférica multiescala, tomemos en consideración la Figura \ref{fig:escalas} para identificar las distintas escalas temporales y espaciales.
+A modo de formar una explicación un poco mas formal y clara sobre lo que conlleva el realizar una simulación atmosférica multiescala, tomemos en consideración la Figura \ref{fig:02_escalas} para identificar las distintas escalas temporales y espaciales.
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.85\linewidth,trim={2.6cm 1.4cm 1.5cm 0.8cm},clip]{Imagenes/01/terra}
+	\includegraphics[width=0.85\linewidth,trim={2.6cm 1.4cm 1.5cm 0.8cm},clip]{Imagenes/02/escalas}
 	\caption{Separación de escalas para la dinámica atmosférica.}
-	\label{fig:escalas}
+	\label{fig:02_escalas}
 \end{figure}
 
 La figura en cuestión muestra tres aspectos claves de las simulaciones atmosféricas que se desean realizar: las áreas del conocimiento involucradas, los fenómenos que resuelve cada área y las escalas asociadas a cada uno de estas.
@@ -32,28 +32,28 @@ Se concluye entonces que las distintas fuerzas que aparecen en las ecuaciones ti
 
 La turbulencia sin embargo\footnote{Probablemente le haga ruido al lector el hecho que hasta ahora no se ha presentado una definición formal de la turbulencia. Como esta requiere una descripción matemática extensa se prefirió dejarla para el próximo capítulo.}, no funciona de la misma forma. Los vórtices de distintos tamaños que habitan en la atmósfera son igualmente importantes en términos de órdenes de magnitud para las ecuaciones que se resuelven.
 
-Cuando se modelan las grandes escalas (sinóptica, mesoescala), generalmente la resolución de malla horizontal es demasiado grande como para captar los vórtices y por lo tanto en efecto de estos en las ecuaciones queda filtrado numéricamente. Operacionalmente, esta operación de filtrado se revierte con la utilización de un esquema adecuado para parametrizar la turbulencia. En los modelos meteorológicos actuales este efecto generalmente queda confinado en la llamada \emph{parametrización de capa límite}, ya que el principal rol que cumple la turbulencia en estas escalas es la de transmitir la información que se genera a nivel de superficie terrestre a la atmósfera libre.
+Cuando se modelan las grandes escalas (sinóptica, mesoescala), generalmente la resolución de malla horizontal es demasiado grande como para captar los vórtices y por lo tanto el efecto de estos en las ecuaciones queda filtrado numéricamente. Operacionalmente, esta operación de filtrado se revierte con la utilización de un esquema adecuado para parametrizar la turbulencia. En los modelos meteorológicos actuales este efecto generalmente queda confinado en la llamada \emph{parametrización de capa límite}, ya que el principal rol que cumple la turbulencia en estas escalas es la de transmitir la información que se genera a nivel de superficie terrestre a la atmósfera libre.
 
-Cuando se modelan las pequeñas escalas, idealmente la resolución de malla horizontal va a bastar para captar de manera adecuada cierto espectro de los vórtices generados por el efecto de la turbulencia y por lo tanto se puede omitir la parametrización de capa límite. Es importante notar que si bien ahora se resuelven los vórtices grandes que provocan la mezcla dentro de la capa límite, otra parte de los vórtices sigue sin ser resuelta y por lo tanto se deberá utilizar otro modelo turbulento para modelarla. Esta modelación será la encargada de representar la cascada de energía y la disipación de energía turbulenta.
+Cuando se modelan las pequeñas escalas, idealmente la resolución de malla horizontal va a bastar para captar de manera adecuada cierto espectro de los vórtices generados por el efecto de la turbulencia y por lo tanto se puede omitir la parametrización de capa límite. Es importante notar que si bien ahora se resuelven los vórtices grandes que provocan la mezcla dentro de la capa límite, otra parte de los vórtices sigue sin ser resuelta\footnote{Esto debido a que la cascada de energía turbulenta existe hasta el órden de los milímetros.} y por lo tanto se deberá utilizar otro modelo turbulento para modelarla. Esta modelación será la encargada de representar la cascada de energía y la disipación de energía turbulenta.
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.5\linewidth,trim={2.67cm 1.05cm 3.1cm 1.98cm},clip]{Imagenes/01/grid}
+	\includegraphics[width=0.5\linewidth,trim={2.67cm 1.35cm 3.1cm 2.25cm},clip]{Imagenes/02/grid}
 	\caption{Idealización de los distintos tamaños de vórtices dentro de un dominio en la zona gris de la turbulencia. Los vórtices mas grandes pueden ser resueltos por la malla, mientras que los más pequeños son filtrados numéricamente y por lo tanto deben ser parametrizados para que su efecto se considere en las ecuaciones de movimiento.}
-	\label{fig:01grid}
+	\label{fig:02_grid_vortex}
 \end{figure}
 
-Reflexionando un poco con respecto al rol que toma la turbulencia tanto en las escalas grandes como en las pequeñas, no es difícil llegar a la conclusión que a través del proceso de escalamiento dinámico se llegará eventualmente a una zona de traslape en donde algunos de los vórtices asociados a la capa límite son indistintamente resueltos y modelados al mismo tiempo. La Figura \ref{fig:01grid} representa este hecho. 
+Reflexionando un poco con respecto al rol que toma la turbulencia tanto en las escalas grandes como en las pequeñas, no es difícil llegar a la conclusión que a través del proceso de escalamiento dinámico se llegará eventualmente a una zona de traslape en donde algunos de los vórtices asociados a la capa límite son indistintamente resueltos y modelados. La Figura \ref{fig:02_grid_vortex} representa este hecho. 
 
 A esta zona de traslape se le denomina zona gris o \emph{Terra Incognita}.
 
-Utilizando la terminología de Wyngaard (2004), sea $\Delta$ la escala (o tamaño) del filtro espacial asociado a la solución numérica (o malla) de las ecuaciones de movimiento y $l$ la escala característica de los vórtices en el rango inercial, el espectro de energía turbulenta $\phi(\lambda)$ se ve como se muestra en la Figura \ref{fig:terra}.
+Utilizando la terminología de Wyngaard (2004), sea $\Delta$ la escala (o tamaño) del filtro espacial asociado a la solución numérica (o malla) de las ecuaciones de movimiento y $l$ la escala característica de los vórtices en el rango inercial, el espectro de energía turbulenta $\phi(\lambda)$ se ve como se muestra en la Figura \ref{fig:02_terra_inc}.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\linewidth,trim={2cm 3.0cm 1.5cm 11.5cm},clip]{Imagenes/terra}
+	\includegraphics[width=0.8\linewidth,trim={2cm 3.0cm 1.5cm 11.5cm},clip]{Imagenes/02/terra_inc}
 	\caption{Espectro de energía turbulenta multiescala.}
-	\label{fig:terra}
+	\label{fig:02_terra_inc}
 \end{figure}
 
 Para valores de $\Delta\gg l$ asociados a la mesoescala, la producción de energía turbulenta queda por debajo del filtro y por lo tanto, tiene sentido que se modele a través de un esquema de submalla. Por otro lado, para valores de $\Delta\ll l$ los vórtices que contienen la energía pueden ser completamente modelado por las ecuaciones y entonces no debe usarse un SGS (microescala).
@@ -62,9 +62,19 @@ Queda entonces el rango en donde $\Delta\sim l$. Dentro de este intervalo se des
 
 En la práctica, el acercamiento para compensar este problema es definir los dominios de modo que se evite usar el modelo en el rango de la \emph{Terra Incognita}.
 \section{Turbulencia Atmosférica y LES}
-\textcolor{red}{hacer}
+Tomando como antecedente la problemática que induce la turbulencia al intentar solucionar numéricamente las ecuaciones que rigen el comportamiento atmosférico utilizando un enfoque multiescala, en esta sección se describirá brevemente la historia del tratamiento especial que tiene la turbulencia, se introducirá el modelo LES para representar los esfuerzos de submalla y los principales avances en los últimos años.
+
+Los primeros modelos desarrollados para poder estimar el potencial eólico parten en el año 1975, donde Jackson y Hunt presentan su análisis bidimensional para flujo turbulento en terreno complejo, el cual en 1979 fue ampliado a 3D por Mason y Stykes. Estos modelos tienen la particularidad de ser lineales y el beneficio de presentar resultados computacionalmente rápidos para pendientes no mayores a 17$^\circ$. Estos mismos modelos lineales, mejorados, actualmente se utilizan en códigos comerciales como MS3DJH, MSFD y WAsP.
+
+En forma paralela a los modelos lineales, se fueron desarrollando métodos numéricos para resolver las ecuaciones no lineales. En 1977 Taylor desarrollo un modelo 2D no lineal de diferencias finitas para el flujo sobre una colina pequeña. Entre el 1970 y 1980 el desarrollo de algoritmos para solucionar las ecuaciones RANS fue intensivo y esto resultó en el origen de una gama de modelos de clausura para la turbulencia. El modelo clásico $k-\epsilon$ fue originalmente propuesto en 1974 por Launder y Spalding y entre los años 80s y 90s se formularon varias modificaciones para flujos atmosféricos. En este punto, los modelos RANS presentaban una mejor solución en términos de la aceleración en la cima de las colinas y el comportamiento aguas abajo de estas.
+
+Luego, desde los años 90s, la técnica de simulación de grandes vórtices (LES) se ha estado aplicando a la capa límite planetaria sobre terreno plano homogéneo. El argumento a favor de la utilización del LES es que con el incremento de la potencia computacional y el refinamiento de las mallas, eventualmente se debería llegar a soluciones que sean independientes del modelo de clausura para la turbulencia. Si bien esto es teóricamente correcto, el terreno real posee rugosidad y por lo tanto se requieren modelos de pared avanzados. Estos modelos aún son dependientes del tipo de parametrización que se escoja en el método numérico.
+
+Las simulaciones LES en terreno real entonces, se ven enfrentadas a, por lo menos, dos grandes problemas: el elevado costo computacional asociado a los tamaños de malla y el acoplamiento entre la cercanía de la pared, altamente parametrizada, con la región exterior resuelta.
+
+A pesar de los desafíos que debe superar el LES, su potencial para modelar flujos a través de colinas ha sido altamente reconocido. Diversos autores han modelado correctamente el campo de viento en la colina Askeverin (Chow y Street, 2009; Bechmann y Sørensen 2010b) y cerros sinusoidales (Brown et al. 2001; Wan et. al. 2007), sin embargo pocos estudios en terreno complejo real existen.
 \section{Alta Resolución y Terreno Complejo}
-Como motivación, se comienza esta sección haciendo una pequeña derivación de la importancia de una correcta estimación de la velocidad del viento. Luego se expondrán los consensos tomados el año 2012 por el \emph{HiRCoT Workshop} (High Resolution Modelling in Complex Terrain), los cuales resumen de muy buena forma las bases y desafios actuales sobre este tema particular y que tienen especial importante en el trabajo a desarrollar.
+Como motivación, se comienza esta sección haciendo una pequeña derivación de la importancia de una correcta estimación de la velocidad del viento. Luego se expondrán los consensos tomados el año 2012 por el \emph{HiRCoT Workshop} (High Resolution Modelling in Complex Terrain), los cuales resumen de muy buena forma las bases y desafios actuales sobre este tema particular y que tienen especial importancia en el trabajo a desarrollar.
 \subsection{Importancia de la Estimación del Viento}
 Para tener un acercamiento a la importancia de la correcta estimación del viento, consideremos la energía cinética del viento. Para un área arbitraria de magnitud $A$ en un tiempo $t$ se tiene:
 \begin{equation} 
@@ -115,7 +125,7 @@ Corresponden a las problemáticas asociadas a la discretización por la implemen
 \begin{itemize*}
 	\item Precisión
 	\item Estabilidad
-	\item Difusión (explícita e implícita)
+	\item Difusión numérica (explícita e implícita)
 	\item Coordenadas
 	\item Necesidad de Benchmark
 \end{itemize*}
@@ -126,32 +136,62 @@ La presencia de terreno complejo por otra parte, incentiva la aparición de ruid
 
 \paragraph{Precisión} Se entiende como precisión, el orden con el cual se reducen los errores de truncación debido a un refinamiento temporal o espacial. Mejores esquemas numéricos implican una mejor precisión, sin embargo son mas costosos computacionalmente. Para simulaciones a alta resolución en terreno complejo, los datos utilizados para inicializar el modelo ya vienen con una resolución propia de los instrumentos de medición usados. Estos datos pueden ensuciar la precisión formal que tenga un cierto esquema numérico debido a que los errores inducidos por los datos predominaran por sobre aquellos del modelo. De ahí que para este tipo de simulaciones, la utilización de esquemas de alto orden no se presenta como un beneficio tan tangible.
 
-\paragraph{Estabilidad} cfl, damping de $w$ que es lo mas critico para el cfl
+\paragraph{Estabilidad} Como se habló anteriormente, debido a la predominancia de los esquemas explícitos, los modelos de NWP están sujetos a criterios de estabilidad numérica. El primer criterio es el CFL, asociado a la advección, donde se debe cumplir que:
 \begin{equation}\label{eq:cfl}
-\frac{c\Delta t}{\Delta x}<\beta
+\frac{c\Delta t}{\Delta x}<\beta_a
 \end{equation}
-
+Donde $c$ es es la rapidez de propagación física de una señal y $\beta_a$ es un coeficiente que depende de la discretización. El otro criterio importante es el asociado a la difusión, el cual se escribe como:
 \begin{equation}\label{eq:cfl_d}
-\frac{M\Delta t}{\Delta x^2}<\beta
+\frac{M\Delta t}{\Delta x^2}<\beta_d
 \end{equation}
+Acá $M$ es un coeficiente de difusión y $\beta_d$ es otro coeficiente que depende de la discretización. Notar que en este segundo criterio, el valor escala de manera cuadrática con $\Delta x$, lo que implica que $\Delta t$ deberá disminuir proporcionalmente a $\Delta x^2$ para mantener estable la integración de los términos difusivos. En simulaciones estándar, el común usar un coeficiente de difusión que escale según $\Delta x^2$ (Smagorinsky por ejemplo), luego este criterio es mas vulnerable a ser violado a muy alta resolución.
 
-\paragraph{Difusión} problemas de la difusión artificial, puede suavizar completamente una simulación a alta resolución. En este caso se debe calcular la difusión horizontal en la coordenada real
+Algunas técnicas prácticas que se utilizan para evitar las inestabilidades incluyen el uso de pasos de tiempo adaptativos que impidan el no cumplimiento de los criterios antes mencionados o el uso de amortiguamiento para la componente $w$ de la velocidad, que es la mas crítica en la simulación de terreno complejo. El uso de amortiguamiento genera soluciones no físicas y por lo tanto no está bien visto por la comunidad científica.
 
-\paragraph{Coordenadas} aaa
+\paragraph{Difusión Numérica} La difusión artificial (o numérica) o disipación artificial es la amortiguación sucesiva de perturbaciones como consecuencia de las propiedades del método numérico. De la misma manera en la que actúa la difusión física, las variaciones de las escalas pequeñas se tienden a suavizar. Esto puede ser provocado implícitamente debido a la diferenciación espacial o explícitamente como un término en las ecuaciones resueltas. Este es un fenómeno complejo y generalmente el manejo de este se encarga a los diseñadores de los núcleos dinámicos de los modelos. A nivel de usuario, una regla práctica es saber que aquellos esquemas espaciales que son de orden par poseen una mayor difusión que aquellos de orden impar, por ende se prefiere el uso de estos últimos.
+
+La difusión artificial posee algunos aspectos positivos, puede mantener bajo control el ruido numérico que se provoca a pequeñas escalas, sin embargo, si existe mucha difusión numérica toda una simulación realizada a alta resolución puede verse suavizada debido al efecto de esta y podría no rescatarse el comportamiento debido al terreno complejo.
+
+Para ámbitos operativos, se prefiere no utilizar difusión horizontal explícita o realizarla solo en coordenadas reales. La difusión implicita es mas dificil de controlar, pero esta no afecta de gran manera al comportamiento sobre terreno complejo a no ser para grandes magnitudes del viento. 
+\paragraph{Coordenadas} Para solucionar las ecuaciones que gobiernan el comportamiento atmosférico, los modelos NWP utilizan sistemas coordenados no necesariamente Cartesianos. La mayoría de los modelos utiliza sistemas que persiguen la forma del terreno, entre los que se pueden nombrar:
+\begin{itemize*}
+	\item Coordenadas ``sigma'' de presión o coordenadas de altura.
+	\item Coordenadas curvilíneas adaptadas al borde.
+	\item Coordenadas Cartesianas con el método de frontera inmersa.
+\end{itemize*}
+
  
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\linewidth,trim={2.6cm 13.5cm 9.2cm 9cm},clip]{Imagenes/02/coordinates}
 	\caption{Comparación entre las coordenadas usuales sigma (arriba) y el método de frontera inmersa (abajo).}
-	\label{fig:02coordinates}
+	\label{fig:02_coordinates}
 \end{figure}
+La transformación de coordenadas naturales a curvilíneas provoca en las ecuaciones gobernantes la aparición de términos métricos, los cuales son difíciles de manejar en pendientes abruptas, pero permite captar bien la forma del terreno. Por otra parte el uso del método de la frontera inmersa no incluye cambio en las ecuaciones pero en manejo de las celdas que están parcialmente ocupadas por orografía no es una tarea computacional sencilla.
 
-\paragraph{Benchmarking}
+Si bien, para cualquiera de estos dos casos existen problemáticas computacionales que no son fáciles de solucionar, la mas limitante en la actualidad es el manejo de las pendientes abruptas y la exigencia que esto significa en la resolución de malla vertical y la aritmética de grandes diferencias de presión. Por lo tanto, el pronóstico de la comunidad, es a migrar a un sistema coordenado cartesiano utilizando el método de frontera inmersa u otros métodos similares en la cercanía del terreno, como la aproximación de pared delgada (Steppeler et. al., 2002) o el método de unión de celdas (Yamazaki y Satomura 2010,2012).
+
+\paragraph{Benchmarking} La existencia de benchmarks (casos de comparación) es clave para este tipo de simulaciones. Lo que se posee actualmente son casos ideales de colinas gausianas para el estudio de ondas de montañas, casos en donde se poseen soluciones analíticas para comparar. Este tipo de casos se justifica actualmente solo en contextos muy simples y por lo tanto se está llevando a cabo el esfuerzo de generar una mayor cantidad de casos y datos para comparar que tengan relación con el terreno complejo a alta resolución. Lo que se espera en el futuro incluye:
+\begin{itemize*}
+	\item Casos reales donde se posean una gran cantidad de observaciones tridimensionales a alta resolución.
+	\item Integración temporal a largo plazo para casos reales que puedan ser usados para revisiones estadísticas.
+	\item Además del flujo medio, tener información sobre las variables de segundo orden tales como los flujos de momentum y radiación.
+\end{itemize*} 
 \subsubsection{Aspecto 3: Parametrizaciones de Capa Límite}
+\textcolor{red}{falta}
+aca explican la union del promedio ensamble con les.
+
+diferencias entre terreno plano y complejo en el contexto de la capa límite
+
+la forma de las ecuaciones es la misma para LES y para RANS, la diferencia depende de la clausura.
+
+tocar el tema de la terra incognita. les en terreno complejo no está bien investigado.
 
 \subsubsection{Aspecto 4: Inicialización y Datos de Entrada}
+\textcolor{red}{falta}
 
 \section{Uso Operativo de Asimilación de Datos}
+\textcolor{red}{falta}
 
 Como se verá mas adelante en detalle, el proceso de asimilación de datos corresponde a buscar la mejor  estimación del estado de la atmósfera a través de una combinación lineal entre un conjunto de observaciones y el resultado de un modelo. A esta estimación se le llama análisis.
 
