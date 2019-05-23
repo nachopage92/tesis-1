@@ -1,15 +1,31 @@
 \chapter{Metodología de la Investigación}
-En este capítulo se presenta detalladamente la definición de los experimentos numéricos a desarrollar, de modo que puedan ser replicables por cualquier persona o grupo de estudio que desee hacerlo. Específicamente se muestra en este capítulo: 
+En este capítulo se presenta detalladamente la definición de los experimentos numéricos a desarrollar, de modo que puedan ser replicables por cualquier persona o grupo de estudio que desee hacerlo. Específicamente se muestra: 
 \begin{itemize*}
 	\item Obtención, incorporación y aplicación de las bases de datos de alta resolución al modelo WRF.
 	\item Definición de las condiciones de borde del modelo.
 	\item Detalle de la configuración espacial y temporal de los 4 experimentos realizados y la justificación académica de estos presentando la información que existe actualmente en la literatura.
 	\item Configuración del proceso de asimilación de datos utilizado.
-	\item Presentación de las métricas estadísticas a utilizar para la comparación de la mejora.
+	\item Presentación de las métricas estadísticas a utilizar para la medición de la mejora.
 \end{itemize*}
-\section{Filosofía y Alcance de la Investigación}
-
+\section{Aspectos Generales}
+\subsection{Filosofía y Alcance de la Investigación}
+El objetivo final esta investigación es poder obtener una buena predicción del potencial eólico para zonas complejas exigiendo al límite el modelo meteorológico de mesoescala WRF. 
+A continuación se presentan algunos lineamientos generales acerca de la filosofía que se adopta para la metodología con el fin de lograr este objetivo y que tienen gran influencia en la manera en la que se configuraron ciertos aspectos numéricos de los experimentos o se tomaron ciertas decisiones en la programación, por lo tanto se encuentra importante explicitarlos.
+\subsubsection{Lineamiento de Simulaciones Reales}
+Se busca realizar las simulaciones de la manera mas real y operativa posible. O sea, antes de utilizar información idealizada o conveniente con respecto al resultado final, se prefiere utilizar datos medidos en terreno. La mayor influencia de esto recae en tres aspectos:
+\begin{enumerate*}
+	\item Las condiciones de borde laterales del modelo provienen de un modelo global altamente probado (GFS) y a las cuales se le realiza un análisis (asimilación de datos) con  gran cantidad de mediciones ubicadas a lo largo de todo el planeta.
+	\item Las bases de datos para la orografía del suelo no se generan computacionalmente, sino que solo se utilizan aquellas que son el resultados de campañas de medición o información proveniente de satélites.
+	\item De la misma manera de lo anterior, la información para el uso de suelo solo provendrá de satelites, campañas de medición o investigaciones previas que hayan dado datos concluyentes para asignar, por ejemplo, el $u^*$.
+\end{enumerate*}
+Esta filosofía tiene como consecuencia que la calidad de los resultados obtenidos estará directamente relacionada con la calidad de la instrumentación usada para medir los datos de entrada. Esto contrasta con algunas simulaciones presentes en la bibliografía en donde muchas veces se utilizan condiciones de borde periódicas, suposiciones de atmósfera neutra, se fija un cierto perfil de velocidad, etc. En esta investigación se busca ser lo mas correcto con respecto a la tecnología existente y por lo tanto la operatividad del sistema. De la misma forma, se evita el ajuste de parámetros arbitrarios del modelo, siendo $c_k$ (clausura turbulenta) la única constante que se asigna.
+\subsubsection{Lineamiento de Libertad de Información}
+Siguiendo con la misma linea del software WRF, toda la investigación fue realizada utilizando solo código libre e información pública que se puede acceder a través de internet. El posproceso de los datos fue realizado en parte a través del lenguaje de gráficos \emph{NCL} y en parte en \emph{Python}, los scripts desarrollados para la automatización del proceso de asimilación de datos fue hecho en \emph{bash}. La información de las mediciones medidas en terreno para los dos casos a analizar se obtuvieron a través de la página web \url{http://rodeo.dtu.dk/}.
+\subsection{Alcance}
+Con alcance se refiere a que es lo que específicamente se realizó en este trabajo. Para esta tesis, se llevaron a cabo 4 simulaciones atmosféricas multiescala las cuales son separadas en dos casos de dos experimentos cada uno.
+\subsubsection{Caso Høvsore}
 \section{Datos de Entrada al Modelo}
+Las condiciones de borde y de entrada al modelo son las encargadas de definir temporalmente y espacialmente el dominio. Una mala elección de una de ellas puede perjudicar enormemente las soluciones y arruinar toda una simulación, debido a que las ecuaciones a resolver son especialmentes sensible a sus condiciones de borde.
 \subsection{Condiciones de Borde de Suelo}
 La información estática que sirve como condición de borde inferior al modelo debe extraerse de datos satelitales u otros similares con el objetivo que sea uniforme y confiable. Esta información debe ser siempre georeferenciada (protocolo GIS).
 

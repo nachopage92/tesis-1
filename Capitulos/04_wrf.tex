@@ -91,9 +91,9 @@ p = p_0\left(\frac{R_d \theta_m}{p_0 \alpha_d}\right)^\gamma
 \end{equation}
 Donde $R_d$ es la constante de gas ideal para el aire seco y $\gamma = c_p/c_v = 1.4$. Además,
 \begin{equation}
-\theta_m = \theta(1+(R_v/R_d)q_v)\approx\theta(1+1.61q_v)
+\theta_m = \theta(1+(R_v/R_d)q_v)\approx\theta(1+0.61q_v)
 \end{equation}
-Es una temperatura potencial modificada por la humedad.
+Es la temperatura potencial virtual.
 \paragraph{Proyecciones Cartográficas} Para implementar las proyecciones cartográficas, el ARW utiliza factores de mapa $m_x,m_y$. Estos corresponden a la razón entre una distancia en el espacio computacional y la misma distancia en la superficie de la tierra:
 \begin{equation}
 (m_x,m_y) = \frac{(\Delta x, \Delta y)}{\text{distancia en la tierra}}
@@ -220,14 +220,8 @@ Con las siguientes constantes:
 \end{align}
 Queda entonces cerrado el problema de la turbulencia.
 \subsection{Parametrizaciones Físicas}
-Junto con el esquema para la difusión, el modelo ARW presenta otros esquemas disponibles para representar diversas físicas que ocurren dentro de la atmósfera. Estos esquemas generalmente se presentan como \emph{drivers} independientes del código principal y por lo tanto son usados como librerías para actualizar las tendencias de las variables de estado que modelan las ecuaciones de Euler. Las categorías de las físicas parametrizadas son:
-\begin{itemize*}
-	\item Microfísicas
-	\item Capa Ĺímite Planetaria
-	\item Modelo de suelo-superficie
-	\item Parametrización de cúmulos
-	\item Radiación
-\end{itemize*}
+Junto con el esquema para la difusión, el modelo ARW presenta otros esquemas disponibles para representar diversas físicas que ocurren dentro de la atmósfera. Estos esquemas generalmente se presentan como \emph{drivers} independientes del código principal y por lo tanto son usados como librerías para actualizar las tendencias de las variables de estado que modelan las ecuaciones de Euler. Las categorías de las físicas parametrizadas son: (1) Microfísicas, (2) Capa Límite Atmosférica, (3) Modelo de suelo-superficie, (4) Cúmulos y (5) Radiación.
+
 A continuación se explicará brevemente la importancia dentro de la simulación de cada una, sin recurrir a desarrollos matemáticos extensos, debido a que WRF ofrece una gran variedad de opciones para cada una de las físicas.
 \subsubsection{Microfísicas}
 Se encarga de resolver explícitamente el vapor de agua, nubosidad y procesos de precipitación. También incluye procesos de sedimentación y el ajuste a la saturación. La diferencia entre los distintos modelos recae en la cantidad de variables a solucionar y el tipo de variables. Los modelos mas sofisticados pueden modelar 10 variables, incluyendo procesos de formación de hielo y variables con mezcla de fases.
@@ -244,4 +238,53 @@ Se encarga de entregar los flujos verticales de submalla ($K_v$) debido al trans
 \subsubsection{Radiación Atmosférica}
 Se encarga de calcular el calentamiento de la atmósfera debido a la divergencia del flujo radiativo y a la radiación de onda corta y onda larga desde la superficie. La radiación de onda larga incluye la radiación infraroja o térmica absorbida y emitida por los gases y superficies, además del flujo radiativo emitido por la superficie. La radiación de onda corta incluye la radiación emitida por el sol dentro del espectro visible, si bien la única fuente de onda corta es el sol, estos procesos incluyen la absorción, reflexión, y dispersión de las ondas en la atmósfera y superficies.
 \section{Sistema de Asimilación de Datos WRFDA}
-\textcolor{red}{Falta}
+Tal como se explicó en el marco teórico, la función que se busca minimizar es la siguiente:
+\begin{equation}
+J(x) = \frac{1}{2}(\mathbf{x}-\mathbf{x_b})^T\mathbf{B}^{-1}(\mathbf{x}-\mathbf{x_b}) + \frac{1}{2}(\mathbf{y}-H(\mathbf{x}))^T \mathbf{R}^{-1}(\mathbf{y}-H(\mathbf{x}))
+\end{equation}
+WRF efectua esto a través de una formulación incremental del problema. Linealizando, sea $\delta \mathbf{x}=\mathbf{x} - \mathbf{x}_g$ y $\delta \mathbf{x}_g=\mathbf{x}_b - \mathbf{x}_g$ se tiene:
+\begin{equation}
+	J(\delta \mathbf{x}) = \frac{1}{2}(\delta \mathbf{x}- \delta \mathbf{x}_g)^T\mathbf{B}^{-1}(\delta \mathbf{x} - \delta \mathbf{x}_g) + \frac{1}{2}[H(\delta \mathbf{x} + \mathbf{x}_g)-\mathbf{y}]^T \mathbf{R}^{-1}[H(\delta \mathbf{x} + \mathbf{x}_g)-\mathbf{y}]
+\end{equation}
+Luego, se hace una serie de Taylor para el término de las observaciones:
+\begin{equation}
+J(\delta \mathbf{x}) = \frac{1}{2}(\delta \mathbf{x}- \delta \mathbf{x}_g)^T\mathbf{B}^{-1}(\delta \mathbf{x} - \delta \mathbf{x}_g) + \frac{1}{2}(\mathbf{H} \delta \mathbf{x} -\textbf{d})^T \mathbf{R}^{-1}(\mathbf{H}\delta \mathbf{x} -\textbf{d})
+\end{equation}
+Donde $d=y-H(\textbf{x}_g )$ y $\textbf{H}$ es la versión linealizada de $H$ es las cercanías de $\textbf{x}_g$.
+
+En esta formulación $\textbf{x}_g$ es el primer estimador de la solución. Para la primera iteración $\textbf{x}_b=\textbf{x}_g$, pero en las iteraciones siguientes $\textbf{x}_g$ será el análisis del ciclo anterior $\textbf{x}_a$.
+
+Para evitar el cálculo de la inversa de la matriz $\textbf{B}$ (que es grande), se hace el siguiente cambio de variable a la variable de control $\textbf{v}$:
+\begin{equation}
+	\delta \mathbf{x}=\textbf{U}\textbf{v}\quad;\quad \delta \mathbf{x}_g=\textbf{U}\textbf{v}_g 
+\end{equation}
+Donde $\textbf{U}$ es la raiz cuadrada de $\textbf{B}$ (en el sentido matricial), es decir:
+\begin{equation}
+\textbf{B}=\textbf{B}^{1/2}\textbf{B}^{T/2} = \textbf{U}\textbf{U}^{T}
+\end{equation}
+o,
+\begin{equation}
+\textbf{U}=\textbf{B}^{1/2}
+\end{equation}
+De la misma forma,
+\begin{equation}
+\textbf{B}^{-1} = \textbf{U}^{-T}\textbf{U}^{-1}
+\end{equation}
+La función de costo con respecto a la variable de control $\textbf{v}$ se vuelve:
+\begin{equation}
+J(\mathbf{v}) = \frac{1}{2}(\mathbf{v}- \mathbf{v}_g)^T(\mathbf{v} - \mathbf{v}_g) + \frac{1}{2}(\mathbf{H} \mathbf{U}\mathbf{v} -\textbf{d})^T \mathbf{R}^{-1}(\mathbf{H}\mathbf{U}\mathbf{v} -\textbf{d})
+\end{equation}
+\subsection{Modelación de $\textbf{B}$}
+Tal como se habló en el capítulo del marco teórico, la matriz de covarianzas del error del \emph{background} $\textbf{B}$ es la encargada de (a) ponderar correctamente el valor del \emph{background} al análisis, y (b) esparcir la información espacialmente y a través de todas las variables. WRF posee su propio mecanismo de generación de la matriz $\textbf{B}$ utilizando el llamado método NMC \cite{https://doi.org/10.5065/d68s4mvh}.
+
+Algunas propiedades relevantes de la matriz son:
+\begin{itemize*}
+	\item $\textbf{B}$ es cuadrada y simétrica.
+	\item $\textbf{B}$ es una matriz semidefinida positiva, sus valores propios son positivos. 
+\end{itemize*}
+
+El en WRF esta matriz se forma a través de tres transformaciones secuenciales de la forma:
+\be 
+\textbf{B}=\textbf{U}_p \textbf{U}_v \textbf{U}_h \textbf{U}_p^T \textbf{U}_v^T \textbf{U}_h^T 
+\ee
+Donde $\textbf{U}_h$ es la transformación horizontal a través de filtros recursivos para modelar la correlación horizontal de las variables de control, $\textbf{U}_v$ es la transformación vertical a través de una descomposición en funciones ortogonales de la varianza vertical y $\textbf{U}_p$ es la transformación de balance/física a través de regresiones lineales con la función de corriente.

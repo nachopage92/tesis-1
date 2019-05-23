@@ -1,7 +1,7 @@
 \chapter{Estado del Arte}
 Tomando en consideración lo amplio, en el sentido de las disciplinas a abarcar, de este trabajo de tesis, el resumen del estado del arte para este se llevará a cabo en cuatro secciones distintas. 
 
-Primero se expondrá la problemática que nace debido a la turbulencia en las simulaciones multiescala. Luego se revisará la historia y la creciente utilización de la técnica de Simulación de Grandes Vórtices (de aquí en adelante \emph{Large Eddy Simulation} o LES) en la solución numérica de los modelos meteorológicos. Tercero, se verán las complicaciones y los desafíos que conlleva el realizar simulaciones de alta resolución en terreno complejo y los consensos internacionales tomados al respecto. Finalmente se mostrará el estado actual de la utilización de los métodos de asimilación de datos para el uso operacional en el contexto de las simulaciones atmosféricas.
+Primero se expondrá la problemática que nace debido a la turbulencia en las simulaciones multiescala. Luego se revisará la historia y la creciente utilización de la técnica de Simulación de Grandes Vórtices (de aquí en adelante \emph{Large Eddy Simulation} o LES) en la solución numérica de los modelos meteorológicos. Tercero, se verán las complicaciones y los desafíos que conlleva el realizar simulaciones de alta resolución en terreno complejo y los consensos internacionales tomados al respecto. Finalmente se mostrará el estado actual de la utilización de los métodos de asimilación de datos para el uso operacional en el contexto de las simulaciones atmosféricas y en la capa límite.
 \section{Simulación Multiescala y Zona Gris}
 Como ya se justificó en la introducción, la predicción atmosférica en zonas localizadas, en especial en aquellas con terreno irregular, es un tema de especial relevancia en las áreas del cambio climático, la contaminación ambiental y la industria energética. Actualmente las simulaciones climáticas regionales se realizan con una resolución de malla del orden de los kilómetros. Esto es, evidentemente, insuficiente para poder representar fehacientemente cualquier topografía compleja, y por lo tanto, insuficiente también para resolver los fenómenos meteorológicos asociados a esta.
 
@@ -78,12 +78,12 @@ Como motivación, se comienza esta sección haciendo una pequeña derivación de
 \subsection{Importancia de la Estimación del Viento}
 Para tener un acercamiento a la importancia de la correcta estimación del viento, consideremos la energía cinética del viento. Para un área arbitraria de magnitud $A$ en un tiempo $t$ se tiene:
 \begin{equation} 
-E = \frac{1}{2}mV^2 = \frac{1}{2}(AVt\rho)V^2 = \frac{1}{2}At\rho V^3
+E_k = \frac{1}{2}mV^2 = \frac{1}{2}(AVt\rho)V^2 = \frac{1}{2}At\rho V^3
 \end{equation}
 
 Donde $\rho$ es la densidad del aire y $V$ es la rapidez del viento. $AVt$ es entonces el volumen de aire pasando por el área $A$ que se define como normal a la dirección de la velocidad del viento $V$. La potencia del viento (energía por unidad de tiempo) para el caso de una turbina eólica queda definida entonces como:
 \begin{equation}
-P = \frac{E}{t} = \frac{1}{2}A\rho V^3
+P = \frac{E_k}{t} = \frac{1}{2}A\rho V^3
 \end{equation}
 
 Donde $A$ pasa a ser ahora el área del rotor de la turbina. La potencia del viento, es entonces, proporcional al cubo de la velocidad del viento.
@@ -105,7 +105,7 @@ Anteriormente ya se había hablado de la relación que existe entre la complejid
 
 Como consecuencia, es de especial interés analizar las problemáticas que induce el terreno complejo y definir las maneras de como abordarlas.
 \subsection{Problemáticas de la Simulación de Alta Resolución}
-El año 2012 se llevo a cabo en Viena, el primer \emph{HiRCoT Workshop}, instancia que reunió a académicos y personas de la industria a debatir activamente sobre las problemáticas y avances existentes con respecto a la modelación atmosférica a alta resolución.
+El año 2012 se llevo a cabo en Viena, el primer \emph{HiRCoT Workshop}, instancia que reunió a académicos y personas de la industria a debatir activamente sobre las problemáticas y avances existentes con respecto a la modelación atmosférica a alta resolución \cite{Arnold2010}.
 
 El concepto de alta resolución, se debe entender en el sentido de una resolución que está por sobre aquella definida por los desarrolladores para utilizar los modelos. A priori se podría decir que un modelo atmosférico con una resolución de malla menor a 1 [km] entra en esta categoría.
 
@@ -178,18 +178,65 @@ Si bien, para cualquiera de estos dos casos existen problemáticas computacional
 	\item Además del flujo medio, tener información sobre las variables de segundo orden tales como los flujos de momentum y radiación.
 \end{itemize*} 
 \subsubsection{Aspecto 3: Parametrizaciones de Capa Límite}
-\textcolor{red}{falta}
-aca explican la union del promedio ensamble con les.
+Los fenómenos asociados a la capa límite y a la mezcla a nivel de superficie son generalmente parametrizados en base al conocimiento de la turbulencia homogénea en terreno plano (por ejemplo, la teoría de similaridad) y bajo condiciones óptimas (estratificación cuasi-estable). Estas condiciones no son las que se encuentran en terreno complejo. Las parametrizaciones clásicas de capa límite funcionan bien hasta mallas del orden de los kilómetros, bajo este rango su aplicación se torna cuestionable.
 
-diferencias entre terreno plano y complejo en el contexto de la capa límite
+Con respecto a la alta resolución de la malla, los modelos numéricos actuales utilizan dos acercamientos para resolver la turbulencia:
+\begin{enumerate*}
+	\item[a.] \emph{Promedio de Ensamble}: Las ecuaciones de Navier-Stokes son descompuestas en una componente media y una componente fluctuante (descomposición de Reynolds). La turbulencia queda completamente parametrizada en función de las variables del flujo medio (en la llamada parametrización de capa límite). Por definición, todas las variables del modelo son valores promedios.
+	\item[b.] \emph{Simulación de Grandes Vórtices}: Mas conocido por sus siglas en ingles LES (\emph{Large Eddy Simulation}). En esta, las ecuaciones de Navier-Stokes son filtradas con un largo del filtro ubicado dentro del rango inercial del espectro turbulento. De esta manera, el modelo resuelve solamente los grandes vórtices y solo la turbulencia de pequeña escala, considerada isotrópica, es parametrizada. Las variables de salida de un modelo LES son, en principio, instantáneas, pertenecientes a una realización específica de un proceso aleatorio.
+\end{enumerate*} 
 
-la forma de las ecuaciones es la misma para LES y para RANS, la diferencia depende de la clausura.
+Convenientemente, las ecuaciones pronósticas del flujo medio atmosférico para estos dos acercamientos son, idénticos. La diferencia radica en el detalle en como se obtiene la clausura del término turbulento.
 
-tocar el tema de la terra incognita. les en terreno complejo no está bien investigado.
+Uno de los problemas relevantes, es que la parametrización usual para el promedio de Reynolds es unidimensional, en el sentido que solamente considera los flujos turbulentos verticales, calculados en función de las condiciones de una sola columna en la malla; mientras que para terreno complejo, las estructuras turbulentas son completamente tridimensionales. A medida que la malla se va volviendo mas pequeña, los flujos turbulentos horizontales y la advección de energía cinética turbulenta (en adelante TKE) se va volviendo mas importante y además se vuelve cuestionable el conocimiento de las estructuras turbulentas que son efectivamente parametrizadas y las que son efectivamente resueltas. 
+
+En los dominios del LES (mallas bajo el kiómetro), los flujos turbulentos relacionados a los grandes vórtices y la producción de TKE comienzan a ser explícitamente resueltos. En esta zona, el LES ha sido raramente probado en terreno complejo y además aún presenta varios problemas abiertos. Considerando el acercamiento usual de utilizar dominios anidados para obtener condiciones de borde realistas, un dominio pequeño LES debe estar anidado a otro mas grande sin LES. La unificación de estos dos dominios no es una tarea sencilla ya que presenta una serie de problemas, entre ellos: (a) el ruido generado en los bordes del dominio anidado, (b) el \emph{spin-up} necesario para que el dominio LES represente adecuadametne la turbulencia, y (c) el tamaño de los dominios de tal forma que los efectos de borde queden fuera de la región de interés.
+
+Junto con esto, se debe tener en cuenta también que, el conocimiento actual sobre la turbulencia en terreno complejo (i.e. las características que el modelo numérico debiese reproducir) es bien limitado y por lo tanto todos los desarrollos en aspectos numéricos deben ir de la mano con esfuerzos experimentales para obtener mejores observaciones.
+
+Todo lo antes expuesto demuestra que, la utilización de LES en terreno complejo es un tema popular y de interés para la comunidad de modelación atmosférica.
+
+Con respecto a la interacción entre las parametrizaciones de capa límite y los procesos de superficie, se han identificado las siguientes problemáticas:
+\begin{enumerate*}
+	\item[a.] Radiación: Es necesario modificar los modelos para considerar los efectos de las pendientes y de las sombras en topología compleja, en especial para las simulaciones a alta resolución. Si bien, la implementación de estos algoritmos son simples, la utilización en sistemas en paralelo se complica debido a que se necesita el cálculo de efectos de sombra no locales que en mallas muy finas pueden significar una gran cantidad de puntos.
+	\item[b.] Validez de la teoría de Monin-Obukhov: La teoría de similaridad se genera en base a información en terreno plano y homogéneo, y, a priori, no se conoce hasta que punto puede ser aplicada a terreno complejo. Se discuten dos problemáticas de esto: (i) la suposición de homogeneidad horizontal (la cual, para simulación a muy alta resolución no debiese ser el problema dominante) y (ii) el intercambio de momemtum: la mayoría de los modelos parametrizan el intercambio de momemtum solamente en función del esfuerzo de corte. De manera general, un buen modelo de superficie debiese tomar en consideración la tridimensionalidad y la heterogeneidad espacial de la turbulencia en terreno complejo.
+	\item[c.] Albedo, Nieve, Humedad del Suelo: Estos parámetros son muy importantes para flujos inducidos térmicamente, energía y balance de agua. Los modelos de suelo generalmente son unidimensionales, pero en terrenos montañosos es necesario  que sean bi o tridimensionales. También, debe ser necesario un acoplamiento entre el modelo atmosférico  y modelos hidrográficos o de nieve para tener resultados correctos. 
+	\item[d.] Desviación de Viento Superficial: Los modelos generan magnitudes para el viento en la superficie demasiado elevadas para terreno plano y valles, debido a que la topografía de submalla no resuelta causan esfuerzos superficiales que no son representados. Varios modelos solucionan esto agregando un término de esfuerzo o aumentando el largo de rugosidad, dependiendo de la varianza de la elevación de submalla. El primero de estos métodos es recomendado debido a que cambiar la longitud de rugosidad tiene efectos colaterales en los flujos de calor y humedad.
+	\item[e.] Arrastre por Ondas de Gravedad: En terrenos montañosos, el arrastre por ondas de gravedad, representan una componente importante del flujo de momemtum de submalla para las corrientes jet. En los modelos, para que esto se considere, deben ser tomados en cuenta los efectos direccionales de submalla.
+\end{enumerate*}
+
+Finalmente, los esfuerzos para los futuros avances en las parametrizaciones de capa límite, que serán aquellos que se utilizarán en los modelos de la próxima generación, iran enfocados en las siguientes lineas:
+\begin{enumerate*}
+	\item[a.] Modificaciones a los Esquemas Existentes: Básicamente incorporar variables que hasta ahora no han sido consideradas, como por ejemplo la velocidad vertical para los modelos de microfísicas y considerar una dependencia explícita de la altura, entre otros.
+	\item[b.] Esquemas Nuevos: Aún se necesita el desarrollo de esquemas nuevos, por ejemplo: parametrizaciones de submalla para efectos de microescala en circulaciones locales, turbulencia y pulsaciones en rotores y tormentas cuesta abajo.
+	\item[c.] Efecto de la Orografía de Submalla: Para reducir las desviaciones de los perfiles de viento.
+	\item[d.] Parametrizaciones de Submalla para Modelos de Escala Gruesa.
+\end{enumerate*}
 
 \subsubsection{Aspecto 4: Inicialización y Datos de Entrada}
-\textcolor{red}{falta}
+Todos los modelos atmosféricos requieren condiciones iniciales superficiales y atmosféricas, además de condiciones de borde laterales e información estática para los dominios de simulación. Las condiciones iniciales y de borde generalmente vienen dadas por un modelo global. La información estática caracteriza las propiedades y el estado de la superficie, como es: la topografía, el albedo, la categoría de uso de suelo, la fracción de vegetación y la textura del suelo.
 
+La información estática nativa de los modelos estándar tiene a lo más una resolución de 1 [km], por ende, para lograr una correcta simulación a alta resolución y en terreno complejo, es necesario alimentar al modelo con bases de datos de alta resolución.
+
+Para las bases de datos orográficas, debido al peso de las bases de datos, los modelos vienen por defecto con información de a lo más 1 [km] de resolución, como lo es por ejemplo el GTOPO30 USGS (información a 30'' de resolución). Para alcanzar la alta resolución se deben incorporar nuevas bases de datos. Existe información disponible desde la \emph{Shuttle Radar Topography Mission} (SRTM) con 3'' (100 [m]) de resolución y tambien de ASTER (\emph{Advanced Spaceborne Thermal Emission and Reflection Radiometer}) con 1'' (30[m]) de resolución. El problema en ambos es el terreno complejo donde algunas veces hay errores (sombras, cálculo de topografía). Algunas veces, existe información nacional obtenida con escáner laser, pero generalmente no están abiertas libremente. Finalmente, la incorporación de las bases de datos de alta resolución a los modelos atmosféricos no es directa ni sencilla y la instalación de estas puede generar nuevos problemas.
+
+Con respecto a la información de la superficie del suelo, las bases de datos usuales, por ejemplo la data de USGS (1 [km]), es de los 90s y por lo tanto está desactualizada al no considerar el cambio en la vegetación y la deforestación. Nuevas bases de información, por ejemplo MODIS o CORINE (3'') usan 20 clases para clasificar el suelo, la cual es un límite bajo para caracterizar el terreno, además estas son locales y no globales. La información de la superficie del suelo se utiliza para calcular, entre otros, el albedo, el largo de rugosidad y la vegetación en cada punto de malla. Esta información se puede obtener también de estudios regionales o modelos agro-meteorológicos, sin embargos estos no se adecuan a algún estándar en específico y su incorporación es tediosa.
+ 
+Para las condiciones iniciales del modelo, tener información adecuada es una precondición para generar simulaciones mesoescala de alta calidad. Generalmente, estas condiciones las provee un modelo operativo global (sinóptico) el cual, por definición, no posee condiciones de borde. Luego, la información de ese modelo debe ser escalada a la malla del modelo mesoescala. Además, dentro de la misma simulación de mesoescala, los campos de los dominios exteriores deben ser escalados en los bordes de los dominios interiores (\emph{nesting}). El escalamiento (o interpolación) se requiere tanto espacial como temporalmente. Los modelos globales utilizan pasos de tiempo típicos de 15 [min], sin embargo el estándar es entregar los resultados en intervalos horarios, por ejemplo 3 [h]. Los modelos mesoescala utilizan pasos de tiempo del orden de los 5 [min] y mucho menor para simulaciones de alta resolución. Las condiciones de borde laterales son creadas entonces por interpolación de los outputs del modelo global (cada 3 horas) a cada 5 minutos generando una serie de tiempo. Debido a la naturaleza de las condiciones, es claro que estas no contienen información física relevante en escalas de tiempo menor a las 3 horas, por lo tanto se deben aplicar un par de medidas cuando se trabaja para dominios donde son relevantes las pequeñas escalas: (i) utilizar una zona de buffer de manera que que los bordes laterales estén lejos de la zona de interés meteorológico y (ii) evitar grandes forzamientos orográficos en los bordes, por lo tanto se deben posicionar los bordes de los dominios en zonas alejadas de terreno complejo. 
+
+A continuación  se listan algunas fuentes de información libres que proveen bases de datos como las descritas anteriormente:
+\begin{itemize*}
+	\item ASTER GDEM
+	\item STRM data
+	\item GlobCover 2009
+	\item GlobCarbon 2007
+	\item MODIS
+	\item FAO
+	\item HWSD 2009
+	\item ESDB
+	\item ECOCLIMAP-2
+	\item LSA SAF
+\end{itemize*}
 \section{Uso Operativo de Asimilación de Datos}
 \textcolor{red}{falta}
 
