@@ -1,4 +1,4 @@
-\begin{thebibliography}{45}
+\begin{thebibliography}{59}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -33,12 +33,20 @@ Delia Arnold, D~Morton, I~Schicker, P~Seibert, MW~Rotach, K~Horvath, J~Dudhia,
 \newblock Institut f{\"u}r Meteorologie, Department
   Wasser-Atmosph{\"a}re-Umwelt, Univ. f. Bodenkultur, 2012.
 
-\bibitem[{Barker et~al.(2004)Barker, Huang, Guo, Bourgeois, y
+\bibitem[{Barker et~al.(2004{\natexlab{a}})Barker, Huang, Guo, Bourgeois, y
   Xiao}]{Barker2004}
 D.~M. Barker, W.~Huang, Y-R. Guo, A.~J. Bourgeois, y Q.~N. Xiao.
 \newblock A three-dimensional variational data assimilation system for {MM}5:
   Implementation and initial results.
-\newblock \emph{Monthly Weather Review}, 132(4):897--914, 2004.
+\newblock \emph{Monthly Weather Review}, 132(4):897--914, 2004{\natexlab{a}}.
+
+\bibitem[{Barker et~al.(2004{\natexlab{b}})Barker, Huang, Guo, Bourgeois, y
+  Xiao}]{doi:10.1175/1520-0493(2004)132<0897:ATVDAS>2.0.CO;2}
+D.~M. Barker, W.~Huang, Y-R. Guo, A.~J. Bourgeois, y Q.~N. Xiao.
+\newblock A three-dimensional variational data assimilation system for mm5:
+  Implementation and initial results.
+\newblock \emph{Monthly Weather Review}, 132(4):897--914, 2004{\natexlab{b}}.
+\newblock \doi{10.1175/1520-0493(2004)132<0897:ATVDAS>2.0.CO;2}.
 
 \bibitem[{Barker et~al.(2003)Barker, Huang, Guo, y
   Bourgeois}]{https://doi.org/10.5065/d6cf9n1j}
@@ -65,6 +73,12 @@ A.~Bechmann, N.~N. S{\o}rensen, J.~Berg, J.~Mann, y P.-E. R{\'{e}}thor{\'{e}}.
 \newblock The bolund experiment, part {II}: Blind comparison of microscale flow
   models.
 \newblock \emph{Boundary-Layer Meteorology}, 141(2):245--271, 2011.
+
+\bibitem[{Bechmann y Sørensen()}]{doi:10.1002/we.414}
+A.~Bechmann y N.~N. Sørensen.
+\newblock Hybrid rans/les applied to complex terrain.
+\newblock \emph{Wind Energy}, 14(2):225--237.
+\newblock \doi{10.1002/we.414}.
 
 \bibitem[{Bechmann et~al.(2009)Bechmann, Berg, Courtney, {Ejsing Jørgensen},
   Mann, y Sørensen}]{3d4285ac04444eb3b9775baf9af052c6}
@@ -102,6 +116,21 @@ Daniele Carati, Gr{\'{e}}goire~S. Winckelmans, y Herv{\'{e}} Jeanmart.
   tensors in large-eddy simulation.
 \newblock \emph{Journal of Fluid Mechanics}, 441, 2001.
 
+\bibitem[{Cheng et~al.(2017)Cheng, Liu, Bourgeois, Wu, y
+  Haupt}]{cheng2017short}
+William~YY Cheng, Yubao Liu, Alfred~J Bourgeois, Yonghui Wu, y Sue~Ellen Haupt.
+\newblock Short-term wind forecast of a data assimilation/weather forecasting
+  system with wind turbine anemometer measurement assimilation.
+\newblock \emph{Renewable energy}, 107:340--351, 2017.
+
+\bibitem[{Chow y Street(2009)}]{doi:10.1175/2008JAMC1862.1}
+Fotini~Katopodes Chow y Robert~L. Street.
+\newblock Evaluation of turbulence closure models for large-eddy simulation
+  over complex terrain: Flow over askervein hill.
+\newblock \emph{Journal of Applied Meteorology and Climatology},
+  48(5):1050--1065, 2009.
+\newblock \doi{10.1175/2008JAMC1862.1}.
+
 \bibitem[{Davidson(2013)}]{davidson2013turbulence}
 P.A. Davidson.
 \newblock \emph{Turbulence in Rotating, Stratified and Electrically Conducting
@@ -115,6 +144,14 @@ P.~Doubrawa, A.~Montorn\`es, R.~J. Barthelmie, S.~C. Pryor, y P.~Casso.
 \newblock Analysis of different gray zone treatments in wrf-les real case
   simulations.
 \newblock \emph{Wind Energy Science Discussions}, 2018:1--23, 2018.
+
+\bibitem[{Dumais et~al.(2013)Dumais, Kirby, y
+  Flanigan}]{dumais2013implementation}
+Robert Dumais, Steve Kirby, y Robert Flanigan.
+\newblock Implementation of the wrf four-dimensional data assimilation method
+  of observation nudging for use as an arl weather running estimate-nowcast.
+\newblock Inf.\ t\'ec., ARMY RESEARCH LAB WHITE SANDS MISSILE RANGE NM
+  COMPUTATIONAL AND INFORMATION~…, 2013.
 
 \bibitem[{Enriquez y Street(2017)}]{subgrid_report}
 Rica~Mae Enriquez y Robert~L. Street.
@@ -139,6 +176,12 @@ Jesper Gr{\o}nnegaard~Pedersen, Mark Kelly, Sven-Erik Gryning, y Burghard
   atmospheric boundary layer.
 \newblock \emph{Meteorologische Zeitschrift}, 22(6):661--674, 2013.
 
+\bibitem[{Hacker et~al.(2018)Hacker, Draper, y Madaus}]{hacker2018challenges}
+Joshua Hacker, Clara Draper, y Luke Madaus.
+\newblock Challenges and opportunities for data assimilation in mountainous
+  environments.
+\newblock \emph{Atmosphere}, 9(4):127, 2018.
+
 \bibitem[{Holton(1992)}]{holton1992introduction}
 J.R. Holton.
 \newblock \emph{An Introduction to Dynamic Meteorology}.
@@ -150,7 +193,6 @@ M.Z. Jacobson.
 \newblock \emph{Fundamentals of Atmospheric Modeling}.
 \newblock Cambridge University Press, 2005.
 \newblock ISBN 9780521548656.
-\newblock \urlprefix\url{https://books.google.cl/books?id=96wWzoyKRMoC}.
 
 \bibitem[{Jim{\'{e}}nez-Esteve et~al.(2018)Jim{\'{e}}nez-Esteve, Udina, Soler,
   Pepin, y Mir{\'{o}}}]{JimnezEsteve2018}
@@ -172,17 +214,54 @@ P.K. Kundu, I.M. Cohen, y H.~Hu.
 \newblock Elsevier Science, 2001.
 \newblock ISBN 9780080545585.
 
-\bibitem[{Mathieu y Scott(2000)}]{9780521775380}
+\bibitem[{Liu et~al.(2008{\natexlab{a}})Liu, Warner, Astling, Bowers, Davis,
+  Halvorson, Rife, Sheu, Swerdlin, y Xu}]{doi:10.1175/2007JAMC1654.1}
+Yubao Liu, Thomas~T. Warner, Elford~G. Astling, James~F. Bowers, Christopher~A.
+  Davis, Scott~F. Halvorson, Daran~L. Rife, Rong-Shyang Sheu, Scott~P.
+  Swerdlin, y Mei Xu.
+\newblock The operational mesogamma-scale analysis and forecast system of the
+  u.s. army test and evaluation command. part ii: Interrange comparison of the
+  accuracy of model analyses and forecasts.
+\newblock \emph{Journal of Applied Meteorology and Climatology},
+  47(4):1093--1104, 2008{\natexlab{a}}.
+\newblock \doi{10.1175/2007JAMC1654.1}.
+
+\bibitem[{Liu et~al.(2008{\natexlab{b}})Liu, Warner, Bowers, Carson, Chen,
+  Clough, Davis, Egeland, Halvorson, Huck, Lachapelle, Malone, Rife, Sheu,
+  Swerdlin, y Weingarten}]{doi:10.1175/2007JAMC1653.1}
+Yubao Liu, Thomas~T. Warner, James~F. Bowers, Laurie~P. Carson, Fei Chen,
+  Charles~A. Clough, Christopher~A. Davis, Craig~H. Egeland, Scott~F.
+  Halvorson, Terrence~W. Huck, Leo Lachapelle, Robert~E. Malone, Daran~L. Rife,
+  Rong-Shyang Sheu, Scott~P. Swerdlin, y Dean~S. Weingarten.
+\newblock The operational mesogamma-scale analysis and forecast system of the
+  u.s. army test and evaluation command. part i: Overview of the modeling
+  system, the forecast products, and how the products are used.
+\newblock \emph{Journal of Applied Meteorology and Climatology},
+  47(4):1077--1092, 2008{\natexlab{b}}.
+\newblock \doi{10.1175/2007JAMC1653.1}.
+
+\bibitem[{Mathieu y Scott(2000{\natexlab{a}})}]{9780521775380}
 Jean Mathieu y Julian Scott.
 \newblock \emph{An Introduction to Turbulent Flow}.
-\newblock Cambridge University Press, 2000.
+\newblock Cambridge University Press, 2000{\natexlab{a}}.
 \newblock ISBN 0521775388.
+
+\bibitem[{Mathieu y Scott(2000{\natexlab{b}})}]{mathieu2000introduction}
+Jean Mathieu y Julian Scott.
+\newblock \emph{An introduction to turbulent flow}.
+\newblock Cambridge University Press, 2000{\natexlab{b}}.
 
 \bibitem[{Meij y Vinuesa(2014)}]{DeMeij2014}
 A.~De Meij y J.F. Vinuesa.
 \newblock Impact of {SRTM} and corine land cover data on meteorological
   parameters using {WRF}.
 \newblock \emph{Atmospheric Research}, 143:351--370, 2014.
+
+\bibitem[{Meneveau(2019)}]{doi:10.1080/14685248.2019.1584664}
+Charles Meneveau.
+\newblock Big wind power: seven questions for turbulence research.
+\newblock \emph{Journal of Turbulence}, 20(1):2--20, 2019.
+\newblock \doi{10.1080/14685248.2019.1584664}.
 
 \bibitem[{Mirocha et~al.(2010)Mirocha, Lundquist, y
   Kosovi{\'{c}}}]{Mirocha2010}
@@ -244,6 +323,11 @@ Fernando Porte-Agél, Charles Meneveau, y Marc~B. Parlange.
   application to a neutral atmospheric boundary layer.
 \newblock \emph{Journal of Fluid Mechanics}, 415:261–284, 2000.
 
+\bibitem[{Reen y Stauffer(2010)}]{reen2010data}
+Brian~P Reen y David~R Stauffer.
+\newblock Data assimilation strategies in the planetary boundary layer.
+\newblock \emph{Boundary-layer meteorology}, 137(2):237--269, 2010.
+
 \bibitem[{Rodrigo et~al.(2017)Rodrigo, Allaerts, Avila, Barcons, Cavar, Arroyo,
   Churchfield, Kosovic, Lundquist, Meyers, Esparza, Palma, Tomaszewski,
   Troldborg, van~der Laan, y Rodrigues}]{Rodrigo2017}
@@ -275,6 +359,15 @@ J.~Smagorinsky.
 \newblock General circulation experiments with the primitive equations.
 \newblock \emph{Monthly Weather Review}, 91(3):99--164, 1963.
 
+\bibitem[{Stauffer et~al.(1991)Stauffer, Seaman, y
+  Binkowski}]{doi:10.1175/1520-0493(1991)119<0734:UOFDDA>2.0.CO;2}
+David~R. Stauffer, Nelson~L. Seaman, y Francis~S. Binkowski.
+\newblock Use of four-dimensional data assimilation in a limited-area mesoscale
+  model part ii: Effects of data assimilation within the planetary boundary
+  layer.
+\newblock \emph{Monthly Weather Review}, 119(3):734--754, 1991.
+\newblock \doi{10.1175/1520-0493(1991)119<0734:UOFDDA>2.0.CO;2}.
+
 \bibitem[{Stevens et~al.(2014)Stevens, Wilczek, y Meneveau}]{Stevens2014}
 Richard~J.~A.~M. Stevens, Michael Wilczek, y Charles Meneveau.
 \newblock Large-eddy simulation study of the logarithmic law for second- and
@@ -300,11 +393,24 @@ Alex~Montornès Torrecillas, Pau Casso, Gil Lizcano, y Branko Kosovic.
   industry applications.
 \newblock 2016.
 
+\bibitem[{Tran et~al.(2018)Tran, Tran, Mansfield, Lyman, y
+  Crosman}]{tran2018four}
+Trang Tran, Huy Tran, Marc Mansfield, Seth Lyman, y Erik Crosman.
+\newblock Four dimensional data assimilation (fdda) impacts on wrf performance
+  in simulating inversion layer structure and distributions of cmaq-simulated
+  winter ozone concentrations in uintah basin.
+\newblock \emph{Atmospheric environment}, 177:75--92, 2018.
+
 \bibitem[{Warner(2010)}]{warner2010numerical}
 T.T. Warner.
 \newblock \emph{Numerical Weather and Climate Prediction}.
 \newblock Cambridge University Press, 2010.
 \newblock ISBN 9781139494311.
+
+\bibitem[{Wilks(2011)}]{wilks2011statistical}
+Daniel~S Wilks.
+\newblock \emph{Statistical methods in the atmospheric sciences}, tomo 100.
+\newblock Academic press, 2011.
 
 \bibitem[{{WRF Community}(2000)}]{https://doi.org/10.5065/d6mk6b4k}
 {WRF Community}.

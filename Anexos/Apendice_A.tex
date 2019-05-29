@@ -1,6 +1,6 @@
 \graphicspath{{./Imagenes/an1/}}
 \chapter{Cálculo de Resultados para Bolund y Comparación Ciega}
-A modo de tener resultados comparables para el ejercicio de comparación ciega organizado por los desarrolladores del experimento de Bolund, se introducen ciertas métricas para la velocidad y para la energía cinética turbulenta.
+A modo de tener resultados comparables para el ejercicio de comparación ciega organizado por los desarrolladores del experimento de Bolund, se introducen ciertas métricas para la velocidad y para la energía cinética turbulenta \cite{Bechmann2011}.
 
 Para el caso de la velocidad, se adimensionaliza esta de la siguiente forma:
 \begin{equation*}
@@ -22,14 +22,14 @@ De manera referencial, los desarrolladores presentan los siguientes resultados p
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.85\linewidth,trim={2.7cm 14.3cm 2.0cm 2cm},clip]{bolund1.pdf}%
-	\caption{Perfil del viento en el punto referencial M0. En línea negra está el perfil entregado por los desarrolladores (para utilizar como condición de borde) y el resto corresponde a distintos modelos. La línea sólida roja corresponde a simulaciones LES.}
+	\caption{Perfil del viento no perturbado en el punto referencial M0 (ver Figura \ref{fig:05_terreno_bolund}). En línea negra está el perfil entregado por los desarrolladores (para utilizar como condición de borde) y el resto corresponde a distintos modelos. La línea sólida roja corresponde a simulaciones LES.}
 	\label{fig:an1_m0}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\linewidth,trim={1.7cm 12.3cm 0.9cm 2cm},clip]{bolund2.pdf}%
-	\caption{Ubicación espacial de los puntos de control en el dominio. En cada punto de control se ubican anemómetros que miden a las alturas de 2m, 5m, y 9m.}
+	\caption{Speedup medido y simulado a través de la sección transversal a $240^\circ$. Arriba: valores para $z=5$ [m]. Abajo: valores para $z=2$ [m].}
 	\label{fig:an1_speedup}
 \end{figure}
 
@@ -38,7 +38,7 @@ De manera referencial, los desarrolladores presentan los siguientes resultados p
 	\includegraphics[width=1.0\linewidth,trim={2.7cm 14.4cm 1.9cm 2cm},clip]{bolund3.pdf}%
 	
 	\includegraphics[width=1.0\linewidth,trim={2.7cm 6.0cm 1.9cm 10.3cm},clip]{bolund3.pdf}%
-	\caption{Ubicación espacial de los puntos de control en el dominio. En cada punto de control se ubican anemómetros que miden a las alturas de 2m, 5m, y 9m.}
+	\caption{Perfil de speedup medido y simulado en los distintos mástiles M1-M4.}
 	\label{fig:an1_speed_masts}
 \end{figure}
 
@@ -46,7 +46,7 @@ De manera referencial, los desarrolladores presentan los siguientes resultados p
 	\centering
 	\includegraphics[width=1\linewidth,trim={1.7cm 12.3cm 0.8cm 2cm},clip]{bolund4.pdf}%
 	
-	\caption{Ubicación espacial de los puntos de control en el dominio. En cada punto de control se ubican anemómetros que miden a las alturas de 2m, 5m, y 9m.}
+	\caption{$\Delta k$ medido y simulado a través de la sección transversal a $240^\circ$. Arriba: valores para $z=5$ [m]. Abajo: valores para $z=2$ [m].}
 	\label{fig:an1_delta_tke}
 \end{figure}
 
@@ -55,6 +55,6 @@ De manera referencial, los desarrolladores presentan los siguientes resultados p
 	\includegraphics[width=1\linewidth,trim={2.7cm 3.8cm 1.9cm 12.5cm},clip]{bolund4.pdf}%
 	
 	\includegraphics[width=1\linewidth,trim={2.7cm 14.3cm 1.9cm 2cm},clip]{bolund5.pdf}%
-	\caption{Ubicación espacial de los puntos de control en el dominio. En cada punto de control se ubican anemómetros que miden a las alturas de 2m, 5m, y 9m.}
+	\caption{Perfil de $\Delta k$ medido y simulado en los distintos mástiles M1-M4.}
 	\label{fig:an1_delta_tke_mast}
 \end{figure}

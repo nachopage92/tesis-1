@@ -21,20 +21,22 @@ Las simulaciones se llevaron a cabo en servidores configurados especialmente par
 Para cada servidor se registraron los tiempos de pared a través de un bot de \emph{Telegram} el cual registraba de manera automática e inmediata la fecha y hora a la cual cada simulación comenzaba o terminaba. Los registros de estos tiempos se pueden ver en la Tabla \ref{tab:an3_tiempos}.
 
 \begin{table}[H]
-	\caption{Específicaciones técnicas de los recursos computacionales utilizados.}\label{tab:an3_tiempos}
+	\caption{Tiempos de cálculo para cada experimento.}\label{tab:an3_tiempos}
 	\centering\resizebox{\textwidth}{!}{
 	\begin{tabular}{lccccc}
 		\toprule
 		Caso 				& Fecha Inicio	&	Fecha Término & $T_w$ [h] &	$\Delta t$ [h] & Incremento	\\
 		\midrule
 		Høvsøre s/DA		& 25/02/2019 17:30 & 04/03/2019 01:28 & 151,97 & -- & --  \\
-		Høvsore c/ DA		& 13/03/2019 23:13 & 19/03/2019 00:49 & 121,60 & -30,37 & -19.98\%\footnotemark \\
-		Bolund s/DA			& \color{red}12/02/2019 22:22 & 20/03/2019 8:35 & 850.22 & -- & -- \\
-		Bolund c/ DA		& aaa & bbb & aaa & bbb & bbb \\
+		Høvsore c/ DA		& 13/03/2019 23:13 & 19/03/2019 00:49 & 121,60 & -30,37 & -19.98\% \\
+		Bolund s/DA			& 12/02/2019 22:22 & 20/03/2019 08:35 & 850,22 & -- & -- \\
+		Bolund c/ DA		& 25/04/2019 22:58 & 24/05/2019 09:44\footnotemark & 662,02 & -188,20 & -22,14\% \\
 		\bottomrule
 	\end{tabular}}
 \end{table}
 
 Acá $T_w$ es el tiempo de pared efectivo y $\Delta t$ corresponde al aumento en este debido a la incorporación del proceso de asimilación de datos. El incremento se calcula como $\Delta t/T_{w0}$, donde el subíndice 0 índica la simulación sin asimilación de datos.
 
-\footnotetext{La justificación con respecto a la disminución del tiempo de cálculo para el caso de Høvsøre se explica debido a que durante la primera simulación, otras personas pertenecientes al grupo de trabajo con el servidor ejecutaron tareas intensivas durante ese tiempo, lo cual hizo imposible el aislamiento del tiempo de pared efectivo}
+Como se puede apreciar en la Tabla \ref{tab:an3_tiempos}, el proceso de asimilación de datos presenta mejoras significativas en términos del tiempo de cálculo.
+
+\footnotetext{Por motivos externos la simulación estuvo detenida desde el 02/05/2019 14:43 hasta el 03/05/2019 12:28, por lo cual se considera esta detención en el cálculo.}

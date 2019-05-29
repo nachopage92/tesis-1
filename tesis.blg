@@ -42,49 +42,54 @@ A level-1 auxiliary file: Anexos/Apendice_A.aux
 A level-1 auxiliary file: Anexos/Apendice_B.aux
 A level-1 auxiliary file: Anexos/Apendice_C.aux
 Database file #1: Bibliografia/biblio.bib
+You're missing a field name---line 559 of file Bibliografia/biblio.bib
+ :  abstract = {Abstract Large Eddy Simulation (LES) of the wind in complex terrain is limited by computational cost. The number of computational grid points required to resolve the near-ground turbulent structures (eddies) are very high. The traditional solution to the problem has been to apply a wall function that accounts for the whole near-wall region. Recently, a hybrid method was proposed in which the eddies close to the ground were modelled in a Reynolds-averaged sense (RANS) and the eddies above this region were simulated using LES. The advantage of the approach is the ability to use shallow cells of high aspect ratio in the RANS layer and thereby resolve the mean near-wall velocity profile. The method is applicable to complex terrain and the benefits of traditional LES are kept intact. Using the hybrid method, simulations of the wind over a natural complex terrain near Wellington in New Zealand are demonstrated. Under certain conditions, unsteady flow features have been measured at the site—flow features that could lead to high structural loads on a planned wind farm. These transient flow phenomena are reproduced with the new method. Additionally, the results from the hybrid method are compared with RANS results. Copyright © 2010 John Wiley \& Sons, Ltd.},
+ :                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ,
+I'm skipping whatever remains of this entry
 Warning--empty journal in https://doi.org/10.5065/d6cf9n1j
+Warning--empty year in doi:10.1002/we.414
 Warning--empty booktitle in MirochaNewLE
 Warning--empty year in MirochaNewLE
 Warning--empty journal in https://doi.org/10.5065/d68s4mvh
-You've used 45 entries,
+You've used 59 entries,
             2833 wiz_defined-function locations,
-            892 strings with 15057 characters,
-and the built_in function-call counts, 29876 in all, are:
-= -- 2125
-> -- 1609
-< -- 16
-+ -- 618
-- -- 543
-* -- 2265
-:= -- 4563
-add.period$ -- 147
-call.type$ -- 45
-change.case$ -- 397
-chr.to.int$ -- 45
-cite$ -- 49
-duplicate$ -- 2225
-empty$ -- 2170
-format.name$ -- 674
-if$ -- 5747
-int.to.chr$ -- 1
+            979 strings with 18822 characters,
+and the built_in function-call counts, 39750 in all, are:
+= -- 2823
+> -- 2141
+< -- 23
++ -- 823
+- -- 723
+* -- 3052
+:= -- 6045
+add.period$ -- 195
+call.type$ -- 59
+change.case$ -- 526
+chr.to.int$ -- 56
+cite$ -- 64
+duplicate$ -- 2961
+empty$ -- 2882
+format.name$ -- 900
+if$ -- 7657
+int.to.chr$ -- 4
 int.to.str$ -- 1
-missing$ -- 545
-newline$ -- 246
-num.names$ -- 180
-pop$ -- 1177
+missing$ -- 727
+newline$ -- 322
+num.names$ -- 236
+pop$ -- 1547
 preamble$ -- 1
-purify$ -- 360
+purify$ -- 476
 quote$ -- 0
-skip$ -- 689
+skip$ -- 889
 stack$ -- 0
-substring$ -- 1154
-swap$ -- 1130
-text.length$ -- 0
+substring$ -- 1550
+swap$ -- 1543
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 372
-warning$ -- 4
-while$ -- 182
+type$ -- 492
+warning$ -- 5
+while$ -- 238
 width$ -- 0
-write$ -- 596
-(There were 4 error messages)
+write$ -- 788
+(There were 5 error messages)
