@@ -1,4 +1,4 @@
-\begin{thebibliography}{59}
+\begin{thebibliography}{57}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -33,20 +33,12 @@ Delia Arnold, D~Morton, I~Schicker, P~Seibert, MW~Rotach, K~Horvath, J~Dudhia,
 \newblock Institut f{\"u}r Meteorologie, Department
   Wasser-Atmosph{\"a}re-Umwelt, Univ. f. Bodenkultur, 2012.
 
-\bibitem[{Barker et~al.(2004{\natexlab{a}})Barker, Huang, Guo, Bourgeois, y
+\bibitem[{Barker et~al.(2004)Barker, Huang, Guo, Bourgeois, y
   Xiao}]{Barker2004}
 D.~M. Barker, W.~Huang, Y-R. Guo, A.~J. Bourgeois, y Q.~N. Xiao.
 \newblock A three-dimensional variational data assimilation system for {MM}5:
   Implementation and initial results.
-\newblock \emph{Monthly Weather Review}, 132(4):897--914, 2004{\natexlab{a}}.
-
-\bibitem[{Barker et~al.(2004{\natexlab{b}})Barker, Huang, Guo, Bourgeois, y
-  Xiao}]{doi:10.1175/1520-0493(2004)132<0897:ATVDAS>2.0.CO;2}
-D.~M. Barker, W.~Huang, Y-R. Guo, A.~J. Bourgeois, y Q.~N. Xiao.
-\newblock A three-dimensional variational data assimilation system for mm5:
-  Implementation and initial results.
-\newblock \emph{Monthly Weather Review}, 132(4):897--914, 2004{\natexlab{b}}.
-\newblock \doi{10.1175/1520-0493(2004)132<0897:ATVDAS>2.0.CO;2}.
+\newblock \emph{Monthly Weather Review}, 132(4):897--914, 2004.
 
 \bibitem[{Barker et~al.(2003)Barker, Huang, Guo, y
   Bourgeois}]{https://doi.org/10.5065/d6cf9n1j}
@@ -78,7 +70,6 @@ A.~Bechmann, N.~N. S{\o}rensen, J.~Berg, J.~Mann, y P.-E. R{\'{e}}thor{\'{e}}.
 A.~Bechmann y N.~N. Sørensen.
 \newblock Hybrid rans/les applied to complex terrain.
 \newblock \emph{Wind Energy}, 14(2):225--237.
-\newblock \doi{10.1002/we.414}.
 
 \bibitem[{Bechmann et~al.(2009)Bechmann, Berg, Courtney, {Ejsing Jørgensen},
   Mann, y Sørensen}]{3d4285ac04444eb3b9775baf9af052c6}
@@ -129,7 +120,6 @@ Fotini~Katopodes Chow y Robert~L. Street.
   over complex terrain: Flow over askervein hill.
 \newblock \emph{Journal of Applied Meteorology and Climatology},
   48(5):1050--1065, 2009.
-\newblock \doi{10.1175/2008JAMC1862.1}.
 
 \bibitem[{Davidson(2013)}]{davidson2013turbulence}
 P.A. Davidson.
@@ -224,7 +214,6 @@ Yubao Liu, Thomas~T. Warner, Elford~G. Astling, James~F. Bowers, Christopher~A.
   accuracy of model analyses and forecasts.
 \newblock \emph{Journal of Applied Meteorology and Climatology},
   47(4):1093--1104, 2008{\natexlab{a}}.
-\newblock \doi{10.1175/2007JAMC1654.1}.
 
 \bibitem[{Liu et~al.(2008{\natexlab{b}})Liu, Warner, Bowers, Carson, Chen,
   Clough, Davis, Egeland, Halvorson, Huck, Lachapelle, Malone, Rife, Sheu,
@@ -238,18 +227,12 @@ Yubao Liu, Thomas~T. Warner, James~F. Bowers, Laurie~P. Carson, Fei Chen,
   system, the forecast products, and how the products are used.
 \newblock \emph{Journal of Applied Meteorology and Climatology},
   47(4):1077--1092, 2008{\natexlab{b}}.
-\newblock \doi{10.1175/2007JAMC1653.1}.
 
-\bibitem[{Mathieu y Scott(2000{\natexlab{a}})}]{9780521775380}
+\bibitem[{Mathieu y Scott(2000)}]{9780521775380}
 Jean Mathieu y Julian Scott.
 \newblock \emph{An Introduction to Turbulent Flow}.
-\newblock Cambridge University Press, 2000{\natexlab{a}}.
+\newblock Cambridge University Press, 2000.
 \newblock ISBN 0521775388.
-
-\bibitem[{Mathieu y Scott(2000{\natexlab{b}})}]{mathieu2000introduction}
-Jean Mathieu y Julian Scott.
-\newblock \emph{An introduction to turbulent flow}.
-\newblock Cambridge University Press, 2000{\natexlab{b}}.
 
 \bibitem[{Meij y Vinuesa(2014)}]{DeMeij2014}
 A.~De Meij y J.F. Vinuesa.
@@ -261,7 +244,6 @@ A.~De Meij y J.F. Vinuesa.
 Charles Meneveau.
 \newblock Big wind power: seven questions for turbulence research.
 \newblock \emph{Journal of Turbulence}, 20(1):2--20, 2019.
-\newblock \doi{10.1080/14685248.2019.1584664}.
 
 \bibitem[{Mirocha et~al.(2010)Mirocha, Lundquist, y
   Kosovi{\'{c}}}]{Mirocha2010}
@@ -366,7 +348,6 @@ David~R. Stauffer, Nelson~L. Seaman, y Francis~S. Binkowski.
   model part ii: Effects of data assimilation within the planetary boundary
   layer.
 \newblock \emph{Monthly Weather Review}, 119(3):734--754, 1991.
-\newblock \doi{10.1175/1520-0493(1991)119<0734:UOFDDA>2.0.CO;2}.
 
 \bibitem[{Stevens et~al.(2014)Stevens, Wilczek, y Meneveau}]{Stevens2014}
 Richard~J.~A.~M. Stevens, Michael Wilczek, y Charles Meneveau.

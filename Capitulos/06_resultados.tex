@@ -11,12 +11,12 @@
 		\center\hspace{0.3cm}(b)
 	\end{minipage}%
 	
-	\includegraphics[width=0.5\linewidth,page=10,trim={2.5cm 6.2cm 1cm 4.5cm},clip]{Imagenes/06/hov/eta1_u}%
-	\includegraphics[width=0.5\linewidth,page=10,trim={2.5cm 6.2cm 1cm 4.5cm},clip]{Imagenes/06/hov/eta1_v}%
+	\includegraphics[width=0.5\linewidth,page=55,trim={2.5cm 6.2cm 1cm 4.5cm},clip]{Imagenes/06/hov/eta1_u}%
+	\includegraphics[width=0.5\linewidth,page=55,trim={2.5cm 6.2cm 1cm 4.5cm},clip]{Imagenes/06/hov/eta1_v}%
 	
 	\center{\hspace{0.3cm}(c)}
 	
-	\includegraphics[width=0.5\linewidth,page=10,trim={2.5cm 6.2cm 1cm 4.5cm},clip]{Imagenes/06/hov/eta1_V}%
+	\includegraphics[width=0.5\linewidth,page=55,trim={2.5cm 6.2cm 1cm 4.5cm},clip]{Imagenes/06/hov/eta1_V}%
 	\caption{(a) Componente $u$ de la velocidad en el primer nivel de la coordenada vertical ($z_1=5.25$ [m]) para las 15:00. (b) Idéntico al anterior pero para la componente $v$. (c) Magnitud del campo de velocidad.}
 	\label{fig:06_hov_eta1}
 \end{figure}
@@ -98,6 +98,19 @@
 	\label{fig:06_hov_spectrum}
 \end{figure}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.55\linewidth,page=1,trim={0cm 0cm 0cm 0cm},clip]{Imagenes/06/hov/corr}%
+	\caption{Gráfico de dispersión para las velocidades a distintas alturas en el mástil meteorológico de Høvsøre.}
+	\label{fig:06_corr_hov}
+\end{figure}
+
+
+
+
+
+
+
 \section{Caso I: Høvsøre c/DA}
 
 \begin{figure}[H]
@@ -158,6 +171,13 @@
 	\label{fig:06_hov_da_spectrum}
 \end{figure}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.55\linewidth,page=1,trim={0cm 0cm 0cm 0cm},clip]{Imagenes/06/hov_da/corr}%
+	\caption{Gráfico de dispersión para las velocidades a distintas alturas en el mástil meteorológico de Høvsøre (con DA).}
+	\label{fig:06_corr_hov_da}
+\end{figure}
+
 \begin{table}[h!]
 	\caption{Comparación de métricas para el caso I Høvsøre.}
 	\label{tab:06_hov_mae_rmse}
@@ -168,6 +188,8 @@
 		\midrule
 		MAE & 2.41091 m/s & 2.16742 m/s \\
 		RMSE & 2.80142 m/s& 2.55778 m/s\\
+		$\Delta{RMSE}$& --  & $8.70\%$  \\
+		$\Delta{MAE}$ & -- & $10.47\%$  \\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -390,18 +412,54 @@
 \end{figure}
 
 \begin{figure}[H]
+	\begin{minipage}{0.33\linewidth}
+		\centering \hspace{1cm}(a)
+	\end{minipage}%
+	\begin{minipage}{0.33\linewidth}
+		\centering \hspace{0.8cm}(b)
+	\end{minipage}%
+	\begin{minipage}{0.33\linewidth}
+		\centering \hspace{0.5cm}(c)
+	\end{minipage}%
+	\vspace{-4mm}
+	\begin{center}
+		\includegraphics[height=0.5\linewidth,page=1,trim={6mm 5mm 3mm 0mm},clip]{Imagenes/06/bol/second_order_mean}%
+		\includegraphics[height=0.5\linewidth,page=2,trim={12mm 5mm 3mm 0mm},clip]{Imagenes/06/bol/second_order_mean}%
+		\includegraphics[height=0.5\linewidth,page=3,trim={12mm 5mm 3mm 0mm},clip]{Imagenes/06/bol/second_order_mean}%
+	\end{center}
+	\vspace{-5mm}
+	\caption{Variables adimensionalizadas de segundo orden para M1-M4 promediadas entre las 12:00 y las 15:00. (a) Energía cinética turbulenta de submalla, (b) Gradiente de velocidad, (c) Esfuerzo turbulento. }
+	\label{fig:06_bol_mean_secondorder}
+\end{figure}
+
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=1.0\linewidth,page=1,trim={3mm 5mm 3mm 3mm},clip]{Imagenes/06/bol/spectra}%
 	\caption{Espectros de energía para la componente horizontal del viento a distintos niveles verticales en el dominio d08 caso Bolund.}
 	\label{fig:06_bol_spectrum}
 \end{figure}
 
-\begin{center}
-\boxed{\textbf{MAE= 2.67240, RMSE=2.95385}}
-\end{center}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth,page=1,trim={0cm 0cm 0cm 0cm},clip]{Imagenes/06/bol/corr}%
+	\includegraphics[width=0.5\linewidth,page=2,trim={0cm 0cm 0cm 0cm},clip]{Imagenes/06/bol/corr}%
+	
+	\includegraphics[width=0.5\linewidth,page=3,trim={0cm 0cm 0cm 0cm},clip]{Imagenes/06/bol/corr}%
+	\includegraphics[width=0.5\linewidth,page=4,trim={0cm 0cm 0cm 0cm},clip]{Imagenes/06/bol/corr}%
+	\caption{Gráfico de dispersión para las velocidades a distintas alturas en los mástiles M1-M4 en Bolund.}
+	\label{fig:06_corr_bol1}
+\end{figure}
 
-
-
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth,page=5,trim={0cm 0cm 0cm 0cm},clip]{Imagenes/06/bol/corr}%
+	\includegraphics[width=0.5\linewidth,page=6,trim={0cm 0cm 0cm 0cm},clip]{Imagenes/06/bol/corr}%
+	
+	\includegraphics[width=0.5\linewidth,page=7,trim={0cm 0cm 0cm 0cm},clip]{Imagenes/06/bol/corr}%
+	\includegraphics[width=0.5\linewidth,page=8,trim={0cm 0cm 0cm 0cm},clip]{Imagenes/06/bol/corr}%
+	\caption{Gráfico de dispersión para las velocidades a distintas alturas en los mástiles M5-M8 en Bolund.}
+	\label{fig:06_corr_bol2}
+\end{figure}
 
 
 
@@ -629,12 +687,68 @@
 \end{figure}
 
 \begin{figure}[H]
+	\begin{minipage}{0.33\linewidth}
+		\centering \hspace{1cm}(a)
+	\end{minipage}%
+	\begin{minipage}{0.33\linewidth}
+		\centering \hspace{0.8cm}(b)
+	\end{minipage}%
+	\begin{minipage}{0.33\linewidth}
+		\centering \hspace{0.5cm}(c)
+	\end{minipage}%
+	\vspace{-4mm}
+	\begin{center}
+		\includegraphics[height=0.5\linewidth,page=1,trim={6mm 5mm 3mm 0mm},clip]{Imagenes/06/bol_da/second_order_mean}%
+		\includegraphics[height=0.5\linewidth,page=2,trim={12mm 5mm 3mm 0mm},clip]{Imagenes/06/bol_da/second_order_mean}%
+		\includegraphics[height=0.5\linewidth,page=3,trim={12mm 5mm 3mm 0mm},clip]{Imagenes/06/bol_da/second_order_mean}%
+	\end{center}
+	\vspace{-5mm}
+	\caption{Variables adimensionalizadas de segundo orden para M1-M4 con DA, promediadas entre las 12:00 y las 15:00. (a) Energía cinética turbulenta de submalla, (b) Gradiente de velocidad, (c) Esfuerzo turbulento. }
+	\label{fig:06_bol_da_mean_secondorder}
+\end{figure}
+
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=1.0\linewidth,page=1,trim={3mm 5mm 3mm 3mm},clip]{Imagenes/06/bol_da/spectra}%
 	\caption{Espectros de energía para la componente horizontal del viento a distintos niveles verticales en el dominio d08 caso Bolund con DA.}
 	\label{fig:06_bol_da_spectrum}
 \end{figure}
 
-\begin{center}
-	\boxed{\textbf{MAE= --, RMSE= --}}
-\end{center}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth,page=1,trim={0cm 0cm 0cm 0cm},clip]{Imagenes/06/bol_da/corr}%
+	\includegraphics[width=0.5\linewidth,page=2,trim={0cm 0cm 0cm 0cm},clip]{Imagenes/06/bol_da/corr}%
+	
+	\includegraphics[width=0.5\linewidth,page=3,trim={0cm 0cm 0cm 0cm},clip]{Imagenes/06/bol_da/corr}%
+	\includegraphics[width=0.5\linewidth,page=4,trim={0cm 0cm 0cm 0cm},clip]{Imagenes/06/bol_da/corr}%
+	\caption{Gráfico de dispersión para las velocidades a distintas alturas en los mástiles M1-M4 en Bolund (con DA).}
+	\label{fig:06_corr_bol1_da}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth,page=5,trim={0cm 0cm 0cm 0cm},clip]{Imagenes/06/bol_da/corr}%
+	\includegraphics[width=0.5\linewidth,page=6,trim={0cm 0cm 0cm 0cm},clip]{Imagenes/06/bol_da/corr}%
+	
+	\includegraphics[width=0.5\linewidth,page=7,trim={0cm 0cm 0cm 0cm},clip]{Imagenes/06/bol_da/corr}%
+	\includegraphics[width=0.5\linewidth,page=8,trim={0cm 0cm 0cm 0cm},clip]{Imagenes/06/bol_da/corr}%
+	\caption{Gráfico de dispersión para las velocidades a distintas alturas en los mástiles M5-M8 en Bolund (con DA).}
+	\label{fig:06_corr_bol2_da}
+\end{figure}
+
+\begin{table}[h!]
+	\caption{Comparación de métricas para el caso II Bolund.}
+	\label{tab:06_bol_mae_rmse}
+	\centering%\footnotesize
+	\begin{tabular}{lcc}
+		\toprule
+		& Sin DA & Con DA \\
+		\midrule
+		MAE & 2.6724 m/s & 4.3562 m/s \\
+		RMSE & 2.9538 m/s& 4.90071 m/s\\
+		$\Delta{RMSE}$&  -- & $-65.91\%$ \\
+		$\Delta{MAE}$ &  -- & $-63.01\%$ \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
