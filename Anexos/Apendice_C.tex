@@ -1,4 +1,5 @@
 \chapter{Tiempos de Cálculo de las Simulaciones}
+\label{apB}
 Las simulaciones se llevaron a cabo en servidores configurados especialmente para ejecutar el código WRF de manera paralela haciendo uso de todos los núcleos y recursos disponibles. En específico se utilizaron dos servidores distintos: S1 es el servidor utilizado para correr las simulaciones correspondientes al caso I de terreno plano en Høvsore y S2 es el servidor utilizado para correr el caso II de terreno complejo en Bolund. Otros recursos computacionales adicionales fueron utilizados también para llevar a cabo distintos análisis de sensibilidad para diversos parámetros y otras pruebas varias las cuales no se detallan en este documento. Las específicaciones técnicas de S1 y S2 se pueden ver en la Tabla \ref{tab:an3_s12}.
 
 \begin{table}[H]
@@ -19,7 +20,7 @@ Las simulaciones se llevaron a cabo en servidores configurados especialmente par
 \end{table}
 
 Para cada servidor se registraron los tiempos de pared a través de un bot de \emph{Telegram} el cual registraba de manera automática e inmediata la fecha y hora a la cual cada simulación comenzaba o terminaba. Los registros de estos tiempos se pueden ver en la Tabla \ref{tab:an3_tiempos}.
-
+\newpage
 \begin{table}[H]
 	\caption{Tiempos de cálculo para cada experimento.}\label{tab:an3_tiempos}
 	\centering\resizebox{\textwidth}{!}{

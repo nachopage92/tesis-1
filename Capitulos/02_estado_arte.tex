@@ -13,7 +13,7 @@ A modo de formar una explicación un poco mas formal y clara sobre lo que conlle
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\linewidth,trim={2.6cm 1.4cm 1.5cm 0.8cm},clip]{Imagenes/02/escalas}
-	\caption{Separación de escalas para la dinámica atmosférica.}
+	\caption{Separación de escalas para la dinámica atmosférica. Fuente: Montornes et al. (2017) \cite{vortex2017}.}
 	\label{fig:02_escalas}
 \end{figure}
 
@@ -39,8 +39,8 @@ Cuando se modelan las pequeñas escalas, idealmente la resolución de malla hori
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.4\linewidth,trim={2.67cm 1.35cm 3.1cm 2.25cm},clip]{Imagenes/02/grid}
-	\caption{Idealización de los distintos tamaños de vórtices dentro de un dominio en la zona gris de la turbulencia. Los vórtices mas grandes pueden ser resueltos por la malla, mientras que los más pequeños son filtrados numéricamente y por lo tanto deben ser parametrizados para que su efecto se considere en las ecuaciones de movimiento.}
+	\includegraphics[width=0.45\linewidth,trim={2.67cm 1.35cm 3.1cm 2.25cm},clip]{Imagenes/02/grid}
+	\caption{Idealización de los distintos tamaños de vórtices dentro de un dominio en la zona gris de la turbulencia. Fuente: Montornes et al. (2017) \cite{vortex2017}.}
 	\label{fig:02_grid_vortex}
 \end{figure}
 
@@ -52,7 +52,7 @@ Utilizando la terminología de Wyngaard (2004), sea $\Delta$ la escala (o tamañ
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.69\linewidth,trim={2cm 3.0cm 1.5cm 11.5cm},clip]{Imagenes/02/terra_inc}
-	\caption{Espectro de energía turbulenta multiescala.}
+	\caption{Espectro de energía turbulenta multiescala. Fuente: Warner (2010) \cite{warner2010numerical}}
 	\label{fig:02_terra_inc}
 \end{figure}
 
@@ -161,7 +161,7 @@ Para ámbitos operativos, se prefiere no utilizar difusión horizontal explícit
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\linewidth,trim={2.6cm 13.5cm 9.2cm 9cm},clip]{Imagenes/02/coordinates}
-	\caption{Comparación entre las coordenadas usuales sigma (arriba) y el método de frontera inmersa (abajo).}
+	\caption{Comparación entre las coordenadas usuales sigma (arriba) y el método de frontera inmersa (abajo). Fuente: Arnold et al. (2010) \cite{Arnold2010}.}
 	\label{fig:02_coordinates}
 \end{figure}
 La transformación de coordenadas naturales a curvilíneas provoca en las ecuaciones gobernantes la aparición de términos métricos, los cuales son difíciles de manejar en pendientes abruptas, pero permite captar bien la forma del terreno. Por otra parte el uso del método de la frontera inmersa no incluye cambio en las ecuaciones pero el manejo de las celdas que están parcialmente ocupadas por orografía no es una tarea computacional sencilla.

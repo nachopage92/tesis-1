@@ -249,7 +249,7 @@ La gran mayoría de los fluidos en la naturaleza y en aplicaciones industriales 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\linewidth,trim={4.3cm 7.7cm 4cm 11.5cm},clip]{Imagenes/03/turbulent}
-	\caption{Serie de tiempo para una componente de la velocidad en un flujo turbulento.}
+	\caption{Serie de tiempo para una componente de la velocidad en un flujo turbulento. Fuente: Pope (2000) \cite{pope2000turbulent}.}
 	\label{fig:03_turbulent}
 \end{figure}
 
@@ -307,7 +307,7 @@ De esta manera, un bosquejo típico log-log de la cascada de energía, se puede 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.85\linewidth,trim={3.2cm 18.3cm 7.0cm 1.5cm},clip]{Imagenes/03/spectra}
-	\caption{Gráfico típico log-log de distribución de energía cinética turbulenta con respecto al número de onda $\kappa$ para un flujo con un número de Reynolds elevado.}
+	\caption{Gráfico típico log-log de distribución de energía cinética turbulenta con respecto al número de onda $\kappa$ para un flujo con un número de Reynolds elevado. Fuente: Mathieu y Scott (2000) \cite{9780521775380}.}
 	\label{fig:03_spectra}
 \end{figure}
 
@@ -339,12 +339,12 @@ Se define la capa límite atmosférica (ABL \emph{Atmospheric Boundary Layer} o 
 
 La ABL es altamente variable y se caracteriza por ser turbulenta en la gran mayoría de los casos. Su turbulencia es generada debido al roce con la superficie, la presencia de obstáculos y/o por flotación debido a la temperatura del suelo. 
 
-Existe una estructura bien definida para las capas límites atmosféricas que se desarrollan sobre superficies a alta presión, esta estructura es variable en el tiempo, siendo influenciada principalmente por los ciclos diarios de enfriamiento y calentamiento de la superficie por la radiación solar. En la Figura \ref{fig:03_abl} se puede ver la evolución de la estructura de la capa límite en las distintas horas del día (para un día estándar) y sus principales componentes.
+Existe una estructura bien definida para las capas límites atmosféricas que se desarrollan sobre superficies a alta presión, esta estructura es variable en el tiempo, siendo influenciada principalmente por los ciclos diarios de enfriamiento y calentamiento de la superficie por la radiación solar. En la Figura \ref{fig:03_abl}\footnote{\url{https://commons.wikimedia.org/wiki/File:Atmospheric\_boundary\_layer.svg}} se puede ver la evolución de la estructura de la capa límite en las distintas horas del día (para un día estándar) y sus principales componentes.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.98\linewidth,trim={0cm 0cm 0cm 0cm},clip]{Imagenes/03/abl}
-	\caption{Evolución diurna de la estructura de la capa límite.}
+	\caption{Evolución diurna de la estructura de la capa límite. Fuente: Wikimedia.}
 	\label{fig:03_abl}
 \end{figure}
 
@@ -394,7 +394,7 @@ En la Figura \ref{fig:03_pbl2} se muestra la evolución para la temperatura pote
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.7\linewidth,trim={5.6cm 14cm 2.7cm 3.3cm},clip]{Imagenes/03/pbl2}
-	\caption{Evolución del perfil de $\theta_v$ en el ciclo diurno.}
+	\caption{Evolución del perfil de $\theta_v$ en el ciclo diurno. Fuente: Stull (1988) \cite{stull1988introduction}.}
 	\label{fig:03_pbl2}
 \end{figure}
 
@@ -520,6 +520,7 @@ Donde $\varepsilon$ es la disipación viscosa de energía cinética turbulenta:
 \be  \varepsilon = \nu(\overline{\partial_j u'_i\partial_j u'_i}) \ee
 
 Para ganar intuición acerca de los distintos términos presentes en la ecuación, es conveniente tomar un sistema coordenado alineado con la dirección del viento medio y asumir homogeneidad horizontal, además se desprecia la advección relacionada a la componente vertical. De esta manera una forma especial del balance de TKE se puede escribir como:
+\newpage
 \be
 \partial_t k  = \frac{g}{\overline{\theta}_v}\overline{w'\theta'_v} - \overline{u' w'} \partial_z \overline{u} - \partial_z\overline{w' k} - \frac{1}{\rho} \partial_z \overline{w' p'} - \varepsilon
 \ee
@@ -544,7 +545,7 @@ Las Figuras \ref{fig:03_tke3}, \ref{fig:03_tke1} y \ref{fig:03_tke2} (Fuente: St
 \begin{figure}[h!]
 	\centering
 		\includegraphics[width=0.8\linewidth,trim={3cm 5.5cm 2.9cm 11.6cm},clip]{Imagenes/03/tke3}
-	\caption{Variación espacial y temporal de TKE modelada.}
+	\caption{Variación espacial y temporal de TKE modelada. Fuente: Stull (1988) \cite{stull1988introduction}.}
 	\label{fig:03_tke3}
 \end{figure}
 
@@ -553,14 +554,14 @@ La Figura \ref{fig:03_tke3} muestra como el valor del TKE es alto a nivel de sup
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\linewidth,trim={3cm 6.3cm 2.9cm 11.5cm},clip]{Imagenes/03/tke1}
-	\caption{Términos normalizados en la ecuación de TKE para el día. Las áreas sombreadas corresponden a un rango de valores. Todos los términos son adimensionalizados por $w_*^3/\delta$.}
+	\caption{Términos normalizados en la ecuación de TKE para el día. Las áreas sombreadas corresponden a un rango de valores. Todos los términos son adimensionalizados por $w_*^3/\delta$. Fuente: Stull (1988) \cite{stull1988introduction}.}
 	\label{fig:03_tke1}
 \end{figure}
 
 \begin{figure}[h!]
 	\centering
 		\includegraphics[width=0.8\linewidth,trim={3.2cm 4.8cm 2.8cm 12.1cm},clip]{Imagenes/03/tke2}
-	\caption{Términos normalizados en la ecuación de TKE para la noche (18:00 y 02:00).}
+	\caption{Términos normalizados en la ecuación de TKE para la noche (18:00 y 02:00). Fuente: Stull (1988) \cite{stull1988introduction}.}
 	\label{fig:03_tke2}
 \end{figure}
  
@@ -612,7 +613,7 @@ Estas diferencias se pueden apreciar en la Figura \ref{fig:03_les}.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.6\linewidth,trim={4.8cm 4.8cm 2.8cm 12.1cm},clip]{Imagenes/03/les}
-	\caption{Curva superior: una muestra de un campo de velocidad $u$ y su correspondiente campo filtrado $\overline{u}$ (en negrita). Curva inferior: campo residual $u'$ y campo residual filtrado $\overline{u'}$ (en negrita).}
+	\caption{Curva superior: una muestra de un campo de velocidad $u$ y su correspondiente campo filtrado $\overline{u}$ (en negrita). Curva inferior: campo residual $u'$ y campo residual filtrado $\overline{u'}$ (en negrita). Fuente: Pope (2000) \cite{pope2000turbulent}.}
 	\label{fig:03_les}
 \end{figure}
 

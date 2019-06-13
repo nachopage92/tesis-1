@@ -1,5 +1,6 @@
 \graphicspath{{./Imagenes/an1/}}
 \chapter{Cálculo de Resultados para Bolund y Comparación Ciega}
+\label{ch:apA}
 A modo de tener resultados comparables para el ejercicio de comparación ciega organizado por los desarrolladores del experimento de Bolund, se introducen ciertas métricas para la velocidad y para la energía cinética turbulenta \cite{Bechmann2011}.
 
 Para el caso de la velocidad, se adimensionaliza esta de la siguiente forma:
@@ -18,6 +19,7 @@ Con respecto a la energía cinética turbulenta, esta se adimensionaliza como:
 Análogamente al caso anterior, $\overline{k_0}$ es un valor de referencia para la energía cinética turbulenta en el punto del dominio donde hay flujo no perturbado.
 
 De manera referencial, los desarrolladores presentan los siguientes resultados para su comparación ciega de modelos:
+\newpage
 
 \begin{figure}[H]
 	\centering
@@ -33,6 +35,8 @@ De manera referencial, los desarrolladores presentan los siguientes resultados p
 	\label{fig:an1_speedup}
 \end{figure}
 
+\newpage
+\vspace*{\fill}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1.0\linewidth,trim={2.7cm 14.4cm 1.9cm 2cm},clip]{bolund3.pdf}%
@@ -41,7 +45,9 @@ De manera referencial, los desarrolladores presentan los siguientes resultados p
 	\caption{Perfil de speedup medido y simulado en los distintos mástiles M1-M4.}
 	\label{fig:an1_speed_masts}
 \end{figure}
-
+\vspace*{\fill}
+\newpage
+\vspace*{\fill}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\linewidth,trim={1.7cm 12.3cm 0.8cm 2cm},clip]{bolund4.pdf}%
@@ -49,7 +55,9 @@ De manera referencial, los desarrolladores presentan los siguientes resultados p
 	\caption{$\Delta k$ medido y simulado a través de la sección transversal a $240^\circ$. Arriba: valores para $z=5$ [m]. Abajo: valores para $z=2$ [m].}
 	\label{fig:an1_delta_tke}
 \end{figure}
-
+\vspace*{\fill}
+\newpage
+\vspace*{\fill}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\linewidth,trim={2.7cm 3.8cm 1.9cm 12.5cm},clip]{bolund4.pdf}%
@@ -58,3 +66,4 @@ De manera referencial, los desarrolladores presentan los siguientes resultados p
 	\caption{Perfil de $\Delta k$ medido y simulado en los distintos mástiles M1-M4.}
 	\label{fig:an1_delta_tke_mast}
 \end{figure}
+\vspace*{\fill}

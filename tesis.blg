@@ -51,45 +51,45 @@ Warning--empty year in doi:10.1002/we.414
 Warning--empty booktitle in MirochaNewLE
 Warning--empty year in MirochaNewLE
 Warning--empty journal in https://doi.org/10.5065/d68s4mvh
-You've used 57 entries,
+You've used 58 entries,
             2833 wiz_defined-function locations,
-            964 strings with 18245 characters,
-and the built_in function-call counts, 38358 in all, are:
-= -- 2714
-> -- 2077
+            958 strings with 18307 characters,
+and the built_in function-call counts, 38796 in all, are:
+= -- 2725
+> -- 2113
 < -- 22
-+ -- 794
-- -- 702
-* -- 2935
-:= -- 5835
-add.period$ -- 182
-call.type$ -- 57
-change.case$ -- 510
-chr.to.int$ -- 56
-cite$ -- 62
-duplicate$ -- 2858
-empty$ -- 2778
-format.name$ -- 871
-if$ -- 7382
++ -- 807
+- -- 714
+* -- 2970
+:= -- 5900
+add.period$ -- 175
+call.type$ -- 58
+change.case$ -- 519
+chr.to.int$ -- 57
+cite$ -- 63
+duplicate$ -- 2895
+empty$ -- 2808
+format.name$ -- 886
+if$ -- 7455
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 704
-newline$ -- 305
-num.names$ -- 228
-pop$ -- 1509
+missing$ -- 715
+newline$ -- 300
+num.names$ -- 232
+pop$ -- 1557
 preamble$ -- 1
-purify$ -- 461
+purify$ -- 469
 quote$ -- 0
-skip$ -- 869
+skip$ -- 894
 stack$ -- 0
-substring$ -- 1503
+substring$ -- 1514
 swap$ -- 1477
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 477
+type$ -- 486
 warning$ -- 5
-while$ -- 231
+while$ -- 234
 width$ -- 0
-write$ -- 749
+write$ -- 741
 (There were 5 error messages)
