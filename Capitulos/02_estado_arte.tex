@@ -13,7 +13,7 @@ A modo de formar una explicación un poco mas formal y clara sobre lo que conlle
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\linewidth,trim={2.6cm 1.4cm 1.5cm 0.8cm},clip]{Imagenes/02/escalas}
-	\caption{Separación de escalas para la dinámica atmosférica. Fuente: Montornes et al. (2017) \cite{vortex2017}.}
+	\caption{Separación de escalas para la dinámica atmosférica. Fuente: \cite{vortex2017}.}
 	\label{fig:02_escalas}
 \end{figure}
 
@@ -40,19 +40,19 @@ Cuando se modelan las pequeñas escalas, idealmente la resolución de malla hori
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.45\linewidth,trim={2.67cm 1.35cm 3.1cm 2.25cm},clip]{Imagenes/02/grid}
-	\caption{Idealización de los distintos tamaños de vórtices dentro de un dominio en la zona gris de la turbulencia. Fuente: Montornes et al. (2017) \cite{vortex2017}.}
+	\caption{Idealización de los distintos tamaños de vórtices dentro de un dominio en la zona gris de la turbulencia. Fuente: \cite{vortex2017}.}
 	\label{fig:02_grid_vortex}
 \end{figure}
 
 Reflexionando un poco con respecto al rol que toma la turbulencia tanto en las escalas grandes como en las pequeñas, no es difícil llegar a la conclusión que a través del proceso de escalamiento dinámico se llegará eventualmente a una zona de traslape en donde algunos de los vórtices asociados a la capa límite son indistintamente resueltos y modelados al mismo tiempo. La Figura \ref{fig:02_grid_vortex} representa este hecho. 
 A esta zona de traslape se le denomina zona gris o \emph{Terra Incognita}.
 
-Utilizando la terminología de Wyngaard (2004), sea $\Delta$ la escala (o tamaño) del filtro espacial asociado a la resolución numérica (o malla) de las ecuaciones de movimiento y $l$ la escala característica de los vórtices en el rango inercial, el espectro de energía turbulenta $\phi(\lambda)$ se ve como se muestra en la Figura \ref{fig:02_terra_inc}.
+Utilizando la terminología de \cite{doi:10.1175/1520-0469(2004)061<1816:TNMITT>2.0.CO;2}, sea $\Delta$ la escala (o tamaño) del filtro espacial asociado a la resolución numérica (o malla) de las ecuaciones de movimiento y $l$ la escala característica de los vórtices en el rango inercial, el espectro de energía turbulenta $\phi(\lambda)$ se ve como se muestra en la Figura \ref{fig:02_terra_inc}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.69\linewidth,trim={2cm 3.0cm 1.5cm 11.5cm},clip]{Imagenes/02/terra_inc}
-	\caption{Espectro de energía turbulenta multiescala. Fuente: Warner (2010) \cite{warner2010numerical}}
+	\caption{Espectro de energía turbulenta multiescala. Fuente: \cite{warner2010numerical}}
 	\label{fig:02_terra_inc}
 \end{figure}
 
@@ -74,7 +74,7 @@ Luego, desde los años 90s, el LES se ha estado aplicando a la capa límite plan
 
 Las simulaciones LES en terreno real entonces, se ven enfrentadas a, por lo menos, dos grandes problemas: el elevado costo computacional asociado a los tamaños de malla y el acoplamiento entre la cercanía de la pared, altamente parametrizada, con la región exterior resuelta.
 
-A pesar de los desafíos que debe superar el LES, su potencial para modelar flujos a través de colinas ha sido altamente reconocido. Diversos autores han modelado correctamente el campo de viento en la colina Askeverin (Chow y Street, 2009; Bechmann y Sørensen 2010b) y cerros sinusoidales (Brown et al. 2001; Wan et. al. 2007), sin embargo pocos estudios en terreno complejo real existen.
+A pesar de los desafíos que debe superar el LES, su potencial para modelar flujos a través de colinas ha sido altamente reconocido. Diversos autores han modelado correctamente el campo de viento en la colina Askeverin \citep{Chow2009,doi:10.1002/we.414} y cerros sinusoidales \citep{brown2001large,wan2007evaluation}, sin embargo pocos estudios en terreno complejo real existen.
 \section{Alta Resolución y Terreno Complejo}
 Como motivación, se comienza esta sección haciendo una pequeña derivación de la importancia de una correcta estimación de la velocidad del viento. Luego se expondrán los consensos tomados el año 2012 por el \emph{HiRCoT Workshop} (High Resolution Modelling in Complex Terrain), los cuales resumen de muy buena forma las bases y desafios actuales sobre este tema particular y que tienen especial importancia en el trabajo a desarrollar.
 \subsection{Importancia de la Estimación del Viento}
@@ -107,7 +107,7 @@ Anteriormente ya se había hablado de la relación que existe entre la complejid
 
 Como consecuencia, es de especial interés analizar las problemáticas que induce el terreno complejo y definir las maneras de como abordarlas.
 \subsection{Problemáticas de la Simulación de Alta Resolución}
-El año 2012 se llevó a cabo en Viena, el primer \emph{HiRCoT Workshop}, instancia que reunió a académicos y personas de la industria a debatir activamente sobre las problemáticas y avances existentes con respecto a la modelación atmosférica a alta resolución \cite{Arnold2010}.
+El año 2012 se llevó a cabo en Viena, el primer \emph{HiRCoT Workshop}, instancia que reunió a académicos y personas de la industria a debatir activamente sobre las problemáticas y avances existentes con respecto a la modelación atmosférica a alta resolución \citep{Arnold2010}.
 
 El concepto de alta resolución, se debe entender en el sentido de una resolución que está por sobre aquella definida por los desarrolladores para utilizar los modelos. A priori, se podría decir que un modelo atmosférico con una resolución de malla menor a 1 [km] entra en esta categoría.
 
@@ -116,7 +116,7 @@ Dentro de los objetivos específicos definidos en este workshop se incluyen: la 
 A continuación se presenta un resumen de los cuatro aspectos estudiados en el workshop y que se deben tener en consideración a la hora de realizar una simulación atmosférica a alta resolución y en la lectura de esta tesis.
 
 \subsubsection{Aspecto 1: Problemas Computacionales}
-Tomando en consideración que existen casos demostrados en donde la alta resolución es una necesidad para simular realísticamente fenómenos meteorológicos asociados a las escalas sinópticas y mesoescala (Morton y Molders, 2007) (Stevens et al., 2010), queda claro que, para desarrollar simulaciones a alta resolución en terreno complejo, se debe asumir un cierto compromiso computacional. El wokrshop identifica 2 temas principales: los relacionados a los tiempos de simulación y aquellos relacionados al rendimiento de I/O\footnote{Input/Output del modelo. Hace referencia al formato de los archivos de entrada y salida.} del código.
+Tomando en consideración que existen casos demostrados en donde la alta resolución es una necesidad para simular realísticamente fenómenos meteorológicos asociados a las escalas sinópticas y mesoescala \citep{morton2007tradeoffs,stevens2010using}, queda claro que, para desarrollar simulaciones a alta resolución en terreno complejo, se debe asumir un cierto compromiso computacional. El wokrshop identifica 2 temas principales: los relacionados a los tiempos de simulación y aquellos relacionados al rendimiento de I/O\footnote{Input/Output del modelo. Hace referencia al formato de los archivos de entrada y salida.} del código.
 
 Con respecto al tiempo de simulación, se abordó el tema de como impacta en este el hecho de llevar una simulación con resolución de 9 [km] a 1 [km]. Si se mantienen los límites de los dominios numéricos constantes, el aumento en la resolución de la malla traerá consigo un aumento de la cantidad de puntos necesarios para simular. Por otro lado, este refinamiento también exigirá un paso de tiempo menor para evitar la violación de la condición CFL. En el mejor de los casos, pasar de una resolución de 9 [km] a 1 [km] en la cual la primera se demore, por ejemplo, 1 hora, implicará que la simulación a alta resolución se va a demorar aproximadamente 1 mes. Actualmente no existen maneras de reducir este aumento considerable en los tiempos de cálculo y por lo tanto pasa mas a ser un limitante en el diseño experimental. Pequeñas mejoras se pueden obtener si se adopta el uso de un paso de tiempo adaptativo, pero esto puede crear incongruencias en los tiempos de obtención de resultados del modelo, en especial para la aplicación de asimilación de datos. La paralelización de procesos también puede ayudar bastante, sin embargo para el análisis de este caso, ambas simulaciones estuvieron masivamente paralelizadas.
 
@@ -161,12 +161,12 @@ Para ámbitos operativos, se prefiere no utilizar difusión horizontal explícit
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\linewidth,trim={2.6cm 13.5cm 9.2cm 9cm},clip]{Imagenes/02/coordinates}
-	\caption{Comparación entre las coordenadas usuales sigma (arriba) y el método de frontera inmersa (abajo). Fuente: Arnold et al. (2010) \cite{Arnold2010}.}
+	\caption{Comparación entre las coordenadas usuales sigma (arriba) y el método de frontera inmersa (abajo). Fuente: \cite{Arnold2010}.}
 	\label{fig:02_coordinates}
 \end{figure}
 La transformación de coordenadas naturales a curvilíneas provoca en las ecuaciones gobernantes la aparición de términos métricos, los cuales son difíciles de manejar en pendientes abruptas, pero permite captar bien la forma del terreno. Por otra parte el uso del método de la frontera inmersa no incluye cambio en las ecuaciones pero el manejo de las celdas que están parcialmente ocupadas por orografía no es una tarea computacional sencilla.
 
-Si bien, para cualquiera de estos dos casos existen problemáticas computacionales que no son fáciles de solucionar, la más limitante en la actualidad es el manejo de las pendientes abruptas y la exigencia que esto significa en la resolución de malla vertical y la aritmética de grandes diferencias de presión. Por lo tanto, el pronóstico de la comunidad, es a migrar a un sistema coordenado cartesiano utilizando el método de frontera inmersa u otros métodos similares en la cercanía del terreno, como la aproximación de pared delgada (Steppeler et. al., 2002) o el método de unión de celdas (Yamazaki y Satomura 2010,2012).
+Si bien, para cualquiera de estos dos casos existen problemáticas computacionales que no son fáciles de solucionar, la más limitante en la actualidad es el manejo de las pendientes abruptas y la exigencia que esto significa en la resolución de malla vertical y la aritmética de grandes diferencias de presión. Por lo tanto, el pronóstico de la comunidad, es a migrar a un sistema coordenado cartesiano utilizando el método de frontera inmersa u otros métodos similares en la cercanía del terreno, como la aproximación de pared delgada \citep{steppeler2002nonhydrostatic} o el método de unión de celdas \citep{yamazaki2010nonhydrostatic,yamazaki2012non}.
 
 \paragraph{Benchmarking} La existencia de benchmarks (casos de comparación) es clave para este tipo de simulaciones. Lo que se posee actualmente son casos ideales de colinas gausianas para el estudio de ondas de montañas, casos en donde se poseen soluciones analíticas para comparar. Este tipo de casos se justifica actualmente solo en contextos muy simples y por lo tanto se está llevando a cabo el esfuerzo de generar una mayor cantidad de casos y datos para comparar que tengan relación con el terreno complejo a alta resolución. Lo que se espera en el futuro incluye:
 \begin{itemize*}
@@ -242,15 +242,15 @@ Actualmente la asimilación de datos es ampliamente utilizada para corregir las 
 
 Para el caso de la asimilación en la capa límite, las investigaciones son escasas y en muchos casos, poco concluyentes. Se pueden resumir las investigaciones en esta área en tres grupos: (i) Incorporación de asimilación de datos en la capa límite planetaria en grandes escalas, (ii) Asimilación de datos de información superficial y (iii) Asimilación de datos en la PBL en la microescala. 
 
-Para el primer grupo, se pueden mencionar las investigaciones de Cheng et al. (2017) \cite{cheng2017short} y Dumais et al. (2013) \cite{dumais2013implementation}. Acá efectivamente se asimilan datos dentro de la capa límite, pero en dominios de mesoescala, lo que significa que se puede acceder a una gran cantidad de punto, como por ejemplo, en el primer artículo donde se tiene la información de los anemómetros de las turbinas de varios parques. Dentro de este grupo también se ubican investigaciones que tienen relación con el ámbito militar y por lo tanto muchos resultados no son públicos. Las conclusiones de estos trabajos muestran mejoras de hasta un 30\% para el error en la magnitud del viento.
+Para el primer grupo, se pueden mencionar las investigaciones de \cite{cheng2017short} y \cite{dumais2013implementation}. Acá efectivamente se asimilan datos dentro de la capa límite, pero en dominios de mesoescala, lo que significa que se puede acceder a una gran cantidad de punto, como por ejemplo, en el primer artículo donde se tiene la información de los anemómetros de las turbinas de varios parques. Dentro de este grupo también se ubican investigaciones que tienen relación con el ámbito militar y por lo tanto muchos resultados no son públicos. Las conclusiones de estos trabajos muestran mejoras de hasta un 30\% para el error en la magnitud del viento.
 
-En el segundo grupo se ubican las investigaciones de Stauffer et al. (1991) \cite{doi:10.1175/1520-0493(1991)119<0734:UOFDDA>2.0.CO;2} y  Reen y Stauffer (2010) \cite{reen2010data}. En estas, lo que se asimila son las variables de la superficie, como por ejemplo: la temperatura del suelo o la humedad. Esta información es sencilla de obtener si se hacen campañas de medición con radiosondas. Luego, es posible obtener una alta densidad de datos en un terreno localizado. Los resultados de estos casos han demostrado que existe una mejora al asimilar datos superficiales, ya que se predice de mejor manera los flujos turbulentos superficiales.
+En el segundo grupo se ubican las investigaciones de \cite{doi:10.1175/1520-0493(1991)119<0734:UOFDDA>2.0.CO;2} y  \cite{reen2010data}. En estas, lo que se asimila son las variables de la superficie, como por ejemplo: la temperatura del suelo o la humedad. Esta información es sencilla de obtener si se hacen campañas de medición con radiosondas. Luego, es posible obtener una alta densidad de datos en un terreno localizado. Los resultados de estos casos han demostrado que existe una mejora al asimilar datos superficiales, ya que se predice de mejor manera los flujos turbulentos superficiales.
 
 Con respecto al último grupo, son casi inexistentes las investigaciones debido a dos motivos: (a) De por si son pocos los trabajos de simulación multiescala en donde se llegue a dominios con tan alta resolución y por ende, la mayoría de esos trabajos va mas enfocado a mejorar el LES que a la implementación de otros procesos numéricos, y (b) Para tener un buen resultado de la asimilación de datos es necesario poseer una alta densidad de puntos, la cual, a escalas muy localizadas no es posible obtener sin hacer uso de algún tipo de instrumentación especial o alguna red de medición experimental que lo permita. Con respecto a esto último, se tiene conocimiento de varios trabajos en universidades extranjeras que se enfocan en el desarrollo de redes multisensoriales para evaluar el recurso eólico en zonas localizadas, sin embargo la información de esos proyectos es privada y de desconoce el resultado de la asimilación de datos para estos casos.
 
 La aplicación de la asimilación en la ABL generalmente se ha dejado de lado debido a que, de por si, las predicciones para la magnitud del viento aún presentan grandes discrepancias con las mediciones en terreno y por lo tanto, asimilar datos puede que sea mas perjudicial que benéfico. Así, la mayoría de lo esfuerzos académicos han estado en el desarrollo de parametrizaciones de PBL mas precisas. 
 
-Finalmente, las investigaciones relacionadas a la interacción entre la asimilación de datos y el terreno complejo, por ejemplo Hacker et al. (2018) \cite{hacker2018challenges}, han ido mas en el enfoque de hallar relaciones entre las variables superficiales y el comportamiento de la atmósfera, mas que la incorporación de datos en la ABL. Hay evidencia que, en terreno complejo, el comportamiento del viento está mas desincronizado de las variables superficiales que el terreno plano y por lo tanto la asimilación de datos de estas es menos efectiva.
+Finalmente, las investigaciones relacionadas a la interacción entre la asimilación de datos y el terreno complejo, por ejemplo  \cite{hacker2018challenges}, han ido mas en el enfoque de hallar relaciones entre las variables superficiales y el comportamiento de la atmósfera, mas que la incorporación de datos en la ABL. Hay evidencia que, en terreno complejo, el comportamiento del viento está mas desincronizado de las variables superficiales que el terreno plano y por lo tanto la asimilación de datos de estas es menos efectiva.
 \newpage
 \section{Síntesis}
 A modo de destacar las ideas fundamentales que se presentaron en este capítulo, a continuación se muestra un listado de los argumentos que hacen que la investigación a realizar sea académicamente atractiva:
@@ -262,5 +262,5 @@ A modo de destacar las ideas fundamentales que se presentaron en este capítulo,
 	\item Los resultados obtenidos servirán como benchmark para futuras investigaciones.
 \end{enumerate*}
 
-Finalmente, y parafraseando al académico Charles Menevau (2019) \cite{doi:10.1080/14685248.2019.1584664}, la aplicación de métodos como la asimilación de datos dentro de la capa límite planetaria sigue siendo un área activa y atractiva de investigación. La descarbonización de la matriz energética mundial exige nuevos estándares para la predicción relacionada a energías renovables, y en el caso de la energía eólica, el núcleo del problema de la predicción yace en la física fundamental de la respuesta de la turbulencia de pared al forzamiento transiente de las grandes escalas.
+Finalmente, y parafraseando al académico \cite{doi:10.1080/14685248.2019.1584664}, la aplicación de métodos como la asimilación de datos dentro de la capa límite planetaria sigue siendo un área activa y atractiva de investigación. La descarbonización de la matriz energética mundial exige nuevos estándares para la predicción relacionada a energías renovables, y en el caso de la energía eólica, el núcleo del problema de la predicción yace en la física fundamental de la respuesta de la turbulencia de pared al forzamiento transiente de las grandes escalas.
 

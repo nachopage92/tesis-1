@@ -179,11 +179,11 @@
     \RequirePackage[sort&compress,round,authoryear]{natbib}
   \fi
   \if@spanish
-    \bibliographystyle{ezspanish}
+    \bibliographystyle{spbasic}
   \else
     \bibliographystyle{plainnat}
   \fi
-  \let\cite\citep
+  %\let\cite\citep
 \fi
 
 %% bibliography fix - makes bibliography appear
@@ -219,6 +219,7 @@
 	\definecolor{dark-red}{rgb}{0.4,0.15,0.15}
 	\definecolor{dark-blue}{rgb}{0.15,0.15,0.4}
 	\definecolor{medium-blue}{rgb}{0,0,0.5}
+	\definecolor{cobalt}{rgb}{0.0, 0.28, 0.67}
 \fi
 
 % Linking and pdf options
@@ -241,8 +242,8 @@
 	% color links
 	\if@colors
 		\hypersetup{%
-			colorlinks,linkcolor={dark-red},citecolor={dark-blue},
-			urlcolor={medium-blue}}
+			colorlinks,linkcolor={cobalt},citecolor={cobalt},
+			urlcolor={cobalt}}
 	\fi
 
 	\renewcommand{\chapterautorefname}{Chapter}

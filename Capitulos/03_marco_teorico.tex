@@ -73,7 +73,6 @@ Nuevamente, cuando las variaciones de densidad son despreciables ($M<0.3$) la tr
 \be\label{eq:cons_mom_nse}
 \rho(\partial_t u_i + u_j\partial_j u_i)= \rho g_i -\partial_i p + \mu\partial_{jj}u_i
 \ee
-
 La ecuación \ref{eq:cons_mom_nse} corresponde a la conocida ecuación de Navier-Stokes. 
 
 Para un fluido ideal, es decir $\mu= 0$ se obtiene la ecuación de Euler, que es de la forma:
@@ -157,7 +156,7 @@ De esta forma, el sistema de ecuaciones que generan en conjunto las ecuaciones \
 \section{Dinámica Atmosférica}
 Tomando en consideración las ecuaciones de conservación presentadas en la sección anterior, es fácil deducir el conjunto de ecuaciones que modelan el comportamiento de la atmósfera. 
 
-La derivación de estas se puede encontrar en las referencias \cite{holton1992introduction} \cite{jacobson2005fundamentals}, sin embargo si ya se tiene un instinto físico con respecto a las fuerzas fundamentales explicadas anteriormente no debería ser sorpresiva la forma que toman estas ecuaciones. 
+La derivación de estas se puede encontrar en las referencias de \cite{holton1992introduction,jacobson2005fundamentals}, sin embargo si ya se tiene un instinto físico con respecto a las fuerzas fundamentales explicadas anteriormente no debería ser sorpresiva la forma que toman estas ecuaciones. 
 
 Las diferencias entre las leyes deducidas en la sección anterior y la dinámica atmosférica son:
 \begin{enumerate*}
@@ -227,7 +226,7 @@ Finalmente, para contabilizar el efecto de la humedad, se puede indistintamente 
 
 \newpage
 \subsection{Ecuaciónes Primitivas}
-Considerando todo lo expuesto anteriormente, las ecuaciones que gobiernan el movimiento global de la atmósfera en coordenadas esféricas se escriben como \cite{warner2010numerical}:
+Considerando todo lo expuesto anteriormente, las ecuaciones que gobiernan el movimiento global de la atmósfera en coordenadas esféricas se escriben como \citep{warner2010numerical}:
 \begin{align}
 d_t u &= \frac{uv\tan\phi}{a}-\frac{uw}{a}-\frac{1}{\rho}\partial_x p - 2\Omega(w\cos\phi - v\sin\phi) + F_{rx}\\
 d_t v &= -\frac{u^2\tan\phi}{a}-\frac{uw}{a}-\frac{1}{\rho}\partial_y p - 2\Omega u\sin\phi + F_{ry}\\
@@ -242,14 +241,14 @@ Donde $\phi$ es la latitud, $a$ es el radio de la tierra, $\Omega$ es la frecuen
 La ecuación \ref{03_eq:humedad} representa la conservación de masa para el vapor de agua dentro de la atmósfera. Este sistema de ecuaciones es la base y precursor de todos los modelos globales de la atmósfera, los cuales se vienen desarrollando desde los años 50.
 \newpage
 \section{Turbulencia Hidrodinámica}
-En esta sección se presentará un introducción a las bases teóricas del problema de la turbulencia. No se pretende hacer una definición detallada de todo el problema, es más, hay ciertos aspectos que se omitirán en esta parte, pero que en secciones futuras se presentan por motivo de la cohesión de este documento. Lo que se presenta acá es, mas que nada, un retrato cualitativo de la turbulencia, necesario para poder entender ciertos aspectos de la dinámica del atmósfera. Para mas información se pueden revisar las referencias clásicas \cite{pope2000turbulent} \cite{davidson2013turbulence} \cite{9780521775380}.
+En esta sección se presentará un introducción a las bases teóricas del problema de la turbulencia. No se pretende hacer una definición detallada de todo el problema, es más, hay ciertos aspectos que se omitirán en esta parte, pero que en secciones futuras se presentan por motivo de la cohesión de este documento. Lo que se presenta acá es, mas que nada, un retrato cualitativo de la turbulencia, necesario para poder entender ciertos aspectos de la dinámica del atmósfera. Para mas información se pueden revisar las referencias clásicas \citep{pope2000turbulent,davidson2013turbulence,9780521775380}.
 \subsection{Aspectos Generales}
 La gran mayoría de los fluidos en la naturaleza y en aplicaciones industriales se dicen que son turbulentos. En nuestra vida cotidiana estamos tan expuestos a estos que, en general, se tiene una buena intuición de lo que son y por lo tanto este concepto es, a grandes rasgos, aceptado sin mayor discusión. La principal característica de un flujo turbulento es que es aleatorio y que posee distintas escalas. Por ejemplo: un gráfico para la velocidad en función del tiempo se verá bien ruidoso y si se pudiese amplificar una sección de este gráfico, la velocidad se seguirá viendo ruidosa tal como se puede apreciar en la Figura \ref{fig:03_turbulent}. Sin embargo, se puede seguir amplificando hasta llegar a una escala en donde la velocidad se comporte de manera suave. Esto mismo se cumple si en vez de considerar el tiempo, se graficara en función de alguna coordenada espacial.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\linewidth,trim={4.3cm 7.7cm 4cm 11.5cm},clip]{Imagenes/03/turbulent}
-	\caption{Serie de tiempo para una componente de la velocidad en un flujo turbulento. Fuente: Pope (2000) \cite{pope2000turbulent}.}
+	\caption{Serie de tiempo para una componente de la velocidad en un flujo turbulento. Fuente: \cite{pope2000turbulent}.}
 	\label{fig:03_turbulent}
 \end{figure}
 
@@ -307,7 +306,7 @@ De esta manera, un bosquejo típico log-log de la cascada de energía, se puede 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.85\linewidth,trim={3.2cm 18.3cm 7.0cm 1.5cm},clip]{Imagenes/03/spectra}
-	\caption{Gráfico típico log-log de distribución de energía cinética turbulenta con respecto al número de onda $\kappa$ para un flujo con un número de Reynolds elevado. Fuente: Mathieu y Scott (2000) \cite{9780521775380}.}
+	\caption{Gráfico típico log-log de distribución de energía cinética turbulenta con respecto al número de onda $\kappa$ para un flujo con un número de Reynolds elevado. Fuente: \cite{9780521775380}.}
 	\label{fig:03_spectra}
 \end{figure}
 
@@ -317,7 +316,7 @@ Con respecto a la escala inercial, se puede demostrar por análisis dimensional 
 \be E(\kappa) = C\varepsilon^{2/3}\kappa^{-5/3} \ee
 Este resultado nace de las consideraciones en las hipótesis de Kolmogorov. Se tiene entonces que para turbulencia homogenea e isotrópica, la pendiente (logarítmica) de la energía con respecto al número de onda en la escala inercial es universal y constante, y tiene un valor de -5/3.
 
-De manera operacional, se puede encontrar el espectro de energía turbulenta haciendo una transformada de Fourier del campo de velocidades\footnote{Una definición mas formal del espectro, a través de las funciones de correlación, se puede ver en Mathieu y Scott (2000) \cite{9780521775380}.}. El par que define esta transformada será:
+De manera operacional, se puede encontrar el espectro de energía turbulenta haciendo una transformada de Fourier del campo de velocidades\footnote{Una definición mas formal del espectro, a través de las funciones de correlación, se puede ver en \cite{9780521775380}.}. El par que define esta transformada será:
 \be \tilde{u}'_i(\vec{\kappa},t) = \frac{1}{(2\pi)^3}\int u'_i(\vec{x},t) e^{-i\vec{\kappa}\cdot\vec{x}}d^3\vec{x} \ee
 \be u'_i(\vec{x},t) = \int \tilde{u}'_i(\vec{\kappa},t) e^{-i\vec{\kappa}\cdot\vec{x}}d^3\vec{\kappa} \ee
 
@@ -394,7 +393,7 @@ En la Figura \ref{fig:03_pbl2} se muestra la evolución para la temperatura pote
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.7\linewidth,trim={5.6cm 14cm 2.7cm 3.3cm},clip]{Imagenes/03/pbl2}
-	\caption{Evolución del perfil de $\theta_v$ en el ciclo diurno. Fuente: Stull (1988) \cite{stull1988introduction}.}
+	\caption{Evolución del perfil de $\theta_v$ en el ciclo diurno. Fuente: \cite{stull1988introduction}.}
 	\label{fig:03_pbl2}
 \end{figure}
 
@@ -459,7 +458,7 @@ Donde $\phi_m$ es un valor que se calcula en función de $z/L$, siendo $L$ es el
 	1 & \frac{z}{L}=0  \quad \text{neutral}
 \end{cases}
 \ee 
-Acá $\beta_m$ y $\gamma_m$ son constantes en función del valor de $\kappa$ que se use \cite{jacobson2005fundamentals}.
+Acá $\beta_m$ y $\gamma_m$ son constantes en función del valor de $\kappa$ que se use \citep{jacobson2005fundamentals}.
 
 El largo de Monin-Obukhov $L$ es una altura proporcional a la altura a la cual la producción de turbulencia debido a la flotación comienza a dominar por sobre la producción debido a efectos mecánicos. Matemáticamente,
 \be 
@@ -469,7 +468,7 @@ La segunda igualdad es obtenida sustituyendo por la siguiente relación de simil
 \be 
 (\overline{w'\theta'_v})_s \approx -u_* \theta_*
 \ee
-Acá se introduce $\theta_*$ que es una variable de escalamiento para la temperatura potencial\footnote{Se omitirá la manera de aproximar $\theta_*$ en este documento, sin embargo se motiva al lector a leer la referencia \cite{jacobson2005fundamentals} si desea conocer mas al respecto.}. $\theta_*$ es proporcional a la diferencia vertical de temperatura potencial. A mayor valor de $\overline{\theta}$ en la cercanía de la superficie, más negativo será el cambio de temperatura potencial con respecto a la altura y por ende mas inestable será la atmósfera. Para este caso $L$ será negativo pero de un valor pequeño (es inversamente proporcional a $\theta_*$). Si $L$ es pequeño y negativo, $z/L$ es negativo y grande. Estos valores de $z/L$ corresponden a atmósferas inestables debido a la flotación. Análogamente, valores positivos de $z/L$ corresponden a atmósferas estables.
+Acá se introduce $\theta_*$ que es una variable de escalamiento para la temperatura potencial\footnote{Se omitirá la manera de aproximar $\theta_*$ en este documento, sin embargo se motiva al lector a leer la referencia \citep{jacobson2005fundamentals} si desea conocer mas al respecto.}. $\theta_*$ es proporcional a la diferencia vertical de temperatura potencial. A mayor valor de $\overline{\theta}$ en la cercanía de la superficie, más negativo será el cambio de temperatura potencial con respecto a la altura y por ende mas inestable será la atmósfera. Para este caso $L$ será negativo pero de un valor pequeño (es inversamente proporcional a $\theta_*$). Si $L$ es pequeño y negativo, $z/L$ es negativo y grande. Estos valores de $z/L$ corresponden a atmósferas inestables debido a la flotación. Análogamente, valores positivos de $z/L$ corresponden a atmósferas estables.
 
 Evidentemente, la introducción de $\theta_*$ permite escribir relaciones de similaridad para el perfil de $\theta$ de la forma:
 \be \label{eq:03_simi_theta}
@@ -512,7 +511,7 @@ Para condiciones neutras se tiene que $\phi_m = 1$ y el perfil de viento horizon
 \ee
 la cual es una fórmula clásica para estimar la velocidad del viento dentro de la capa límite.
 \subsection{Ecuación de Energía Cinética Turbulenta}
-La ecuación de transporte que rige el comportamiento del TKE se puede escribir de la siguiente forma \cite{stull1988introduction}:
+La ecuación de transporte que rige el comportamiento del TKE se puede escribir de la siguiente forma \citep{stull1988introduction}:
 \be
 \partial_t k + \overline{u}_j\partial_j k = \delta_{i3}\frac{g}{\overline{\theta}_v}\overline{u'_i\theta'_v} - \overline{u'_i u'_j} \partial_j \overline{u_i} - \partial_j\overline{u'_j k} - \frac{1}{\rho} \partial_i \overline{u'_i p'} - \varepsilon
 \ee
@@ -540,12 +539,12 @@ El significado físico de cada término es:
 
 Como síntesis, la turbulencia es disipativa. El término $VI$ existe siempre que el TKE no sea cero. Físicamente, esto significa que la turbulencia tiende a decaer y desaparecer a través del tiempo, a no ser que sea creada localmente o trasportada por el flujo medio o procesos turbulentos o de presión. Luego, el TKE no es una cantidad que se conserva. La capa límite puede ser turbulenta solo si existen ciertos procesos físicos generando esta turbulencia.
 
-Las Figuras \ref{fig:03_tke3}, \ref{fig:03_tke1} y \ref{fig:03_tke2} (Fuente: Stull, 1998 \cite{stull1988introduction}) representan la distribución de TKE y el balance de los términos de la ecuación de TKE\footnote{Acá se utiliza una nueva variable de escalamiento $w_*$. Corresponde a una velocidad de escalamiento convectiva. Se calcula como: $[(g\delta/\overline{\theta}_v)(\overline{w'\theta'_v})_s]^{1/3}$.} para distintas horas de un día según simulaciones de varios autores. Estos gráficos y valores servirán de referencia a los valores obtenidos en los resultados de los experimentos de esta tesis.
+Las Figuras \ref{fig:03_tke3}, \ref{fig:03_tke1} y \ref{fig:03_tke2} (Fuente: \cite{stull1988introduction}) representan la distribución de TKE y el balance de los términos de la ecuación de TKE\footnote{Acá se utiliza una nueva variable de escalamiento $w_*$. Corresponde a una velocidad de escalamiento convectiva. Se calcula como: $[(g\delta/\overline{\theta}_v)(\overline{w'\theta'_v})_s]^{1/3}$.} para distintas horas de un día según simulaciones de varios autores. Estos gráficos y valores servirán de referencia a los valores obtenidos en los resultados de los experimentos de esta tesis.
 
 \begin{figure}[h!]
 	\centering
 		\includegraphics[width=0.8\linewidth,trim={3cm 5.5cm 2.9cm 11.6cm},clip]{Imagenes/03/tke3}
-	\caption{Variación espacial y temporal de TKE modelada. Fuente: Stull (1988) \cite{stull1988introduction}.}
+	\caption{Variación espacial y temporal de TKE modelada. Fuente: \cite{stull1988introduction}.}
 	\label{fig:03_tke3}
 \end{figure}
 
@@ -554,14 +553,14 @@ La Figura \ref{fig:03_tke3} muestra como el valor del TKE es alto a nivel de sup
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.8\linewidth,trim={3cm 6.3cm 2.9cm 11.5cm},clip]{Imagenes/03/tke1}
-	\caption{Términos normalizados en la ecuación de TKE para el día. Las áreas sombreadas corresponden a un rango de valores. Todos los términos son adimensionalizados por $w_*^3/\delta$. Fuente: Stull (1988) \cite{stull1988introduction}.}
+	\caption{Términos normalizados en la ecuación de TKE para el día. Las áreas sombreadas corresponden a un rango de valores. Todos los términos son adimensionalizados por $w_*^3/\delta$. Fuente: \cite{stull1988introduction}.}
 	\label{fig:03_tke1}
 \end{figure}
 
 \begin{figure}[h!]
 	\centering
 		\includegraphics[width=0.8\linewidth,trim={3.2cm 4.8cm 2.8cm 12.1cm},clip]{Imagenes/03/tke2}
-	\caption{Términos normalizados en la ecuación de TKE para la noche (18:00 y 02:00). Fuente: Stull (1988) \cite{stull1988introduction}.}
+	\caption{Términos normalizados en la ecuación de TKE para la noche (18:00 y 02:00). Fuente: \cite{stull1988introduction}.}
 	\label{fig:03_tke2}
 \end{figure}
  
@@ -585,7 +584,7 @@ Hasta ahora, el problema de la turbulencia se ha acotado a separar el flujo en s
 
 Si se considera la naturaleza multiescala de la turbulencia, resulta natural querer resolver los campos de flujo separando las escalas de producción (relacionadas con los grandes vórtices y el ingreso de energía) de las escalas pequeñas (relacionadas a los vórtices en la escala de Kolmogorov y a la disipación de energía). La manera de realizar esto es aplicando un operador de filtro a las variables, de modo que actúe a nivel del espectro de energía, separando las escalas grandes de las pequeñas. De ahí el nombre Simulación de Grandes Vórtices o Large Eddy Simulation (LES) en inglés. 
 
-El desarrollo del LES fue motivado principalmente por aplicaciones meteorológicas (Smagorinsky (1963), Lilly (1967), Deardorff (1974)) y su implementación en la ABL sigue siendo un foco de investigación activo para el LES. 
+El desarrollo del LES fue motivado principalmente por aplicaciones meteorológicas \citep{doi:10.1175/1520-0493(1963)091<0099:GCEWTP>2.3.CO;2,deardorff1974three,lilly1966representation} y su implementación en la ABL sigue siendo un foco de investigación activo para el LES. 
 
 Formalmente, se pueden considerar cuatro pasos conceptuales para la aplicación del LES:
 \begin{enumerate*}
@@ -613,11 +612,11 @@ Estas diferencias se pueden apreciar en la Figura \ref{fig:03_les}.
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=0.6\linewidth,trim={4.8cm 4.8cm 2.8cm 12.1cm},clip]{Imagenes/03/les}
-	\caption{Curva superior: una muestra de un campo de velocidad $u$ y su correspondiente campo filtrado $\overline{u}$ (en negrita). Curva inferior: campo residual $u'$ y campo residual filtrado $\overline{u'}$ (en negrita). Fuente: Pope (2000) \cite{pope2000turbulent}.}
+	\caption{Curva superior: una muestra de un campo de velocidad $u$ y su correspondiente campo filtrado $\overline{u}$ (en negrita). Curva inferior: campo residual $u'$ y campo residual filtrado $\overline{u'}$ (en negrita). Fuente: \cite{pope2000turbulent}.}
 	\label{fig:03_les}
 \end{figure}
 
-Se debe tener en cuenta que el filtro es en el fondo un nuevo operador matemático que cumple sus propias propiedades y que permite separar las escalas grandes de las pequeñas. Para una mejor descripción teórica de lo que implica un operador de filtrado se puede recurrir a Berselli et al. (2005) \cite{9783540263173}.
+Se debe tener en cuenta que el filtro es en el fondo un nuevo operador matemático que cumple sus propias propiedades y que permite separar las escalas grandes de las pequeñas. Para una mejor descripción teórica de lo que implica un operador de filtrado se puede recurrir a  \cite{9783540263173}.
 
 \subsection{Ecuaciones de Conservación Filtradas}
 La aplicación del filtro a la ecuación de conservación de masa para flujo incompresible, da como resultado el hecho de que tanto el campo filtrado $\overline{u}$ como el campo residual $u'$ son solenoidales,
@@ -656,7 +655,7 @@ $\Pi$ es la tasa de producción de energía cinética residual (o disipación de
 \Pi = -\tau_{ij}^r\overline{S}_{ij}
 \ee 
 \subsection{Modelación de los Esfuerzos Residuales}
-Para lograr la clausura de las ecuaciones filtradas, se necesita un modelo para el esfuerzo residual anisotrópico $\tau_{ij}^r$. El modelo mas simple es el propuesto por Smagorinsky (1963), el cual también sirve como base para varios modelos mas avanzados.
+Para lograr la clausura de las ecuaciones filtradas, se necesita un modelo para el esfuerzo residual anisotrópico $\tau_{ij}^r$. El modelo mas simple es el propuesto por \cite{doi:10.1175/1520-0493(1963)091<0099:GCEWTP>2.3.CO;2}, el cual también sirve como base para varios modelos mas avanzados.
 \subsubsection{Modelo de Smagorinsky}
 El modelo se puede ver en dos partes. Primero el modelo de viscosidad turbulenta lineal:
 \be \tau_{ij}^r = -2\nu_t \overline{S}_{ij} \ee
@@ -665,11 +664,11 @@ se usa para relacionar el esfuerzo residual con la tasa de deformación filtrada
 Segundo, a través de una analogía con la hipótesis de largo de mezcla, la viscosidad turbulenta se modela como:
 \be \nu_t = \ell_s^2 \overline{\mathcal{S}} \ee
 \be \nu_t = (C_S \Delta)^2 \overline{\mathcal{S}} \ee
-donde $\mathcal{S}$ es la tasa de deformación filtrada característica. $\ell_s$ es la escala de longitud de Smagorinsky, la cual, por medio de un coeficiente de Smagorinsky $C_s$($\sim 0,17$) se toma como proporcional al ancho del filtro $\Delta$.
+donde $\mathcal{S}$ es la tasa de deformación filtrada característica. $\ell_s$ es la escala de longitud de Smagorinsky, la cual, por medio de un coeficiente de Smagorinsky $C_s$ ($\sim \!0,17$) se toma como proporcional al ancho del filtro $\Delta$.
 \subsubsection{Modelo de Deardorff}
 Tomando en consideración que el modelo de Smagorinsky es instantáneo y local, se torna natural el buscar incorporar los efectos no locales y de historia a través de alguna ecuación de transporte para $\tau_{ij}^r$. 
 
-Deardorff (1974) planteó una ecuación de transporte para $k_r$\footnote{La estructura de la ecuación de transporte puede variar según el caso. Para motivos de esta tesis la forma de esta ecuación se verá en el próximo capítulo.} y logró la clausura a través de las siguientes relaciones:
+\cite{deardorff1974three} planteó una ecuación de transporte para $k_r$\footnote{La estructura de la ecuación de transporte puede variar según el caso. Para motivos de esta tesis la forma de esta ecuación se verá en el próximo capítulo.} y logró la clausura a través de las siguientes relaciones:
 \be \varepsilon_r = \frac{C_E k_r^{3/2}}{\Delta} \ee
 \be \nu_t = C_v k_r^{1/2}\Delta \ee
 Donde $C_E\approx 0.7$ y $C_v\approx 0.1$. $\varepsilon_r$ es la tasa de disipación de energía cinética residual. Modelos de este tipo son ampliamente usados en meteorología y es este el que se implementa en las simulaciones de esta tesis.
@@ -704,7 +703,7 @@ donde $\mathbf{K}$ es la matriz peso de la innovación que se debe encontrar.
 
 Si bien es posible hallar una solución teórica al problema multidimensional expresado en la ecuación \ref{eq:03_dataassim1}, generalmente es ineficiente y por lo tanto se adopta una metodología de minimización de funcion de costo o, análisis variacional.
 
-Se puede demostrar \cite{warner2010numerical} que el problema variacional multidimensional busca minimizar una función de costo $J(\mathbf{x})$, que pondera los errores provenientes del modelo $J_b$ (\emph{background}) y de las observaciones $J_o$ de la forma:
+Se puede demostrar \citep{warner2010numerical} que el problema variacional multidimensional busca minimizar una función de costo $J(\mathbf{x})$, que pondera los errores provenientes del modelo $J_b$ (\emph{background}) y de las observaciones $J_o$ de la forma:
 
 \be 
 J(x) = J_b + J_o = \frac{1}{2}(\textbf{x}-\textbf{x}_b)^T \textbf{B}^{-1}(\textbf{x}-\textbf{x}_b) + \frac{1}{2}(H(\textbf{x})-\textbf{y})^T \textbf{R}^{-1}(H(\textbf{x})-\textbf{y})

@@ -1,4 +1,5 @@
-\documentclass[oneside,numbers,spanish,a4paper]{ezthesis}
+%\documentclass[oneside,numbers,spanish,a4paper]{ezthesis}
+\documentclass[oneside,spanish,a4paper]{ezthesis}
 %\documentclass[oneside,authoryear,draft,spanish]{ezthesis}
 %\documentclass[oneside,authoryear,draftmarks,spanish]{ezthesis}
 %% # Opciones disponibles para el documento #
@@ -161,7 +162,10 @@ backgroundcolor=\color{gray75},
 \makeatletter
 \def\tagform@#1{\maketag@@@{(\ignorespaces\textbf{#1}\unskip\@@italiccorr)}}
 \renewcommand{\eqref}[1]{\textup{{\normalfont(\ref{#1}}\normalfont)}}
-\makeatother 
+\makeatother
+\usepackage{natbib}
+\setcitestyle{aysep={},yysep={;}}
+%\bibliographystyle{spbasic}
 %%##################################################################################################################################
 %% # Datos del documento #
 %% Nota que los acentos se deben escribir: \'a, \'e, \'i, etc.
