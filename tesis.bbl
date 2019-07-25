@@ -1,4 +1,4 @@
-\begin{thebibliography}{70}
+\begin{thebibliography}{71}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{{#1}}
 \providecommand{\urlprefix}{URL }
@@ -101,6 +101,10 @@ Cheng WY, Liu Y, Bourgeois AJ, Wu Y, Haupt SE (2017) Short-term wind forecast
 Chow FK, Street RL (2009) Evaluation of turbulence closure models for
   large-eddy simulation over complex terrain: Flow over askervein hill. Journal
   of Applied Meteorology and Climatology 48(5):1050--1065
+
+\bibitem[{{Comisión Nacional de Energía de Chile}(2018)}]{anuariocne2018}
+{Comisión Nacional de Energía de Chile} (2018) Anuario Estadístico de
+  Energía 2018
 
 \bibitem[{Davidson(2013)}]{davidson2013turbulence}
 Davidson P (2013) Turbulence in Rotating, Stratified and Electrically

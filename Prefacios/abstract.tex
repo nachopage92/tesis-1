@@ -7,13 +7,14 @@
 %% Recuerda que aqu'i ya puedes escribir acentos como: 'a, 'e, 'i, etc.
 %% La letra n con tilde es: 'n.
 \prefacesection{Abstract}
-\color{red}Con el fin de lograr una correcta predicción del recurso viento en terreno complejo en zonas muy localizadas, se llevaron cabo una serie de simulaciones numéricas multiescala con datos reales utilizando WRF-LES a través de la técnica de dominios anidados hasta una resolución máxima de aproximadamente 2 [m]. Para corregir las desviaciones propias de una simulación numérica, se propuso mejorar los resultados utilizando un esquema de asimilación de datos en el dominio mas interior.
+In order to achieve a correct wind resource prediction in complex terrain for localized areas, a series of multiscale meteorological numerical simulations with high resolution real data was carried out using the WRF atmospheric model and a LES turbulence closure.
+The meso-microscale coupling was done through nested domains until a resolution of approximately 2 [m] was reached. To correct the numerical simulation deviations and uncertainties, a four-dimensional data assimilation scheme in the innermost domain was proposed. 
 
-Se presentan resultados para 4 casos. Los primeros dos casos corresponden a una simulación real en el sitio de pruebas de turbinas en Høvsøre, Dinamarca, el cual es un terreno cuasi-plano ampliamente estudiado. La primera simulación valida el acercamiento numérico y la segunda muestra la influencia de la asimilación de datos en la capa límite considerando 6 niveles de un mástil meteorológico ubicado en el centro del dominio.
+The implementation's validation is based in 4 cases. The first two correspond to a simulation at the turbine test site in Høvsøre, Denmark, which is a widely studied quasi-flat terrain. The first simulation validates the numerical approach and the second one shows the influence of the data assimilation in the boundary layer considering 5 levels of a meteorological mast located at the domain center.
 
-Las siguientes dos simulaciones corresponden a la aplicación de la misma metodología pero en terreno complejo. En este caso se simula la colina de Bolund ubicada también en Dinamarca. Estas dos simulaciones ahora nos exponen el comportamiento del modelo para este caso, y la influencia de la asimilación de datos multipunto utilizando la información de 8 mástiles y en 3 niveles cercanos a la superficie.
+The last two cases correspond to the application of the same methodology but in complex terrain to simulate the Bolund hill, also located in Denmark. These two simulations exposes: (i) the behavior of the model for a neutrally stratified wind flow with a separation bubble and, (ii) the multipoint data assimilation influence using information of 8 mast at 3 levels near the surface.
 
-Los resultados obtenidos muestran que es posible obtener predicciones certeras y que rescaten el comportamiento turbulento del viento a las escalas simuladas y que además, la asimilación de datos mejora considerablemente esta predicción, dando pié a un uso operativo de los códigos utilizados.
+The obtained results shows that it is possible to obtain more accurate predictions that replicate the turbulent wind behavior at simulated scales and that, in addition, data assimilation improves the flat terrain prediction by 10\%.  In complex terrain, the data assimilation fails to improve the solution due to the proximity of the measurements with the ground and the terrain induced forcing. However, all the research gives rise to an operational use of the proposed methodology and codes.
 
 \color{black}
 \paragraph{Keywords} \emph{Multiscale Simulation, LES, Data Assimlation, WRF, Atmospheric Boundary Layer, NWP, Atmospheric Turbulence, Wind Energy}

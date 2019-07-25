@@ -122,8 +122,8 @@
 
 %% margins
 \RequirePackage[
-  top     = 40mm, bottom     = 33mm,
-  outer   = 25mm, inner      = 40mm,
+  top     = 30mm, bottom     = 30mm,
+  outer   = 30mm, inner      = 40mm,
   headsep = 10mm, headheight = 15pt,
   marginparwidth = 15mm ]{geometry}
 
@@ -145,7 +145,7 @@
   \else
     \fancyhf{}
     \fancyhead[L]{\itshape\nouppercase\leftmark}
-    \fancyhead[R]{\itshape\thepage}
+    \fancyfoot[R]{\itshape\thepage}
     \fancyfoot[C]{\draftmark}
 
     \fancypagestyle{plain}{%

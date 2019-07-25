@@ -172,10 +172,10 @@ backgroundcolor=\color{gray75},
 %% La letra n con tilde es: \~n.
 
 \author{Pablo Andrés Cárdenas Zamorano}
-\title{PREDICCIÓN EÓLICA DE ALTA RESOLUCIÓN Y A CORTO PLAZO EN TERRENO COMPLEJO MEDIANTE ACOPLAMIENTO MESO-MICROESCALA, SIMULACIÓN DE GRANDES VÓRTICES Y ASIMILACIÓN DE DATOS 4D}
+\title{SIMULACIÓN MULTIESCALA DEL VIENTO SOBRE TERRENO COMPLEJO MEDIANTE EL MÉTODO EMBEDIDO WRF-LES Y ASIMILACIÓN VARIACIONAL DE DATOS 4D}
 \degree{Magíster en Ciencias de la Ingeniería Mecánica }
-\supervisor{Dr. Ing. Alex Flores}
-\correferent{Dr. Carlos Rosales}
+\supervisor{Dr. Ing. Alex Flores Maradiaga}
+\correferent{Dr. Carlos Rosales Huerta}
 \correferentextern{Dr. XXXXX XXXXXXXXX}
 \institution{UNIVERSIDAD TÉCNICA FEDERICO SANTA MARÍA}
 \faculty{Escuela de Ingeniería y Ciencias}
@@ -188,15 +188,29 @@ backgroundcolor=\color{gray75},
 %% Quitar el comentario en la siguiente linea para austar los m'argenes del
 %% documento. Leer la documentaci'on de "geometry" para m'as informaci'on.
 
-\geometry{top=35mm,bottom=35mm,inner=30mm,outer=30mm}
+%\geometry{top=30mm,bottom=30mm,inner=40mm,outer=30mm}
 
 %% El siguiente comando agrega ligas activas en el documento para las
 %% referencias cruzadas y citas bibliogr'aficas. Tiene que ser *la 'ultima*
 %% instrucci'on antes de \begin{document}.
 \hyperlinking
+
+\usepackage{titlesec}
+
+\usepackage{etoolbox}
+
+\makeatletter
+\patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
+\patchcmd{\ttlh@hang}{\noindent}{}{}{}
+\makeatother
+
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
 \begin{document}
 \renewcommand{\listtablename}{Índice de tablas}
 \renewcommand{\tablename}{Tabla} 
+\pagenumbering{roman}
 \sloppy 
 
 
@@ -215,6 +229,7 @@ backgroundcolor=\color{gray75},
 %% Por cada prefacio (p.e. agradecimientos, resumen, etc.) crear
 %% un nuevo archivo e incluirlo aqu'i.
 %% Para m'as detalles y un ejemplo mirar el archivo "gracias.tex".
+%\newgeometry{top=30mm,bottom=30mm,inner=40mm,outer=30mm}
 \include{Prefacios/frase}
 \include{Prefacios/gracias}
 \include{blanco}
@@ -230,8 +245,14 @@ backgroundcolor=\color{gray75},
 %%%% Indice
 \tableofcontents
 %%%% Indice de figuras
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listfigurename}
 \listoffigures
 %%%% Indice de tablas
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listtablename}
 \listoftables
 %%%% Indice de tablas
 \include{Capitulos/00_nomenclatura}
@@ -241,6 +262,7 @@ backgroundcolor=\color{gray75},
 %%% Mirar el archivo "intro.tex" para un ejemplo y recomendaciones para
 %%% escribir.
 %
+\pagenumbering{arabic}
 \include{Capitulos/01_intro}
 %
 \include{Capitulos/02_estado_arte}
