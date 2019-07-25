@@ -80,33 +80,32 @@ El objetivo final de esta investigación es implementar un sistema robusto que o
 
 En el presente trabajo se brinda una descripción acabada de los fenómenos y problemáticas que abarca la tarea descrita anteriormente, además de un resumen de la bibliografía necesaria para que cualquier persona que quiera involucrarse en el campo de la simulación atmosférica con asimilación de datos pueda hacerlo de una manera sencilla. Como beneficio para la comunidad científica, los resultados obtenidos podrán ser utilizados como linea de base (o benchmark) para cualquier otra simulación futura a alta resolución, pudiendo dar pié a una nueva prueba canónica para modelos multiescala en operación continua.
 
-%ACA VA LA CORRECCIÓN
 \section{Hipótesis}
-
-Mejorar la precisión de los pronósticos actuales para el viento a través de simulaciones atmosféricas multiescala de alta resolución en terreno complejo y la incorporación de un esquema de asimilación de datos 4D que vaya alimentando datos al sistema en tiempo real.
+A través de simulaciones numéricas multiescala de alta resolución con un modelo atmosférico y un esquema de asimilación de datos 4D dentro de la capa límite planetaria, es posible obtener un pronóstico preciso a corto plazo para viento sobre terreno complejo y representar correctamente el comportamiento turbulento de este.
 
 \section{Objetivos}
 \subsubsection{Objetivo Principal}
 \begin{itemize*}
-	\item Lograr a través de la aplicación de asimilación de datos 4D multipunto en la capa límite atmosférica una mejora comparativa con respecto a los modelos existentes para la predicción de viento a alta resolución en terreno complejo en el modelo de código libre WRF.
+	\item Mejorar la precisión de los pronósticos de la capa límite planetaria a través de simulaciones atmosféricas multiescala de alta resolución sobre terreno complejo con la incorporación de un esquema de asimilación de datos 4D multipunto para alimentar datos al sistema en tiempo real y lograr un ajuste adecuado de las variables.
+	%\item Lograr a través de la aplicación de asimilación de datos 4D multipunto en la capa límite atmosférica una mejora comparativa con respecto a los modelos existentes para la predicción de viento a alta resolución en terreno complejo en el modelo de código libre WRF.
 \end{itemize*}
 \subsubsection{Objetivos Secundarios}
 \begin{itemize*}
-	\item Acoplar dominios de microescala y mesoescala en simulaciones numéricas atmosféricas mediante una clausura de turbulencia tipo LES.
-	\item Estudiar el uso e incorporar bases de datos reales de alta resolución para orografía y uso de suelo en el modelo WRF.
-	\item Desarrollar y optimizar códigos relacionados con simulación atmosférica multiescala y asimilación de datos.
-	\item Estudiar la influencia de la asimilación de datos en la capa límite considerando un solo punto y multipunto.
-	\item Verificar y validar resultados obtenidos con aquellos presentes en el estado del arte y campañas de medición en terrenos reales.
-	\item Generar una base de datos de resultados para terreno complejo real utilizable como benchmark para la comunidad científica. 
+	\item Acoplar dominios de microescala y mesoescala en simulaciones numéricas atmosféricas para el uso eficiente del esquema de clausura turbulenta tipo LES.
+	\item Estudiar e incorporar una metodología para usar bases de datos reales de alta resolución para orografía y uso de suelo en el modelo WRF.
+	\item Desarrollar y optimizar el método y código para la simulación atmosférica multiescala y asimilación de datos.
+	\item Estudiar la influencia de la asimilación de datos en la simulación computacional de la capa límite considerando un solo punto y múltiples puntos (estaciones) de monitoreo.
+	\item Verificar y validar resultados obtenidos con aquellos estudios publicados en la literatura y basados en campañas de medición en terrenos reales.
+	\item Generar una base de datos de resultados para terreno complejo real utilizable como base de comparación y validación para la comunidad científica. 
 \end{itemize*}
-
+\newpage
 \section{Estructura del Documento}
 La estructura de esta tesis se organiza de la siguiente manera:
 \begin{itemize*}
-	\item Cap. 2: Se exponen los últimos avances, problemáticas y consensos en torno a la simulación atmosférica multiescala y asimilación de datos, que son el núcleo del trabajo realizado.
-	\item Cap. 3: Sienta las bases conceptuales, matemáticas y físicas sobre las cuales se desarrolla la investigación. Acá se abordan: las leyes fundamentales de los fluidos, la dinámica atmosférica, la turbulencia, la capa límite planetaria, el método de simulación de grandes vórtices (LES) y la asimilación de datos.
-	\item Cap. 4: Sienta las bases numéricas, es decir, se explica el funcionamiento del software  libre WRF.
-	\item Cap. 5: Muestra la filosofía y configuración de los 4 experimentos realizados: 2 casos para terreno plano (donde uno sirve como validación y el otro analiza la asimilación de datos) y dos casos para terreno complejo (sin y con asimilación). Además, se detalla la metodología para la obtención y presentación de resultados.
-	\item Cap. 6: Se presentan los resultados mas relevantes.
-	\item Cap. 7: Conclusiones, trabajo futuro y aspectos que quedan abiertos a la mejora.
+	\item Cap. 2: Se exponen los últimos avances, problemáticas y tendencias en torno a la simulación atmosférica multiescala y asimilación de datos, que son el núcleo del trabajo realizado.
+	\item Cap. 3: Sienta las bases conceptuales, matemáticas y físicas sobre las cuales se desarrolla la investigación. Se abordan: las leyes fundamentales de los fluidos, la dinámica atmosférica, la turbulencia, la capa límite planetaria, el método de simulación de grandes vórtices (LES) y la asimilación de datos 4D.
+	\item Cap. 4: Se explica el funcionamiento del software  libre WRF y la metodología implementada para este estudio.
+	\item Cap. 5: Muestra la filosofía y configuración de los 4 experimentos realizados: 2 casos para terreno plano (donde uno sirve como validación y el otro analiza la asimilación de datos) y dos casos para terreno complejo (sin y con asimilación). Además, se detalla la metodología para la obtención, postprocesamiento y presentación de resultados.
+	\item Cap. 6: Se presentan y analizan detalladamente los resultados mas relevantes.
+	\item Cap. 7: Conclusiones, trabajo futuro y propuestas de mejora para el trabajo/método implementado.
 \end{itemize*}
