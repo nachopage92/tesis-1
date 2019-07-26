@@ -1,4 +1,4 @@
-\begin{thebibliography}{71}
+\begin{thebibliography}{75}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{{#1}}
 \providecommand{\urlprefix}{URL }
@@ -156,6 +156,10 @@ Hacker J, Draper C, Madaus L (2018) Challenges and opportunities for data
 \bibitem[{Holton(1992)}]{holton1992introduction}
 Holton J (1992) An Introduction to Dynamic Meteorology. Academic Press
 
+\bibitem[{Jackson y Hunt(1975)}]{jackson1975turbulent}
+Jackson P, Hunt J (1975) Turbulent wind flow over a low hill. Quarterly Journal
+  of the Royal Meteorological Society 101(430):929--955
+
 \bibitem[{Jacobson(2005)}]{jacobson2005fundamentals}
 Jacobson M (2005) Fundamentals of Atmospheric Modeling. Cambridge University
   Press
@@ -174,6 +178,10 @@ Kosovi{\'{c}} B, Curry JA (2000) A large eddy simulation study of a
 
 \bibitem[{Kundu et~al.(2001)Kundu, Cohen, y Hu}]{kundu2001fluid}
 Kundu P, Cohen I, Hu H (2001) Fluid Mechanics. Elsevier Science
+
+\bibitem[{Launder y Spalding(1974)}]{launder1974numerical}
+Launder B, Spalding D (1974) The numerical computation of turbulent flows.
+  Computer Methods in Applied Mechanics and Engineering 3:269--289
 
 \bibitem[{Lilly(1966)}]{lilly1966representation}
 Lilly K (1966) The representation of small-scale turbulence in numerical
@@ -197,6 +205,10 @@ Liu Y, Warner TT, Bowers JF, Carson LP, Chen F, Clough CA, Davis CA, Egeland
   evaluation command. part i: Overview of the modeling system, the forecast
   products, and how the products are used. Journal of Applied Meteorology and
   Climatology 47(4):1077--1092
+
+\bibitem[{Mason y Sykes(1979)}]{mason1979flow}
+Mason P, Sykes R (1979) Flow over an isolated hill of moderate slope. Quarterly
+  Journal of the Royal Meteorological Society 105(444):383--395
 
 \bibitem[{Mathieu y Scott(2000)}]{9780521775380}
 Mathieu J, Scott J (2000) An Introduction to Turbulent Flow. Cambridge
@@ -340,6 +352,10 @@ Stull R (1988) An Introduction to Boundary Layer Meteorology. Springer
 Talbot C, Bou-Zeid E, Smith J (2012) Nested mesoscale large-eddy simulations
   with {WRF}: Performance in real test cases. Journal of Hydrometeorology
   13(5):1421--1441
+
+\bibitem[{Taylor(1977)}]{taylor1977some}
+Taylor P (1977) Some numerical studies of surface boundary-layer flow above
+  gentle topography. Boundary-Layer Meteorology 11(4):439--465
 
 \bibitem[{Torrecillas et~al.(2016)Torrecillas, Casso, Lizcano, y
   Kosovic}]{https://doi.org/10.13140/rg.2.1.2270.1041}

@@ -1,19 +1,19 @@
 \chapter{Marco Teórico}
-Las bases de esta investigación se encuentran distribuidas en las áreas de la mecánica de fluidos, la meteorología, computación científica y matemáticas. En este capítulo se presenta el conjunto de conocimientos mínimos necesarios para comprender la manera en la que el código WRF ejecuta la integración numérica para predecir el comportamiento del viento y el posproceso realizado para interpretar los resultados. 
+Las bases de esta investigación se encuentran distribuidas en las áreas de la mecánica de fluidos, la meteorología dinámica, computación científica y matemáticas. En este capítulo se presenta el conjunto de fundamentos teóricos necesarios para comprender la manera en la que el modelo WRF ejecuta la integración numérica para predecir el comportamiento del viento y el postproceso realizado para interpretar los resultados. 
 
-En primer lugar, se introducen las ecuaciones que describen el comportamiento de un fluido a modo de ganar cierta intuición sobre los términos existentes en cada ecuación. Luego se describen aspectos relevantes de estas ecuaciones aplicadas a la atmósfera, para finalmente escribir las ecuaciones primitivas, piedra angular de la modelación atmosférica. Seguido, se presentan los temas de turbulencia, teoría de la capa límite, los fundamentos matemáticos del LES y finalmente el proceso de asimilación de datos.
+En primer lugar, se introducen las ecuaciones que describen el comportamiento de un fluido a modo de ganar cierta intuición sobre los términos existentes en cada ecuación. Luego se describen aspectos relevantes de estas ecuaciones aplicadas a la atmósfera, para finalmente establecer las ecuaciones primitivas, piedra angular de la modelación atmosférica. Seguido, se presentan los temas de turbulencia, teoría de la capa límite, los fundamentos matemáticos del LES y finalmente el proceso de asimilación de datos.
 
 A lo largo de esta sección, y por simplicidad, se aplicará la notación indicial cada vez que exista un índice repetido en un término, es decir:
 \begin{equation}\label{eq:indicial}
-\sum_{i=1}^{3}\! x_i y_i = x_i y_i
+\sum_{i=1}^{3}\! x_i y_i = x_i y_i.
 \end{equation}
 De la misma manera, se utiliza la siguiente notación para las derivadas:
 \begin{equation}
-\partial_x a = \frac{\partial a}{\partial x}
+\partial_x a = \frac{\partial a}{\partial x}.
 \end{equation}
-Utilizando estas dos notaciones, notar que es posible por ejemplo, escribir el operador divergencia como:
+Utilizando estas dos notaciones por favor notar que es posible por ejemplo, escribir el operador divergencia como:
 \begin{equation}\label{eq:divergencia}
-\nabla\cdot\vec{u} = \partial_i u_i
+\nabla\cdot\vec{u} = \partial_i u_i.
 \end{equation}
 \section{Leyes Fundamentales de un Fluido}
 Sea un medio fluido cualquiera de densidad $\rho$ y campo de velocidad $\vec{v}=(u,v,w)=u_i\vec{e}_i$. Se define la derivada material como el cambio total de una variable $a$ en un elemento diferencial fluido a lo largo de su trayectoria como

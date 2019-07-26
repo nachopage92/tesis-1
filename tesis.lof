@@ -5,9 +5,9 @@
 \contentsline {figure}{\numberline {1.3}{\ignorespaces Esquema de la sonda FONDEF ID16I10105.\relax }}{6}{figure.caption.16}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Separaci\IeC {\'o}n de escalas para la din\IeC {\'a}mica atmosf\IeC {\'e}rica. Fuente: \cite {vortex2017}.\relax }}{11}{figure.caption.17}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Idealizaci\IeC {\'o}n de los distintos tama\IeC {\~n}os de v\IeC {\'o}rtices dentro de un dominio en la zona gris de la turbulencia. Fuente: \cite {vortex2017}.\relax }}{13}{figure.caption.18}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Espectro de energ\IeC {\'\i }a turbulenta multiescala. Fuente: \cite {warner2010numerical}\relax }}{13}{figure.caption.19}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Comparaci\IeC {\'o}n entre las coordenadas usuales sigma (arriba) y el m\IeC {\'e}todo de frontera inmersa (abajo). Fuente: \cite {Arnold2010}.\relax }}{20}{figure.caption.20}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Idealizaci\IeC {\'o}n de los distintos tama\IeC {\~n}os de v\IeC {\'o}rtices dentro de un dominio en la zona gris de la turbulencia. Fuente: \cite {vortex2017}.\relax }}{12}{figure.caption.18}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Espectro de energ\IeC {\'\i }a cin\IeC {\'e}tica turbulenta multiescala. Fuente: \cite {warner2010numerical}\relax }}{13}{figure.caption.19}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Comparaci\IeC {\'o}n entre las coordenadas usuales sigma (arriba) y el m\IeC {\'e}todo de frontera inmersa (abajo). Fuente: \cite {arnold2012high}.\relax }}{20}{figure.caption.20}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Serie de tiempo para una componente de la velocidad en un flujo turbulento. Fuente: \cite {pope2000turbulent}.\relax }}{39}{figure.caption.21}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Gr\IeC {\'a}fico t\IeC {\'\i }pico log-log de distribuci\IeC {\'o}n de energ\IeC {\'\i }a cin\IeC {\'e}tica turbulenta con respecto al n\IeC {\'u}mero de onda $\kappa $ para un flujo con un n\IeC {\'u}mero de Reynolds elevado. Fuente: \cite {9780521775380}.\relax }}{43}{figure.caption.22}
@@ -86,6 +86,6 @@
 \contentsline {figure}{\numberline {A.4}{\ignorespaces $\Delta k$ medido y simulado a trav\IeC {\'e}s de la secci\IeC {\'o}n transversal a $240^\circ $. Arriba: valores para $z=5$ [m]. Abajo: valores para $z=2$ [m].\relax }}{158}{figure.caption.101}
 \contentsline {figure}{\numberline {A.5}{\ignorespaces Perfil de $\Delta k$ medido y simulado en los distintos m\IeC {\'a}stiles M1-M4.\relax }}{159}{figure.caption.102}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Orograf\IeC {\'\i }a (MSNM) y uso de suelo (categor\IeC {\'\i }a USGS24) de alta definici\IeC {\'o}n para cada uno de las mallas anidadas (d01-d07). Para el dominio d07 se presenta la ubicaci\IeC {\'o}n del punto de control (rojo) y la distribuci\IeC {\'o}n de turbinas e\IeC {\'o}licas en la zona (negro).\relax }}{161}{figure.caption.103}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Orograf\IeC {\'\i }a (MSNM) y uso de suelo (categor\IeC {\'\i }a USGS24) de alta definici\IeC {\'o}n para cada uno de las mallas anidadas (d01-d08).\relax }}{162}{figure.caption.104}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Orograf\IeC {\'\i }a (MSNM) y uso de suelo (categor\IeC {\'\i }a USGS24) de alta resoluci\IeC {\'o}n para cada uno de las mallas anidadas (d01-d07) en H\IeC {\o }vs\IeC {\o }re.\relax }}{162}{figure.caption.103}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Orograf\IeC {\'\i }a (MSNM) y uso de suelo (categor\IeC {\'\i }a USGS24) de alta resoluci\IeC {\'o}n para cada uno de las mallas anidadas (d01-d08) en Bolund.\relax }}{163}{figure.caption.104}
 \addvspace {10\p@ }
