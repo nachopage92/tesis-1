@@ -37,7 +37,7 @@ Código GDAL para la conversión del uso de suelo de Bolund de GeoTIFF a binario
 \begin{lstlisting}
 gdal_translate -of ENVI -ot Int16 result.tif BOLUND_LANDUSE.bil
 \end{lstlisting}
-Código GDAL para correjir los valores indefinidos generados por la rotación del datúm:
+Código GDAL para correjir los valores indefinidos generados por la rotación del datum:
 \begin{lstlisting}
 gdal_calc.py -A BOLUND_LANDUSE.bil --outfile=BOLUND_LANDUSE2.bil 
 --calc="(A==32767)*16+(A<32767)*A"

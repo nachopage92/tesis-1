@@ -46,6 +46,7 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 `journal' is a missing field, not a string, for entry https://doi.org/10.5065/d6cf9n1j
 while executing---line 1649 of file spbasic.bst
 Warning--empty journal in https://doi.org/10.5065/d6cf9n1j
+Warning--missing school in phdthesis
 Warning--missing publisher in anuariocne2018
 `journal' is a missing field, not a string, for entry lilly1966representation
 while executing---line 1649 of file spbasic.bst
@@ -55,45 +56,45 @@ Warning--empty booktitle in MirochaNewLE
 `journal' is a missing field, not a string, for entry https://doi.org/10.5065/d68s4mvh
 while executing---line 1649 of file spbasic.bst
 Warning--empty journal in https://doi.org/10.5065/d68s4mvh
-You've used 75 entries,
+You've used 80 entries,
             3269 wiz_defined-function locations,
-            1118 strings with 21046 characters,
-and the built_in function-call counts, 89301 in all, are:
-= -- 8105
-> -- 2704
-< -- 33
-+ -- 972
-- -- 858
-* -- 8089
-:= -- 12135
-add.period$ -- 67
-call.type$ -- 75
-change.case$ -- 654
-chr.to.int$ -- 74
-cite$ -- 81
-duplicate$ -- 7889
-empty$ -- 8205
-format.name$ -- 1083
-if$ -- 18734
+            1140 strings with 21824 characters,
+and the built_in function-call counts, 94706 in all, are:
+= -- 8600
+> -- 2857
+< -- 35
++ -- 1029
+- -- 906
+* -- 8574
+:= -- 12873
+add.period$ -- 72
+call.type$ -- 80
+change.case$ -- 694
+chr.to.int$ -- 79
+cite$ -- 87
+duplicate$ -- 8367
+empty$ -- 8703
+format.name$ -- 1146
+if$ -- 19864
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 832
-newline$ -- 235
-num.names$ -- 300
-pop$ -- 1892
+missing$ -- 883
+newline$ -- 250
+num.names$ -- 320
+pop$ -- 2008
 preamble$ -- 1
-purify$ -- 584
+purify$ -- 620
 quote$ -- 0
-skip$ -- 1341
+skip$ -- 1426
 stack$ -- 0
-substring$ -- 10497
-swap$ -- 1764
+substring$ -- 11123
+swap$ -- 1876
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 636
-warning$ -- 6
-while$ -- 646
+type$ -- 678
+warning$ -- 7
+while$ -- 686
 width$ -- 0
-write$ -- 805
+write$ -- 858
 (There were 7 error messages)

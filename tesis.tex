@@ -1,5 +1,5 @@
 %\documentclass[oneside,numbers,spanish,a4paper]{ezthesis}
-\documentclass[oneside,spanish,a4paper]{ezthesis}
+\documentclass[twoside,spanish,a4paper]{ezthesis}
 %\documentclass[oneside,authoryear,draft,spanish]{ezthesis}
 %\documentclass[oneside,authoryear,draftmarks,spanish]{ezthesis}
 %% # Opciones disponibles para el documento #
@@ -172,18 +172,18 @@ breaklines=true,
 %% La letra n con tilde es: \~n.
 
 \author{Pablo Andrés Cárdenas Zamorano}
-\title{SIMULACIÓN MULTIESCALA DEL VIENTO SOBRE TERRENO COMPLEJO MEDIANTE EL MÉTODO EMBEDIDO WRF-LES Y ASIMILACIÓN VARIACIONAL DE DATOS 4D}
+\title{SIMULACIÓN MULTIESCALA DEL VIENTO SOBRE TERRENO COMPLEJO MEDIANTE EL MÉTODO EMBEBIDO WRF-LES Y ASIMILACIÓN VARIACIONAL DE DATOS 4D}
 \degree{Magíster en Ciencias de la Ingeniería Mecánica }
-\supervisor{Dr. Ing. Alex Flores Maradiaga}
-\correferent{Dr. Carlos Rosales Huerta}
-\correferentextern{Dr. XXXXX XXXXXXXXX}
+\supervisor{Ph.D. Alex Flores Maradiaga}
+\correferent{Ph.D. Carlos Rosales Huerta}
+\correferentextern{Ph.D. Ricardo Muñoz Magnino}
 \institution{UNIVERSIDAD TÉCNICA FEDERICO SANTA MARÍA}
 \faculty{Escuela de Ingeniería y Ciencias}
 \department{DEPARTAMENTO DE INGENIERÍA MECÁNICA}
 \city{VALPARAÍSO }
 \country{CHILE }
 
-%% # M'argenes del documento #
+%% # Márgenes del documento #
 %% 
 %% Quitar el comentario en la siguiente linea para austar los m'argenes del
 %% documento. Leer la documentaci'on de "geometry" para m'as informaci'on.
@@ -193,10 +193,7 @@ breaklines=true,
 %% El siguiente comando agrega ligas activas en el documento para las
 %% referencias cruzadas y citas bibliogr'aficas. Tiene que ser *la 'ultima*
 %% instrucci'on antes de \begin{document}.
-\hyperlinking
-
 \usepackage{titlesec}
-
 \usepackage{etoolbox}
 
 \makeatletter
@@ -207,12 +204,12 @@ breaklines=true,
 \titleformat{\chapter}[display]
 {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
 \titlespacing*{\chapter}{0pt}{0pt}{20pt}
+\hyperlinking
 \begin{document}
 \renewcommand{\listtablename}{Índice de tablas}
 \renewcommand{\tablename}{Tabla} 
 \pagenumbering{roman}
 \sloppy 
-
 
 %% En esta secci'on se describe la estructura del documento de la tesis.
 %% Consulta los reglamentos de tu universidad para determinar el orden

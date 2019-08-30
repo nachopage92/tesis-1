@@ -1,6 +1,6 @@
-\chapter{Tiempos de Cálculo de las Simulaciones}
+\chapter{Eficiencia Computacional de las Simulaciones}
 \label{apB}
-Las simulaciones se llevaron a cabo en servidores configurados especialmente para ejecutar el código WRF de manera paralela haciendo uso de todos los núcleos y recursos disponibles. En específico se utilizaron dos servidores distintos: S1 es el servidor utilizado para correr las simulaciones correspondientes al caso I de terreno plano en Høvsore y S2 es el servidor utilizado para correr el caso II de terreno complejo en Bolund. Otros recursos computacionales adicionales fueron utilizados también para llevar a cabo distintos análisis de sensibilidad para diversos parámetros y otras pruebas varias las cuales no se detallan en este documento. Las específicaciones técnicas de S1 y S2 se pueden ver en la Tabla \ref{tab:an3_s12}.
+Las simulaciones se llevaron a cabo en servidores configurados especialmente para ejecutar el código WRF de manera paralela haciendo uso de todos los núcleos y recursos disponibles. En específico se utilizaron dos servidores distintos: S1 es el servidor utilizado para correr las simulaciones correspondientes al caso I de terreno plano en Høvsore y S2 es el servidor utilizado para correr el caso II de terreno complejo en Bolund. Otros recursos computacionales adicionales fueron utilizados también para llevar a cabo distintos análisis de sensibilidad para diversos parámetros y otras pruebas varias las cuales no se detallan en este documento. Las especificaciones técnicas de S1 y S2 se presentan en la Tabla \ref{tab:an3_s12}.
 
 \begin{table}[H]
 	\caption{Específicaciones técnicas de los recursos computacionales utilizados.}\label{tab:an3_s12}
@@ -19,7 +19,7 @@ Las simulaciones se llevaron a cabo en servidores configurados especialmente par
 	\end{tabular}}
 \end{table}
 
-Para cada servidor se registraron los tiempos de pared a través de un bot de \emph{Telegram} el cual registraba de manera automática e inmediata la fecha y hora a la cual cada simulación comenzaba o terminaba. Los registros de estos tiempos se pueden ver en la Tabla \ref{tab:an3_tiempos}.
+Para cada servidor se registraron los tiempos de pared a través de un bot de \emph{Telegram} el cual registraba de manera automática e inmediata la fecha y hora a la cual cada simulación comenzaba o terminaba. Los registros de estos tiempos se resumen en la Tabla \ref{tab:an3_tiempos}.
 \newpage
 \begin{table}[H]
 	\caption{Tiempos de cálculo para cada experimento.}\label{tab:an3_tiempos}
@@ -36,8 +36,8 @@ Para cada servidor se registraron los tiempos de pared a través de un bot de \e
 	\end{tabular}}
 \end{table}
 
-Acá $T_w$ es el tiempo de pared efectivo y $\Delta t$ corresponde al aumento en este debido a la incorporación del proceso de asimilación de datos. El incremento se calcula como $\Delta t/T_{w0}$, donde el subíndice 0 índica la simulación sin asimilación de datos.
+Acá $T_w$ es el tiempo de cálculo efectivo (tiempo de pared) y $\Delta t$ corresponde al aumento en este debido a la incorporación del proceso de asimilación de datos. El incremento se calcula como $\Delta t/T_{w0}$, donde el subíndice 0 índica la simulación sin asimilación de datos.
 
-Como se puede apreciar en la Tabla \ref{tab:an3_tiempos}, el proceso de asimilación de datos presenta mejoras significativas en términos del tiempo de cálculo.
+Como se puede apreciar en la Tabla \ref{tab:an3_tiempos}, el proceso de asimilación de datos presenta mejoras significativas en términos del tiempo de cálculo, lo que es esperanzador para una implementación efectiva y efectiva de la solución propuesta. 
 
 \footnotetext{Por motivos externos la simulación estuvo detenida desde el 02/05/2019 14:43 hasta el 03/05/2019 12:28, por lo cual se considera esta detención en el cálculo.}

@@ -220,6 +220,7 @@
 	\definecolor{dark-blue}{rgb}{0.15,0.15,0.4}
 	\definecolor{medium-blue}{rgb}{0,0,0.5}
 	\definecolor{cobalt}{rgb}{0.0, 0.28, 0.67}
+	\definecolor{cobalt}{rgb}{0.23, 0.11, 0.55}
 \fi
 
 % Linking and pdf options

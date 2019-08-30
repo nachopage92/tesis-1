@@ -1,4 +1,4 @@
-\begin{thebibliography}{75}
+\begin{thebibliography}{80}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{{#1}}
 \providecommand{\urlprefix}{URL }
@@ -51,7 +51,7 @@ Barker DM, Huang W, Guo YR, Bourgeois AJ, Xiao QN (2004) A three-dimensional
   results. Monthly Weather Review 132(4):897--914
 
 \bibitem[{Bechmann y Sørensen(2011)}]{doi:10.1002/we.414}
-Bechmann A, Sørensen NN (2011) Hybrid rans/les applied to complex terrain.
+Bechmann A, Sørensen NN (2011) Hybrid {RANS}/{LES} applied to complex terrain.
   Wind Energy 14(2):225--237
 
 \bibitem[{Bechmann et~al.(2009)Bechmann, Berg, Courtney, {Ejsing Jørgensen},
@@ -86,10 +86,23 @@ Brasseur JG, Wei T (2010) Designing large-eddy simulation of the turbulent
 Brown AR, Hobson J, Wood N (2001) Large-eddy simulation of neutral turbulent
   flow over rough sinusoidal ridges. Boundary-Layer Meteorology 98(3):411--441
 
+\bibitem[{Burden y Faires(2010)}]{burden2010numerical}
+Burden R, Faires J (2010) Numerical Analysis. Cengage Learning
+
+\bibitem[{Businger et~al.(1971)Businger, Wyngaard, Izumi, y
+  Bradley}]{businger1971flux}
+Businger JA, Wyngaard JC, Izumi Y, Bradley EF (1971) Flux-profile relationships
+  in the atmospheric surface layer. Journal of the atmospheric Sciences
+  28(2):181--189
+
 \bibitem[{Carati et~al.(2001)Carati, Winckelmans, y Jeanmart}]{CARATI2001}
 Carati D, Winckelmans GS, Jeanmart H (2001) On the modelling of the
   subgrid-scale and filtered-scale stress tensors in large-eddy simulation.
   Journal of Fluid Mechanics 441
+
+\bibitem[{Chaudhari(2014)}]{phdthesis}
+Chaudhari A (2014) Large-eddy simulation of wind flows over complex terrains
+  for wind energy applications. PhD thesis
 
 \bibitem[{Cheng et~al.(2017)Cheng, Liu, Bourgeois, Wu, y
   Haupt}]{cheng2017short}
@@ -136,6 +149,12 @@ Dumais R, Kirby S, Flanigan R (2013) Implementation of the {WRF}
 Enriquez RM, Street RL (2017) An algebraic subgrid-scale model for large-eddy
   simulations of the atmospheric boundary layer. Tech. rep., Bob and Norma
   Street Environmental Fluid Mechanics Laboratory, Stanford University
+
+\bibitem[{Floors et~al.(2013)Floors, Vincent, Gryning, Pe{\~n}a, y
+  Batchvarova}]{floors2013wind}
+Floors R, Vincent CL, Gryning SE, Pe{\~n}a A, Batchvarova E (2013) The wind
+  profile in the coastal boundary layer: Wind lidar measurements and numerical
+  modelling. Boundary-layer meteorology 147(3):469--491
 
 \bibitem[{Green y Zhang(2015)}]{Green2015}
 Green BW, Zhang F (2015) Numerical simulations of {Hurricane Katrina} (2005) in
@@ -254,6 +273,13 @@ Morton D, Molders N (2007) Tradeoffs in resolution versus computational
 Mu{\~{n}}oz-Esparza D, Kosovi{\'{c}} B, Mirocha J, van Beeck J (2014) Bridging
   the transition from mesoscale to microscale turbulence in numerical weather
   prediction models. Boundary-Layer Meteorology 153(3):409--440
+
+\bibitem[{Pedersen et~al.(2013)Pedersen, Kelly, Gryning, y
+  Br{\"u}mmer}]{pedersen2013effect}
+Pedersen JG, Kelly M, Gryning SE, Br{\"u}mmer B (2013) The effect of unsteady
+  and baroclinic forcing on predicted wind profiles in large eddy simulations:
+  Two case studies of the daytime atmospheric boundary layer. Meteorologische
+  Zeitschrift 22(6):661--674
 
 \bibitem[{Pe{\~{n}}a et~al.(2013)Pe{\~{n}}a, Floors, y Gryning}]{Pea2013}
 Pe{\~{n}}a A, Floors R, Gryning SE (2013) The {H}{\o}vs{\o}re tall wind-profile
