@@ -4,7 +4,7 @@ A continuación se presentan los resultados de los 4 experimentos numéricos rea
 Tomando en consideración que los resultados para este caso son válidos desde las 12:00 hasta las 18:00 del día simulado, se busca evidenciar cuatro aspectos relevantes del modelo: (i) La respuesta del modelo LES al escalamiento dinámico y la alta resolución, (ii) la concordancia entre los datos simulados y aquellos obtenidos por \cite{Pea2013}, (ii) la concordancia entre los datos simulados y la serie de tiempo medida en el mástil meteorológico y (iv) la concordancia de los parámetros de segundo orden con aquellos canónicos para flujo en terreno plano homogéneo.
 
 \subsubsection{Estratificación Térmica y Espesor de Capa Límite Atmosférica}
-En primer lugar se revisa la estabilidad del flujo durante la ventana de tiempo seleccionada. Tomando en cuenta que según la literatura este debería ser un caso de atmósfera neutra, la Figura \ref{fig:06_hov_pbl} muestra la evolución del perfil de temperatura potencial virtual a través de toda la simulación para el punto de control en el mástil meteorológico. Debido a la homogeneidad del terreno, los perfiles de temperatura potencial virtual en el resto del dominio son, a grandes rasgos, idénticos, y por lo tanto se puede inferir que el perfil mostrado es representativo de todo el dominio. En éste se puede notar cómo la estratificación térmica del campo va cambiando a medida que avanza en el ciclo diurno la simulación, desde una atmósfera inestable en la mañana, hasta la alta estabilidad en la noche. Notar que, tal como lo expuso Peña, se tiene un perfil estable desde las 12:00 hasta las 15:00 horas, ventana de tiempo que cae dentro de los resultados válidos del modelo y por ende, será en esta ventana en la cual se extraerán resultados.
+En primer lugar se revisa la estabilidad del flujo durante la ventana de tiempo seleccionada. Tomando en cuenta que según la literatura este debería ser un caso de atmósfera neutra, la Figura \ref{fig:06_hov_pbl} muestra la evolución del perfil de temperatura potencial virtual a través de toda la simulación para el punto de control en el mástil meteorológico. Debido a la homogeneidad del terreno, los perfiles de temperatura potencial virtual en el resto del dominio son, a grandes rasgos, idénticos, y por lo tanto se puede inferir que el perfil mostrado es representativo de todo el dominio. En éste se puede notar cómo la estratificación térmica del campo va cambiando a medida que avanza en el ciclo diurno la simulación, desde una atmósfera inestable en la mañana, hasta la alta estabilidad en la noche. Notar que, tal como lo expuso Peña, se tiene un perfil de estratificación térmica neutra desde las 12:00 hasta las 15:00 horas, ventana de tiempo que cae dentro de los resultados válidos del modelo y por ende, será en esta ventana en la cual se extraerán resultados.
 
 \begin{figure}[H]
 	\begin{minipage}{0.5\linewidth}
@@ -127,7 +127,7 @@ La Figura \ref{fig:06_corr_hov} muestra el gráfico de dispersión entre la rapi
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.55\linewidth,page=1,trim={0cm 0cm 0cm 0cm},clip]{Imagenes/06/hov/corr}%
-	\caption{Gráfico de dispersión para las velocidades a distintas alturas en el mástil meteorológico de Høvsøre.}
+	\caption{Gráfico de dispersión para las velocidades a distintas alturas en el mástil meteorológico de Høvsøre. Cada color corresponde a los valores cada 10 minutos desde las 12:00 horas.}
 	\label{fig:06_corr_hov}
 \end{figure}
 
@@ -219,7 +219,7 @@ Con respecto a las métricas estadísticas de error del experimento, el gráfico
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.55\linewidth,page=1,trim={0cm 0cm 0cm 0cm},clip]{Imagenes/06/hov_da/corr}%
-	\caption{Gráfico de dispersión para las velocidades a distintas alturas en el mástil meteorológico de Høvsøre (con DA).}
+	\caption{Gráfico de dispersión para las velocidades a distintas alturas en el mástil meteorológico de Høvsøre (con DA). Cada color corresponde a los valores cada 10 minutos desde las 12:00 horas.}
 	\label{fig:06_corr_hov_da}
 \end{figure}
 
@@ -433,11 +433,11 @@ Con respecto a las velocidades en cada mástil:
 	\item M8: Gran déficit de velocidad.
 \end{itemize*} 
 
-Además, se puede apreciar una inestabilidad numérica que ocurrió en el lapso de \emph{spinup} entre las 08:00 y las 10:00, la cual pudo perjudicar al modelo y se desconoce su origen.
+Además, se puede apreciar una desviación con respecto a los valores medidos que ocurrió en el lapso de \emph{spinup} entre las 08:00 y las 10:00, la cual pudo perjudicar al modelo y se desconoce su origen.
 
-De manera general se puede decir entonces que, si bien el modelo tuvo un relativo éxito con respecto a la concordancia de las variables adimensionales definidas para la comparación ciega, al comparar con los datos reales medidos para esa fecha en específico, se encuentran grandes discrepancias. El modelo WRF fue en la mayoría de los casos excesivamente difusivo y esto pudo perjudicar la representación de nolinealidades que si se manifiestan en la realidad. Por otro lado, la nolinealidad que si se mostró en la simulación, está bien representada en términos de direcciones, da a entrever que la problemática del modelo a esta escala podría estar en su modelo de suelo, de capa superficial, o incluso en la definición de la categoría de uso de suelo.
+De manera general se puede decir entonces que, si bien el modelo tuvo un relativo éxito con respecto a la concordancia de las variables adimensionales definidas para la comparación ciega, al comparar con los datos reales medidos para esa fecha en específico, se encuentran grandes discrepancias. El modelo WRF fue en la mayoría de los casos excesivamente difusivo y esto pudo perjudicar la representación de nolinealidades que sí se manifiestan en la realidad. Por otro lado, la nolinealidad que sí se mostró en la simulación, está bien representada en términos de direcciones, da a entrever que la problemática del modelo a esta escala podría estar en su modelo de suelo, de capa superficial, o incluso en la definición de la categoría de uso de suelo.
 
-Otra información importante, es la manifestación de turbulencia resuelta en las series de tiempo para los puntos que se ubican en zonas sensibles del dominio. Este comportamiento no se había mostrado en el caso de Høvsore, por ser cuasiplano y homogéneo. La aparición de esta, a este nivel de escala y considerando que se usa un modelo atmosférico, es un muy buen indicador para concluir que la unificación de la meso y microescala fue realizada con éxito.
+Otra información importante, es la manifestación de turbulencia resuelta (fluctuaciones pequeñas en el valor de la velocidad que se aprecia como ruido) en las series de tiempo para los puntos que se ubican en zonas sensibles del dominio. Este comportamiento no se había mostrado en el caso de Høvsore, por ser cuasiplano y homogéneo. La aparición de esta, a este nivel de escala y considerando que se usa un modelo atmosférico, es un muy buen indicador para concluir que la unificación de la meso y microescala fue realizada con éxito.
 
 \newpage
 \vspace*{\fill}
@@ -612,7 +612,7 @@ Finalmente, se obtiene un valor de $2.6724$ [m/s] para el MAE, y $2.9538$ [m/s] 
 
 \section{Caso II: Bolund con Asimilación Multipunto}
 \subsubsection{Estratificación Térmica y Espesor de Capa Límite Atmosférica}
-Si bien la asimilación de datos no cambia la neutralidad de la capa límite, ni la selección para el alto $\delta$ de ABL, si logró modificar considerablemente la distribución de las lineas horarias  de la Figura \ref{fig:06_bol_da_pbl} con respecto al gráfico sin DA. Esto nos da una primera aproximación a la influencia que tuvo el DA sobre el dominio, la capacidad de desplazar los perfiles de temperatura potencial virtual.
+Si bien la asimilación de datos no cambia la neutralidad de la capa límite, ni la selección para el alto $\delta$ de ABL, sí logró modificar considerablemente la distribución de las lineas horarias  de la Figura \ref{fig:06_bol_da_pbl} con respecto al gráfico sin DA. Esto nos da una primera aproximación a la influencia que tuvo el DA sobre el dominio, la capacidad de desplazar los perfiles de temperatura potencial virtual.
 
 \begin{figure}[H]
 	\begin{minipage}{0.5\linewidth}
@@ -865,7 +865,7 @@ En la Figura \ref{fig:06_bol_da_mean_secondorder} se muestran los estadísticos 
 	\caption{Variables adimensionalizadas de segundo orden para M1-M4 con DA, promediadas entre las 12:00 y las 15:00. (a) Energía cinética turbulenta de submalla, (b) Gradiente de velocidad, (c) Esfuerzo turbulento. }
 	\label{fig:06_bol_da_mean_secondorder}
 \end{figure}
-Con respecto al espectro de velocidades en la Figura \ref{fig:06_bol_da_spectrum}, sorpresivamente ahora no se revela el \emph{backscatter} que presentó el caso de terreno plano, probablemente porque el forzamiento debido a la interacción con el terreno complejo sea dominante sobre el forzamiento que causa la asimilación de datos, sin embargos si existen comportamientos ruidosos luego del número de onda de \emph{cutoff}. Las pendientes para el rango inercial se ven modificadas: el primer nivel tiene una un poco mas empinada (explicada por el ingreso de energía que se da a pequeñas escalas), y los niveles superiores tienen un comportamiento con una pendiente menor que -5/3, siendo quizás mas difusivos como consecuencia de la interacción con la capa de superficie.
+Con respecto al espectro de velocidades en la Figura \ref{fig:06_bol_da_spectrum}, sorpresivamente ahora no se revela el \emph{backscatter} que presentó el caso de terreno plano, probablemente porque el forzamiento debido a la interacción con el terreno complejo sea dominante sobre el forzamiento que causa la asimilación de datos, sin embargos sí existen comportamientos ruidosos luego del número de onda de \emph{cutoff}. Las pendientes para el rango inercial se ven modificadas: el primer nivel tiene una un poco mas empinada (explicada por el ingreso de energía que se da a pequeñas escalas), y los niveles superiores tienen un comportamiento con una pendiente menor que -5/3, siendo quizás mas difusivos como consecuencia de la interacción con la capa de superficie.
 \newpage
 \begin{figure}[H]
 	\centering

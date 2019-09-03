@@ -26,7 +26,7 @@ Esta metodología tiene como consecuencia que la calidad de los resultados obten
 \subsubsection{Lineamiento de Libertad de Información}
 Siguiendo con la misma filosofía del software libre WRF, toda la investigación fue realizada utilizando solo código libre e información pública que se puede acceder a través de internet. El posproceso de los datos fue realizado en parte a través del lenguaje de gráficos \emph{NCL} y en parte en \emph{Python}, los scripts desarrollados para la automatización del proceso de asimilación de datos fue hecho en \emph{bash}. La información de las mediciones medidas en terreno para los dos casos a analizar se obtuvieron a través de la página web \url{http://rodeo.dtu.dk/}.
 \subsection{Resumen de la Metodología}
-Para esta tesis, se llevaron a cabo 4 simulaciones atmosféricas multiescala las cuales son separadas en dos casos de dos experimentos cada uno: uno en terreno plano (para validar la metodología) y otro en terreno complejo.
+Para esta tesis, se llevaron a cabo 4 simulaciones atmosféricas multiescala utilizando la versión 3.8.1 del modelo WRF, las cuales son separadas en dos casos de dos experimentos cada uno: uno en terreno plano (para validar la metodología) y otro en terreno complejo.
 
 Las distintas etapas del proceso de experimentación se pueden listar como:
 \begin{enumerate*}
@@ -140,6 +140,22 @@ El modelo WRF se corre durante 10 minutos, luego se extrae el archivo de resulta
 La recursividad del proceso y el hecho de que la asimilación de datos se lleva a cabo a medida que el modelo integra le da la cualidad de \textbf{Asimilación de Datos 4D}.
 
 Con respecto a la modelación de la matriz $\textbf{B}$, esta es generada a través del método NMC \citep{https://doi.org/10.5065/d68s4mvh} haciendo uso de la herramienta \emph{gen\_be} incluida dentro del mismo código WRFDA. Las constantes de ponderación que usa internamente el WRFDA se fijan con los valores: \emph{var\_scaling} $=1000.0$ y \emph{len\_scaling} $=1.5$.
+
+La aplicación de la asimilación de datos se puede ver de manera referencial en la Figura \ref{fig:05_da_expl}. Acá se muestran la diferencia entre la magnitud de la velocidad del campo sin y con asimilación para los dos casos a simular. En (a) se puede apreciar de forma mas pura como actúa el DA, ya que al tener un solo punto de asimilación se grafica de forma mas clara el radio de influencia de la información asimilada, por otro lado (b) corresponde a un proceso multipunto y el campo de velocidades se adapta simultaneamente a los 8 puntos amortizando los radios de influencia de cada punto.
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.5\linewidth}
+		\center\hspace{0.3cm}(a)
+	\end{minipage}%
+	\begin{minipage}{0.5\linewidth}
+		\center\hspace{0.3cm}(b)
+	\end{minipage}%
+	
+	\includegraphics[width=0.5\linewidth,page=1,trim={2.5cm 6.2cm 1cm 4.5cm},clip]{Imagenes/05/eta1_da_hov}%
+	\includegraphics[width=0.5\linewidth,page=1,trim={1.0cm 5.2cm 1cm 4.5cm},clip]{Imagenes/05/eta1_da_bol}%
+	\caption{Diferencia de la magnitud del campo de velocidad en el primer nivel del modelo entre resultados sin y con asimilación de datos. (a) Caso I puntual. (b) Caso II con varios puntos.}
+	\label{fig:05_da_expl}
+\end{figure}
 \newpage
 \section{Detalle de Experimentos}
 \subsection{Caso I - Terreno Plano: Høvsøre}

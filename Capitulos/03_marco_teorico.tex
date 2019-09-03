@@ -162,7 +162,7 @@ Antes de escribir las ecuaciones en su forma final es necesario definir primero 
 \subsection{Temperatura Potencial}
 Generalmente en dinámica atmosférica es conveniente formular la ecuación de conservación de energía en función de una nueva variable para la temperatura que permite entregar mas información acerca del estado térmico del ambiente. 
 
-Así, se introduce entonces la temperatura potencial $\theta$, que corresponde a la temperatura de un elemento diferencial de fluido si se expande adiabáticamente hasta una presión de referencia $p_s$ (generalmente la presión atmosférica). Este valor permanece constante para procesos secos y adiabáticos.
+Así, se introduce entonces la temperatura potencial $\theta$, que corresponde a la temperatura de un elemento diferencial de fluido si se expande adiabáticamente hasta una presión de referencia $p_s$ (generalmente 1000 [hPa]). Este valor permanece constante para procesos secos y adiabáticos.
 \be \label{eq:temp_pot}
 \theta = T\left(\frac{p_s}{p}\right)^{R/C_p}.
 \ee 
@@ -372,7 +372,7 @@ En días despejados, el crecimiento de la capa de mezcla está unido al calentam
 
 Los perfiles de temperatura potencial virtual para esta capa suelen ser generalmente adiabáticos debido a la mezcla, mientras que en la capa superficial es normal hallar perfiles superadiabáticos debido a la superficie caliente.
 
-Sobre la capa de mezcla, una capa estable actua como cubierta de los movimientos ascendentes de aire caliente restringiendo el dominio de la turbulencia. Es la llamada capa de arrastre o \emph{entrainment zone}. Generalmente esta capa es lo suficientemente estable como para que ocurra una inversión térmica y por lo tanto, también se le denomina como capa de inversión.
+Sobre la capa de mezcla, una capa estable actúa como cubierta de los movimientos ascendentes de aire caliente restringiendo el dominio de la turbulencia. Es la llamada capa de arrastre o \emph{entrainment zone}. Generalmente esta capa es lo suficientemente estable como para que ocurra una inversión térmica y por lo tanto, también se le denomina como capa de inversión.
 
 La rapidez de los vientos dentro de esta capa son subgeostróficos. La parte media de la capa de mezcla presenta un perfil de velocidad que es casi constante (debido a la alta mezcla de momentum) y un perfil logarítmico en los dominios de la capa de superficie.
 
@@ -512,7 +512,7 @@ Para condiciones neutras se tiene que $\phi_m = 1$ y el perfil de viento horizon
 \be 
 |\overline{V}_h(z)| = \frac{u_*}{\kappa} \ln \frac{z}{z_{0,m}},
 \ee
-la cual es una fórmula clásica para estimar la velocidad del viento dentro de la capa límite.
+la cual es una fórmula clásica para estimar la velocidad del viento dentro de la capa atmosférica superficial.
 \subsection{Ecuación de Energía Cinética Turbulenta}
 La ecuación de transporte que rige el comportamiento de la TKE se puede escribir de la siguiente forma \citep{stull1988introduction}:
 \be
@@ -579,7 +579,7 @@ Para flujos estables $R_f$ es positivo. Es más, si $R_f < 1$ el flujo es turbul
 De esta manera se fija un número de Richardson critico $Ri_c$ ($0,21\sim0,25$) y de término de turbulencia $Ri_t$ ($\approx1,0$) y así se puede estimar cuando un flujo laminar se vuelve turbulento o cuando un flujo turbulento se vuelve laminar.
 \paragraph{Número de Richardson Global} Debido a que en terreno es difícil conocer los gradientes locales necesarios para la ecuación \ref{eq:03_richardson}, estos se pueden aproximar haciendo uso de mediciones discretas como:
 \be R_b = \frac{g \Delta \overline{\theta}_v \Delta z}{\overline{\theta}_v[(\Delta u)^2 + (\Delta v)^2 ]} \ee
-Acá el subíndice $b$ es de \emph{bulk}. Este es el número mas usado por los meteorólogos y si bien, no sirve para tener un aproximado de la intensidad turbulenta, si funciona para tener una prueba de la existencia de ésta.
+Acá el subíndice $b$ es de \emph{bulk}. Este es el número mas usado por los meteorólogos y si bien, no sirve para tener un aproximado de la intensidad turbulenta, sí funciona para tener una prueba de la existencia de ésta.
 \newpage
 
 
