@@ -104,7 +104,7 @@ El tercer término representa ahora el trabajo por expansión o compresión de u
 
 La ley general de la conservación de energía se deriva a partir del Teorema de Transporte de Reynolds que en su forma diferencial queda expresada como:
 \be 
-\rho d_t\left( e+ K \right) = u_i\rho g_i + \partial_j(u_i \sigma_{ij}) - \partial_j q_i.
+\rho d_t\left( e+ K \right) = u_i\rho g_i + \partial_j(u_i \sigma_{ij}) - \partial_i q_i.
 \ee
 
 Acá $e$ es energía interna y $q_i$ es el flujo de calor. Combinando la ecuación anterior con la ecuación \ref{eq:cinect} se obtiene una ecuación de transporte para la energía interna (ecuación de calor) en su forma mas general.
@@ -112,7 +112,7 @@ Acá $e$ es energía interna y $q_i$ es el flujo de calor. Combinando la ecuaci�
 \rho\left(\partial_t e + u_j\partial_j e\right)= -\partial_i q_i - p\partial_i u_i + \Phi.
 \ee
 
-Para el caso de un gas ideal, la magnitud de $\Phi$ es despreciable con respecto al resto de los términos en la ecuación\footnote{Si bien los órdenes de magnitud pueden ser muy distintos en las escalas grandes, en la escala molecular la importancia de $\Phi$ es indiscutida, ya que es la encargada de ``agotar'' la energía cinética y transformarla efectivamente en calor, permitiendo la creación de una cascada de energía a través de las escalas espaciales. Este concepto se abordará mas adelante.}. Se introduce la definición de energía interna:
+Para el caso de un gas ideal, la magnitud de $\Phi$ es despreciable con respecto al resto de los términos en la ecuación\footnote{Si bien los órdenes de magnitud pueden ser muy distintos en las escalas grandes, en la escala molecular la importancia de $\Phi$ es indiscutida, ya que es la encargada de ``agotar'' la energía cinética y transformarla efectivamente en calor, permitiendo la existencia de una cota inferior espacial dentro de la cascada de energía. Este concepto se abordará mas adelante.}. Se introduce la definición de energía interna:
 \be 
 e = C_v T,
 \ee
@@ -236,7 +236,7 @@ La ecuación \ref{03_eq:humedad} representa la conservación de masa para el vap
 
 
 \section{Turbulencia Hidrodinámica}
-En esta sección\footnote{Los siguientes párrafos corresponden a adaptaciones al español de los textos de \cite{pope2000turbulent} y \cite{9780521775380}.} se presentará un introducción a las bases teóricas del problema de la turbulencia. Lo que se presenta es, mas que nada, un retrato cualitativo de la turbulencia, necesario para poder entender ciertos aspectos de la dinámica del atmósfera. Para mas información se pueden revisar las referencias clásicas \citep{pope2000turbulent,davidson2013turbulence,9780521775380}.
+En esta sección\footnote{Los siguientes párrafos corresponden a adaptaciones al español de los textos de \cite{pope2000turbulent} y \cite{9780521775380}.} se presentará un introducción a las bases teóricas del problema de la turbulencia. Lo que se presenta es, más que nada, un retrato cualitativo de la turbulencia, necesario para poder entender ciertos aspectos de la dinámica del atmósfera. Para más información se pueden revisar las referencias clásicas \citep{pope2000turbulent,davidson2013turbulence,9780521775380}.
 \subsection{Aspectos Generales}
 La gran mayoría de los flujos en la naturaleza y en aplicaciones industriales son turbulentos. En nuestra vida cotidiana estamos tan expuestos a estos que, en general, se tiene una buena intuición de lo que son y por lo tanto este concepto es, a grandes rasgos, aceptado sin mayor discusión. La principal característica de un flujo turbulento es que es aleatorio y que posee distintas escalas. Por ejemplo: un gráfico para la velocidad en función del tiempo se verá bien ruidoso y si se pudiese amplificar una sección de este gráfico, la velocidad se seguirá viendo ruidosa tal como se puede apreciar en la Figura \ref{fig:03_turbulent}. Sin embargo, se puede seguir amplificando hasta llegar a una escala en donde la velocidad se comporte de manera suave. Esto mismo se cumple si en vez de considerar el tiempo, se graficara en función de alguna coordenada espacial.
 
@@ -251,7 +251,7 @@ Para entender el origen de la turbulencia, consideremos el número de Reynolds:
 \be Re = \frac{Vl}{\nu}.\ee
 el cual se puede interpretar como el cociente entre las fuerzas inerciales y viscosas en un fluido. Para un flujo que no es turbulento, o sea, laminar, el número de Reynolds es relativamente bajo y eso significa que la viscosidad predomina en su comportamiento. El rol que tiene la viscosidad es muy relevante, ya que es la encargada de atenuar perturbaciones que se puedan dar en las condiciones iniciales o de contorno. A medida que el número de Reynolds crece, la viscosidad irá perdiendo esta capacidad de atenuar las fluctuaciones y se llegará a un punto en donde estas fluctuaciones comenzarán a amplificarse localmente (se alcanza un número de Reynolds crítico y se entra en la zona de transición). A mayor número de Reynolds mayor es la presencia de inestabilidades en todo el flujo y lo que deriva en la turbulencia.
 
-Actualmente no existe una definición formal de turbulencia. Luego, en ausencia de esta, se pueden presentar las principales características asociadas a los flujos turbulentos:
+Actualmente no existe una definición matemáticamente formal de turbulencia. Luego, en ausencia de esta, se pueden presentar las principales características asociadas a los flujos turbulentos:
 \begin{itemize*}
 	\item La turbulencia es un proceso aleatorio
 	\item La turbulencia contiene un amplio rango de diferentes escalas.
@@ -280,9 +280,9 @@ El esfuerzo de Reynolds es el que acarrea la información sobre la turbulencia d
 Con la introducción del tensor de esfuerzos de Reynolds, se puede definir ahora la energía cinética turbulenta $k$ (en adelante TKE) como:
 \be k=\frac{1}{2}\overline{u'_i u'_i}. \ee
 \subsection{Escalas de la Turbulencia}
-Para entender la manera en la que interactúan las distintas escalas presentes en la turbulencia, primero es necesario comprender el concepto de \emph{cascada de energía}. La idea de la cascada de energía fue introducida por Richardson en 1922 y expone que la energía cinética entra a la turbulencia en las escalas mas grandes del movimiento, y luego es transferida (por un proceso no viscoso) a escalas cada vez mas pequeñas hasta que, en la escala mas pequeña posible, es disipada por los efectos viscosos.
+Para entender la manera en la que interactúan las distintas escalas presentes en la turbulencia, primero es necesario comprender el concepto de \emph{cascada de energía}. La idea de la cascada de energía fue introducida por Richardson en 1922 y expone que la energía cinética entra a la turbulencia en las escalas mas grandes del movimiento, y luego es transferida (por un proceso no viscoso) a escalas cada vez mas pequeñas hasta que, en la escala más pequeña posible, es disipada por los efectos viscosos.
 
-El mecanismo con el cual se lleva a cabo la cascada es la ruptura continua de vórtices. Los vórtices mas grandes son inestables (poseen un $Re$ elevado) y tienden a descomponerse en vórtices mas pequeños, y estos vórtices continúan rompiéndose hasta que el número de Reynolds asociado a los vórtices se hace tan pequeño como para que la viscosidad pueda estabilizar sus estructuras.
+El mecanismo con el cual se lleva a cabo la cascada es la ruptura continua de vórtices. Los vórtices más grandes son inestables (poseen un $Re$ elevado) y tienden a descomponerse en vórtices más pequeños, y estos vórtices continúan rompiéndose hasta que el número de Reynolds asociado a los vórtices se hace tan pequeño como para que la viscosidad pueda estabilizar sus estructuras.
 
 La importancia de esta idea radica en que la disipación viscosa ocurre solamente al final de todo el proceso. Esta tasa de disipación $\varepsilon$ debe ser determinada entonces en el inicio de la cascada a través de la transferencia de energía de los vórtices más grandes.
 
@@ -317,7 +317,7 @@ Este resultado nace de las consideraciones en las hipótesis de Kolmogorov. Se o
 
 En términos prácticos, se puede encontrar el espectro de energía turbulenta haciendo una transformada de Fourier del campo de velocidades\footnote{Una definición mas formal del espectro, a través de las funciones de correlación, se puede ver en \cite{9780521775380}.}. El par que define esta transformada será:
 \be \tilde{u}'_i(\vec{\kappa},t) = \frac{1}{(2\pi)^3}\int u'_i(\vec{x},t) e^{-i\vec{\kappa}\cdot\vec{x}}d^3\vec{x}. \ee
-\be u'_i(\vec{x},t) = \int \tilde{u}'_i(\vec{\kappa},t) e^{-i\vec{\kappa}\cdot\vec{x}}d^3\vec{\kappa}. \ee
+\be u'_i(\vec{x},t) = \int \tilde{u}'_i(\vec{\kappa},t) e^{i\vec{\kappa}\cdot\vec{x}}d^3\vec{\kappa}. \ee
 
 El espectro de energía cinética turbulenta se puede expresar en función del número de onda $\vec{\kappa}$ como:
 \be 
@@ -383,15 +383,15 @@ Los escalares pasivos que flotaron gracias a la radiación del día se mantendr�
 
 La capa residual no tiene contacto directo con la superficie. Durante la noche, la capa estable aumenta su espesor modificando el fondo de la capa residual. Luego, la capa residual no es afectada por el transporte turbulento de propiedades relacionadas a la superficie y por lo tanto no cae dentro de la definición de lo que se define como capa límite, sin embargo es una estructura dominante de la atmósfera.
 \subsubsection{Capa Límite Estable}
-A medida que la noche progresa, la parte inferior de la capa residual se transforma debido al contacto con la superficie en una capa límite estable. Esta se caracteriza por ser estáticamente estable y poseer de manera esporádica turbulencia de baja intensidad. Si bien los vientos a nivel de superficie se vuelven mas tranquilos, por sobre esto, el viento puede acelerar a velocidades supergeostróficas en un fenómeno llamado jet nocturno o corriente en chorro de bajo nivel.
+A medida que la noche progresa, la parte inferior de la capa residual se transforma debido al contacto con la superficie en una capa límite estable. Esta se caracteriza por ser estáticamente estable y poseer de manera esporádica turbulencia de baja intensidad. Si bien los vientos a nivel de superficie se vuelven más tranquilos, por sobre esto, el viento puede acelerar a velocidades supergeostróficas en un fenómeno llamado jet nocturno o corriente en chorro de bajo nivel.
 
 Mientras que el aire estáticamente estable tiende a suprimir la producción de turbulencia a nivel de superficie, el desarrollo del jet nocturno fomenta el cizallamiento en el viento, lo cual provoca la turbulencia lejos de la superficie. Como resultado, existe turbulencia que se manifiesta en ráfagas cortas que generan mezcla a través de la capa límite estable. Durante los periodos no turbulentos, el movimiento del viento se desacopla de la superficie.
 
 El límite superior de la capa límite estable no es fácilmente identificable como lo es en la capa de mezcla, ya que esta se une suavemente a la capa residual. El largo característico de la capa estable será la altura en donde la turbulencia es solo una pequeña fracción de su valor superficial.
 
-La velocidad del viento durante la noche tiene un comportamiento complejo. En las cercanías de la superficie generalmente se tiene un viento leve o incluso calmado. Sobre los 200 [m] el aire puede alcanzar velocidades de entre 10 a 30 [m/s] en el jet nocturno. Un poco mas arriba la velocidad del viento disminuye, recuperando su valor geostrófico.
+La velocidad del viento durante la noche tiene un comportamiento complejo. En las cercanías de la superficie generalmente se tiene un viento leve o incluso calmado. Sobre los 200 [m] el aire puede alcanzar velocidades de entre 10 a 30 [m/s] en el jet nocturno. Un poco más arriba la velocidad del viento disminuye, recuperando su valor geostrófico.
 
-Esta capa estable también es posible que se forme durante el día siempre y cuando la superficie sea mas fría que el aire que lo rodea, como puede ser el caso de frentes cálidos o zonas cercanas a la costa.
+Esta capa estable también es posible que se forme durante el día siempre y cuando la superficie sea más fría que el aire que lo rodea, como puede ser el caso de frentes cálidos o zonas cercanas a la costa.
 \subsubsection{Evolución de la Temperatura Potencial}
 En la Figura \ref{fig:03_pbl2} se muestra la evolución para la temperatura potencial virtual $\theta_v$ a lo largo de un día estándar. Se puede observar que el perfil de $\theta_v$ brinda la información suficiente para reconocer perfectamente la estructura de la capa límite. 
 \begin{figure}[h!]
@@ -472,7 +472,7 @@ La segunda igualdad es obtenida sustituyendo por la siguiente relación de simil
 \be 
 (\overline{w'\theta'_v})_s \approx -u_* \theta_*,
 \ee
-donde se introduce $\theta_*$ que es una variable de escalamiento para la temperatura potencial\footnote{Se omitirá la manera de aproximar $\theta_*$ en este documento, sin embargo se motiva al lector a leer la referencia \citep{jacobson2005fundamentals} si desea conocer mas al respecto.}. $\theta_*$ es proporcional a la diferencia vertical de temperatura potencial. A mayor valor de $\overline{\theta}$ en la cercanía de la superficie, más negativo será el cambio de temperatura potencial con respecto a la altura y por ende mas inestable será la atmósfera. Para este caso $L$ será negativo pero de un valor pequeño (es inversamente proporcional a $\theta_*$). Si $L$ es pequeño y negativo, $z/L$ es negativo y grande. Estos valores de $z/L$ corresponden a atmósferas inestables debido a la flotación. Análogamente, valores positivos de $z/L$ corresponden a atmósferas estables.
+donde se introduce $\theta_*$ que es una variable de escalamiento para la temperatura potencial\footnote{Se omitirá la manera de aproximar $\theta_*$ en este documento, sin embargo se motiva al lector a leer la referencia \citep{jacobson2005fundamentals} si desea conocer mas al respecto.}. $\theta_*$ es proporcional a la diferencia vertical de temperatura potencial. A mayor valor de $\overline{\theta}$ en la cercanía de la superficie, más negativo será el cambio de temperatura potencial con respecto a la altura y por ende más inestable será la atmósfera. Para este caso $L$ será negativo pero de un valor pequeño (es inversamente proporcional a $\theta_*$). Si $L$ es pequeño y negativo, $z/L$ es negativo y grande. Estos valores de $z/L$ corresponden a atmósferas inestables debido a la flotación. Análogamente, valores positivos de $z/L$ corresponden a atmósferas estables.
 
 Evidentemente, la introducción de $\theta_*$ permite escribir relaciones de similaridad para el perfil de $\theta$ de la forma:
 \be \label{eq:03_simi_theta}
@@ -604,7 +604,7 @@ Formalmente, se pueden considerar cuatro pasos conceptuales para la aplicación 
 \subsection{Filtrado}
 El operador de filtrado es definido como:
 \begin{equation}
-\overline{u}(x_i,t) = \int G(r_i,x_j) u(x_j-r_i,t)dr_i,
+\overline{u}(x_i,t) = \int G(r_j,x_i) u(x_i-r_j,t)dr_j,
 \end{equation}
 donde la integración se realiza en todo el dominio del flujo. Notar que el filtro corresponde a una operación de convolución en el sentido del análisis de Fourier. El kernel, base o núcleo $G$ del filtro satisface una condición de normalización:
 \begin{equation}
@@ -635,7 +635,7 @@ Utilizando esto, se escribe la ecuación de momentum filtrada como:
 \ee
 Se define el tensor de esfuerzos residuales como:
 \be \tau_{ij}^R \equiv \overline{u_j u_i} - \overline{u}_j \overline{u}_i. \ee
-El cual es análogo al tensor de esfuerzos de Reynolds\footnote{Para diferenciar la notación, se utilizan corchetes para indicar promedio y $^*$ para indiciar fluctuaciones. De esta forma la descomposición de Reynolds se escribe $u_i = \langle u_i\rangle + u^*_i$}:
+El cual es análogo al tensor de esfuerzos de Reynolds\footnote{Para diferenciar la notación, se utilizan corchetes para indicar promedio y $^*$ para indicar fluctuaciones. De esta forma la descomposición de Reynolds se escribe $u_i = \langle u_i\rangle + u^*_i$}:
 \be \langle u^*_i u^*_j \rangle = \langle u_i u_j \rangle - \langle u_i \rangle \langle u_j \rangle. \ee
 La energía cinética residual es:
 \be k_r = \frac{1}{2}\tau_{ii}^R. \ee
@@ -663,7 +663,7 @@ y $\Pi$ es la tasa de producción de energía cinética residual (o disipación 
 \Pi = -\tau_{ij}^r\overline{S}_{ij}.
 \ee 
 \subsection{Modelación de los Esfuerzos Residuales}
-Para lograr la clausura de las ecuaciones filtradas, se necesita un modelo para el esfuerzo residual anisotrópico $\tau_{ij}^r$. El modelo mas simple es el propuesto por \cite{doi:10.1175/1520-0493(1963)091<0099:GCEWTP>2.3.CO;2}, el cual también sirve como base para varios modelos mas avanzados.
+Para lograr la clausura de las ecuaciones filtradas, se necesita un modelo para el esfuerzo residual anisotrópico $\tau_{ij}^r$. El modelo más simple es el propuesto por \cite{doi:10.1175/1520-0493(1963)091<0099:GCEWTP>2.3.CO;2}, el cual también sirve como base para varios modelos más avanzados.
 \subsubsection{Modelo de Smagorinsky}
 El modelo se puede subdividir en dos partes. Primero el modelo de viscosidad turbulenta lineal, en base a:
 \be \tau_{ij}^r = -2\nu_t \overline{S}_{ij}, \ee
@@ -694,9 +694,9 @@ Sea $\mathbf{x}$\footnote{Para esta sección se utilizará la negrita para indic
 \begin{equation*}
 	\mathbf{x}_a = \mathbf{x}_b + \delta \mathbf{x},
 \end{equation*}
-sea lo mas cercano posible a $\mathbf{x}_t$.
+sea lo más cercano posible a $\mathbf{x}_t$.
 
-Las observaciones utilizadas en el análisis se almacenan en el vector de observación $\mathbf{y}$. En el proceso de análisis este vector de observación debe ser comparado con un vector de estado. Como cada grado de libertad del vector de estado evidentemente no tendrá su correspondiente observación, es necesario llevar a cabo una transformación desde el espacio del modelo hacia el espacio de observación. Esta transformación se realiza a través del operador de observación $H(\mathbf{x})$\footnote{$H(x)$ es una matriz también, sin embargo, y solo para este caso, no se utiliza la negrita para diferenciarla del operador linealizado $\textbf{H}$ que se verá mas adelante.}. Básicamente este operador interpola las variables de estado desde los puntos de la malla numérica a los puntos de observación a través de una interpolación adecuada (por ejemplo: lineal o cuadrática) . La diferencia
+Las observaciones utilizadas en el análisis se almacenan en el vector de observación $\mathbf{y}$. En el proceso de análisis este vector de observación debe ser comparado con un vector de estado. Como cada grado de libertad del vector de estado evidentemente no tendrá su correspondiente observación, es necesario llevar a cabo una transformación desde el espacio del modelo hacia el espacio de observación. Esta transformación se realiza a través del operador de observación $H(\mathbf{x})$\footnote{$H(x)$ es una matriz también, sin embargo, y solo para este caso, no se utiliza la negrita para diferenciarla del operador linealizado $\textbf{H}$ que se verá más adelante.}. Básicamente este operador interpola las variables de estado desde los puntos de la malla numérica a los puntos de observación a través de una interpolación adecuada (por ejemplo: lineal o cuadrática) . La diferencia
 \begin{equation*}
 	\mathbf{y}-H(\mathbf{x}_b),
 \end{equation*}
@@ -730,7 +730,7 @@ Despejando se puede tener una solución analítica de la forma:
 \be \label{eq:03_dataassim}
 \textbf{x}_a = \textbf{x}_b + \textbf{B}H^T(H\textbf{B}H^T+\textbf{R})^{-1}(\textbf{y}-H(\textbf{x}_b)). 
 \ee
-La ecuación anterior es fácil de entender si se identifican las matrices $H\textbf{B}H^T$ que es la proyección del error del background en el espacio de observación y $\textbf{B}H^T$ que es la proyección del error del background en espacio de background-observación. De esta manera el análisis no es mas que una combinación de la ponderación de los errores aplicado al vector de innovación.
+La ecuación anterior es fácil de entender si se identifican las matrices $H\textbf{B}H^T$ que es la proyección del error del background en el espacio de observación y $\textbf{B}H^T$ que es la proyección del error del background en espacio de background-observación. De esta manera el análisis no es más que una combinación de la ponderación de los errores aplicado al vector de innovación.
 
 Utilizando la terminología de la sección anterior, se deriva que:
 \be

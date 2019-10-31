@@ -29,7 +29,7 @@ En primer lugar se revisa la estabilidad del flujo durante la ventana de tiempo 
 
 En base a la misma Figura \ref{fig:06_hov_pbl} es posible estimar el \textbf{alto de la capa límite} como el punto en altura justo antes de la inversión térmica. Utilizando este acercamiento es fácil notar como el espesor de ABL varía durante el día desde un valor cercano a los 800 [m] hasta unos 400 [m] en la noche. Se decide utilizar un valor promedio de $\delta = 750$ [m] para adimensionalizar los resultados obtenidos.
 \subsubsection{Estructuras del Campo de Velocidades}
-Con respecto a las variables de primer orden y el rendimiento del LES, la Figura \ref{fig:06_hov_eta1} muestra los campos instantáneos de velocidad para el primer nivel vertical $z_1\approx 5.25$ [m] del dominio interior d07 a las 15:00\footnote{Si bien la selección de la hora es arbitraria, cualquier hora después de las 12:00 hubiese servido y de hecho el comportamiento del campo no varía mucho, debido a las condiciones termodinámicas.}.Se pueden apreciar las estructuras de flujo turbulento que revela el método LES sobre del campo de velocidades. 
+Con respecto a las variables de primer orden y el rendimiento del LES, la Figura \ref{fig:06_hov_eta1} muestra los campos instantáneos de velocidad para el primer nivel vertical $z_1\approx 5.25$ [m] del dominio interior d07 a las 15:00\footnote{Si bien la selección de la hora es arbitraria, cualquier hora después de las 12:00 hubiese servido y de hecho el comportamiento del campo no varía mucho, debido a las condiciones termodinámicas.}.Se pueden apreciar las estructuras de flujo turbulento que revela el método LES sobre el campo de velocidades. 
 \begin{figure}[H]
 	\centering
 	\begin{minipage}{0.5\linewidth}
@@ -61,7 +61,7 @@ Para evaluar la calidad del modelo, se muestra la serie de tiempo de los datos s
 	\label{fig:06_hov_ts}
 \end{figure}
 
-En la Figura \ref{fig:06_hov_ts}, la linea segmentada vertical indica el límite del tiempo de \emph{spinup} y por lo tanto sólo los resultados desde ese punto en adelante son válidos. Se puede apreciar que la simulación (en línea continua) capta de buena forma la tendencia de la magnitud de la velocidad para el mástil, sin embargo, la simulación fue incapaz de representar las ráfagas que ocurrieron en esa fecha y que aceleraron al fluido. Un déficit de momentum se observa en los niveles superficiales, dando a entender que quizás el modelo de superficie o de turbulencia está actuando de manera disipativa en esos primeros niveles. Con respecto a la dirección del viento, ésta quedó a grandes rasgos bien representada por la simulación.
+En la Figura \ref{fig:06_hov_ts}, la línea segmentada vertical indica el límite del tiempo de \emph{spinup} y por lo tanto sólo los resultados desde ese punto en adelante son válidos. Se puede apreciar que la simulación (en línea continua) capta de buena forma la tendencia de la magnitud de la velocidad para el mástil, sin embargo, la simulación fue incapaz de representar la aceleración del fluido en esa fecha. Un déficit de momentum se observa en los niveles superficiales, dando a entender que quizás el modelo de superficie o de turbulencia está actuando de manera disipativa en esos primeros niveles. Con respecto a la dirección del viento, ésta quedó a grandes rasgos bien representada por la simulación.
 
 \begin{figure}[H]
 	\begin{minipage}{0.33\linewidth}
@@ -114,7 +114,7 @@ La adimensionalización de las variables se llevó a cabo con la velocidad de fr
 
 Con respecto al gradiente adimensional $\Phi_m$, el valor que maneja la teoría de Monin-Obukhov para atmósfera neutra es unitario. En este caso se tiene un valor sobrestimado cercano a $3$ con un ligero \emph{overshoot} en el primer 20\% de la capa límite. El overshoot puede ser entendido según \cite{doi:10.1063/1.3319073} como un LES que no cumple los criterios adecuados para escalar correctamente el flujo superficial de pared. El modelo WRF, siendo un modelo climático, utiliza su parametrización de capa superficial para hacerse cargo de este problema, sin embargo en este caso se muestra deficiente. Con respecto a la diferencia de valores, se puede ver como la influencia del terreno real no homogéneo y el uso de las condiciones de borde provenientes de otro modelo real desplaza la curva hacia la derecha.
 
-Finalmente, la Figura \ref{fig:06_hov_spectrum} muestra el espectro espacial bidimensional para los primeros 5 niveles verticales del modelo. Se aprecia la desviación de la pendiente inercial para el primer nivel debido a la influencia del terreno en comparación a los niveles superiores que presentan una mayor concordancia con la ley de los -5/3. El filtro corta efectivamente a nivel de malla en el número de onda correspondiente a $(2\Delta x)^{-1}\approx 0.02$ y por lo tanto está siendo bien aplicado. La forma del espectro, exhibiendo el ingreso de energía en las escalas mas grandes y la disipación después del número de onda de corte, muestra concordancia con la fenomenología física de los flujos turbulentos y por lo tanto se puede argumentar que el modelo WRF representa correctamente la cascada de energía en su modo LES a alta resolución sobre terreno plano.
+Finalmente, la Figura \ref{fig:06_hov_spectrum} muestra el espectro espacial bidimensional para los primeros 5 niveles verticales del modelo. Se aprecia la desviación de la pendiente inercial para el primer nivel debido a la influencia del terreno en comparación a los niveles superiores que presentan una mayor concordancia con la ley de los -5/3. El filtro corta efectivamente a nivel de malla en el número de onda correspondiente a $(2\Delta x)^{-1}\approx 0.02$ [1/m] y por lo tanto está siendo bien aplicado. La forma del espectro, exhibiendo el ingreso de energía en las escalas mas grandes y la disipación después del número de onda de corte, muestra concordancia con la fenomenología física de los flujos turbulentos y por lo tanto se puede argumentar que el modelo WRF representa correctamente la cascada de energía en su modo LES a alta resolución sobre terreno plano.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1.0\linewidth,page=1,trim={3mm 5mm 3mm 3mm},clip]{Imagenes/06/hov/spectra}%
@@ -131,7 +131,7 @@ La Figura \ref{fig:06_corr_hov} muestra el gráfico de dispersión entre la rapi
 	\label{fig:06_corr_hov}
 \end{figure}
 
-Con respecto al resto de los parámetros de error estadísticos, se tiene un valor para el MAE de $2.41091$ [m/s] y un valor para el RMSE de $2.80142$ [m/s]. Es decir, en promedio existe un error de aproximadamente 2 [m/s] para la rapidez del viento en los niveles analizados. Este error evidentemente es no deseable para evaluación del recurso eólico y se buscará corregir con la asimilación de datos 4D que se muestran mas adelante.
+Con respecto al resto de los parámetros de error estadísticos, se tiene un valor para el MAE de $2.41091$ [m/s] y un valor para el RMSE de $2.80142$ [m/s]. Es decir, en promedio existe un error de aproximadamente 2 [m/s] para la rapidez del viento en los niveles analizados. Este error evidentemente es no deseable para evaluación del recurso eólico y se buscará corregir con la asimilación de datos 4D que se muestran más adelante.
 
 
 
@@ -157,7 +157,7 @@ Se revisa ahora la influencia que tiene la asimilación de datos en un solo punt
 	\caption{Serie de tiempo para la rapidez instantánea del viento $V$ y su dirección en la ubicación del mástil meteorológico para el caso con asimilación puntual de datos. La línea continua corresponde a lo datos simulados interpolados a las alturas de medición (solo para $V$) y la línea punteada a los datos medidos en el mástil.}
 	\label{fig:06_hov_da_ts}
 \end{figure}
-Con respecto a los resultados simulados y válidos (luego del \emph{spinup}), estos nuevamente no logran captar la presencia de las ráfagas, ni tampoco suplir las deficiencias de viento a nivel de superficie. Una explicación para esto se puede encontrar en el mismo gráfico: la información asimilada pierde su influencia unos pocos pasos de tiempo después de ser asimilada. De esta forma la corrección que genera la asimilación de datos en la capa límite es poco efectiva, ya que el forzamiento de las condiciones de borde provenientes de la malla del dominio padre (d06) es superior al forzamiento generado por la asimilación.
+Con respecto a los resultados simulados y válidos (luego del \emph{spinup}), estos nuevamente no logran captar la aceleración, ni tampoco suplir las deficiencias de viento a nivel de superficie. Una explicación para esto se puede encontrar en el mismo gráfico: la información asimilada pierde su influencia unos pocos pasos de tiempo después de ser asimilada. De esta forma la corrección que genera la asimilación de datos en la capa límite es poco efectiva, ya que el forzamiento de las condiciones de borde provenientes de la malla del dominio padre (d06) es superior al forzamiento generado por la asimilación.
 
 De todas formas se obtiene una mejora, dado que la asimilación de datos logra influir en el comportamiento del flujo, acercando los valores de la velocidad a aquellos medidos por el mástil.
 
@@ -205,7 +205,7 @@ Para las variables de segundo orden, los comportamiento de $k_{sgs}$ y $\tau_{13
 	\label{fig:06_hov_da_mean_secondorder}
 \end{figure}
 
-El espectro de energía cinética horizontal en la Figura \ref{fig:06_hov_da_spectrum} nos muestra el impacto de la asimilación de datos a nivel de microescala. Si bien, en los niveles superiores no existe mayor diferencia con respecto al experimentos sin asimilación, el nivel superficial exhibe una retro-distribución (\emph{backscatter}) de energía de submalla. Este ingreso de energía evidentemente proviene de la incorporación sintética por asimilación variacional de los valores medidos al modelo, los cuales se acentúan en el primer nivel. Surge la necesidad ahora de controlar este ingreso sintético de energía, a modo de tener resultados físicos para el problema. Esta necesidad se podría suplir a nivel de la clausura del LES para la modelación de la turbulencia.
+El espectro de energía cinética horizontal en la Figura \ref{fig:06_hov_da_spectrum} nos muestra el impacto de la asimilación de datos a nivel de microescala. Si bien, en los niveles superiores no existe mayor diferencia con respecto al experimento sin asimilación, el nivel superficial exhibe una retro-distribución (\emph{backscatter}) de energía de submalla. Este ingreso de energía evidentemente proviene de la incorporación sintética por asimilación variacional de los valores medidos al modelo, los cuales se acentúan en el primer nivel. Surge la necesidad ahora de controlar este ingreso sintético de energía, a modo de tener resultados físicos para el problema. Esta necesidad se podría suplir a nivel de la clausura del LES para la modelación de la turbulencia.
 
 \begin{figure}[H]
 	\centering
@@ -367,7 +367,7 @@ En la Figura \ref{fig:06_bol_cross} se muestra un gráfico de contornos para la 
 	\label{fig:06_bol_referencia}
 \end{figure}
 \subsubsection{Comparación Ciega}
-La Figura \ref{fig:06_bol_referencia} muestra la diferencia entre las condiciones para el flujo simulado no perturbado en un punto lejos de la colina y los valores que se declaran en la campaña experimental de Bolund para usar como condición inicial y de borde. Tal como se explicó antes en la metodología, la diferencia entre estos valores no es relevante ya que la simulación corresponde a un estado de la atmósfera para una fecha específica, mientras que las condiciones de borde de la comparación ciega responden a un condiciones idealizadas. 
+La Figura \ref{fig:06_bol_referencia} muestra la diferencia entre las condiciones para el flujo simulado no perturbado en un punto lejos de la colina y los valores que se declaran en la campaña experimental de Bolund para usar como condición inicial y de borde. Tal como se explicó antes en la metodología, la diferencia entre estos valores no es relevante ya que la simulación corresponde a un estado de la atmósfera para una fecha específica, mientras que las condiciones de borde de la comparación ciega responden a condiciones idealizadas. 
 
 La importancia de los valores de la Figura \ref{fig:06_bol_referencia} es que permite computar los resultados adimensionales que se mostrarán mas adelante. La manera como se calculan estos resultados se pueden ver en el Apéndice \ref{ch:apA}.
 
@@ -394,7 +394,7 @@ La Figura \ref{fig:06_bol_speedup} muestra el perfil de aceleración o \emph{spe
 	\caption{Incremento adimensional de energía cinética turbulenta (sgs) en los primeros 3 niveles del modelo ($1.1$ [m] azul; $3.4$ [m] verde; $5.6$ [m] amarillo) para la sección de corte a 240$^\circ$ en Bolund. Se muestran los resultados para las 12:00 (arriba), 13:00, 14:00 y 15:00 horas (abajo).}
 	\label{fig:06_bol_tke}
 \end{figure}
-Con respecto a los valores de la Figura \ref{fig:06_bol_speedup}, los distintos modelos de la comparación numérica ciega entregan un rango amplio de valores como resultado, por lo cuál no se podría precisar el rendimiento del modelo en comparación con los demás, además por otro lado, los resultados entregados por las simulaciones de este trabajo son transientes en contraste con los resultados estacionarios. Se tiene una buena concordancia con los resultados entregados por los modelos LES en la comparación ciega. Con respecto a los datos medidos de los mástiles, la estación M1 es la que mejor se comporta, el resto de los mástiles se ven fuertemente afectados por el forzamiento del terreno complejo y por lo tanto los resultados distan de los medidos. Con respecto a las diferencias entre las distintas alturas: para M2 y M3 los niveles superiores presentan valores mas altos que los inferiores y para M4 se invierte este comportamiento, como es de esperar. 
+Con respecto a los valores de la Figura \ref{fig:06_bol_speedup}, los distintos modelos de la comparación numérica ciega entregan un rango amplio de valores como resultado, por lo cuál no se podría precisar el rendimiento del modelo en comparación con los demás, además por otro lado, los resultados entregados por las simulaciones de este trabajo son transientes en contraste con los resultados estacionarios. Se tiene una buena concordancia con los resultados entregados por los modelos LES en la comparación ciega. Con respecto a los datos medidos de los mástiles, la estación M1 es la que mejor se comporta, el resto de los mástiles se ven fuertemente afectados por el forzamiento del terreno complejo y por lo tanto los resultados distan de los medidos. Con respecto a las diferencias entre las distintas alturas: para M2 y M3 los niveles superiores presentan valores más altos que los inferiores y para M4 se invierte este comportamiento, como es de esperar. 
 
 En la Figura \ref{fig:06_bol_tke} se muestra el incremento de energía cinética turbulenta para la sección de M1-M4 calculada según la indicación de los desarrolladores del experimento. Si se compara con los datos medidos y con aquellos simulados para la comparación ciega, se tiene una buena concordancia con respecto a su comportamiento en el dominio. Existe un incremento debido a la interacción con la pendiente abrupta cercana al mástil M2, el cuál es más intenso en los primeros niveles del modelo, luego este aumento decae y en la parte de la separación vuelve a aumentar. El aumento obtenido en la parte de la separación y en la parte de la aceleración no es tan grande como el obtenido por el resto de los modeladores, sin embargo está en mejor concordancia con los datos medidos, por lo tanto se concluye que la metodología de alta resolución resuelve de buena manera este comportamiento.
 
@@ -419,13 +419,13 @@ Se extrae de este análisis, que el LES está actuando de una manera demasiado d
 \subsubsection{Comparación con Series de Tiempo}
 En las siguientes páginas, se ubican las Figuras \ref{fig:06_bol_ts_m1}-\ref{fig:06_bol_ts_m8} correspondientes a las series de tiempo de rapidez horizontal y dirección para cada uno de los mástiles en Bolund. 
 
-Para cada mástil existe una muy buena concordancia en la dirección. Llama la atención que en M4, punto donde ocurre la separación, la dirección está bastante bien representada salvo por la recuperación del giro que ocurre a una altura mas baja que la real. 
+Para cada mástil existe una muy buena concordancia en la dirección. Llama la atención que en M4, punto donde ocurre la separación, la dirección está bastante bien representada salvo por la recuperación del giro que ocurre a una altura más baja que la real. 
 
 Con respecto a las velocidades en cada mástil:
 \begin{itemize*}
 	\item M1: Presenta un gran déficit de velocidad en todos los niveles. El primer nivel tiene un grado medio de intensidad turbulenta.
 	\item M2: Sigue la tendencia de los experimentos, pero el modelo fue incapaz de captar la aceleración a 5 y 9 [m] de altura.
-	\item M3: Presenta déficit e incapacidad de representar la ráfaga que se da a las 13:00.
+	\item M3: Presenta déficit e incapacidad de representar la aceleración que se da a las 13:00.
 	\item M4: Capta de muy buena manera la dirección, considerando que está en una zona con flujo altamente no lineal, incluso en la etapa de \emph{spinup}. Existe un exceso de momentum para la velocidad a los 9 [m]. Presenta intensidad turbulenta leve.
 	\item M5: Déficit de momentum en todas las alturas, pero capta la tendencia.
 	\item M6: También es un punto complicado, pues se ubica después de la pendiente en la recta horizontal. No se capta la tendencia y los valores están lejos de los medidos. La rapidez a 2[m] es mayor que a 5 y 9 [m] y presenta una alta intensidad turbulenta.
@@ -551,7 +551,7 @@ Análogo al caso I, la Figura \ref{fig:06_bol_spectrum} muestra el espectro bidi
 	\label{fig:06_bol_spectrum}
 \end{figure}
 \subsubsection{Parámetros Estadísticos y Dispersión}
-Las Figuras \ref{fig:06_corr_bol1} y \ref{fig:06_corr_bol2} muestran los gráficos de dispersión entre la rapidez horizontal simulada y real para cada mástil con su correspondiente coeficiente de correlación. Como se pudo observar en las series de tiempo, el modelo fue incapaz de representar correctamente lo medido y por lo tanto se puede ver que todos los coeficientes de correlación con considerablemente bajos.
+Las Figuras \ref{fig:06_corr_bol1} y \ref{fig:06_corr_bol2} muestran los gráficos de dispersión entre la rapidez horizontal simulada y real para cada mástil con su correspondiente coeficiente de correlación. Como se pudo observar en las series de tiempo, el modelo fue incapaz de representar correctamente lo medido y por lo tanto se puede ver que todos los coeficientes de correlación son considerablemente bajos.
 
 Finalmente, se obtiene un valor de $2.6724$ [m/s] para el MAE, y $2.9538$ [m/s] para el RMSE, que servirán de referencia para evaluar el rendimiento de la asimilación multipunto de datos.
 \newpage
@@ -612,7 +612,7 @@ Finalmente, se obtiene un valor de $2.6724$ [m/s] para el MAE, y $2.9538$ [m/s] 
 
 \section{Caso II: Bolund con Asimilación Multipunto}
 \subsubsection{Estratificación Térmica y Espesor de Capa Límite Atmosférica}
-Si bien la asimilación de datos no cambia la neutralidad de la capa límite, ni la selección para el alto $\delta$ de ABL, sí logró modificar considerablemente la distribución de las lineas horarias  de la Figura \ref{fig:06_bol_da_pbl} con respecto al gráfico sin DA. Esto nos da una primera aproximación a la influencia que tuvo el DA sobre el dominio, la capacidad de desplazar los perfiles de temperatura potencial virtual.
+Si bien la asimilación de datos no cambia la neutralidad de la capa límite, ni la selección para el alto $\delta$ de ABL, sí logró modificar considerablemente la distribución de las líneas horarias  de la Figura \ref{fig:06_bol_da_pbl} con respecto al gráfico sin DA. Esto nos da una primera aproximación a la influencia que tuvo el DA sobre el dominio, la capacidad de desplazar los perfiles de temperatura potencial virtual.
 
 \begin{figure}[H]
 	\begin{minipage}{0.5\linewidth}
@@ -674,7 +674,7 @@ El dominio de la Figura \ref{fig:06_bol_da_st} muestra dos grandes diferencias c
 		\centering
 		\includegraphics[height=0.73\linewidth,page=109,trim={37mm 23mm 20mm 20mm},clip]{Imagenes/06/bol_da/eta1}%
 	\end{minipage}%
-	\caption{Lineas de flujo para la solución numérica en Bolund (con DA) en el primer nivel ($z_1 = 1.12$ [m]) en las horas (a) 12:00, (b) 13:00, (c) 14:00 y (d) 15:00.}
+	\caption{Líneas de flujo para la solución numérica en Bolund (con DA) en el primer nivel ($z_1 = 1.12$ [m]) en las horas (a) 12:00, (b) 13:00, (c) 14:00 y (d) 15:00.}
 	\label{fig:06_bol_da_st}
 \end{figure}
 En la Figura \ref{fig:06_bol_da_cross} se puede notar de manera más detallada la disminución global de velocidad en la sección M1-M4. La burbuja de separación disminuyó su largo a un valor de aproximadamente 25 [m].
@@ -748,7 +748,7 @@ Con respecto a los valores para el resto de las horas, hubo un aumento considera
 \end{figure}
 \vspace*{\fill}
 \newpage
-Con respecto a los perfiles en los mástiles mostrados en la Figura \ref{fig:06_bol_da_mast_tke_speedup}: M1 disminuye su aceleración (\emph{speedup}) y aumenta considerablemente su $\Delta k$, alejándose de los datos medidos. Las estaciones M2 y M3 mantienen su comportamiento, con la diferencia de que ahora en M2 hay mas TKE. Esta diferencia en el TKE para M1 y M2, está relacionada con el incremento local de $k$ en las cercanías de esos puntos. M4 mantiene a grandes rasgos lo simulado anteriormente, pero se intensifica el déficit de \emph{speedup} dentro de la burbuja de separación. De manera general, todos los valores están lejanos de los medidos, mayormente influenciados por el reinicio de la TKE en cada etapa de la DA.
+Con respecto a los perfiles en los mástiles mostrados en la Figura \ref{fig:06_bol_da_mast_tke_speedup}: M1 disminuye su aceleración (\emph{speedup}) y aumenta considerablemente su $\Delta k$, alejándose de los datos medidos. Las estaciones M2 y M3 mantienen su comportamiento, con la diferencia de que ahora en M2 hay más TKE. Esta diferencia en el TKE para M1 y M2, está relacionada con el incremento local de $k$ en las cercanías de esos puntos. M4 mantiene a grandes rasgos lo simulado anteriormente, pero se intensifica el déficit de \emph{speedup} dentro de la burbuja de separación. De manera general, todos los valores están lejanos de los medidos, mayormente influenciados por el reinicio de la TKE en cada etapa de la DA.
 \vspace*{\fill}
 \begin{figure}[H]
 	\begin{minipage}{0.5\linewidth}
@@ -767,7 +767,7 @@ Con respecto a los perfiles en los mástiles mostrados en la Figura \ref{fig:06_
 \vspace*{\fill}
 \newpage
 \subsubsection{Comparación con Series de Tiempo}
-A continuación se muestran los resultados para las series de tiempo en la Figuras \ref{fig:06_bol_da_ts_m1}-\ref{fig:06_bol_da_ts_m8}. Se puede reconocer que los resultados para todos los mástiles empeoraron: los déficit se acentuaron e incluso la dirección se modificó (ver M7). Por otro lado, se puede ver que se rescatan tendencias de las mediciones, como por ejemplo la pequeña ráfaga que ocurre a cerca de las 13:00 y la aceleración leve que ocurre después de esto. El mástil que mejor se comporta al usar DA es extrañamente M4 (sitio con flujo no lineal) encontrándose alta concordancia entre lo simulado y lo real. Los mástiles que antes presentaban cierta intensidad turbulenta ahora la muestran de manera mas fuerte, revelando cierta relación entre el DA y la turbulencia resuelta.
+A continuación se muestran los resultados para las series de tiempo en la Figuras \ref{fig:06_bol_da_ts_m1}-\ref{fig:06_bol_da_ts_m8}. Se puede reconocer que los resultados para todos los mástiles empeoraron: los déficit se acentuaron e incluso la dirección se modificó (ver M7). Por otro lado, se puede ver que se rescatan tendencias de las mediciones, como por ejemplo la aceleración que ocurre a cerca de las 13:00 y la aceleración leve que ocurre después de esto. El mástil que mejor se comporta al usar DA es extrañamente M4 (sitio con flujo no lineal) encontrándose alta concordancia entre lo simulado y lo real. Los mástiles que antes presentaban cierta intensidad turbulenta ahora la muestran de manera mas fuerte, revelando cierta relación entre el DA y la turbulencia resuelta.
 
 En general, este proceso de asimilación de datos multipunto no fue exitoso. Las discrepancias que se pretendían corregir sólo se acentuaron y las mejoras que se pudieron hallar son demasiado locales como para trazar una regla general. Esto demuestra la complejidad que induce el terreno complejo en el comportamiento del viento y el cuidado especial que se debe tener para simular un caso como este que, a grandes rasgos, sigue teniendo una relativa sencillez.
 \newpage
@@ -865,7 +865,7 @@ En la Figura \ref{fig:06_bol_da_mean_secondorder} se muestran los estadísticos 
 	\caption{Variables adimensionalizadas de segundo orden para M1-M4 con DA, promediadas entre las 12:00 y las 15:00. (a) Energía cinética turbulenta de submalla, (b) Gradiente de velocidad, (c) Esfuerzo turbulento. }
 	\label{fig:06_bol_da_mean_secondorder}
 \end{figure}
-Con respecto al espectro de velocidades en la Figura \ref{fig:06_bol_da_spectrum}, sorpresivamente ahora no se revela el \emph{backscatter} que presentó el caso de terreno plano, probablemente porque el forzamiento debido a la interacción con el terreno complejo sea dominante sobre el forzamiento que causa la asimilación de datos, sin embargos sí existen comportamientos ruidosos luego del número de onda de \emph{cutoff}. Las pendientes para el rango inercial se ven modificadas: el primer nivel tiene una un poco mas empinada (explicada por el ingreso de energía que se da a pequeñas escalas), y los niveles superiores tienen un comportamiento con una pendiente menor que -5/3, siendo quizás mas difusivos como consecuencia de la interacción con la capa de superficie.
+Con respecto al espectro de velocidades en la Figura \ref{fig:06_bol_da_spectrum}, sorpresivamente ahora no se revela el \emph{backscatter} que presentó el caso de terreno plano, probablemente porque el forzamiento debido a la interacción con el terreno complejo sea dominante sobre el forzamiento que causa la asimilación de datos, sin embargo sí existen comportamientos ruidosos luego del número de onda de \emph{cutoff}. Las pendientes para el rango inercial se ven modificadas: el primer nivel tiene una un poco más empinada (explicada por el ingreso de energía que se da a pequeñas escalas), y los niveles superiores tienen un comportamiento con una pendiente menor que -5/3, siendo quizás más difusivos como consecuencia de la interacción con la capa de superficie.
 \newpage
 \begin{figure}[H]
 	\centering

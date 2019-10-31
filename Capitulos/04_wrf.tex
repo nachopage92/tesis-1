@@ -56,7 +56,7 @@ A continuación se presenta una lista con las principales características del m
 	\item Condiciones de borde laterales reales o ideales.
 	\item Opciones para parametrización física de: capa superficial, capa límite planetaria, radiación superficial y atmosférica, microfísicas y convección de cúmulos.
 	\item Modelos oceánicos.
-	\item Anudamiento de datos a través asimilación de datos.
+	\item Incorporación de datos a través asimilación de datos.
 	\item Inicialización con filtro digital.
 	\item Paso de tiempo adaptativo.
 	\item Ejemplos para casos idealizados.
@@ -64,7 +64,7 @@ A continuación se presenta una lista con las principales características del m
 
 El desarrollo del modelo WRF ha sido un esfuerzo colaborativo entre NCAR (\emph{National Center for Atmospheric Research}), NOAA (\emph{National Oceanic and Atmospheric Administration}), NCEP (\emph{National Centers for Environmental Prediction}), ESRL (\emph{Earth System Research Laboratory}), NRL (\emph{Naval Research Laboratory}), AFWA (\emph{Department of Defense's Air Force Weather Agency}), CAPS (\emph{Center for Analysis and Prediction of Storms}), la universidad de Oklahoma y el FAA (\emph{Federal Aviation Administration}) con el objetivo de crear un modelo de predicción mesoescala de última generación para avanzar en la comprensión y predicción del clima, junto con entregar una herramienta de acceso libre a toda la comunidad.
 
-Junto con el núcleo dinámico (ARW), el software WRF viene con un sistema de preproceso (WPS) que se encarga de formar los dominios, asignar las bases de datos de orografía y uso de suelo e interpolar horizontalmente las condiciones iniciales y de borde que se utilizaran. También, WRF viene con un código de asimilación de datos nativo (WRFDA) el cual es el encargado de manipular los datos de observaciones en terreno, filtrarlos y efectuar la asimilación de datos, habitualmente aplicado para mallas de macro y mesoescala.
+Junto con el núcleo dinámico (ARW), el software WRF viene con un sistema de preproceso (WPS) que se encarga de formar los dominios, asignar las bases de datos de orografía y uso de suelo e interpolar horizontalmente las condiciones iniciales y de borde que se utilizarán. También, WRF viene con un código de asimilación de datos nativo (WRFDA) el cual es el encargado de manipular los datos de observaciones en terreno, filtrarlos y efectuar la asimilación de datos, habitualmente aplicado para mallas de macro y mesoescala.
  
 \newpage
 \section{Ecuaciones Resueltas}
@@ -213,7 +213,7 @@ La clausura del modelo de turbulencia se hace considerando la ecuación de trans
 \begin{equation}
 \partial_t(\mu_d k) + (\nabla\cdot\vec{V}k)_\eta = \mu_d(\mathcal{P} + \mathcal{F} + \mathcal{D}).
 \end{equation}
-Los términos al lado derecho corresponden a la producción de energía cinética turbulenta, a la flotación y a la disipación respectivamente. Estos se calculan como:
+Los términos al lado derecho corresponden a la producción mecánica, a la producción por flotación y a la disipación de energía cinética turbulenta respectivamente. Estos se calculan como:
 \begin{align}
 	\mathcal{P}&= K_h (S_{11}^2 + S_{22}^2 + S_{12}^2) + K_v (S_{33}^2 + S_{13}^2 + S_{23}^2),\\
 	\mathcal{F}&=-K_v N^2,\\
@@ -233,9 +233,9 @@ A continuación se explicará brevemente la importancia dentro de la simulación
 \subsubsection{Microfísicas}
 Se encarga de resolver explícitamente el vapor de agua, nubosidad y procesos de precipitación. También incluye procesos de sedimentación y el ajuste a la saturación. La diferencia entre los distintos modelos recae en la cantidad de variables a solucionar y el tipo de variables. Los modelos mas sofisticados pueden modelar 10 variables, incluyendo procesos de formación de hielo y variables con mezcla de fases.
 \subsubsection{Parametrización de Cúmulos}
-Son responsables de modelar el efecto de submalla de las nubes convectivas. En específico busca representar los flujos verticales debido a las escalas no resueltas y compensar el movimiento fuera de las nubes. Opera sobre toda una columna de aire y entrega el calentamiento vertical y perfiles de humedad. Los modelos mas avanzados pueden entregar los campos de tendencias para nubes y precipitacion.
+Son responsables de modelar el efecto de submalla de las nubes convectivas. En específico busca representar los flujos verticales debido a las escalas no resueltas y compensar el movimiento fuera de las nubes. Opera sobre toda una columna de aire y entrega el calentamiento vertical y perfiles de humedad. Los modelos más avanzados pueden entregar los campos de tendencias para nubes y precipitación.
 
-Teóricamente, esta parametrización debe usarse solo para malla gruesas (>10 [km]) cuando es necesario representar el movimiento que no pudo ser resuelto. Mallas mas finas pueden resolver explícitamente los vórtices verticales y por lo tanto no requiere usarse.
+Teóricamente, esta parametrización debe usarse solo para malla gruesas (>10 [km]) cuando es necesario representar el movimiento que no pudo ser resuelto. Mallas más finas pueden resolver explícitamente los vórtices verticales y por lo tanto no requiere usarse.
 \subsubsection{Capa Superficial}
 Los esquemas de capa superficial se encargan de calcular la velocidad de fricción $u^*$ y los coeficientes de mezcla que permiten el cálculo de los flujos de calor y humedad desde la superficie por el esquema de modelo de suelo y los esfuerzos de pared por el esquema de capa límite. Generalmente cada modelo de capa superficial tiene su modelo de capa límite asociado, sin embargo, se espera que en el futuro estos puedan independizarse. La manera de hallar los coeficientes se hace a través del uso de funciones de estabilidad o por teorías de similaridad como la propuesta por Monin-Obukhov.
 \subsubsection{Modelo de Suelo}
@@ -243,7 +243,7 @@ A través de los resultados obtenidos por los modelos de capa superficial, micro
 \subsubsection{Capa Límite Planetaria}
 Se encarga de entregar los flujos verticales de submalla ($K_v$) debido al transporte turbulento para toda la columna de aire, no solo la capa límite y de esta manera actualiza las tendencias de temperatura, humedad y momentum horizontal para el modelo. La mayoría de los modelos considera mezcla seca para la capa límite, pero existen modelos mas avanzados que pueden manejar efectos de saturación para la estabilidad vertical. Este esquema es unidimensional y asume que existe una clara separación entre los vórtices de submalla y los vórtices resueltos (i.e. fuera de la zona gris de la turbulencia). A medida que la resolución de la malla va aumentando hasta el tamaño de los metros, es mejor no utilizar un modelo de capa límite y calcular explícitamente la mezcla vertical a través de un modelo 3D para la turbulencia (modo LES).
 \subsubsection{Radiación Atmosférica}
-Se encarga de calcular el calentamiento de la atmósfera debido a la divergencia del flujo radiativo y a la radiación de onda corta y onda larga desde la superficie. La radiación de onda larga incluye la radiación infraroja o térmica absorbida y emitida por los gases y superficies, además del flujo radiativo emitido por la superficie. La radiación de onda corta incluye la radiación emitida por el sol dentro del espectro visible, si bien la única fuente de onda corta es el sol, estos procesos incluyen la absorción, reflexión, y dispersión de las ondas en la atmósfera y superficies.
+Se encarga de calcular el calentamiento de la atmósfera debido a la divergencia del flujo radiativo y a la radiación de onda corta y onda larga desde la superficie. La radiación de onda larga incluye la radiación infrarroja o térmica absorbida y emitida por los gases y superficies, además del flujo radiativo emitido por la superficie. La radiación de onda corta incluye la radiación emitida por el sol dentro del espectro visible. Si bien la única fuente de onda corta es el sol, estos procesos incluyen la absorción, reflexión, y dispersión de las ondas en la atmósfera y superficies.
 
 \newpage
 \section{Sistema de Asimilación de Datos WRFDA}
@@ -261,13 +261,13 @@ J(\delta \mathbf{x}) = \frac{1}{2}(\delta \mathbf{x}- \delta \mathbf{x}_g)^T\mat
 \end{equation}
 donde $d=y-H(\textbf{x}_g )$ y $\textbf{H}$ es la versión linealizada de $H$ en las cercanías de $\textbf{x}_g$.
 
-En esta formulación $\textbf{x}_g$ es el primer estimador de la solución. Para la primera iteracción $\textbf{x}_b=\textbf{x}_g$, pero en las iteraciones siguientes $\textbf{x}_g$ será el análisis del ciclo anterior $\textbf{x}_a$.
+En esta formulación $\textbf{x}_g$ es el primer estimador de la solución. Para la primera iteración $\textbf{x}_b=\textbf{x}_g$, pero en las iteraciones siguientes $\textbf{x}_g$ será el análisis del ciclo anterior $\textbf{x}_a$.
 
 Para evitar el cálculo de la inversa de la matriz $\textbf{B}$, se hace el siguiente cambio de variable a la variable de control $\textbf{v}$:
 \begin{equation}
 	\delta \mathbf{x}=\textbf{U}\textbf{v}\quad;\quad \delta \mathbf{x}_g=\textbf{U}\textbf{v}_g 
 \end{equation}
-Donde $\textbf{U}$ es la raiz cuadrada de $\textbf{B}$ (en el sentido matricial), es decir:
+Donde $\textbf{U}$ es la raíz cuadrada de $\textbf{B}$ (en el sentido matricial), es decir:
 \begin{equation}
 \textbf{B}=\textbf{B}^{1/2}\textbf{B}^{T/2} = \textbf{U}\textbf{U}^{T},
 \end{equation}
@@ -286,8 +286,7 @@ J(\mathbf{v}) = \frac{1}{2}(\mathbf{v}- \mathbf{v}_g)^T(\mathbf{v} - \mathbf{v}_
 \subsection{Modelación de $\textbf{B}$}
 Tal como se explicó en el capítulo del marco teórico, la matriz de covarianzas del error del \emph{background} $\textbf{B}$ es la encargada de (a) ponderar correctamente el valor del \emph{background} al análisis, y (b) distribuir la información espacialmente y a través de todas las variables. WRF posee su propio mecanismo de generación de la matriz $\textbf{B}$ utilizando el llamado método NMC \citep{https://doi.org/10.5065/d68s4mvh}.
 
-Algunas prop
-iedades relevantes de la matriz son:
+Algunas propiedades relevantes de la matriz son:
 \begin{itemize*}
 	\item $\textbf{B}$ es cuadrada y simétrica.
 	\item $\textbf{B}$ es una matriz semidefinida positiva, es decir, sus valores propios son positivos. 
