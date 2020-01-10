@@ -1,0 +1,75 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: tesis.aux
+The style file: spbasic.bst
+A level-1 auxiliary file: Preliminares/portada.aux
+A level-1 auxiliary file: blanco.aux
+A level-1 auxiliary file: Preliminares/contraportada.aux
+Already encountered file blanco.aux
+---line 30 of file tesis.aux
+ : \@input{blanco.aux
+ :                   }
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: Prefacios/frase.aux
+A level-1 auxiliary file: Prefacios/gracias.aux
+A level-1 auxiliary file: Prefacios/abstract.aux
+A level-1 auxiliary file: Prefacios/resumen.aux
+A level-1 auxiliary file: Capitulos/00_nomenclatura.aux
+A level-1 auxiliary file: Capitulos/01_intro.aux
+A level-1 auxiliary file: Capitulos/02_estado_arte.aux
+A level-1 auxiliary file: Capitulos/03_marco_teorico.aux
+A level-1 auxiliary file: Capitulos/04_maxent.aux
+A level-1 auxiliary file: Capitulos/05_metodologia.aux
+A level-1 auxiliary file: Capitulos/06_resultados.aux
+A level-1 auxiliary file: Capitulos/07_conclusiones.aux
+A level-1 auxiliary file: Anexos/Apendice_A.aux
+A level-1 auxiliary file: Anexos/Apendice_B.aux
+A level-1 auxiliary file: Anexos/Apendice_C.aux
+Database file #1: Bibliografia/biblio.bib
+Warning--I didn't find a database entry for "Bechmann2011"
+Warning--I didn't find a database entry for "3d4285ac04444eb3b9775baf9af052c6"
+Warning--I didn't find a database entry for "Pineda2004"
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Warning--can't use both author and editor fields in LIBRO:rachford-wheeler
+You've used 8 entries,
+            3269 wiz_defined-function locations,
+            747 strings with 6515 characters,
+and the built_in function-call counts, 6885 in all, are:
+= -- 623
+> -- 130
+< -- 8
++ -- 53
+- -- 39
+* -- 567
+:= -- 958
+add.period$ -- 8
+call.type$ -- 8
+change.case$ -- 51
+chr.to.int$ -- 11
+cite$ -- 9
+duplicate$ -- 631
+empty$ -- 685
+format.name$ -- 61
+if$ -- 1459
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 70
+newline$ -- 34
+num.names$ -- 32
+pop$ -- 148
+preamble$ -- 1
+purify$ -- 45
+quote$ -- 0
+skip$ -- 129
+stack$ -- 0
+substring$ -- 776
+swap$ -- 146
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 60
+warning$ -- 1
+while$ -- 46
+width$ -- 0
+write$ -- 94
+(There was 1 error message)

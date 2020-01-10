@@ -3,114 +3,32 @@
 \begin{tabular}{ll}
 	\textbf{Símbolo} & \textbf{Descripción} \\
 	& \\
-	$A$ & Área   \\
-	$a$ & Variable arbitraria, Radio de la Tierra   \\
-	$\textbf{B}$ & Matriz de covarianzas de errores del background \\
-	$C$ &  Capacidad calorífica, Coeficiente numérico   \\ 
-	$E$ & Energía  \\
-	$e$ &  Energía interna, Factor de Coriolis   \\
-	$F$ & Forzamiento externo   \\
-	$f$ & Factor de Coriolis \\
-	$G$ & Kernel \\
-	$\vec g$ & Vector de fuerzas de cuerpo     \\
-	$H$ & Fuentes de calor, Operador de obsevación  \\
-	$J$ & Función de Costo \\
-	$\textbf{K}$ & Matriz peso \\
-	$K$ & Coeficiente de difusión turbulento, Energía Cinética   \\
-	$k$ &   Energía cinética turbulenta	\\
-	$L$ &  Largo de Monin-Obukhov    \\
-	$l$ & Escala de longitud característica  \\
-	$\ell$ & Escala de longitud \\
-	$M$ & Número de Mach     \\
-	$m$ & Masa, Factor de mapa    \\
-	$N$ &  Frecuencia de Brunt–Väisälä    \\
-	$P$ & Potencia    \\
-	$Pr$ & Número de Prandtl    \\
-	$p$ & Presión     \\
-	$Q$ & Fuentes de masa de agua     \\
-	$q$ &   Fracción de mezcla de masa de agua   \\
-	$\vec{q}$ &  Vector flujo de calor   \\
-	$\textbf{R}$ & Matriz de covarianzas de errores de observaciones \\
-	$R$ &   Constante de gases ideales, Número de Richardson   \\
-	$Re$ & Número de Reynolds    \\
+	$\phi$ & Función de forma \\
+	$L$ & Operador diferencia \\
+	$\sigma$ & Esfuerzos mecánico \\
+	$\varepsilon$ & Deformación unitaria \\
+	$u$ & Función incógnita general \\
+	$w$ & Función de peso (ponderación) \\
+	$h_car$ & Distancia característica internodal \\
+	$np$ & Número de puntos por nuve \\
+	$A$ & Matriz de momentos \\
+	$B$ & \\
+	$\vec{x_c}$, $\vec{x}$ & Coordenadas puntos de colocación (Collocation points) \\
+	$\vec{x_s}$ & Coordenadas puntos fuentes (Sources points) \\
+	$p(\vec{x})$ & Base polinomial \\
+	$H$ & Funcional de entropía \\
+	$\vec{lambda}$ & Multiplicador de Lagrange asociado al problema MaxEnt  \\
 \end{tabular}
+
 \newpage
-\begin{tabular}{ll}
-	\textbf{Símbolo} & \textbf{Descripción} \\
-	& \\
-	$Ri$ & Número de Richardson gradiente  \\
-	$\mathcal{S}$ & Tasa de deformación filtrada característica\\
-	$\overline{\overline{S}}$ & Tensor tasa de deformación    \\
-	$s$ & Desviación Estándar \\
-	$T$ &   Temperatura  \\
-	$\vec u$ & Vector velocidad     \\
-	$u$ & Componente $x$ de la velocidad \\
-	$V$ & Rapidez     \\
-	$v$ & Componente $y$ de la velocidad  \\
-	$w$ & Componente $z$ de la velocidad  \\
-	$\vec{x}$ & Vector de estado \\
-	$\vec{y}$ & Vector de observación \\
-	& \\
-	$\alpha$ &  Difusividad térmica, Volumen específico, Ángulo    \\
-	$\beta$ & Coeficiente numérico  \\
-	$\gamma$ &  Gradiente de temperatura, Coeficiente de Monin-Obukhov  \\
-	$\Delta$ & Tamaño de filtro espacial  \\
-	$\delta$ & Delta de Kronecker, Perturbación, Derivada discreta     \\
-	$\varepsilon$ & Disipación de energía cinética turbulenta, Error \\
-	$\eta$ & Escala longitudinal de Kolmogorov, Coordenada de presión \\
-	$\theta$ &   Temperatura potencial   \\
-	$\kappa$ &   Constante de Von Karman, Número de onda   \\
-	$\lambda$ & Número de onda, Conductividad térmica  \\	
-	$\mu$ & Viscosidad dinámica, Peso de columna de aire    \\
-	$\nu$ & Viscosidad cinemática     \\
-	$\Pi$ & Producción de energía cinética residual \\
-	$\rho$ & Densidad     \\
-	$\overline{\overline{\sigma}}$ & Tensor de esfuerzos superficiales   \\
-	$\overline{\overline{\tau}}$ & Tensor de esfuerzos viscosos    \\
-	$\tau$ &  Periodo  \\
-	$\Phi$ & Disipación Viscosa  \\	
-	$\phi$ & Espectro de energía cinética, Función de Monin-Obukhov,\\
-	&  Geopotencial     \\
-	$\psi$ & Función de influencia de Monin-Obukhov, Latitud    \\
-	$\Omega$ & Velocidad Angular \\	
-\end{tabular}
-\newpage
+
 \begin{tabular}{ll}
 	\textbf{Subíndice} & \textbf{Descripción}\\
-	& \\
-	$a$ & Análisis \\
-	$b$ & Global (\emph{bulk}), background \\
-	$c$ & Crítico \\
-	$D$ & Arrastre \\
-	$d$ & Aire seco \\
-	$e$ & Tierra \\
-	$E$ & Energía \\	
-	$f$ & Flujo turbulento, Filtrado \\
-	$h$ & Energía, Hidrostrático, Horizontal     \\
-	$i$ & Índice mudo para notación indicial     \\
-	$j$ & Índice mudo para notación indicial     \\
-	$k$ & Cinético    \\
-	$m$ & Momentum  	\\
-	$N$ & Relacionado a Brunt–Väisälä \\
-	$o$ & Observación \\
-	$p$ & Presión constante \\
-	$R$ & Reynolds \\	
-	$r$ & Roce, Referencia, Residual, Rotación     \\
-	$S$ & Smagorinsky \\
-	$s$ & Superficie    \\
-	$t$ & Turbulento, Verdadero, Superior \\
-	$v$ & Volumen constante, Virtual, Vapor, Vertical \\
-	$\nu$ & Viscosidad Turbulenta \\
-	$0$ & Grandes escalas, Rugosidad\\
-	$*$ & Fricción, Variable de escalamiento \\	
+	&	
 \end{tabular}
 
 \bigskip
 \begin{tabular}{ll}
 	\textbf{Superíndice} & \textbf{Descripción}\\
-	 & \\
-	$\overline{\,\,\,}$ & Componente media, Filtrada      \\
-	$'$ & Componente fluctuante, de Submalla  	\\
-	$R$ & Reynolds \\
-	$r$ & Reynolds, Residual \\
+	 & 
 \end{tabular}

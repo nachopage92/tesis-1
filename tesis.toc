@@ -1,0 +1,39 @@
+\babel@toc {spanish}{}
+\contentsline {chapter}{Agradecimientos}{\es@scroman {vi}}{section*.1}
+\contentsline {chapter}{Abstract}{\es@scroman {vii}}{section*.3}
+\contentsline {paragraph}{Keywords}{\es@scroman {vii}}{paragraph*.5}
+\contentsline {chapter}{Resumen}{\es@scroman {viii}}{section*.6}
+\contentsline {paragraph}{Palabras Clave}{\es@scroman {viii}}{paragraph*.8}
+\contentsline {chapter}{\'{I}ndice de figuras}{\es@scroman {xi}}{section*.10}
+\contentsline {chapter}{\IeC {\'I}ndice de tablas}{\es@scroman {xii}}{section*.12}
+\contentsline {chapter}{Nomenclatura}{\es@scroman {xiii}}{section*.14}
+\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Hip\IeC {\'o}tesis}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Objetivos}{1}{section.1.2}
+\contentsline {subsubsection}{Objetivo Principal}{1}{subsubsection*.16}
+\contentsline {subsubsection}{Objetivos Secundarios}{1}{subsubsection*.17}
+\contentsline {section}{\numberline {1.3}Estructura del Documento}{2}{section.1.3}
+\contentsline {chapter}{\numberline {2}Estado del Arte}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Simulaci\IeC {\'o}n Multiescala y Zona Gris}{4}{section.2.1}
+\contentsline {chapter}{\numberline {3}Marco Te\IeC {\'o}rico}{5}{chapter.3}
+\contentsline {chapter}{\numberline {4}Funci\IeC {\'o}nal de M\IeC {\'a}xima Entrop\IeC {\'\i }a y su implementaci\IeC {\'o}n como funci\IeC {\'o}n de forma}{6}{chapter.4}
+\contentsline {section}{\numberline {4.1}Aspectos Generales}{6}{section.4.1}
+\contentsline {chapter}{\numberline {5}Metodolog\IeC {\'\i }a de la Investigaci\IeC {\'o}n}{7}{chapter.5}
+\contentsline {section}{\numberline {5.1}Nube de aproximaci\IeC {\'o}n}{7}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Criterio de creaci\IeC {\'o}n de nube}{7}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Verificaci\IeC {\'o}n de la calidad de la nube}{7}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Generaci\IeC {\'o}n de nube}{8}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}Pruebas num\IeC {\'e}ricas en espacios unidimensionales y bidimensionales}{9}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Test 1D 1}{9}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Test 1D 2}{9}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Test 1D 3, ElasticBar}{9}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Test 1D 4, RW}{9}{subsection.5.2.4}
+\contentsline {subsection}{\numberline {5.2.5}Test 1D 5, AxialTruss}{9}{subsection.5.2.5}
+\contentsline {subsection}{\numberline {5.2.6}Test 1D 6, Waveprop}{10}{subsection.5.2.6}
+\contentsline {subsection}{\numberline {5.2.7}Test 1D 1, T1}{10}{subsection.5.2.7}
+\contentsline {chapter}{\numberline {6}Resultados Obtenidos y An\IeC {\'a}lisis}{11}{chapter.6}
+\contentsline {chapter}{\numberline {7}Conclusiones y Trabajo Futuro}{12}{chapter.7}
+\contentsline {chapter}{\numberline {A}C\IeC {\'a}lculo de Resultados para Bolund y Comparaci\IeC {\'o}n Ciega}{13}{appendix.Alph1}
+\contentsline {chapter}{\numberline {B}Incorporaci\IeC {\'o}n de Bases de Datos de Alta Resoluci\IeC {\'o}n}{18}{appendix.Alph2}
+\contentsline {chapter}{\numberline {C}Eficiencia Computacional de las Simulaciones}{22}{appendix.Alph3}
+\contentsline {chapter}{Bibliograf\'{\i }a}{24}{section*.27}

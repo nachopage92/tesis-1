@@ -1,0 +1,46 @@
+\begin{thebibliography}{8}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{DOI~\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{DOI~\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem[{de~Boor(1974)}]{LIBRO:rachford-wheeler}
+de~Boor C (1974) Mathematical Aspects of Finite Elements in Partial
+  Differential Equations, 1st edn. Academic Press
+
+\bibitem[{Boyd y Vandenberghe(2004)}]{opt-convx}
+Boyd S, Vandenberghe L (2004) Convex Optimization. Cambridge University Press
+
+\bibitem[{Jaynes(1957)}]{jaynes}
+Jaynes ET (1957) Information theory and stadistical mechanics. The Physical
+  Review 106(4):620--630
+
+\bibitem[{Liu y Gu(2005)}]{LIBRO:liu-intro}
+Liu G, Gu Y (2005) An Introduction to Meshfree Methods and Their Programming.
+  Springer
+
+\bibitem[{Liu(2002)}]{liu-mf}
+Liu GR (2002) Meshfree Methods: Moving Beyond the Finite Element Methods. CRC
+  Press
+
+\bibitem[{Park et~al.(2003)Park, Kwon, y
+  Youn}]{paper:sang-hoon_error_estimates}
+Park SH, Kwon KC, Youn SK (2003) A posteriori error estimates and an adaptive
+  scheme of least-squares meshfree method. International Journal for Numerical
+  Methods in Engineering 58(8):1213--1250
+
+\bibitem[{Perazzo y Marchant(2016)}]{marchant}
+Perazzo F, Marchant F (2016) Análisis comparativo entre funciones de forma
+  maxent y wea weaweaweasdawe de mínimos cuadrados ponderados en un método
+  sin malla de colocación. Revista Internacional de Métodos Numéricos para
+  Cálculo y Diseño en Ingeniería 33(3-4):290--298
+
+\bibitem[{Shannon(1948)}]{shannon}
+Shannon C (1948) A mathematical theory of communication. The Bell System
+  Technical Journal 27(3):379--423
+
+\end{thebibliography}
