@@ -1,5 +1,12 @@
 #!/bin/bash
 
+rm *.aux
+rm *.lof
+rm *.log
+rm *.lot
+rm *.out
+rm *.toc
+
 BASE="${1%.*}"
 pdflatex $BASE.tex
 if [ $? -ne 0 ]; then

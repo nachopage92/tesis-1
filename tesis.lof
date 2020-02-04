@@ -2,17 +2,56 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Sistema mec\IeC {\'a}nico general\relax }}{5}{figure.caption.18}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Conjunto convexo $X$. El anillo convexo de $X$ corresponen a los puntos rojos. Cada punto interior puede ser calculado como una combinaci\IeC {\'o}n lineal de conv $X$ \relax }}{9}{figure.caption.19}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Gr\IeC {\'a}fica de las funciones de forma para una distribuci\IeC {\'o}n regular\relax }}{26}{figure.caption.24}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Gr\IeC {\'a}fica de las funciones de forma para una distribuci\IeC {\'o}n irregular\relax }}{26}{figure.caption.25}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Soluci\IeC {\'o}n del test T1\relax }}{28}{figure.caption.26}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Convergencia test T1 sujeto a condiciones Dirichlet - Dirichlet para una distribuci\IeC {\'o}n regular\relax }}{28}{figure.caption.27}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Convergencia test T1 sujeto a condiciones Dirichlet - Neumann para una distribuci\IeC {\'o}n regular\relax }}{29}{figure.caption.28}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Convergencia test T1 sujeto a condiciones Neumann - Dirichlet para una distribuci\IeC {\'o}n regular\relax }}{29}{figure.caption.29}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Convergencia test T1 sujeto a condiciones Dirichlet - Dirichlet para una distribuci\IeC {\'o}n irregular\relax }}{30}{figure.caption.30}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Convergencia test T1 sujeto a condiciones Dirichlet - Neumann para una distribuci\IeC {\'o}n irregular\relax }}{30}{figure.caption.31}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Convergencia test T1 sujeto a condiciones Neumann - Dirichlet para una distribuci\IeC {\'o}n irregular\relax }}{31}{figure.caption.32}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Soluci\IeC {\'o}n del test T2\relax }}{32}{figure.caption.33}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Convergencia test T2 sujeto a condiciones Dirichlet - Dirichlet para una distribuci\IeC {\'o}n regular\relax }}{32}{figure.caption.34}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Convergencia test T1 sujeto a condiciones Dirichlet - Neumann para una distribuci\IeC {\'o}n regular\relax }}{33}{figure.caption.35}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Convergencia test T1 sujeto a condiciones Neumann - Dirichlet para una distribuci\IeC {\'o}n regular\relax }}{33}{figure.caption.36}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Convergencia test T2 sujeto a condiciones Dirichlet - Dirichlet\relax }}{34}{figure.caption.37}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Convergencia test T1 sujeto a condiciones Dirichlet - Neumann\relax }}{34}{figure.caption.38}
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Convergencia test T1 sujeto a condiciones Neumann - Dirichlet\relax }}{35}{figure.caption.39}
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Soluci\IeC {\'o}n del test ElasticBar\relax }}{35}{figure.caption.40}
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Convergencia test ElasticBar sujeto a condiciones Dirichlet - Dirichlet para una distribuci\IeC {\'o}n regular\relax }}{36}{figure.caption.41}
+\contentsline {figure}{\numberline {6.17}{\ignorespaces Convergencia test ElasticBar sujeto a condiciones Dirichlet - Neumann para una distribuci\IeC {\'o}n regular\relax }}{36}{figure.caption.42}
+\contentsline {figure}{\numberline {6.18}{\ignorespaces Convergencia test ElasticBar sujeto a condiciones Neumann - Dirichlet para una distribuci\IeC {\'o}n regular\relax }}{37}{figure.caption.43}
+\contentsline {figure}{\numberline {6.19}{\ignorespaces Convergencia test ElasticBar sujeto a condiciones Dirichlet - Dirichlet\relax }}{37}{figure.caption.44}
+\contentsline {figure}{\numberline {6.20}{\ignorespaces Convergencia test ElasticBar sujeto a condiciones Dirichlet - Neumann\relax }}{38}{figure.caption.45}
+\contentsline {figure}{\numberline {6.21}{\ignorespaces Convergencia test ElasticBar sujeto a condiciones Neumann - Dirichlet\relax }}{38}{figure.caption.46}
+\contentsline {figure}{\numberline {6.22}{\ignorespaces Soluci\IeC {\'o}n del test RW\relax }}{39}{figure.caption.47}
+\contentsline {figure}{\numberline {6.23}{\ignorespaces Convergencia test RW sujeto a condiciones Dirichlet - Dirichlet para una distribuci\IeC {\'o}n regular\relax }}{40}{figure.caption.48}
+\contentsline {figure}{\numberline {6.24}{\ignorespaces Convergencia test RW sujeto a condiciones Dirichlet - Neumann para una distribuci\IeC {\'o}n regular\relax }}{40}{figure.caption.49}
+\contentsline {figure}{\numberline {6.25}{\ignorespaces Convergencia test RW sujeto a condiciones Neumann - Dirichlet para una distribuci\IeC {\'o}n regular\relax }}{41}{figure.caption.50}
+\contentsline {figure}{\numberline {6.26}{\ignorespaces Convergencia test RW sujeto a condiciones Dirichlet - Dirichlet para una distribuci\IeC {\'o}n irregular\relax }}{41}{figure.caption.51}
+\contentsline {figure}{\numberline {6.27}{\ignorespaces Convergencia test RW sujeto a condiciones Dirichlet - Neumann para una distribuci\IeC {\'o}n irregular\relax }}{42}{figure.caption.52}
+\contentsline {figure}{\numberline {6.28}{\ignorespaces Convergencia test RW sujeto a condiciones Neumann - Dirichlet para una distribuci\IeC {\'o}n irregular\relax }}{42}{figure.caption.53}
+\contentsline {figure}{\numberline {6.29}{\ignorespaces Soluci\IeC {\'o}n del test Axialtruss\relax }}{43}{figure.caption.54}
+\contentsline {figure}{\numberline {6.30}{\ignorespaces Convergencia test Axialtruss sujeto a condiciones Dirichlet - Dirichlet para una distribuci\IeC {\'o}n regular\relax }}{44}{figure.caption.55}
+\contentsline {figure}{\numberline {6.31}{\ignorespaces Convergencia test Axialtruss sujeto a condiciones Neumann - Dirichlet para una distribuci\IeC {\'o}n regular\relax }}{44}{figure.caption.56}
+\contentsline {figure}{\numberline {6.32}{\ignorespaces Convergencia test Axialtruss sujeto a condiciones Dirichlet - Neumann para una distribuci\IeC {\'o}n regular\relax }}{45}{figure.caption.57}
+\contentsline {figure}{\numberline {6.33}{\ignorespaces Convergencia test Axialtruss sujeto a condiciones Dirichlet - Dirichlet para una distribuci\IeC {\'o}n irregular\relax }}{45}{figure.caption.58}
+\contentsline {figure}{\numberline {6.34}{\ignorespaces Convergencia test Axialtruss sujeto a condiciones Neumann - Dirichlet para una distribuci\IeC {\'o}n irregular\relax }}{46}{figure.caption.59}
+\contentsline {figure}{\numberline {6.35}{\ignorespaces Convergencia test Axialtruss sujeto a condiciones Dirichlet - Neumann para una distribuci\IeC {\'o}n irregular\relax }}{46}{figure.caption.60}
+\contentsline {figure}{\numberline {6.36}{\ignorespaces Soluci\IeC {\'o}n del test Waveprop\relax }}{47}{figure.caption.61}
+\contentsline {figure}{\numberline {6.37}{\ignorespaces Convergencia test Waveprop sujeto a condiciones Dirichlet - Dirichlet para una distribuci\IeC {\'o}n regular\relax }}{48}{figure.caption.62}
+\contentsline {figure}{\numberline {6.38}{\ignorespaces Convergencia test Waveprop sujeto a condiciones Dirichlet - Neumann para una distribuci\IeC {\'o}n regular\relax }}{48}{figure.caption.63}
+\contentsline {figure}{\numberline {6.39}{\ignorespaces Convergencia test Waveprop sujeto a condiciones Neumann - Dirichlet para una distribuci\IeC {\'o}n regular\relax }}{49}{figure.caption.64}
+\contentsline {figure}{\numberline {6.40}{\ignorespaces Convergencia test Waveprop sujeto a condiciones Dirichlet - Dirichlet para una distribuci\IeC {\'o}n irregular\relax }}{49}{figure.caption.65}
+\contentsline {figure}{\numberline {6.41}{\ignorespaces Convergencia test Waveprop sujeto a condiciones Dirichlet - Neumann para una distribuci\IeC {\'o}n irregular\relax }}{50}{figure.caption.66}
+\contentsline {figure}{\numberline {6.42}{\ignorespaces Convergencia test Waveprop sujeto a condiciones Neumann - Dirichlet para una distribuci\IeC {\'o}n irregular\relax }}{50}{figure.caption.67}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Perfil del viento no perturbado en el punto referencial M0 (ver Figura \ref {fig:05_terreno_bolund}). En l\IeC {\'\i }nea negra est\IeC {\'a} el perfil entregado por los desarrolladores (para utilizar como condici\IeC {\'o}n de borde) y el resto corresponde a distintos modelos. La l\IeC {\'\i }nea s\IeC {\'o}lida roja corresponde a simulaciones LES.\relax }}{14}{figure.caption.18}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Speedup medido y simulado a trav\IeC {\'e}s de la secci\IeC {\'o}n transversal a $240^\circ $. Arriba: valores para $z=5$ [m]. Abajo: valores para $z=2$ [m].\relax }}{14}{figure.caption.19}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Perfil de speedup medido y simulado en los distintos m\IeC {\'a}stiles M1-M4.\relax }}{15}{figure.caption.20}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces $\Delta k$ medido y simulado a trav\IeC {\'e}s de la secci\IeC {\'o}n transversal a $240^\circ $. Arriba: valores para $z=5$ [m]. Abajo: valores para $z=2$ [m].\relax }}{16}{figure.caption.21}
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Perfil de $\Delta k$ medido y simulado en los distintos m\IeC {\'a}stiles M1-M4.\relax }}{17}{figure.caption.22}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Orograf\IeC {\'\i }a (MSNM) y uso de suelo (categor\IeC {\'\i }a USGS24) de alta resoluci\IeC {\'o}n para cada uno de las mallas anidadas (d01-d07) en H\IeC {\o }vs\IeC {\o }re.\relax }}{20}{figure.caption.23}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Orograf\IeC {\'\i }a (MSNM) y uso de suelo (categor\IeC {\'\i }a USGS24) de alta resoluci\IeC {\'o}n para cada uno de las mallas anidadas (d01-d08) en Bolund.\relax }}{21}{figure.caption.24}
 \addvspace {10\p@ }

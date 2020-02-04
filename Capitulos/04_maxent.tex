@@ -1,4 +1,125 @@
 \chapter{Funciónal de Máxima Entropía y su implementación como función de forma}
-\section{Aspectos Generales}
 
-( Hablar de lo que corresponga acá )
+El principio de máxima entropía se entiende como una medida de la incerteza \citep{jaynes}, luego, para obtener una distribución con la menor incerteza se propone maximizar el siguiente funcional,
+\begin{equation}
+ \bm{H} (\bm{p}) = - \sum_{i=1}^{n} p_i \, ln \, p_i 
+\end{equation}
+sujeto a las siguientes condiciones,
+\begin{equation}
+\label{condicion1} \sum_{i=1}^{n} p_i = 1 
+\end{equation}
+\begin{equation} \label{condicion2} \sum_{i=1}^{n} p_i \, g_r (x_i) = \langle g_r (\bm{x}) \rangle 
+\end{equation}
+Donde $\bm{H}$ corresponde al funcional de entropía descrito por Shannon \citep{shannon} como una medida de la incerteza de la información. $p_i$ es la probabilidad de ocurrencia de un evento $x_i$, y $\langle g_r(\bm{x}) \rangle$
+una función de distribución de probabilidad. De la matemática estadística se interpreta la ecuación (\ref{condicion1}) como la probabilidad total del espacio muestral y (\ref{condicion2}) como el valor esperado de de los cuales su distribución de probabilidad se conoce.
+
+Se replantea el problema de máxima entropía por un problema equivalente teniendo en cuenta la siguiente consideración: Se pretende otorgar un grado de localidad a la función de forma, de esta manera se puede plantear un sistema de ecuaciones ensamblando cada subdominio local (o dominio de soporte) del dominio global del problema. Para ello se introducen una función de ponderación \textit{a priori} $\bm{m}(\bm{x})$ (``weight function'', según la literatura \citep{liu-intro}, \citep{liu-mf}, en este caso llamaremos función ``prior''). Las más utilizadas son las funciones de tipo spline y exponencial (o de Gauss). A modo de ejemplificar se muestra la función prior de Gauss:
+\begin{equation} 
+m_i (\bm{x}) = exp( -\beta_i || \bm{x_i} - \bm{x} ||^2 )
+\end{equation}
+\begin{equation}
+ \beta_i=\frac{\gamma}{h_i^2} 
+\end{equation}
+donde $\bm{\beta}$ es un parametro que permite regular el tamaño del subdominio local,
+$h_i$ ($i=1,\ldots,n$) es la distancia caracteristica internodal asociada al nodo $i$ y $\gamma$ es un parámetro obtenido de manera experimental o estadística.\\
+
+Se plantea un siguiente problema de optimización convexa para la busqueda de a función de forma $\bm{\phi}$ como,
+\begin{equation} 
+\mbox{max} \bm{H} ( \bm{\phi} ) = - \sum_{i=1}^{n} \phi_i(\bm{x}) \, ln \frac{\phi_i (\bm{x})}{m_i(\bm{x})}  
+\end{equation}
+sujeto a,
+\begin{equation} \label{restriccion1}
+\sum_{i=1}^{n} \phi_i (\bm{x}) = 1 
+\end{equation}
+\begin{equation} \label{restriccion2}
+\sum_{i=1}^{n} \phi_i (\bm{x}) \bm{\tilde{x}_i} = 0 
+\end{equation}
+donde $\bm{ \tilde{ x }_i } = \bm{x_i} - \bm{x} $ permite expresar el problema de manera equivalente, desplazando las coordenadas centrandolas en el i-ésimo nodo del campo\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{comment}
+%Caracter local (leer paper)
+%Caracter global (leer paper)
+%\begin{equation} 
+%\bm{H} (p1, \ldots , pn) = - \sum_{i=1}^{n} \phi_i \, ln \, \phi_i 
+%\end{equation}
+%sujeto a
+%\begin{equation}
+%\sum_{i=1}^{n} \phi_i = 1 
+%\end{equation}
+%\begin{equation}
+%\sum_{i=1}^{n} \phi_i \, x_i = \langle x \rangle  
+%\end{equation}
+%\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Se tiene entonces un problema de optimización convexa sujeto a restricciones el cual puede ser resuelto mediante la metodología Dual de Lagrange \citep{opt-convx}. El funcional de Lagrange $L$ puede ser escrito como,
+\begin{equation}
+L( \bm{\phi} , \bm{\tilde{\lambda}} , \bm{x} ) = \sum_{i=1}^{n} \phi_i \, ln \frac{\phi_i}{m_i}  +  \lambda_0 \left( \sum_{i=1}^{n} \phi_i -1 \right) +  \bm{\lambda}^T \left( \sum_{i=1}^{n} \phi_i (\bm{x}_i-\bm{x}) \right) 
+\end{equation}
+donde $\bm{\tilde{\lambda}}^T= \left\{ \lambda_0 \hspace{0,3cm} \bm{\lambda}^T \right\}$ es el vector que contiene a los multiplicadores de lagrange asociados a las restricciones ( $\lambda_0$ asociado a (\ref{restriccion1}) y y $\bm{\lambda}^T$ a \ref{restriccion2}). Al diferenciar esta expresión en función de la función de forma $\bm{\phi}$ $(\phi_i \mbox{ para } i \in (1, \ldots, n))$ e igualarlo a cero resulta:
+\begin{equation} 
+\frac{\partial L}{\partial \phi_j} = ln \left( \frac{\phi_j}{m_j} + 1 + \lambda_0 + \bm{\lambda}^T (\bm{x}_j-\bm{x}) \right) = 0 
+\end{equation}
+Luego se despejar $\phi_j$ en función de los multiplicadores de Lagrange $\lambda_0$ y $\bm{\lambda}$
+\begin{equation}
+ln \left( \frac{\phi_j}{m_j} \right) = - 1 - \lambda_0 - \bm{\lambda}^T (\bm{x}_j-\bm{x}) 
+\end{equation}
+despejando la función de forma y reemplazando el índice libre $j$ por $i$,
+\begin{equation} 
+\phi_i = m_i exp ( -1 -\lambda_0 - \bm{\lambda}^T (\bm{x}_i-\bm{x}) ) 
+\end{equation}
+o bien, expresado convenientemente,
+\begin{equation} 
+\phi_i = m_i \frac{exp ( -1 -\lambda_0)} {( \bm{\lambda}^T (\bm{x}_i-\bm{x}) )} 
+\end{equation}
+Para encontrar los multiplicadores desconocidos se recurre al problema dual de Lagrange. Se define la función conjugada como,
+\begin{equation} \label{dummy1}
+f^{*}(\bm{y}) = \sup_{a\in \Omega} (\bm{y}
+^T \bm{x} - f(\bm{x}))
+\end{equation}
+donde el argumento $\bm{y}$ es,
+\begin{equation} \label{dummy2}
+\bm{y} = -\lambda_0^T \bm{1} - \lambda^T (\bm{x_i}-\bm{x})
+\end{equation}
+La función conjugada asociada a la entropía es
+\begin{equation}
+f^*( y ) = \sum_{i=1}^{n} m_i \, exp(y_i-1)
+\end{equation}
+Luego, reemplazando (\ref{dummy2}) en (\ref{dummy1}) se obtiene el problema dual:
+\begin{align}
+g(\lambda_0,\lambda) & = -\lambda_0 - f^*(\bm{y}) \\
+& = -\lambda_0 -\sum_{i=1}^{n} m_i \, exp(-\lambda_0^T \bm{1} - \lambda^T (\bm{x_i}-\bm{x})-1) \\
+& = -\lambda_0 -exp(-\lambda_0^T \bm{1} -1) \sum_{i=1}^{n} m_i exp(-\lambda^T (\bm{x_i}-\bm{x}))
+\end{align}
+Se define la función partición como,
+\begin{align}
+Z(\lambda,x) & = exp(\lambda_0^T \bm{1} +1) \\
+& = \sum_{i=1}^{n} m_i exp(-\lambda^T (\bm{x_i}-\bm{x}))
+\end{align}
+Maximizando la ecuación anterior respecto a $\lambda_0$ se encuentra una expresión equivalente para $Z(\lambda,x)$
+\begin{equation}
+\hat{g}(\lambda) = - lnZ(\lambda,x)
+\end{equation}
+Finalmente, el resultado de minimizar la función $\hat{g}(\lambda)$ permite obtener $\lambda^*$ (valor óptimo de $\lambda$). El teorema de \textit{Karush-Kuhn-Tucker} \citep{opt-convx} asegura la existencia $\lambda^*$ en el caso en que $\bm{x} \in \mbox{convex}(\Omega)$. Se obtienen como resultado:
+\begin{equation}
+\phi_i = m_i \frac{exp(-(\lambda^*)^T(\bm{x_i}-\bm{x}))}{Z(\lambda^*,x)}
+\end{equation}
+La obtensión de parámetro óptimo $\lambda^*$ se realiza mediante la resolución de un problema de minimización no restrictiva de $-\hat{g}(\lambda)$. Notar que el debido a las coordenadas desplazadas establecida en \ref{restriccion2} se puede encontrar $\lambda^*$ implementando un algoritmo de búsqueda de raices (por ejemplo, mediando el algoritmo de Newton-Raphson) \citep{marchant}
+La derivada de la función de forma se expresa como:
+
+\begin{footnotesize}
+\begin{equation}
+\begin{split}
+\nabla \phi_i(\bm{x}) = &  \phi_i 
+\left(
+\bm{x_i} \left( \bm{He}^{-1} - \bm{He}^{-1} \sum_{j=1}^{n} \phi_j \tilde{x}_j \otimes \frac{\nabla m_j}{m_j} \right) \right.\\
+&\left. + \frac{\nabla m_i}{m_i} - \sum_{j=1}^{n} \phi_j \frac{\nabla m_j}{m_j}
+\right)
+\end{split}
+\end{equation}
+\end{footnotesize}
+donde $\bm{He}$ es la matriz Hessiana.
+\begin{equation}
+\bm{He} = \sum_{j=1}^{n} \phi_j \tilde{x}_j \otimes \tilde{x}_j
+\end{equation}

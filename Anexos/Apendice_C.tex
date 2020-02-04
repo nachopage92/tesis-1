@@ -1,43 +1,43 @@
 \chapter{Eficiencia Computacional de las Simulaciones}
 \label{apB}
-Las simulaciones se llevaron a cabo en servidores configurados especialmente para ejecutar el código WRF de manera paralela haciendo uso de todos los núcleos y recursos disponibles. En específico se utilizaron dos servidores distintos: S1 es el servidor utilizado para correr las simulaciones correspondientes al caso I de terreno plano en Høvsore y S2 es el servidor utilizado para correr el caso II de terreno complejo en Bolund. Otros recursos computacionales adicionales fueron utilizados también para llevar a cabo distintos análisis de sensibilidad para diversos parámetros y otras pruebas varias las cuales no se detallan en este documento. Las especificaciones técnicas de S1 y S2 se presentan en la Tabla \ref{tab:an3_s12}.
-
-\begin{table}[H]
-	\caption{Específicaciones técnicas de los recursos computacionales utilizados.}\label{tab:an3_s12}
-	\centering\resizebox{\textwidth}{!}{
-	\begin{tabular}{lcc}
-		\toprule
-		Servidor 				& S1	&	S2	\\
-		\midrule
-		CPU			 			& Intel Xeon CPU E5-2609 v2@2.50Ghz & Intel Xeon Silver 4110 CPU @ 2.10GHz  \\
-		\# Cores				& 8 & 32  \\
-		Arquitectura            & x86\_64  & x86\_64  \\
-	 	RAM			 			& 55Gb & 126Gb  \\
-		HDD			 			& 1Tb & 2Tb  \\
-		OS			 			& Scientific Linux 7.2 & Debian 9  \\
-		\bottomrule
-	\end{tabular}}
-\end{table}
-
-Para cada servidor se registraron los tiempos de pared a través de un bot de \emph{Telegram} el cual registraba de manera automática e inmediata la fecha y hora a la cual cada simulación comenzaba o terminaba. Los registros de estos tiempos se resumen en la Tabla \ref{tab:an3_tiempos}.
-\newpage
-\begin{table}[H]
-	\caption{Tiempos de cálculo para cada experimento.}\label{tab:an3_tiempos}
-	\centering\resizebox{\textwidth}{!}{
-	\begin{tabular}{lccccc}
-		\toprule
-		Caso 				& Fecha Inicio	&	Fecha Término & $T_w$ [h] &	$\Delta t$ [h] & Incremento	\\
-		\midrule
-		Høvsøre s/DA		& 25/02/2019 17:30 & 04/03/2019 01:28 & 151,97 & -- & --  \\
-		Høvsore c/ DA		& 13/03/2019 23:13 & 19/03/2019 00:49 & 121,60 & -30,37 & -19.98\% \\
-		Bolund s/DA			& 12/02/2019 22:22 & 20/03/2019 08:35 & 850,22 & -- & -- \\
-		Bolund c/ DA		& 25/04/2019 22:58 & 24/05/2019 09:44\footnotemark & 662,02 & -188,20 & -22,14\% \\
-		\bottomrule
-	\end{tabular}}
-\end{table}
-
-Acá $T_w$ es el tiempo de cálculo efectivo (tiempo de pared) y $\Delta t$ corresponde al aumento en este debido a la incorporación del proceso de asimilación de datos. El incremento se calcula como $\Delta t/T_{w0}$, donde el subíndice 0 índica la simulación sin asimilación de datos.
-
-Como se puede apreciar en la Tabla \ref{tab:an3_tiempos}, el proceso de asimilación de datos presenta mejoras significativas en términos del tiempo de cálculo, lo que es esperanzador para una implementación efectiva y efectiva de la solución propuesta. 
-
-\footnotetext{Por motivos externos la simulación estuvo detenida desde el 02/05/2019 14:43 hasta el 03/05/2019 12:28, por lo cual se considera esta detención en el cálculo.}
+%Las simulaciones se llevaron a cabo en servidores configurados especialmente para ejecutar el código WRF de manera paralela haciendo uso de todos los núcleos y recursos disponibles. En específico se utilizaron dos servidores distintos: S1 es el servidor utilizado para correr las simulaciones correspondientes al caso I de terreno plano en Høvsore y S2 es el servidor utilizado para correr el caso II de terreno complejo en Bolund. Otros recursos computacionales adicionales fueron utilizados también para llevar a cabo distintos análisis de sensibilidad para diversos parámetros y otras pruebas varias las cuales no se detallan en este documento. Las especificaciones técnicas de S1 y S2 se presentan en la Tabla \ref{tab:an3_s12}.
+%
+%\begin{table}[H]
+%	\caption{Específicaciones técnicas de los recursos computacionales utilizados.}\label{tab:an3_s12}
+%	\centering\resizebox{\textwidth}{!}{
+%	\begin{tabular}{lcc}
+%		\toprule
+%		Servidor 				& S1	&	S2	\\
+%		\midrule
+%		CPU			 			& Intel Xeon CPU E5-2609 v2@2.50Ghz & Intel Xeon Silver 4110 CPU @ 2.10GHz  \\
+%		\# Cores				& 8 & 32  \\
+%		Arquitectura            & x86\_64  & x86\_64  \\
+%	 	RAM			 			& 55Gb & 126Gb  \\
+%		HDD			 			& 1Tb & 2Tb  \\
+%		OS			 			& Scientific Linux 7.2 & Debian 9  \\
+%		\bottomrule
+%	\end{tabular}}
+%\end{table}
+%
+%Para cada servidor se registraron los tiempos de pared a través de un bot de \emph{Telegram} el cual registraba de manera automática e inmediata la fecha y hora a la cual cada simulación comenzaba o terminaba. Los registros de estos tiempos se resumen en la Tabla \ref{tab:an3_tiempos}.
+%\newpage
+%\begin{table}[H]
+%	\caption{Tiempos de cálculo para cada experimento.}\label{tab:an3_tiempos}
+%	\centering\resizebox{\textwidth}{!}{
+%	\begin{tabular}{lccccc}
+%		\toprule
+%		Caso 				& Fecha Inicio	&	Fecha Término & $T_w$ [h] &	$\Delta t$ [h] & Incremento	\\
+%		\midrule
+%		Høvsøre s/DA		& 25/02/2019 17:30 & 04/03/2019 01:28 & 151,97 & -- & --  \\
+%		Høvsore c/ DA		& 13/03/2019 23:13 & 19/03/2019 00:49 & 121,60 & -30,37 & -19.98\% \\
+%		Bolund s/DA			& 12/02/2019 22:22 & 20/03/2019 08:35 & 850,22 & -- & -- \\
+%		Bolund c/ DA		& 25/04/2019 22:58 & 24/05/2019 09:44\footnotemark & 662,02 & -188,20 & -22,14\% \\
+%		\bottomrule
+%	\end{tabular}}
+%\end{table}
+%
+%Acá $T_w$ es el tiempo de cálculo efectivo (tiempo de pared) y $\Delta t$ corresponde al aumento en este debido a la incorporación del proceso de asimilación de datos. El incremento se calcula como $\Delta t/T_{w0}$, donde el subíndice 0 índica la simulación sin asimilación de datos.
+%
+%Como se puede apreciar en la Tabla \ref{tab:an3_tiempos}, el proceso de asimilación de datos presenta mejoras significativas en términos del tiempo de cálculo, lo que es esperanzador para una implementación efectiva y efectiva de la solución propuesta. 
+%
+%\footnotetext{Por motivos externos la simulación estuvo detenida desde el 02/05/2019 14:43 hasta el 03/05/2019 12:28, por lo cual se considera esta detención en el cálculo.}

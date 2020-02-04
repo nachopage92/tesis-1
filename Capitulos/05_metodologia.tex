@@ -43,67 +43,17 @@ es decir, $x^2$ y $x^2+y^2$ en 1D y 2D respectivamente.
 \subsection{Generación de nube}
 Entre las alternativas para generar nubes de aproximación se encuentran (citar a rainald). En este trabajo se utilizó el algoritmo propuesto por Rainald (citar libro), rutina que crea una colección de puntos discretos cercanos previamente triangulados (Triangulación de Delaunay).
 
-\section{Pruebas numéricas en espacios unidimensionales y bidimensionales}
 
-\subsection{Test 1D 1}
-cuya solución exacta es
-\begin{eqnarray}
-    u = \sin( 2 \pi x ) \\
-    du = 2 \pi \cos( 2 \pi x )
-\end{eqnarray}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{./Imagenes/05/T1_21-20_regular_type-2_direct_10.pdf}
+    \caption{Gráfica de las funciones de forma para una distribución regular} \label{fig:multiple_sf}
+\end{figure}
 
-\subsection{Test 1D 2}
-cuya solución exacta es
-\begin{eqnarray}
-    u  = 1 - x^3 + exp(-100 x^2 )
-    du = - 3 x^2 -200 x \exp(-100 x^2 )
-\end{eqnarray}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{./Imagenes/05/T1_21-20_irreg_type-2_direct_10.pdf}
+    \caption{Gráfica de las funciones de forma para una distribución irregular} \label{fig:multiple_sf}
+\end{figure}
 
-\subsection{Test 1D 3, ElasticBar}
-cuya solución exacta es
-\begin{eqnarray}
-    u = \frac{1}{E} ( \frac{1}{2} x - \frac{x^3}{6})
-    du = \frac{( 1 -x^2 )}{2}
-\end{eqnarray}
 
-\subsection{Test 1D 4, RW}
-cuya solución exacta es
-\begin{eqnarray}
-    u  = ( 1-x ) (\arctan(a*(x-xo))+\arctan(a*xo))
-    du = ( 1-x )*\frac{a}{( 1 + a^2 (x-xo)^2 )} - \arctan(a*(x-xo)) + \arctan(a*xo)
-\end{eqnarray}
-
-\subsection{Test 1D 5, AxialTruss}
-La ecuación governante es
-\begin{equation}
-    E A \frac{d^2 u}{d^2 x} + b(x) = 0
-\end{equation}
-y su término fuente es:
-\begin{equation}
-    b(x) = -(2.3 \pi)^2 \sin(2.3\pi x)
-\end{equation}
-donde su extremo izquierdo ($x=0$) se encuentra fijo y su extremo derecho ($x=1$) se le aplica una fuerza sinusoidal a lo largo del eje $x$, es decir:
-\begin{equation}
-    u|_{x=0} = 0
-\end{equation}
-\begin{equation}
-    \begin{split}
-        f = A \sigma_x|_{x=1} = E A \frac{d u}{d x} |_{x=1} = -2.3 \pi \cos(2.3 \pi x) , \\
-        \mbox{ o bien, } \hspace{0.5cm} \frac{d u}{d x} |_{x=1} = -2.3 \pi \cos(2.3 \pi x)
-    \end{split}
-\end{equation}
-
-cuya solución exacta es
-\begin{eqnarray}
-    u = -sin( 2.3 \pi x ) 
-    du = - 2.3 \pi \cos( 2.3 \pi x )
-\end{eqnarray}
-
-\subsection{Test 1D 6, Waveprop}
-cuya solución exacta es
-\begin{eqnarray}
-    u = \frac{ sin( \sqrt{\lambda} x) }{ sin( \sqrt{\lambda} ) }
-    du = \sqrt{\lambda} \frac{ cos( \sqrt{\lambda} x )} {( sin( \sqrt{\lambda} ))}
-\end{eqnarray}
-
-\subsection{Test 1D 1, T1}

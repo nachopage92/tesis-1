@@ -26,14 +26,20 @@ A level-1 auxiliary file: Anexos/Apendice_A.aux
 A level-1 auxiliary file: Anexos/Apendice_B.aux
 A level-1 auxiliary file: Anexos/Apendice_C.aux
 Database file #1: Bibliografia/biblio.bib
-Warning--I didn't find a database entry for "Bechmann2011"
-Warning--I didn't find a database entry for "3d4285ac04444eb3b9775baf9af052c6"
-Warning--I didn't find a database entry for "Pineda2004"
+Warning--I didn't find a database entry for "liuintro"
+Warning--I didn't find a database entry for "liu-intro"
+Warning--I didn't find a database entry for "IGA_LIBRO"
+Warning--I didn't find a database entry for "solidification"
+Warning--I didn't find a database entry for "2D_NS_MF"
+Warning--I didn't find a database entry for "eeg"
+Warning--I didn't find a database entry for "arroyo"
+Warning--I didn't find a database entry for "IGA_LME"
+Warning--I didn't find a database entry for "maxent_en_elasticidad"
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--can't use both author and editor fields in LIBRO:rachford-wheeler
 You've used 8 entries,
             3269 wiz_defined-function locations,
-            747 strings with 6515 characters,
+            754 strings with 6548 characters,
 and the built_in function-call counts, 6885 in all, are:
 = -- 623
 > -- 130
